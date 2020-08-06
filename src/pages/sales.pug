@@ -1,65 +1,90 @@
 extends ../layouts/default
 
 block meta
-    title Sales | Shopinizer eCommerce
+    title Dashboard | Shopinizer eCommerce
+
+block nestbar
+    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-indigo-100
+        h3.mb-6.text-2xl Sales
+
+        .flex.flex-col.mb-6
+            h4.mb-3.text-md Orders
+            nav.pl-3
+                ul.flex.flex-col
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="#") View
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="#") Add
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="#") Search
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="#") Export
+
+        .flex.flex-col.mb-6
+            h3.mb-3.text-md Others
+            nav.pl-3
+                ul.flex.flex-col
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="#") Draft Orders
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="#") Shipment
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="#") Return Requests
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="#") Gift Certificates
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="#") Order Statuses
 
 block page
-    article.flex
-        .side-nav.flex-col.h-screen
-            .nav-title.flex.mb-6
-                //span.material-icons.text-gray-600.text-xl.self-center.mr-2    navigate_next
-                p.text-xl.text-gray-800.self-center   Sales
+    .mb-8
+        .flex.flex-row.justify-between.items-center
+            h2.mb-8.text-3xl.font-light.leading-none View Sales
+            nav.flex.flex-row
+                a.flex.flex-row.items-center.text-white.bg-indigo-700.rounded.hover_opacity-75.fade(href="#")
+                    span.material-icons.py-2.px-2.bg-indigo-800.text-md.rounded-l add
+                    span.py-2.px-5.text-sm.font-bold.tracking-widest.uppercase Add
+                a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                    span.material-icons.py-2.px-2.text-md more_vert
 
+        nav.flex.flex-row.border-b.border-gray-300
+            a.block.pb-2.px-5.-mb-px.font-medium.text-indigo-700.border-b-2.border-indigo-700.hover_text-indigo-700(href="#") All Records
+            a.block.pb-2.px-5.-mb-px.text-gray-600.hover_text-indigo-700(href="#") Tab 2
+            a.block.pb-2.px-5.-mb-px.text-gray-600.hover_text-indigo-700(href="#") Tab 3
+            a.block.pb-2.px-5.-mb-px.text-gray-600.hover_text-indigo-700(href="#") Tab 4
 
+    table#records-table.display
+        thead
+            tr
+                th.py-2.text-xs.font-bold.uppercase Column 1
+                th.py-2.text-xs.font-bold.uppercase Column 2
+                th.py-2.text-xs.font-bold.uppercase Column 3
+                th.py-2.text-xs.font-bold.uppercase Column 4
+                th.py-2.text-xs.font-bold.uppercase.text-right Action
+        tbody
+            tr
+                td Row 1 Data 1
+                td Row 1 Data 2
+                td Row 1 Data 3
+                td Row 1 Data 4
+                td 
+                    nav.flex.flex-row.items-center.justify-end
+                        a.ml-2.fade.hover_text-indigo-700(href="#")
+                            span.material-icons.text-xl visibility
+                        a.ml-2.fade.hover_text-red-700(href="#")
+                            span.material-icons.text-xl delete
+                        a.ml-2.fade.hover_text-indigo-700(href="#")
+                            span.material-icons more_vert
+            tr
+                td Row 2 Data 1
+                td Row 2 Data 2
+                td Row 2 Data 3
+                td Row 2 Data 4
+                td 
+                    nav.flex.flex-row.items-center.justify-end
+                        a.ml-2.fade.hover_text-indigo-700(href="#")
+                            span.material-icons.text-xl visibility
+                        a.ml-2.fade.hover_text-red-700(href="#")
+                            span.material-icons.text-xl delete
+                        a.ml-2.fade.hover_text-indigo-700(href="#")
+                            span.material-icons more_vert
 
-            .nav-menu.mb-8
-                .nav-subtitle.flex.mb-3
-                    p.text-md.text-gray-800   Orders
-                nav.ml-4
-                    ul.flex-col
-                        li.mb-3
-                            a(href="")
-                                p.text-sm.text-gray-600  View
-
-                        li.mb-3
-                            a(href="")
-                                p.text-sm.text-gray-600  Add
-
-
-                        li.mb-3
-                            a(href="")
-                                p.text-sm.text-gray-600  Search
-
-
-                        li.mb-3
-                            a(href="")
-                                p.text-sm.text-gray-600  Export
-
-
-            .nav-menu
-                .nav-subtitle.flex.mb-3
-                    p.text-md.text-gray-800   Others
-                nav.ml-4
-                    ul.flex-col
-                        li.mb-3
-                            a(href="")
-                                p.text-sm.text-gray-600  Draft Orders
-
-                        li.mb-3
-                            a(href="")
-                                p.text-sm.text-gray-600  Shipment
-
-
-                        li.mb-3
-                            a(href="")
-                                p.text-sm.text-gray-600  Return Requests
-
-
-                        li.mb-3
-                            a(href="")
-                                p.text-sm.text-gray-600  Gift Certificates
-
-
-                        li.mb-3
-                            a(href="")
-                                p.text-sm.text-gray-600  Order Statuses

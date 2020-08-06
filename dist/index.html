@@ -1,39 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html class="h-full" lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--start css-->
-    <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons&amp;display=swap">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="assets/css/app.min.css">
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
     <!--end css-->
     <link rel="shortcut icon" href="./assets/images/note.svg" type="image/x-icon">
     <title>Dashboard | Shopinizer eCommerce</title>
   </head>
-  <body class="flex">
-    <!-- start header-->
-    <header class="relative top-0 left-0 h-screen px-2 py-4">
-      <div class="inner flex flex-wrap content-between h-full">
-        <div class="logo self-center w-full"><a class="flex w-full" href=""><img class="mx-auto" src="./assets/images/icon.svg" width="30px"></a></div>
-        <div class="menu-group flex-col self-center mt-auto"><a class="flex menu-item p-2 rounded rounded-sm hdr-icon my-2" href="/dist/sales.html"><span class="material-icons text-white text-md">     attach_money</span></a><a class="flex menu-item p-2 rounded rounded-sm hdr-icon my-2" href="/dist/customers.html"><span class="material-icons text-white text-md">     group</span></a><a class="flex menu-item p-2 rounded rounded-sm hdr-icon my-2" href="/dist/catalog.html"><span class="material-icons text-white text-md">     category</span></a><a class="flex menu-item p-2 rounded rounded-sm hdr-icon my-2" href="/dist/marketing.html"><span class="material-icons text-white text-md">     campaign</span></a><a class="flex menu-item p-2 rounded rounded-sm hdr-icon my-2" href="/dist/analytics.html"><span class="material-icons text-white text-md">     bar_chart</span></a><a class="flex menu-item p-2 rounded rounded-sm hdr-icon my-2" href="/dist/channels.html"><span class="material-icons text-white text-md">     merge_type</span></a><a class="flex menu-item p-2 rounded rounded-sm hdr-icon my-2" href="/dist/store.html"><span class="material-icons text-white text-md">     store_mall_directory</span></a></div>
-        <div class="control-group flex-col self-center mt-auto"><a class="flex menu-item p-2 rounded rounded-sm my-2" href=""><span class="material-icons text-white text-md">    settings</span></a><a class="flex menu-item p-2 rounded rounded-sm mt-2" href=""><span class="material-icons text-white text-md">     person</span></a></div>
-      </div>
-    </header>
-    <!-- end Header-->
-    <main class="flex w-full">
+  <body class="flex flex-col h-full antialiased font-sans text-base font-normal leading-normal text-left text-gray-800 bg-white" id="app">
+    <main class="flex flex-row h-full">
+      <!-- start SideBar-->
+      <aside class="relative flex flex-col content-center justify-between h-full py-6 px-4 bg-indigo-700">
+        <div class="block"><a class="flex w-full hover_opacity-75" href="./" data-tippy-content="Home"><img class="mx-auto" src="./assets/images/icon.svg" width="30px"></a></div>
+        <div class="flex flex-col"><a class="flex p-2 rounded my-3 bg-indigo-800 hover_opacity-75" href="./" data-tippy-content="Home"><span class="material-icons text-white text-md">home</span></a><a class="flex p-2 rounded my-3 bg-indigo-800 hover_opacity-75" href="./sales.html" data-tippy-content="Sales"><span class="material-icons text-white text-md">attach_money</span></a><a class="flex p-2 rounded my-3 bg-indigo-800 hover_opacity-75" href="./customers.html" data-tippy-content="Customers"><span class="material-icons text-white text-md">group</span></a><a class="flex p-2 rounded my-3 bg-indigo-800 hover_opacity-75" href="./catalog.html" data-tippy-content="Catalog"><span class="material-icons text-white text-md">category</span></a><a class="flex p-2 rounded my-3 bg-indigo-800 hover_opacity-75" href="./marketing.html" data-tippy-content="Marketing"><span class="material-icons text-white bg-indigo-800 text-md">campaign</span></a><a class="flex p-2 rounded my-3 bg-indigo-800 hover_opacity-75" href="./analytics.html" data-tippy-content="Analytics"><span class="material-icons text-white text-md">bar_chart</span></a><a class="flex p-2 rounded my-3 bg-indigo-100 pointer-events-none" href="./channels.html" data-tippy-content="Channels"><span class="material-icons text-indigo-800 text-md">merge_type</span></a><a class="flex p-2 rounded my-3 bg-indigo-800 hover_opacity-75" href="./store.html" data-tippy-content="Store"><span class="material-icons text-white text-md">store_mall_directory</span></a></div>
+        <div class="flex flex-col"><a class="flex px-2 hover_opacity-75" href="#" data-tippy-content="More"><span class="material-icons text-white text-md">more_vert</span></a></div>
+      </aside>
+      <!-- end SideBar-->
       <!--start page content-->
+      <div class="flex flex-col flex-1 h-full overflow-y-auto">
+        <div class="flex flex-col flex-1 py-6 px-8">Home
+        </div>
+        <!-- start Footer-->Footer
+        <!-- end Footer-->
+      </div>
       <!--end page content-->
     </main>
-    <!--start footer-->
-    <!--end footer-->
     <!-- START JAVASCRIPTS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <script src="assets/javascripts/app.min.js"></script>
     <!-- END JAVASCRIPTS-->
   </body>

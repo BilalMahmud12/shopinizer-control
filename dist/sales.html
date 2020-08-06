@@ -1,83 +1,104 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html class="h-full" lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--start css-->
-    <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons&amp;display=swap">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="assets/css/app.min.css">
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
     <!--end css-->
     <link rel="shortcut icon" href="./assets/images/note.svg" type="image/x-icon">
-    <title>Sales | Shopinizer eCommerce</title>
+    <title>Dashboard | Shopinizer eCommerce</title>
   </head>
-  <body class="flex">
-    <!-- start header-->
-    <header class="relative top-0 left-0 h-screen px-2 py-4">
-      <div class="inner flex flex-wrap content-between h-full">
-        <div class="logo self-center w-full"><a class="flex w-full" href=""><img class="mx-auto" src="./assets/images/icon.svg" width="30px"></a></div>
-        <div class="menu-group flex-col self-center mt-auto"><a class="flex menu-item p-2 rounded rounded-sm hdr-icon my-2" href="/dist/sales.html"><span class="material-icons text-white text-md">     attach_money</span></a><a class="flex menu-item p-2 rounded rounded-sm hdr-icon my-2" href="/dist/customers.html"><span class="material-icons text-white text-md">     group</span></a><a class="flex menu-item p-2 rounded rounded-sm hdr-icon my-2" href="/dist/catalog.html"><span class="material-icons text-white text-md">     category</span></a><a class="flex menu-item p-2 rounded rounded-sm hdr-icon my-2" href="/dist/marketing.html"><span class="material-icons text-white text-md">     campaign</span></a><a class="flex menu-item p-2 rounded rounded-sm hdr-icon my-2" href="/dist/analytics.html"><span class="material-icons text-white text-md">     bar_chart</span></a><a class="flex menu-item p-2 rounded rounded-sm hdr-icon my-2" href="/dist/channels.html"><span class="material-icons text-white text-md">     merge_type</span></a><a class="flex menu-item p-2 rounded rounded-sm hdr-icon my-2" href="/dist/store.html"><span class="material-icons text-white text-md">     store_mall_directory</span></a></div>
-        <div class="control-group flex-col self-center mt-auto"><a class="flex menu-item p-2 rounded rounded-sm my-2" href=""><span class="material-icons text-white text-md">    settings</span></a><a class="flex menu-item p-2 rounded rounded-sm mt-2" href=""><span class="material-icons text-white text-md">     person</span></a></div>
-      </div>
-    </header>
-    <!-- end Header-->
-    <main class="flex w-full">
-      <!--start page content-->
-      <article class="flex">
-        <div class="side-nav flex-col h-screen">
-          <div class="nav-title flex mb-6">
-            <!--span.material-icons.text-gray-600.text-xl.self-center.mr-2    navigate_next-->
-            <p class="text-xl text-gray-800 self-center">  Sales</p>
-          </div>
-          <div class="nav-menu mb-8">
-            <div class="nav-subtitle flex mb-3">
-              <p class="text-md text-gray-800">  Orders</p>
-            </div>
-            <nav class="ml-4">
-              <ul class="flex-col">
-                <li class="mb-3"><a href="">
-                    <p class="text-sm text-gray-600"> View</p></a></li>
-                <li class="mb-3"><a href="">
-                    <p class="text-sm text-gray-600"> Add</p></a></li>
-                <li class="mb-3"><a href="">
-                    <p class="text-sm text-gray-600"> Search</p></a></li>
-                <li class="mb-3"><a href="">
-                    <p class="text-sm text-gray-600"> Export</p></a></li>
-              </ul>
-            </nav>
-          </div>
-          <div class="nav-menu">
-            <div class="nav-subtitle flex mb-3">
-              <p class="text-md text-gray-800">  Others</p>
-            </div>
-            <nav class="ml-4">
-              <ul class="flex-col">
-                <li class="mb-3"><a href="">
-                    <p class="text-sm text-gray-600"> Draft Orders</p></a></li>
-                <li class="mb-3"><a href="">
-                    <p class="text-sm text-gray-600"> Shipment</p></a></li>
-                <li class="mb-3"><a href="">
-                    <p class="text-sm text-gray-600"> Return Requests</p></a></li>
-                <li class="mb-3"><a href="">
-                    <p class="text-sm text-gray-600"> Gift Certificates</p></a></li>
-                <li class="mb-3"><a href="">
-                    <p class="text-sm text-gray-600"> Order Statuses</p></a></li>
-              </ul>
-            </nav>
-          </div>
+  <body class="flex flex-col h-full antialiased font-sans text-base font-normal leading-normal text-left text-gray-800 bg-white" id="app">
+    <main class="flex flex-row h-full">
+      <!-- start SideBar-->
+      <aside class="relative flex flex-col content-center justify-between h-full py-6 px-4 bg-indigo-700">
+        <div class="block"><a class="flex w-full hover_opacity-75" href="./" data-tippy-content="Home"><img class="mx-auto" src="./assets/images/icon.svg" width="30px"></a></div>
+        <div class="flex flex-col"><a class="flex p-2 rounded my-3 bg-indigo-800 hover_opacity-75" href="./" data-tippy-content="Home"><span class="material-icons text-white text-md">home</span></a><a class="flex p-2 rounded my-3 bg-indigo-800 hover_opacity-75" href="./sales.html" data-tippy-content="Sales"><span class="material-icons text-white text-md">attach_money</span></a><a class="flex p-2 rounded my-3 bg-indigo-800 hover_opacity-75" href="./customers.html" data-tippy-content="Customers"><span class="material-icons text-white text-md">group</span></a><a class="flex p-2 rounded my-3 bg-indigo-800 hover_opacity-75" href="./catalog.html" data-tippy-content="Catalog"><span class="material-icons text-white text-md">category</span></a><a class="flex p-2 rounded my-3 bg-indigo-800 hover_opacity-75" href="./marketing.html" data-tippy-content="Marketing"><span class="material-icons text-white bg-indigo-800 text-md">campaign</span></a><a class="flex p-2 rounded my-3 bg-indigo-800 hover_opacity-75" href="./analytics.html" data-tippy-content="Analytics"><span class="material-icons text-white text-md">bar_chart</span></a><a class="flex p-2 rounded my-3 bg-indigo-100 pointer-events-none" href="./channels.html" data-tippy-content="Channels"><span class="material-icons text-indigo-800 text-md">merge_type</span></a><a class="flex p-2 rounded my-3 bg-indigo-800 hover_opacity-75" href="./store.html" data-tippy-content="Store"><span class="material-icons text-white text-md">store_mall_directory</span></a></div>
+        <div class="flex flex-col"><a class="flex px-2 hover_opacity-75" href="#" data-tippy-content="More"><span class="material-icons text-white text-md">more_vert</span></a></div>
+      </aside>
+      <!-- end SideBar-->
+      <aside class="flex flex-col w-full max-w-xxs py-6 px-8 bg-indigo-100">
+        <h3 class="mb-6 text-2xl">Sales</h3>
+        <div class="flex flex-col mb-6">
+          <h4 class="mb-3 text-md">Orders</h4>
+          <nav class="pl-3">
+            <ul class="flex flex-col">
+              <li class="mb-3"><a class="text-gray-600 hover_text-indigo-700" href="#">View</a></li>
+              <li class="mb-3"><a class="text-gray-600 hover_text-indigo-700" href="#">Add</a></li>
+              <li class="mb-3"><a class="text-gray-600 hover_text-indigo-700" href="#">Search</a></li>
+              <li class="mb-3"><a class="text-gray-600 hover_text-indigo-700" href="#">Export</a></li>
+            </ul>
+          </nav>
         </div>
-      </article>
+        <div class="flex flex-col mb-6">
+          <h3 class="mb-3 text-md">Others</h3>
+          <nav class="pl-3">
+            <ul class="flex flex-col">
+              <li class="mb-3"><a class="text-gray-600 hover_text-indigo-700" href="#">Draft Orders</a></li>
+              <li class="mb-3"><a class="text-gray-600 hover_text-indigo-700" href="#">Shipment</a></li>
+              <li class="mb-3"><a class="text-gray-600 hover_text-indigo-700" href="#">Return Requests</a></li>
+              <li class="mb-3"><a class="text-gray-600 hover_text-indigo-700" href="#">Gift Certificates</a></li>
+              <li class="mb-3"><a class="text-gray-600 hover_text-indigo-700" href="#">Order Statuses</a></li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+      <!--start page content-->
+      <div class="flex flex-col flex-1 h-full overflow-y-auto">
+        <div class="flex flex-col flex-1 py-6 px-8">
+          <div class="mb-8">
+            <div class="flex flex-row justify-between items-center">
+              <h2 class="mb-8 text-3xl font-light leading-none">View Sales</h2>
+              <nav class="flex flex-row"><a class="flex flex-row items-center text-white bg-indigo-700 rounded hover_opacity-75 fade" href="#"><span class="material-icons py-2 px-2 bg-indigo-800 text-md rounded-l">add</span><span class="py-2 px-5 text-sm font-bold tracking-widest uppercase">Add</span></a><a class="flex flex-row items-center ml-4 text-indigo-700 border border-indigo-700 rounded hover_opacity-50 fade" href="#"><span class="material-icons py-2 px-2 text-md">more_vert</span></a></nav>
+            </div>
+            <nav class="flex flex-row border-b border-gray-300"><a class="block pb-2 px-5 -mb-px font-medium text-indigo-700 border-b-2 border-indigo-700 hover_text-indigo-700" href="#">All Records</a><a class="block pb-2 px-5 -mb-px text-gray-600 hover_text-indigo-700" href="#">Tab 2</a><a class="block pb-2 px-5 -mb-px text-gray-600 hover_text-indigo-700" href="#">Tab 3</a><a class="block pb-2 px-5 -mb-px text-gray-600 hover_text-indigo-700" href="#">Tab 4</a></nav>
+          </div>
+          <table class="display" id="records-table">
+            <thead>
+              <tr>
+                <th class="py-2 text-xs font-bold uppercase">Column 1</th>
+                <th class="py-2 text-xs font-bold uppercase">Column 2</th>
+                <th class="py-2 text-xs font-bold uppercase">Column 3</th>
+                <th class="py-2 text-xs font-bold uppercase">Column 4</th>
+                <th class="py-2 text-xs font-bold uppercase text-right">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Row 1 Data 1</td>
+                <td>Row 1 Data 2</td>
+                <td>Row 1 Data 3</td>
+                <td>Row 1 Data 4</td>
+                <td> 
+                  <nav class="flex flex-row items-center justify-end"><a class="ml-2 fade hover_text-indigo-700" href="#"><span class="material-icons text-xl">visibility</span></a><a class="ml-2 fade hover_text-red-700" href="#"><span class="material-icons text-xl">delete</span></a><a class="ml-2 fade hover_text-indigo-700" href="#"><span class="material-icons">more_vert</span></a></nav>
+                </td>
+              </tr>
+              <tr>
+                <td>Row 2 Data 1</td>
+                <td>Row 2 Data 2</td>
+                <td>Row 2 Data 3</td>
+                <td>Row 2 Data 4</td>
+                <td> 
+                  <nav class="flex flex-row items-center justify-end"><a class="ml-2 fade hover_text-indigo-700" href="#"><span class="material-icons text-xl">visibility</span></a><a class="ml-2 fade hover_text-red-700" href="#"><span class="material-icons text-xl">delete</span></a><a class="ml-2 fade hover_text-indigo-700" href="#"><span class="material-icons">more_vert</span></a></nav>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- start Footer-->Footer
+        <!-- end Footer-->
+      </div>
       <!--end page content-->
     </main>
-    <!--start footer-->
-    <!--end footer-->
     <!-- START JAVASCRIPTS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
     <script src="assets/javascripts/app.min.js"></script>
     <!-- END JAVASCRIPTS-->
   </body>

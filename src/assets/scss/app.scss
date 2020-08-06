@@ -1,75 +1,106 @@
-/**
- * This injects Tailwind's base styles and any base styles registered by
- * plugins.
- */
 @tailwind base;
-
-/**
-Reset Css
-**/
-
-.text-accent {
-  color: #2d4fef !important;
-}
-
-
-
-/**
-Header Css
-**/
-
-header {
-  background: #2d4fef;
-  width: 60px;
-}
-
-.hdr-icon {
-  background: #4666fd;
-}
-
-
-/**
-Utilities css
-**/
-
-.side-nav {
-  width: 260px;
-  background: #f1f1f5;
-  padding: 1.5rem 2rem;
-
-  .nav-menu {
-    nav {
-      ul {
-        li {
-          a:hover {
-            p {
-              color: #2d4fef !important;
-            }
-            
-          }
-        }
-      }
-    }
-  }
-}
-
-
-.create-btn {
-    padding: .5rem 2rem;
-    border-color: #2d4fef;
-    color: #2d4fef;
-    border-radius: 0.25rem;
-    border: 1px solid;
-    font-size: 14px;
-}
-
 
 @tailwind components;
 
-
+@tailwind utilities;
 
 /**
-  * This injects Tailwind's utility classes and any utility classes registered
-  * by plugins.
-  */
-  @tailwind utilities;
+ **  Custom CSS
+ **/
+
+.fade {
+  transition: all .3s ease-in-out;
+}
+
+table.dataTable thead th,
+table.dataTable thead td {
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+table.dataTable thead th,
+table.dataTable thead td,
+table.dataTable tbody th,
+table.dataTable tbody td {
+  padding: 1rem 0.5rem;
+}
+
+table.dataTable.no-footer {
+  border-bottom: none;
+}
+
+table.dataTable.stripe tbody tr.odd,
+table.dataTable.display tbody tr.odd {
+  background-color: #ebf4ff;
+}
+
+table.dataTable.hover tbody tr:hover,
+table.dataTable.display tbody tr:hover {
+  background-color: #c3dafe;
+}
+
+table.dataTable.display tbody tr.odd>.sorting_1,
+table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
+  background-color: #edf2f7;
+}
+
+.dataTables_wrapper select,
+.dataTables_wrapper .dataTables_filter input {
+  color: #4a5568; 			/*text-gray-700*/
+  padding-left: 1rem; 		/*pl-4*/
+  padding-right: 1rem; 		/*pl-4*/
+  padding-top: .5rem; 		/*pl-2*/
+  padding-bottom: .5rem; 		/*pl-2*/
+  line-height: 1.25; 			/*leading-tight*/
+  border-width: 1px; 			/*border-2*/
+  border-radius: .25rem; 		
+  border-color: #ebf4ff; 		/*border-gray-200*/
+  background-color: #ebf4ff; 	/*bg-gray-200*/
+}
+
+.dataTables_wrapper .dataTables_length {
+  float: right;
+  margin-left: 2rem;
+}
+
+.dataTables_length,
+.dataTables_filter {
+  margin-bottom: 1.5rem;
+}
+
+/*Pagination Buttons*/
+.dataTables_wrapper .dataTables_paginate .paginate_button		{
+  margin: 0 0.4rem;
+  font-weight: 500;				/*font-bold*/
+  border-radius: .25rem;			/*rounded*/
+  color: #4c51bf;
+  border: 1px solid transparent;	/*border border-transparent*/
+}
+
+/*Pagination Buttons - Current selected */
+.dataTables_wrapper .dataTables_paginate .paginate_button.current	{
+  color: #fff !important;				/*text-white*/
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06); 	/*shadow*/
+  font-weight: 500;					/*font-bold*/
+  border-radius: .25rem;				/*rounded*/
+  color: #fff;
+  background: #4c51bf !important;		/*bg-indigo-500*/
+  border: 1px solid transparent;		/*border border-transparent*/
+}
+
+/*Pagination Buttons - Hover */
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover		{
+  color: #fff !important;				/*text-white*/
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);	 /*shadow*/
+  font-weight: 500;					/*font-bold*/
+  border-radius: .25rem;				/*rounded*/
+  color: #4c51bf;
+  background: #ebf4ff !important;		/*bg-indigo-500*/
+  border: 1px solid transparent;		/*border border-transparent*/
+}
+
+/*Add padding to bottom border */
+table.dataTable.no-footer {
+  border-bottom: 1px solid #e2e8f0;	/*border-b-1 border-gray-300*/
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}

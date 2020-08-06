@@ -39,10 +39,10 @@ function css() {
     .pipe(
       postcss([
         require("tailwindcss"),
-        require("@fullhuman/postcss-purgecss")({
-          content: ["./src/**/*.pug"],
-          defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
-        }),
+        //require("@fullhuman/postcss-purgecss")({
+        //  content: ["./src/**/*.pug"],
+        //  defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+        //}),
         require("autoprefixer")
         //require("cssnano")
       ])
