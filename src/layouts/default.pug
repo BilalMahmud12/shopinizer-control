@@ -1,0 +1,47 @@
+doctype html
+html(lang="en", dir="ltr")
+    head
+        block head
+            meta(charset="utf-8")
+            meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+
+            //start css
+            link(rel="stylesheet", href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css", media="all")
+            link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+            link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&display=swap")
+            link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Oxygen&display=swap")
+            link(rel="stylesheet", href="assets/css/app.min.css")
+            script(src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer)
+            //end css
+
+            link(rel="shortcut icon", href="./assets/images/note.svg", type="image/x-icon")
+
+            block meta
+            
+    
+    body.flex
+        // start header
+        block header
+            include ../partials/header
+        // end Header
+       
+        main.flex.w-full
+            //start page content
+            block page
+            //end page content
+
+        //start footer
+        block footer
+            include ../partials/footer
+        //end footer
+
+
+        
+
+        // START JAVASCRIPTS
+        block scripts
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+        script(src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js")
+        script(src="assets/javascripts/app.min.js")
+        // END JAVASCRIPTS

@@ -1,0 +1,75 @@
+/**
+ * This injects Tailwind's base styles and any base styles registered by
+ * plugins.
+ */
+@tailwind base;
+
+/**
+Reset Css
+**/
+
+.text-accent {
+  color: #2d4fef !important;
+}
+
+
+
+/**
+Header Css
+**/
+
+header {
+  background: #2d4fef;
+  width: 60px;
+}
+
+.hdr-icon {
+  background: #4666fd;
+}
+
+
+/**
+Utilities css
+**/
+
+.side-nav {
+  width: 260px;
+  background: #f1f1f5;
+  padding: 1.5rem 2rem;
+
+  .nav-menu {
+    nav {
+      ul {
+        li {
+          a:hover {
+            p {
+              color: #2d4fef !important;
+            }
+            
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.create-btn {
+    padding: .5rem 2rem;
+    border-color: #2d4fef;
+    color: #2d4fef;
+    border-radius: 0.25rem;
+    border: 1px solid;
+    font-size: 14px;
+}
+
+
+@tailwind components;
+
+
+
+/**
+  * This injects Tailwind's utility classes and any utility classes registered
+  * by plugins.
+  */
+  @tailwind utilities;

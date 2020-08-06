@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--start css-->
+    <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/app.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
+    <!--end css-->
+    <link rel="shortcut icon" href="./assets/images/note.svg" type="image/x-icon">
+    <title>Reservation | TurXpert</title>
+  </head>
+  <body class="flex">
+    <!-- start header-->
+    <header class="relative top-0 left-0 h-screen px-2 py-4">
+      <div class="inner flex flex-wrap content-between h-full">
+        <div class="logo self-center w-full"><a class="flex w-full" href=""><img class="mx-auto" src="./assets/images/icon.svg" width="30px"></a></div>
+        <div class="menu-group flex-col self-center mt-auto"><a class="flex menu-item p-2 rounded rounded-sm hdr-icon my-2" href="/dist/sales.html"><span class="material-icons text-white text-md">     attach_money</span></a><a class="flex menu-item p-2 rounded rounded-sm hdr-icon my-2" href="/dist/customers.html"><span class="material-icons text-white text-md">     group</span></a><a class="flex menu-item p-2 rounded rounded-sm hdr-icon my-2" href="/dist/catalog.html"><span class="material-icons text-white text-md">     category</span></a><a class="flex menu-item p-2 rounded rounded-sm hdr-icon my-2" href="/dist/marketing.html"><span class="material-icons text-white text-md">     campaign</span></a><a class="flex menu-item p-2 rounded rounded-sm hdr-icon my-2" href="/dist/analytics.html"><span class="material-icons text-white text-md">     bar_chart</span></a><a class="flex menu-item p-2 rounded rounded-sm hdr-icon my-2" href="/dist/channels.html"><span class="material-icons text-white text-md">     merge_type</span></a><a class="flex menu-item p-2 rounded rounded-sm hdr-icon my-2" href="/dist/store.html"><span class="material-icons text-white text-md">     store_mall_directory</span></a></div>
+        <div class="control-group flex-col self-center mt-auto"><a class="flex menu-item p-2 rounded rounded-sm my-2" href=""><span class="material-icons text-white text-md">    settings</span></a><a class="flex menu-item p-2 rounded rounded-sm mt-2" href=""><span class="material-icons text-white text-md">     person</span></a></div>
+      </div>
+    </header>
+    <!-- end Header-->
+    <main class="flex w-full">
+      <!--start page content-->
+      <article class="home-page w-screen flex flex-col">
+        <!-- start utilities bar-->
+        <div class="utility-bar h-24 flex bg-white shadow shadow-base">
+          <div class="navigate flex flex-col"><a class="flex self-center p-2 w-12 h-12" href=""><i class="material-icons text-3xl text-gray-800 self-center"> chevron_left</i></a><a class="flex self-center justify-center p-2 w-12 h-12 bg-gray-800" href=""><i class="material-icons text-xl text-white self-center"> book</i></a></div>
+          <div class="pax flex border-r border-gray-300 px-2"><a class="flex flex-col self-center px-4" href=""><i class="material-icons text-2xl text-blue-500 self-center"> people</i>
+              <p class="text-xs mt-2">Guests</p></a></div>
+          <div class="reservation-content flex flex-col border-r border-gray-300">
+            <div class="label py-2 flex"><i class="material-icons text-md text-gray-500 self-center ml-4"> folder</i>
+              <p class="text-xs self-center ml-1">RES-02042020-510</p>
+            </div>
+            <div class="items-wrap flex pb-2 pt-1"><a class="content flex border-r border-gray-300 px-4 py-2" href=""><i class="material-icons text-md text-gray-500 self-center"> folder_open</i>
+                <p class="text-xs self-center ml-1">Tickets</p></a><a class="content flex border-r border-gray-300 px-4 py-2" href=""><i class="material-icons text-md text-gray-500 self-center"> folder_open</i>
+                <p class="text-xs self-center ml-1">Hotels Acc.</p></a><a class="content flex border-r border-gray-300 px-4 py-2" href=""><i class="material-icons text-md text-gray-500 self-center"> folder_open</i>
+                <p class="text-xs self-center ml-1">Transfers</p></a><a class="content flex border-r border-gray-300 px-4 py-2" href=""><i class="material-icons text-md text-gray-500 self-center"> folder_open</i>
+                <p class="text-xs self-center ml-1">Tours</p></a><a class="content flex border-r border-gray-300 px-4 py-2" href=""><i class="material-icons text-md text-gray-500 self-center"> folder_open</i>
+                <p class="text-xs self-center ml-1">Rent A Car</p></a><a class="content flex px-4 py-2" href=""><i class="material-icons text-md text-gray-500 self-center"> folder_open</i>
+                <p class="text-xs self-center ml-2">Extra Services</p></a></div>
+          </div>
+          <div class="docs flex border-r border-gray-300 px-2"><a class="voucher flex flex-col self-center px-3 border-r border-gray-300" href=""><i class="material-icons text-md text-blue-500 self-center"> description</i>
+              <p class="text-xs mt-2">Voucher</p></a><a class="voucher flex flex-col self-center px-4 border-r border-gray-300" href=""><i class="material-icons text-md text-blue-500 self-center"> monetization_on</i>
+              <p class="text-xs mt-2">Invoice</p></a><a class="voucher flex flex-col self-center px-3 border-r border-gray-300" href=""><i class="material-icons text-md text-blue-500 self-center"> reply_all</i>
+              <p class="text-xs mt-2">e-Mail Hotel</p></a><a class="voucher flex flex-col self-center px-4" href=""><i class="material-icons text-md text-blue-500 self-center"> print</i>
+              <p class="text-xs mt-2">Print</p></a></div>
+          <div class="actions flex px-2"><a class="voucher flex flex-col self-center px-4 border-r border-gray-300" href=""><i class="material-icons text-md text-green-500 self-center"> done_outline</i>
+              <p class="text-xs mt-2">Save</p></a><a class="voucher flex flex-col self-center px-3 border-r border-gray-300" href=""><i class="material-icons text-md text-red-500 self-center"> cancel</i>
+              <p class="text-xs mt-2">Cancel</p></a><a class="voucher flex flex-col self-center px-3" href=""><i class="material-icons text-md text-red-500 self-center"> delete</i>
+              <p class="text-xs mt-2">Delete</p></a></div>
+        </div>
+        <section class="data flex">
+          <p class="text-2xl">test</p>
+        </section>
+      </article>
+      <!--end page content-->
+    </main>
+    <!--start footer-->
+    <!--end footer-->
+    <!-- START JAVASCRIPTS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+    <script src="assets/javascripts/app.min.js"></script>
+    <!-- END JAVASCRIPTS-->
+  </body>
+</html>

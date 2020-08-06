@@ -1,0 +1,144 @@
+extends ../layouts/default
+
+block meta
+    title Product Categories | Shopinizer eCommerce
+
+block page
+    article.flex.w-full
+        .side-nav.flex-col.h-screen
+            .nav-title.flex.mb-6
+                //span.material-icons.text-gray-600.text-xl.self-center.mr-2    navigate_next
+                p.text-xl.text-gray-800.self-center   Catalog
+
+            .nav-menu.mb-6
+                .nav-subtitle.flex.mb-3
+                    p.text-md.text-gray-800   Products
+                nav.ml-4
+                    ul.flex-col
+                        li.mb-3
+                            a(href="")
+                                p.text-sm.text-gray-600  View
+
+                        li.mb-3
+                            a(href="")
+                                p.text-sm.text-gray-600  Add
+
+
+                        li.mb-3
+                            a(href="")
+                                p.text-sm.text-gray-600  Search
+
+
+                        li.mb-3
+                            a(href="")
+                                p.text-sm.text-gray-600  Import
+
+
+                        li.mb-3
+                            a(href="")
+                                p.text-sm.text-gray-600  Export
+
+
+            .nav-menu.mb-6
+                .nav-subtitle.flex.mb-3
+                    p.text-md.text-gray-800   Product Definitions
+                nav.ml-4
+                    ul.flex-col
+                        li.mb-3
+                            a(href="")
+                                p.text-sm.text-gray-600  Brands
+
+
+                        li.mb-3
+                            a(href="./dist/categories.html")
+                                p.text-sm.text-gray-600  Product Categories
+
+
+                        li.mb-3
+                            a(href="")
+                                p.text-sm.text-gray-600  Product Attributes
+
+
+                        li.mb-3
+                            a(href="")
+                                p.text-sm.text-gray-600  Product Options
+
+
+                        li.mb-3
+                            a(href="")
+                                p.text-sm.text-gray-600  Product filters
+
+
+                        li.mb-3
+                            a(href="")
+                                p.text-sm.text-gray-600  Price Lists
+
+
+                        
+
+
+
+            .nav-menu
+                .nav-subtitle.flex.mb-3
+                    p.text-md.text-gray-800   Product's Feedback
+                nav.ml-4
+                    ul.flex-col
+                        li.mb-3
+                            a(href="")
+                                p.text-sm.text-gray-600  Product Reviews
+
+
+        .content.p-6.w-full
+            .content-title
+                p.main.text-2xl.text-accent.mb-2   Product Categories
+                p.sub-title.text-sm.text-gray-600.mb-4     Categories allow you to group products by similar attributes. The categories in your store are shown below.
+
+            .data-section.py-2
+                .control-area.flex.justify-between.py-6
+                    .control-button.mr-4
+                        a.create-btn(href="")    Create Category
+
+                    .bulk-action-buttons.flex
+                        a.flex.self-center.text-sm.text-red-500.p-2.border.border-gray-300.rounded.rounded-sm(href="")
+                            span.material-icons     delete
+
+                .data-table
+                    table.w-full.border-l.border-r.border-gray-300
+                        tr.bg-gray-200
+                            th.py-2.px-4.text-md.font-normal.border-r.border-gray-300(width="5%")
+                                input.self-center.text-accent(type="checkbox")      
+                            th.py-2.px-4.text-xs.font-normal.text-left.border-r.border-gray-300(width="30%")      Category Name
+                            th.py-2.px-4.text-xs.font-normal.text-left.border-r.border-gray-300(width="15%")     Products
+                            th.py-2.px-4.text-xs.font-normal.text-left.border-r.border-gray-300(width="15%")      Products in Sub Cats
+                            th.py-2.px-4.text-xs.font-normal.text-left.border-r.border-gray-300(width="15%")      Visible in Menu
+                            th.py-2.px-4.text-xs.font-normal.text-left(width="20%")     Actions
+
+
+
+                        tr.border-b.border-gray-300
+                            th.py-2.px-4.text-sm.font-normal.border-r.border-gray-300(width="5%")
+                                input.self-center(type="checkbox")      
+                            th.py-2.px-4.text-sm.font-normal.text-left.border-r.border-gray-300(width="30%")
+                                a(href="")      Electronic Devices     
+                            th.py-2.px-4.text-sm.font-normal.text-left.border-r.border-gray-300(width="15%")     10
+                            th.py-2.px-4.text-sm.font-normal.text-left.border-r.border-gray-300(width="15%")     5
+                            th.py-2.px-4.text-sm.font-normal.text-left.border-r.border-gray-300(width="15%")     Yes
+                            th.py-2.px-4.text-sm.font-normal.text-left(width="20%")
+                                .actions-wrap.flex
+                                    a.flex(href="")
+                                        span.material-icons.text-gray-500.text-md       more_horiz
+
+
+
+                        tr.border-b.border-gray-300
+                            th.py-2.px-4.text-sm.font-normal.border-r.border-gray-300(width="5%")
+                                input.self-center(type="checkbox")      
+                            th.py-2.px-4.text-sm.font-normal.text-left.border-r.border-gray-300(width="30%")
+                                a(href="")        Home & Life style   
+                            th.py-2.px-4.text-sm.font-normal.text-left.border-r.border-gray-300(width="15%")     10
+                            th.py-2.px-4.text-sm.font-normal.text-left.border-r.border-gray-300(width="15%")     5
+                            th.py-2.px-4.text-sm.font-normal.text-left.border-r.border-gray-300(width="15%")     Yes
+                            th.py-2.px-4.text-sm.font-normal.text-left(width="20%")
+
+
+
