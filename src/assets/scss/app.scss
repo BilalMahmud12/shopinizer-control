@@ -30,17 +30,24 @@ table.dataTable.no-footer {
 
 table.dataTable.stripe tbody tr.odd,
 table.dataTable.display tbody tr.odd {
-  background-color: #ebf4ff;
+  background-color: #f7fafc;
 }
 
 table.dataTable.hover tbody tr:hover,
 table.dataTable.display tbody tr:hover {
-  background-color: #c3dafe;
+  background-color: #ebf4ff;
 }
 
 table.dataTable.display tbody tr.odd>.sorting_1,
 table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
-  background-color: #edf2f7;
+  background-color: #ebf4ff;
+}
+
+table.dataTable.row-border tbody th,
+table.dataTable.row-border tbody td,
+table.dataTable.display tbody th,
+table.dataTable.display tbody td {
+  border-top: 0;
 }
 
 .dataTables_wrapper select,
@@ -64,7 +71,7 @@ table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
 
 .dataTables_length,
 .dataTables_filter {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 /*Pagination Buttons*/
