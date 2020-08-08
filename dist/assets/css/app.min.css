@@ -19110,7 +19110,7 @@ video {
 
 .form-checkbox:focus {
   outline: none;
-  box-shadow: 0 0 0 3px #a3bffa;
+  box-shadow: 0 0 0 1px #a3bffa;
   border-color: #a3bffa;
 }
 
@@ -19156,7 +19156,7 @@ video {
 
 .form-radio:focus {
   outline: none;
-  box-shadow: 0 0 0 3px #a3bffa;
+  box-shadow: 0 0 0 1px #a3bffa;
   border-color: #a3bffa;
 }
 
