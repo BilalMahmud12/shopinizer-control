@@ -93,22 +93,44 @@ block page
                                     path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
 
                     .w-full.md_w-1_2.px-4.mb-6
-                            label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="Weight") Weight
-                                span.mx-1.text-sm.text-red-600 *
-                            .relative
-                                input#Weight.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-200.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="0")
-                                .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.px-4.text-gray-600 KGS
-                    
+                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="Weight") Weight
+                            span.mx-1.text-sm.text-red-600 *
+                        .relative
+                            input#Weight.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-200.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="0")
+                            .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.px-4.text-gray-600 KGS
+                
 
-                    .w-full.px-4.mb-0
-                            label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="Weight") Categories
-                                span.mx-1.text-sm.text-red-600 *
-                            treeselect(
-                                v-model="treeselect_value",
-                                v-bind:multiple="true",
-                                v-bind:clearable="true",
-                                v-bind:searchable="true",
-                                v-bind:options="treeselect_options")
+                    .w-full.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="Weight") Categories
+                            span.mx-1.text-sm.text-red-600 *
+                        treeselect(
+                            v-model="treeselect_value",
+                            v-bind:multiple="true",
+                            v-bind:clearable="true",
+                            v-bind:searchable="true",
+                            v-bind:options="treeselect_options")
+        
+
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.inline-flex.items-center.ml-3
+                            input.form-radio.h-6.w-6.text-indigo-700(type="radio")
+                            span.ml-2 Radio
+
+                    .w-full.md_w-1_2.px-4.mb-0
+                        label.inline-flex.items-center.ml-3
+                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                            span.ml-2 Checkbox
+
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.inline-flex.items-center.ml-3
+                            input.form-radio.h-6.w-6.text-indigo-700(type="radio")
+                            span.ml-2 Radio
+
+                    .w-full.md_w-1_2.px-4.mb-0
+                        label.inline-flex.items-center.ml-3
+                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                            span.ml-2 Checkbox
+
         
             .p-8.mb-8.bg-white.shadow.rounded
                 h6.mb-6.text-2xl.font-light.text-gray-600 Description
