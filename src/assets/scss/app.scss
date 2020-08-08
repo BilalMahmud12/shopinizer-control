@@ -206,6 +206,13 @@ table.dataTable.no-footer {
   margin-bottom: 0.75em;
 }
 
+table.dataTable tbody td.select-checkbox:before,
+table.dataTable tbody th.select-checkbox:before,
+table.dataTable tr.selected td.select-checkbox:after,
+table.dataTable tr.selected th.select-checkbox:after {
+  display: none;
+}
+
 .vue-treeselect__control {
   height: 46px !important;
   border-color: #edf2f7 !important;
