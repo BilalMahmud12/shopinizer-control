@@ -19325,15 +19325,44 @@ table.dataTable.display tbody > tr.odd > .selected {
 
 .vue-treeselect__placeholder,
 .vue-treeselect__single-value {
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 4px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: .25rem;
+}
+
+.vue-treeselect__multi-value-label {
+  padding-right: 12px;
+}
+
+.vue-treeselect__multi-value-label,
+.vue-treeselect__value-remove {
+  padding: 0 10px;
+}
+
+.vue-treeselect__multi-value-item {
+  font-size: 1rem;
+}
+
+.vue-treeselect__label {
+  padding: .25rem .5rem;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .dropzone {
   min-height: auto;
   border: 1px dashed #667eea;
   border-radius: 4px;
+}
+
+.vue-treeselect:not(.vue-treeselect--disabled) .vue-treeselect__multi-value-item:not(.vue-treeselect__multi-value-item-disabled):hover .vue-treeselect__multi-value-item:not(.vue-treeselect__multi-value-item-new) .vue-treeselect__multi-value-item:not(.vue-treeselect__multi-value-item-new):hover,
+.vue-treeselect__multi-value-item {
+  background: #c3dafe;
+  color: #4c51bf;
+}
+
+.vue-treeselect__value-remove {
+  color: #7f9cf5;
 }
 
 .notifications_label {
