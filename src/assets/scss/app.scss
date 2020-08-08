@@ -309,6 +309,20 @@ table.dataTable.order-column.stripe tbody>tr.odd.selected:hover {
   color: #7f9cf5;
 }
 
+.ql-toolbar.ql-snow,
+.ql-container.ql-snow {
+  border: 1px solid #edf2f7;
+}
+
+.ql-toolbar.ql-snow {
+  border-radius: 4px 4px 0 0;
+}
+
+.ql-container.ql-snow {
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05) !important;
+}
+
 .notifications_label {
   top: -6px !important;
   right: -6px !important;
