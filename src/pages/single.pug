@@ -1,0 +1,140 @@
+extends ../layouts/default
+
+block meta
+    title Dashboard | Shopinizer eCommerce
+
+block nestbar
+    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-indigo-100
+        h3.mb-6.text-2xl Sales
+
+        .flex.flex-col.mb-6
+            h4.mb-3.text-md Orders
+            nav.pl-3
+                ul.flex.flex-col
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="#") View
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./single.html") Add
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="#") Search
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="#") Export
+
+        .flex.flex-col.mb-6
+            h3.mb-3.text-md Others
+            nav.pl-3
+                ul.flex.flex-col
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="#") Draft Orders
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="#") Shipment
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="#") Return Requests
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="#") Gift Certificates
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="#") Order Statuses
+block page
+    .flex.flex-row.justify-between.items-center.px-12.py-6.bg-white.shadow-sm.z-50
+        h2.text-3xl.font-light.leading-none Add Sales
+        // Buttons control
+        nav.flex.flex-row
+            //a.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.rounded.hover_opacity-75.fade(href="#")
+                span.material-icons.py-1.px-2.bg-indigo-800.text-md.rounded-l add
+                span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase New one
+            a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                span.material-icons.py-1.px-2.text-md more_vert
+
+    .relative.flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
+        .mb-5.text-center
+            h5.mb-1.text-xl.font-medium Product Information
+            p.text-lg.font-light.text-gray-600 Information to help define a product.
+        // start Form
+        form.w-full.max-w-5xl(action="/upload" method="post" enctype="multipart/form-data" )
+            .p-8.mb-8.bg-white.shadow.rounded
+                h6.mb-6.text-2xl.font-light.text-gray-600 Basic Information
+
+                .flex.flex-wrap.-mx-4
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="name") Product Name
+                            span.mx-1.text-sm.text-red-600 *
+                        input#name.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-200.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="Simple Product Name")
+        
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="SKU") SKU
+                        input#SKU.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-200.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="SKU-854")
+        
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="select-1") Product Name
+                        .relative
+                            select#select-1.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-200.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="Simple Product Name")
+                                option Option 1
+                                option Option 2
+                                option Option 3
+                            .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                    path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="Pric") Default Pric
+                            span.mx-1.text-sm.text-red-600 *
+                            | (excluding tax)
+                        input#Pric.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-200.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="USD 500")
+                
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="select-2") Brand
+                        .relative
+                            select#select-2.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-200.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="Simple Product Name")
+                                option Option 1
+                                option Option 2
+                                option Option 3
+                            .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                    path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+
+                    .w-full.md_w-1_2.px-4.mb-6
+                            label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="Weight") Weight
+                                span.mx-1.text-sm.text-red-600 *
+                            .relative
+                                input#Weight.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-200.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="0")
+                                .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.px-4.text-gray-600 KGS
+                    
+
+                    .w-full.px-4.mb-0
+                            label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="Weight") Categories
+                                span.mx-1.text-sm.text-red-600 *
+                            treeselect(
+                                v-model="treeselect_value",
+                                v-bind:multiple="true",
+                                v-bind:clearable="true",
+                                v-bind:searchable="true",
+                                v-bind:options="treeselect_options")
+        
+            .p-8.mb-8.bg-white.shadow.rounded
+                h6.mb-6.text-2xl.font-light.text-gray-600 Description
+
+                #editor
+                    p Hello World!
+                    p Some initial
+                        strong bold
+                        | text
+
+            .p-8.mb-8.bg-white.shadow.rounded
+                h6.mb-6.text-2xl.font-light.text-gray-600 Images
+
+                .flex.flex-wrap.-mx-4
+                    .w-full.px-4.mb-6
+                        #upload-widget.dropzone
+
+
+        // end Form
+                    
+block footer
+    .flex.flex-row.justify-end.items-center.px-12.py-4.bg-white.border-t.border-gray-200.z-50
+        nav.flex.flex-row
+            a.flex.flex-row.items-center.ml-4.text-gray-500.rounded.hover_opacity-75.fade(href="#")
+                span.py-1.text-sm.font-medium.tracking-widest.uppercase Cancel
+            a.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.rounded.hover_opacity-75.fade(href="#")
+                span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Save
+            a.flex.flex-row.items-center.ml-4.text-white.bg-red-700.rounded.hover_opacity-75.fade(href="#")
+                span.material-icons.py-1.px-2.bg-red-800.text-md.rounded delete

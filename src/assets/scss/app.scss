@@ -111,3 +111,22 @@ table.dataTable.no-footer {
   margin-top: 0.75em;
   margin-bottom: 0.75em;
 }
+
+.vue-treeselect__control {
+  height: 46px !important;
+  border-color: #edf2f7 !important;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05) !important;
+}
+
+.vue-treeselect__placeholder,
+.vue-treeselect__single-value {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 4px;
+}
+
+.dropzone {
+  min-height: auto;
+  border: 1px dashed #667eea;
+  border-radius: 4px;
+}
