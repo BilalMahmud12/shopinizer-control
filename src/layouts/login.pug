@@ -1,0 +1,32 @@
+doctype html
+html.h-full(lang="en", dir="ltr")
+    head
+        block head
+            meta(charset="utf-8")
+            meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+
+            //start css
+            link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons&display=swap")
+            link(rel="stylesheet", href="assets/css/app.min.css")
+            //end css
+
+            link(rel="shortcut icon", href="./assets/images/note.svg", type="image/x-icon")
+
+            block meta
+            
+    body.flex.flex-col.h-full.antialiased.font-sans.text-base.font-normal.leading-normal.text-left.text-indigo-900.bg-login
+        main#app.flex.flex-row.h-full
+            //start page content
+            .flex.flex-col.flex-1.items-center.justify-center.h-full
+                .flex.flex-col.w-full
+                    block page
+            //end page content
+
+        // START JAVASCRIPTS
+        block scripts
+        script(src="https://cdn.jsdelivr.net/npm/vue@2.6.11")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+        script(src="https://unpkg.com/@popperjs/core@2")
+        script(src="https://unpkg.com/tippy.js@6")
+        script(src="assets/javascripts/app.min.js")
+        // END JAVASCRIPTS

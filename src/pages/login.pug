@@ -1,0 +1,24 @@
+extends ../layouts/login
+
+block meta
+    title Dashboard | Shopinizer eCommerce
+
+block page
+    .w-full.self-center.max-w-sm
+        form.bg-white.shadow-md.rounded.p-8.mb-4
+            .mb-6.text-center
+                img.inline-block.mx-auto(src="./assets/images/icon-dark.svg", width="60px")
+
+            .mb-4
+                label.block.mb-2.text-sm.font-bold(for='email') Email
+                input#email.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-200.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type='email' placeholder='name@domin.com')
+            
+            .mb-6
+                label.block.mb-2.text-sm.font-bold(for='password') Password
+                input#password.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-200.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type='password' placeholder='********')
+            
+
+            .flex.items-center.justify-between
+                button.bg-indigo-700.text-white.font-bold.py-2.px-6.rounded.fade.hover_bg-indigo-800.focus_outline-none.focus_shadow-outline(type="button") Sign In
+                a.inline-block.align-baseline.font-bold.text-sm.text-indigo-700.fade.hover_text-indigo-800(href='#') Forgot Password?
+        p.text-center.text-white.text-sm &copy;2020 Admin. All rights reserved.

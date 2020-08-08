@@ -8,8 +8,13 @@
  **  Custom CSS
  **/
 
+ .bg-login {
+  background: #8E2DE2;
+  background: -webkit-linear-gradient(to right, #4c51bf, #8E2DE2);
+  background: linear-gradient(to right, #4c51bf, #8E2DE2);
+ }
 
- .form-checkbox {
+.form-checkbox {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
