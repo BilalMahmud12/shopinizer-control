@@ -82,6 +82,9 @@ $(document).ready(function() {
         theme: 'snow'
     });
 
+    $(".select2-df").select2({
+    });
+
     // Upload images
     $("#upload-widget").dropzone({
         url: "/upload",
