@@ -12,7 +12,7 @@ block nestbar
             nav.pl-3
                 ul.flex.flex-col
                     li.mb-3
-                        a.text-gray-600.hover_text-indigo-700(href="./products.html") View
+                        a.text-gray-800.hover_text-indigo-800(href="./products.html") View
                     li.mb-3
                         a.text-gray-600.hover_text-indigo-700(href="./product-single.html") Add
                     li.mb-3
@@ -27,7 +27,7 @@ block nestbar
                     li.mb-3
                         a.text-gray-600.hover_text-indigo-700(href="./product-brands.html") Brands
                     li.mb-3
-                        a.text-indigo-800.hover_text-indigo-800(href="./product-categories.html") Product Categories
+                        a.text-gray-600.hover_text-indigo-700(href="./product-categories.html") Product Categories
                     li.mb-3
                         a.text-gray-600.hover_text-indigo-700(href="./product-attributes.html") Product Attributes
                     li.mb-3
@@ -40,18 +40,18 @@ block nestbar
 block page
     .px-12.pt-6.bg-gray-100
         .flex.flex-row.justify-between.items-center.mb-6
-            h2.text-3xl.font-light.leading-none Product Categories
+            h2.text-3xl.font-light.leading-none View Products
             // Buttons control
             nav.flex.flex-row
-                a.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.rounded.hover_opacity-75.fade(href="./product-category-single.html")
+                a.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.rounded.hover_opacity-75.fade(href="./product-single.html")
                     span.material-icons.py-1.px-2.bg-indigo-800.text-md.rounded-l add
-                    span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase New category
+                    span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase New product
                 a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
                     span.material-icons.py-1.px-2.text-md more_vert
 
         // Tabs
         nav.flex.flex-row.border-b.border-gray-300
-            a.block.pb-2.px-5.-mb-px.font-medium.text-indigo-700.border-b-2.border-indigo-700.hover_text-indigo-700(href="./product-categories.html") All Records
+            a.block.pb-2.px-5.-mb-px.font-medium.text-indigo-700.border-b-2.border-indigo-700.hover_text-indigo-700(href="./products.html") All Records
 
     .px-12.py-6
         // Recored Table
@@ -61,34 +61,21 @@ block page
                     th.select-all.no-sort
                         label.pointer-events-none.inline-flex.items-center.justify-center.w-full.h-full
                             input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
-                    th.py-2.text-xs.font-bold.uppercase(style="width: 40%;") Category Name
-                    th.py-2.text-xs.font-bold.uppercase Products
-                    th.py-2.text-xs.font-bold.uppercase Products In Sub Cats
-                    th.py-2.text-xs.font-bold.uppercase Visible In Menu?
+                    th.py-2.text-xs.font-bold.uppercase Product SKU
+                    th.py-2.text-xs.font-bold.uppercase Stock Level
+                    th.py-2.text-xs.font-bold.uppercase(style="width: 40%;") Product Name
+                    th.py-2.text-xs.font-bold.uppercase Price
                     th.no-sort.py-2.text-xs.font-bold.uppercase.text-right(style="width: 6%;") Action
             tbody
                 tr
                     td.p-0
                         label.pointer-events-none.inline-flex.items-center.justify-center.w-full.h-full.cursor-pointer
                             input.select-row.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
-                    td
-                        a.text-indigo-500.hover_text-indigo-700(href="./product-category-single.html") Bath
-                    td 13
-                    td 0
-                    td Row 1 Data 4
-                    td
-                        nav.flex.flex-row.items-center.justify-end
-                            a.ml-2.fade.text-gray-500.hover_text-gray-700(href="#")
-                                span.material-icons more_vert
-                tr
-                    td.p-0
-                        label.pointer-events-none.inline-flex.items-center.justify-center.w-full.h-full
-                            input.select-row.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
-                    td
-                        a.text-indigo-500.hover_text-indigo-700(href="./product-category-single.html") Publications
-                    td 13
-                    td 0
-                    td Row 1 Data 4
+                    td SM13
+                    td N/A
+                    td 
+                        a.text-indigo-500.hover_text-indigo-700(href="./product-single.html") [Sample] Smith Journal 13
+                    td USD 25.00
                     td
                         nav.flex.flex-row.items-center.justify-end
                             a.ml-2.fade.text-gray-500.hover_text-gray-700(href="#")
