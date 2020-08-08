@@ -19312,6 +19312,11 @@ table.dataTable.no-footer {
   border-radius: 4px;
 }
 
+.notifications_label {
+  top: -6px !important;
+  right: -6px !important;
+}
+
 @media (min-width: 640px) {
   .sm_container {
     width: 100%;
