@@ -19169,8 +19169,17 @@ video {
   transition: all .3s ease-in-out;
 }
 
+.select-checkbox {
+  cursor: pointer;
+}
+
 table.dataTable thead th,
 table.dataTable thead td {
+  background-color: #f7fafc;
+  border-bottom: 2px solid #e2e8f0 !important;
+}
+
+table.dataTable.display tbody td {
   border-bottom: 1px solid #e2e8f0 !important;
 }
 
@@ -19178,26 +19187,28 @@ table.dataTable thead th,
 table.dataTable thead td,
 table.dataTable tbody th,
 table.dataTable tbody td {
-  padding: 1rem 0.5rem;
+  padding: .8rem 1rem;
 }
 
 table.dataTable.no-footer {
-  border-bottom: none;
+  border: 1px solid #e2e8f0 !important;
+  border-bottom: none !important;
+  border-radius: 4px;
 }
 
 table.dataTable.stripe tbody tr.odd,
 table.dataTable.display tbody tr.odd {
-  background-color: #f7fafc;
+  background-color: transparent;
 }
 
 table.dataTable.hover tbody tr:hover,
 table.dataTable.display tbody tr:hover {
-  background-color: #ebf4ff;
+  background-color: #f7fafc;
 }
 
 table.dataTable.display tbody tr.odd > .sorting_1,
 table.dataTable.order-column.stripe tbody tr.odd > .sorting_1 {
-  background-color: #ebf4ff;
+  background-color: transparent;
 }
 
 table.dataTable.row-border tbody th,
@@ -19314,7 +19325,26 @@ table.dataTable.stripe tbody > tr.odd.selected,
 table.dataTable.stripe tbody > tr.odd > .selected,
 table.dataTable.display tbody > tr.odd.selected,
 table.dataTable.display tbody > tr.odd > .selected {
-  background-color: #c3dafe;
+  background-color: #ebf4ff;
+}
+
+table.dataTable.display tbody tr.even > .sorting_1,
+table.dataTable.order-column.stripe tbody tr.even > .sorting_1 {
+  background-color: transparent;
+}
+
+table.dataTable.display tbody > tr.even.selected > .sorting_1,
+table.dataTable.order-column.stripe tbody > tr.even.selected > .sorting_1,
+table.dataTable.display tbody > tr.odd.selected > .sorting_1,
+table.dataTable.order-column.stripe tbody > tr.odd.selected > .sorting_1 {
+  background-color: #ebf4ff;
+}
+
+table.dataTable.display tbody > tr.even.selected:hover,
+table.dataTable.order-column.stripe tbody > tr.even.selected:hover,
+table.dataTable.display tbody > tr.odd.selected:hover,
+table.dataTable.order-column.stripe tbody > tr.odd.selected:hover {
+  background-color: #ebf4ff !important;
 }
 
 .vue-treeselect__control {
