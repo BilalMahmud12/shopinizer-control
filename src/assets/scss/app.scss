@@ -218,6 +218,18 @@ table.dataTable tr.selected th.select-checkbox:after {
   display: none;
 }
 
+table.dataTable tbody>tr.selected,
+table.dataTable tbody>tr>.selected {
+  background-color: #ebf4ff;
+}
+
+table.dataTable.stripe tbody>tr.odd.selected,
+table.dataTable.stripe tbody>tr.odd>.selected,
+table.dataTable.display tbody>tr.odd.selected,
+table.dataTable.display tbody>tr.odd>.selected {
+  background-color: #c3dafe;
+}
+
 .vue-treeselect__control {
   height: 46px !important;
   border-color: #edf2f7 !important;
