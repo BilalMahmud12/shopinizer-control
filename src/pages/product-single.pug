@@ -79,7 +79,7 @@ block page
                     .w-full.md_w-1_2.px-4.mb-6
                         label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="select-1") Product Type
                         .relative
-                            select#select-1.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-200.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="Simple Product Name")
+                            select#select-1.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-200.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
                                 option Option 1
                                 option Option 2
                                 option Option 3
@@ -96,7 +96,7 @@ block page
                     .w-full.md_w-1_2.px-4.mb-6
                         label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="select-2") Brand
                         .relative
-                            select#select-2.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-200.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="Simple Product Name")
+                            select#select-2.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-200.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
                                 option Option 1
                                 option Option 2
                                 option Option 3
@@ -137,6 +137,62 @@ block page
                 .flex.flex-wrap.-mx-4
                     .w-full.px-4.mb-6
                         #upload-widget.dropzone
+
+
+            .p-8.mb-8.bg-white.shadow.rounded
+                h6.mb-6.text-2xl.font-light.text-gray-600 Product Identifiers
+
+                .flex.flex-wrap.-mx-4
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="pSKU") SKU
+                        input#pSKU.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-200.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                    
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="MPN") Manufacturer Part Number (MPN)
+                        input#MPN.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-200.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                    
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="UPC") Product UPC/EAN
+                        input#UPC.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-200.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                    
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="UPC") Global Trade Number (GTN)
+                        input#GTN.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-200.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                    
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="BPN") Bin Picking Number (BPN)
+                        input#GTN.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-200.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+
+
+            .p-8.mb-8.bg-white.shadow.rounded
+                h6.mb-6.text-2xl.font-light.text-gray-600 Product Identifiers
+
+                .flex.flex-wrap.-mx-4
+                
+                    .w-full.px-4.mb-6
+                        .w-full.md_w-1_2
+                            label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="Weight") Default Price
+                                span.mx-1.text-sm.text-red-600 *
+                                | (excluding tax)
+                            .relative
+                                input#Weight.block.w-full.py-3.px-4.pl-16.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-200.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", placeholder="0.00")
+                                .absolute.pointer-events-none.inset-y-0.left-0.flex.items-center.px-4.text-gray-600 USD
+                        
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="select-2") Tax Class
+                        .relative
+                            select#select-2.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-200.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                option Option 1
+                                option Option 2
+                                option Option 3
+                            .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                    path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+            
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="BPN") Bin Picking Number (BPN)
+                        input#GTN.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-200.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+
             
             .p-8.mb-8.bg-white.shadow.rounded
                 h6.mb-6.text-2xl.font-light.text-gray-600 Search Engine Optimization
