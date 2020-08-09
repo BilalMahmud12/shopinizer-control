@@ -14,6 +14,7 @@ button {
   outline: 0 !important;
 }
 
+.customizations-repeater > .items > .item-content:not(:last-child),
 .variations-repeater > .items > .item-content:not(:last-child) {
   margin-bottom: 1.5rem;
   border-bottom: 1px solid #e2e8f0;
@@ -356,7 +357,7 @@ table.dataTable.order-column.stripe tbody>tr.odd.selected:hover {
 .select2-container--default .select2-selection--single .select2-selection__rendered {
   color: #434190;
   line-height: 1.5;
-  padding: 0.75rem 1rem;
+  padding: 0.7rem 1rem;
 }
 
 .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {

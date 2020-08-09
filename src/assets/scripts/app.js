@@ -99,4 +99,8 @@ $(document).ready(function() {
             selector: '.variation-values-repeater'
         }]
     });
+
+    // Customizations repeater
+    $('.customizations-repeater').repeater({
+    });
 });
