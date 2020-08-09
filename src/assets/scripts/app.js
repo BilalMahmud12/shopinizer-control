@@ -82,8 +82,8 @@ $(document).ready(function() {
         theme: 'snow'
     });
 
-    $(".select2-df").select2({
-    });
+    // Select2
+    $(".select2-df").select2({});
 
     // Upload images
     $("#upload-widget").dropzone({
@@ -92,4 +92,11 @@ $(document).ready(function() {
         uploadMultiple: true,
         capture: true,
     });
- });
+
+    // Variations repeater
+    $('.variations-repeater').repeater({
+        repeaters: [{
+            selector: '.variation-values-repeater'
+        }]
+    });
+});

@@ -8,7 +8,18 @@
  **  Custom CSS
  **/
 
- .bg-login {
+select,
+input,
+button {
+  outline: 0 !important;
+}
+
+.variations-repeater > .items > .item-content:not(:last-child) {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.bg-login {
   background: #8E2DE2;
   background: -webkit-linear-gradient(to right, #4c51bf, #8E2DE2);
   background: linear-gradient(to right, #4c51bf, #8E2DE2);
@@ -170,7 +181,7 @@ table.dataTable.display tbody td {
   line-height: 1.25; 			/*leading-tight*/
   border-width: 1px; 			/*border-2*/
   border-radius: .25rem; 		
-  border-color: #edf2f7; 		/*border-gray-200*/
+  border-color: #e2e8f0; 		/*border-gray-200*/
   background-color: #f7fafc; 	/*bg-gray-200*/
 }
 
@@ -263,7 +274,7 @@ table.dataTable.order-column.stripe tbody>tr.odd.selected:hover {
 
 .vue-treeselect__control {
   height: 46px !important;
-  border-color: #edf2f7 !important;
+  border-color: #e2e8f0 !important;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05) !important;
 }
 
@@ -311,7 +322,7 @@ table.dataTable.order-column.stripe tbody>tr.odd.selected:hover {
 
 .ql-toolbar.ql-snow,
 .ql-container.ql-snow {
-  border: 1px solid #edf2f7;
+  border: 1px solid #e2e8f0;
 }
 
 .ql-toolbar.ql-snow {
@@ -325,7 +336,7 @@ table.dataTable.order-column.stripe tbody>tr.odd.selected:hover {
 
 .select2-container--default .select2-selection--single {
   background-color: #fff;
-  border: 1px solid #edf2f7;
+  border: 1px solid #e2e8f0;
   border-radius: 4px;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05) !important;
 }
