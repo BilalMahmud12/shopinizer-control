@@ -356,6 +356,31 @@ block page
                                     input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
                                     span.ml-2 Show condition on storefront
 
+
+            .p-8.mb-8.bg-white.shadow.rounded
+                h6.mb-1.text-2xl.font-light.text-gray-600 Custom Fields
+                p.mb-6.font-light.text-gray-600 Custom fields allow you to specify additional information that will appear on the products page. Custom fields appear automatically in the product's details if they are defined on the product. If you don't want to show any custom fields, simply remove them from the product.
+
+                // Repeater
+                .custom-fields-repeater
+                    .items(data-repeater-list="custom-fields")
+                        .item-content(data-repeater-item)
+                            .flex.flex-wrap.items-center.-mx-4
+                                .w-full.md_w-5_12.px-4.mb-4
+                                    label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Custom Field Name
+                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="e.g. Wine Vintage") 
+                        
+                                .w-full.md_w-6_12.px-4.mb-4
+                                    label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Custom Field Value
+                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="1966") 
+                                
+                                .w-1_12.px-4.mb-4
+                                    button.flex.flex-row.items-center.mt-8.text-red-500.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button" data-repeater-delete)
+                                        span.material-icons.text-md clear
+                    button.flex.flex-row.items-center.text-indigo-700.rounded.outline-none.hover_opacity-75.fade(type="button" data-repeater-create)
+                        span.text-xs.font-medium.tracking-widest.uppercase + Add Custom Fields
+                // Repeater End
+
             .p-8.mb-8.bg-white.shadow.rounded
                 h6.mb-6.text-2xl.font-light.text-gray-600 Search Engine Optimization
                 

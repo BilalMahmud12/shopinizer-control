@@ -101,6 +101,8 @@ $(document).ready(function() {
     });
 
     // Customizations repeater
-    $('.customizations-repeater').repeater({
-    });
+    $('.customizations-repeater').repeater({});
+
+    // Custom Fields repeater
+    $('.custom-fields-repeater').repeater({});
 });
