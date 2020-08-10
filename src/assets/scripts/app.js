@@ -32,6 +32,11 @@ new Vue({
         vuejsDatepicker
     },
     mounted: function() {
+        $('.cscroll').scrollSpy({
+            target: $('.nscroll a'),
+	        activeClass: 'text-indigo-700 border-indigo-700'
+        }).scroll();
+
         // Tippy
         tippy('[data-tippy-content]', {
             placement: 'right'
