@@ -403,6 +403,205 @@ block page
                     button.flex.flex-row.items-center.text-indigo-700.rounded.outline-none.hover_opacity-75.fade(type="button" data-repeater-create)
                         span.text-xs.font-medium.tracking-widest.uppercase + Add Custom Fields
                 // Repeater End
+  
+
+            .p-8.mb-8.bg-white.shadow.rounded
+                h6.mb-6.text-2xl.font-light.text-gray-600 Related Products
+                
+                .flex.flex-wrap.-mx-4
+                    .w-full.px-4.mb-6
+                        label.inline-flex.items-center
+                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox" name="related_products" v-model="related_products")
+                            span.ml-2 Automatically show related products on my storefront
+
+                    .w-full.px-4.mb-6(v-if="!related_products")
+                        .flex.flex-wrap.-mx-4
+                            .w-full.px-4.mb-6
+                                    label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="Weight") Categories
+                                        span.mx-1.text-sm.text-red-600 *
+                                    treeselect(
+                                        v-model="treeselect_value",
+                                        v-bind:multiple="true",
+                                        v-bind:clearable="true",
+                                        v-bind:searchable="true",
+                                        v-bind:options="treeselect_options")
+
+                            .w-full.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Add Related Products
+                                table.dataTable.no-footer.dtr-inline.display
+                                    thead
+                                        tr
+                                            th.py-2.text-xs.font-bold.uppercase Image
+                                            th.py-2.text-xs.font-bold.uppercase Product SKU
+                                            th.py-2.text-xs.font-bold.uppercase Stock Level
+                                            th.py-2.text-xs.font-bold.uppercase(style="width: 40%;") Product Name
+                                            th.py-2.text-xs.font-bold.uppercase Price
+                                            th.no-sort.py-2.text-xs.font-bold.uppercase.text-right(style="width: 6%;")
+                                    tbody
+                                        tr
+                                            td
+                                                img.w-12.h-12(src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt="")
+                                            td SM13
+                                            td N/A
+                                            td [Sample] Smith Journal 13
+                                            td USD 25.00
+                                            td
+                                                nav.flex.flex-row.items-center.justify-end
+                                                    button.ml-2.fade.text-gray-500.hover_text-indigo-700.mt-2(type="button" data-tippy-content="More")
+                                                        span.material-icons add
+                                        tr
+                                            td
+                                                img.w-12.h-12(src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt="")
+                                            td SM14
+                                            td N/A
+                                            td [Sample] Smith Journal 14
+                                            td USD 25.00
+                                            td
+                                                nav.flex.flex-row.items-center.justify-end
+                                                    button.ml-2.fade.text-gray-500.hover_text-indigo-700.mt-2(type="button" data-tippy-content="More")
+                                                        span.material-icons add
+
+                            .w-full.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Related Products
+                                table.dataTable.no-footer.dtr-inline.display
+                                    thead
+                                        tr
+                                            th.py-2.text-xs.font-bold.uppercase Image
+                                            th.py-2.text-xs.font-bold.uppercase Product SKU
+                                            th.py-2.text-xs.font-bold.uppercase Stock Level
+                                            th.py-2.text-xs.font-bold.uppercase(style="width: 40%;") Product Name
+                                            th.py-2.text-xs.font-bold.uppercase Price
+                                            th.no-sort.py-2.text-xs.font-bold.uppercase.text-right(style="width: 6%;")
+                                    tbody
+                                        tr
+                                            td
+                                                img.w-12.h-12(src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt="")
+                                            td SM13
+                                            td N/A
+                                            td [Sample] Smith Journal 13
+                                            td USD 25.00
+                                            td
+                                                nav.flex.flex-row.items-center.justify-end
+                                                    button.ml-2.fade.text-red-500.hover_text-indigo-700.mt-2(type="button" data-tippy-content="More")
+                                                        span.material-icons close
+
+
+            .mb-5.text-center
+                h5.mb-1.text-xl.font-medium Fulfillment
+                p.text-lg.font-light.text-gray-600 Setup shipping and inventory details for this product.
+
+            .p-8.mb-8.bg-white.shadow.rounded
+                h6.mb-1.text-2xl.font-light.text-gray-600 Dimensions & Weight
+                p.mb-6.font-light.text-gray-600 Enter the dimensions and weight of this product to help calculate shipping rate. These measurements are for the product's shipping container. They are used to help calculate shipping price and do not show up on your storefront.
+                
+                .flex.flex-wrap.-mx-4
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Weight (KGS)
+                            span.mx-1.text-sm.text-red-600 *
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="0")
+                    
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Width (Centimeters)
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                    
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Height (Centimeters)
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                    
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Depth (Centimeters)
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                    
+
+            .p-8.mb-8.bg-white.shadow.rounded
+                h6.mb-6.text-2xl.font-light.text-gray-600 Shipping Details
+                
+                .flex.flex-wrap.items-center.-mx-4 
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Fixed Shipping Price
+                        .relative
+                            input.block.w-full.py-3.px-4.pl-16.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", placeholder="0.00")
+                            .absolute.pointer-events-none.inset-y-0.left-0.flex.items-center.px-4.text-gray-600 USD
+                    
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.inline-flex.items-center.mt-8
+                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                            span.ml-2 Free Shipping
+                    
+
+            .p-8.mb-8.bg-white.shadow.rounded
+                h6.mb-6.text-2xl.font-light.text-gray-600 Purchasability
+                    
+                .flex.flex-wrap.items-center.-mx-4.mb-8
+                    .w-full.px-4.mb-2
+                        label.inline-flex.items-center
+                            input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="purchasability" v-model="purchasability" value="1")
+                            span.ml-2 This product can be purchased in my online store
+                    .w-full.px-4.mb-2
+                        label.inline-flex.items-center
+                            input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="purchasability" v-model="purchasability" value="2")
+                            span.ml-2 This product is coming soon but I want to take pre-orders
+                    
+                    .w-full.px-4.mb-2(v-if="purchasability == 2")
+                        .flex.flex-wrap.items-center.-mx-4.mt-4
+                            .w-full.md_w-4_12.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Message
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="ie. Expected release date is December 10th")
+                            
+                            .w-full.md_w-4_12.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Release Date
+                                vuejs-datepicker(placeholder="D MMM YYYY" input-class="block w-full py-3 px-4 appearance-none leading-tight text-indigo-900 bg-white border border-gray-300 shadow-xs rounded fade focus_outline-none focus_border-indigo-300")
+
+                            .w-full.md_w-4_12.px-4.mb-6
+                                label.inline-flex.items-center.mt-8
+                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    span.ml-2 Remove pre-order status on this date
+
+                    .w-full.px-4.mb-2
+                        label.inline-flex.items-center
+                            input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="purchasability" v-model="purchasability" value="3")
+                            span.ml-2 This product cannot be purchased in my online store
+
+                    .w-full.px-4.mb-2(v-if="purchasability == 3")
+                        label.inline-flex.items-center.ml-6.mt-4
+                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                            span.ml-2 Show “Call for pricing” message instead of the price
+
+
+                .flex.flex-wrap.items-center.-mx-4
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Minimum Purchase Quantity
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                    
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Maximum Purchase Quantity
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                    
+
+
+            .p-8.mb-8.bg-white.shadow.rounded
+                h6.mb-6.text-2xl.font-light.text-gray-600 Gift Wrapping
+                p.mb-6.font-light.text-gray-600 Select the gift wrapping option you want to apply to this product.
+                
+                h6.mb-6.text-xl.font-light.text-gray-600 Gift Wrapping options
+                .flex.flex-wrap.items-center.-mx-4 
+                    .w-full.px-4.mb-2
+                        label.inline-flex.items-center
+                            input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="gift")
+                            span.ml-2 Use all visible gift wrapping options I've created
+                    .w-full.px-4.mb-2
+                        label.inline-flex.items-center
+                            input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="gift")
+                            span.ml-2 Don't allow this item to be gift wrapped
+                    .w-full.px-4.mb-2
+                        label.inline-flex.items-center.pointer-events-none
+                            input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="gift")
+                            span.ml-2.text-gray-500 Specify gift wrapping options for this product (no Gift wrapping options available to select)
+
+
+            .mb-5.text-center
+                h5.mb-1.text-xl.font-medium SEO & Sharing
+                p.text-lg.font-light.text-gray-600 Boost traffic to your online business.
 
             .p-8.mb-8.bg-white.shadow.rounded
                 h6.mb-6.text-2xl.font-light.text-gray-600 Search Engine Optimization

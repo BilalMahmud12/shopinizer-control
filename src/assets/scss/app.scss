@@ -364,6 +364,22 @@ table.dataTable.order-column.stripe tbody>tr.odd.selected:hover {
   background-color: #667eea;
 }
 
+.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day:hover,
+.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).month:hover,
+.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).year:hover {
+  border: 1px solid #4c51bf !important;
+}
+
+.vdp-datepicker__calendar .cell.selected {
+  color: #fff !important;
+  background: #4c51bf !important;
+}
+
+.vdp-datepicker__calendar .cell.selected:hover {
+  color: #fff !important;
+  background: #5a67d8 !important;
+}
+
 .notifications_label {
   top: -6px !important;
   right: -6px !important;
