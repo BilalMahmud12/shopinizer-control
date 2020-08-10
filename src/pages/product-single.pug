@@ -198,17 +198,40 @@ block page
                 h6.mb-6.text-2xl.font-light.text-gray-600 Inventory
 
                 .flex.flex-wrap.-mx-4
-                    .w-full.md_w-1_2.px-4
+                    .w-full.md_w-1_2.px-4.mb-4
                         label.inline-flex.items-center
-                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox", v-model="inventory")
                             span.ml-2 Track inventory
 
+                    .w-full.px-4(v-if="inventory")
+                        .flex.flex-wrap.-mx-4
+                            .w-full.px-4.mb-6
+                                .mb-2
+                                    label.inline-flex.items-center.ml-4
+                                        input.form-radio.h-6.w-6.text-indigo-700(type="radio", name="inventory_level", v-model="inventory_level", value="1")
+                                        span.ml-2 On the product level
+                                .mb-0
+                                    label.inline-flex.items-center.ml-4
+                                        input.form-radio.h-6.w-6.text-indigo-700(type="radio", name="inventory_level", v-model="inventory_level", value="2")
+                                        span.ml-2 On the variant level
 
+                            .w-full.md_w-1_2.px-4.mb-6(v-if="inventory_level == 1")
+                                label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Stock
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", placeholder="--")
+        
+                            .w-full.md_w-1_2.px-4.mb-6(v-if="inventory_level == 1")
+                                label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Low Stock
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", placeholder="--")
+
+                            .w-full.px-4.mb-6(v-if="inventory_level == 2")
+                                p.text-gray-600 Add variant options to create variants and manage inventory 
+                                    a.text-indigo-700(href="#variations_section") below
+                             
             .mb-5.text-center
                 h5.mb-1.text-xl.font-medium Product Options
                 p.text-lg.font-light.text-gray-600 Create product variations and customizations.
 
-            .p-8.mb-8.bg-white.shadow.rounded
+            #variations_section.p-8.mb-8.bg-white.shadow.rounded
                 h6.mb-1.text-2xl.font-light.text-gray-600 Variations
                 p.mb-6.font-light.text-gray-600 Add variant options like size and color to create variants for this product.
  
@@ -411,7 +434,7 @@ block page
 block footer
     .flex.flex-row.justify-end.items-center.px-12.py-4.bg-white.border-t.border-gray-200.z-50
         nav.flex.flex-row
-            button.flex.flex-row.items-center.ml-4.text-gray-500.rounded.outline-none.hover_opacity-75.fade(type="button")
+            button.flex.flex-row.items-center.ml-4.text-gray-600.rounded.outline-none.hover_opacity-75.fade(type="button")
                 span.py-1.text-sm.font-medium.tracking-widest.uppercase Cancel
             button.flex.flex-row.items-center.ml-4.text-indigo-700.bg-white.border.border-indigo-700.outline-none.rounded.hover_opacity-75.fade(type="button")
                 span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Save&Exit

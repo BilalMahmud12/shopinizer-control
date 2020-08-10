@@ -3,6 +3,9 @@ Vue.component('treeselect', VueTreeselect.Treeselect)
 new Vue({
     el: '#app',
     data: {
+        inventory: false,
+        inventory_level: 1,
+
         // treeselect dump
         treeselect_value: null,
         treeselect_options: [ {
