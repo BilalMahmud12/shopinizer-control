@@ -39,334 +39,105 @@ block nestbar
 
 
 block page
-    .flex.flex-row.justify-between.items-center.px-12.py-4.bg-white.shadow-sm.z-50
-        h2.text-3xl.font-light.leading-none [Sample] Smith Journal 13
-        // Buttons control
-        nav.flex.flex-row
-            //a.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.rounded.hover_opacity-75.fade(href="#")
-                span.material-icons.py-1.px-2.bg-indigo-800.text-md.rounded-l add
-                span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase New one
-            a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
-                span.material-icons.py-1.px-2.text-md more_vert
+    .flex.flex-col.px-12.py-4.bg-white.shadow-sm.z-50
+        .flex.flex-row.items-center.justify-between.-ml-3
+            .flex.flex-col
+                nav.flex.flex-row.mb-1
+                    a.flex.flex-row.items-center.text-gray-500.hover_text-indigo-700.fade(href="./products.html")
+                        span.material-icons.text-xl keyboard_backspace
+                        span.ml-2.font-bold.text-xs.uppercase View Products
+                h2.mb-2.text-3xl.font-light.leading-none [Sample] Smith Journal 13
 
-    .relative.flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
-        .mb-5.text-center
-            h5.mb-1.text-xl.font-medium Product Information
-            p.text-lg.font-light.text-gray-600 Information to help define a product.
-        // start Form
-        form.w-full.max-w-5xl(action="/upload" method="post" enctype="multipart/form-data" )
-            .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-6.text-2xl.font-light.text-gray-600 Basic Information
+            // Buttons control
+            nav.flex.flex-row
+                a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                    span.material-icons.py-1.px-2.text-md more_vert
 
-                .flex.flex-wrap.-mx-4
-                
-                    .w-full.px-4.mb-6
-                        .w-full.md_w-1_2
-                            label.inline-flex.items-center
-                                input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
-                                span.ml-2 Visible on Storefront
-
-                    .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="name") Product Name
-                            span.mx-1.text-sm.text-red-600 *
-                        input#name.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="Simple Product Name")
-                    
-                    .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="SKU") SKU
-                            span.mx-1.text-sm.text-red-600 *
-                        input#SKU.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="SKU-5842")
-
-                    .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="select-1") Product Type
-                        .relative
-                            select#select-1.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
-                                option Option 1
-                                option Option 2
-                                option Option 3
-                            .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
-                                svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
-                                    path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
-
-                    .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="Pric") Default Pric
-                            span.mx-1.text-sm.text-red-600 *
-                            | (excluding tax)
-                        input#Pric.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="USD 500")
-                
-                    .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="select-2") Brand
-                        .relative
-                            select#select-2.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
-                                option Option 1
-                                option Option 2
-                                option Option 3
-                            .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
-                                svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
-                                    path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
-
-                    .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="Weight") Weight
-                            span.mx-1.text-sm.text-red-600 *
-                        .relative
-                            input#Weight.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="0")
-                            .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.px-4.text-gray-600 KGS
-                
-
-                    .w-full.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="Weight") Categories
-                            span.mx-1.text-sm.text-red-600 *
-                        treeselect(
-                            v-model="treeselect_value",
-                            v-bind:multiple="true",
-                            v-bind:clearable="true",
-                            v-bind:searchable="true",
-                            v-bind:options="treeselect_options")
-        
-            .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-6.text-2xl.font-light.text-gray-600 Description
-
-                #editor
-                    p Hello World!
-                    p Some initial
-                        strong bold
-                        | text
-
-            .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-6.text-2xl.font-light.text-gray-600 Images
-
-                .flex.flex-wrap.-mx-4
-                    .w-full.px-4.mb-6
-                        #upload-widget.dropzone
+    
+    .cscroll.relative.flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
+        .flex.flex-wrap.-mx-4.max-w-6xl.mx-auto
+            .w-full.md_w-2_12.px-4.top-0.self-start.sticky.overflow-y-auto
+                .h-full(style="max-height: 800px;")
+                    .flex.flex-col.mb-4
+                        h4.mb-2.text-sm.font-bold.text-gray-900 Product Information
+                        ul.flex.flex-col
+                            li.mb-2
+                                a.sscroll.text-gray-600.hover_text-indigo-700(href="#information") Basic Information
+                            li.mb-2
+                                a.sscroll.text-gray-600.hover_text-indigo-700(href="#description") Description
+                            li.mb-2
+                                a.sscroll.text-gray-600.hover_text-indigo-700(href="#images") Images
+                            li.mb-2
+                                a.sscroll.text-gray-600.hover_text-indigo-700(href="#product_identifiers") Product Identifiers
+                            li.mb-2
+                                a.sscroll.text-gray-600.hover_text-indigo-700(href="#pricing") Pricing
+                            li.mb-2
+                                a.sscroll.text-gray-600.hover_text-indigo-700(href="#inventory") Inventory
+                    .flex.flex-col.mb-4
+                        h4.mb-2.text-sm.font-bold.text-gray-800 Product Options
+                        ul.flex.flex-col
+                            li.mb-2
+                                a.sscroll.text-gray-600.hover_text-indigo-700(href="#variations_section") Variations
+                            li.mb-2
+                                a.sscroll.text-gray-600.hover_text-indigo-700(href="#customizations") Customizations
+                    .flex.flex-col.mb-4
+                        h4.mb-2.text-sm.font-bold.text-gray-800 Storefront
+                        ul.flex.flex-col
+                            li.mb-2
+                                a.sscroll.text-gray-600.hover_text-indigo-700(href="#storefront") Storefront Details
+                            li.mb-2
+                                a.sscroll.text-gray-600.hover_text-indigo-700(href="#custom_fields") Custom Fields
+                            li.mb-2
+                                a.sscroll.text-gray-600.hover_text-indigo-700(href="#related_products") Related Products
+                    .flex.flex-col.mb-4
+                        h4.mb-2.text-sm.font-bold.text-gray-800 Fulfillment
+                        ul.flex.flex-col
+                            li.mb-2
+                                a.sscroll.text-gray-600.hover_text-indigo-700(href="#dimensions") Dimensions & Weight
+                            li.mb-2
+                                a.sscroll.text-gray-600.hover_text-indigo-700(href="#shipping") Shipping Details
+                            li.mb-2
+                                a.sscroll.text-gray-600.hover_text-indigo-700(href="#purchasability") Purchasability
+                            li.mb-2
+                                a.sscroll.text-gray-600.hover_text-indigo-700(href="#gifts") Gift Wrapping
+                    .flex.flex-col.mb-4
+                        h4.mb-2.text-sm.font-bold.text-gray-800 SEO & Sharing
+                        ul.flex.flex-col
+                            li.mb-2
+                                a.sscroll.text-gray-600.hover_text-indigo-700(href="#seo") SEO
 
 
-            .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-6.text-2xl.font-light.text-gray-600 Product Identifiers
+            .w-full.md_w-10_12.px-4
+                .mb-5.text-center
+                    h5.mb-1.text-xl.font-medium Product Information
+                    p.text-lg.font-light.text-gray-600 Information to help define a product.
+                // start Form
+                form.w-full(action="/upload" method="post" enctype="multipart/form-data" )
+                    #information.p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Basic Information
 
-                .flex.flex-wrap.-mx-4
-                    .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="pSKU") SKU
-                        input#pSKU.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
-                    
-                    .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="MPN") Manufacturer Part Number (MPN)
-                        input#MPN.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
-                    
-                    .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="UPC") Product UPC/EAN
-                        input#UPC.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
-                    
-                    .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="UPC") Global Trade Number (GTN)
-                        input#GTN.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
-                    
-                    .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="BPN") Bin Picking Number (BPN)
-                        input#GTN.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
-
-
-            .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-6.text-2xl.font-light.text-gray-600 Pricing
-
-                .flex.flex-wrap.-mx-4
-                    .w-full.px-4.mb-6
                         .flex.flex-wrap.-mx-4
-                            .w-full.md_w-1_2.px-4
-                                label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="Weight") Default Price
-                                    span.mx-1.text-sm.text-red-600 *
-                                    | (excluding tax)
-                                .relative
-                                    input#Weight.block.w-full.py-3.px-4.pl-16.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", placeholder="0.00")
-                                    .absolute.pointer-events-none.inset-y-0.left-0.flex.items-center.px-4.text-gray-600 USD
-                            
-                    .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="select-2") Tax Class
-                        .relative
-                            select#select-2.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
-                                option Option 1
-                                option Option 2
-                                option Option 3
-                            .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
-                                svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
-                                    path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
-            
-                    .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="BPN") Bin Picking Number (BPN)
-                        input#GTN.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
-
-
-            .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-6.text-2xl.font-light.text-gray-600 Inventory
-
-                .flex.flex-wrap.-mx-4
-                    .w-full.md_w-1_2.px-4.mb-4
-                        label.inline-flex.items-center
-                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox", v-model="inventory")
-                            span.ml-2 Track inventory
-
-                    .w-full.px-4(v-if="inventory")
-                        .flex.flex-wrap.-mx-4
+                        
                             .w-full.px-4.mb-6
-                                .mb-2
-                                    label.inline-flex.items-center.ml-4
-                                        input.form-radio.h-6.w-6.text-indigo-700(type="radio", name="inventory_level", v-model="inventory_level", value="1")
-                                        span.ml-2 On the product level
-                                .mb-0
-                                    label.inline-flex.items-center.ml-4
-                                        input.form-radio.h-6.w-6.text-indigo-700(type="radio", name="inventory_level", v-model="inventory_level", value="2")
-                                        span.ml-2 On the variant level
-
-                            .w-full.md_w-1_2.px-4.mb-6(v-if="inventory_level == 1")
-                                label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Stock
-                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", placeholder="--")
-        
-                            .w-full.md_w-1_2.px-4.mb-6(v-if="inventory_level == 1")
-                                label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Low Stock
-                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", placeholder="--")
-
-                            .w-full.px-4.mb-6(v-if="inventory_level == 2")
-                                p.text-gray-600 Add variant options to create variants and manage inventory 
-                                    a.text-indigo-700(href="#variations_section") below
-                             
-            .mb-5.text-center
-                h5.mb-1.text-xl.font-medium Product Options
-                p.text-lg.font-light.text-gray-600 Create product variations and customizations.
-
-            #variations_section.p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-1.text-2xl.font-light.text-gray-600 Variations
-                p.mb-6.font-light.text-gray-600 Add variant options like size and color to create variants for this product.
- 
-                // Repeater
-                .variations-repeater 
-                    .flex.flex-row.items-center.justify-between.mb-8
-                        h6.text-xl.font-light.text-gray-600 Variations Options
-                        button.flex.flex-row.items-center.text-white.bg-indigo-700.outline-none.rounded.hover_opacity-75.fade(type="button" data-repeater-create)
-                            span.material-icons.p-1.bg-indigo-800.text-xl.rounded-l add
-                            span.py-1.px-4.text-xs.font-bold.tracking-widest.uppercase Add Variant Option
-                    .items(data-repeater-list="variations")
-                        .item-content(data-repeater-item)
-                            .flex.flex-wrap.-mx-4
-                                .w-full.md_w-1_4.px-4.mb-6
-                                    label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="vName") Name
-                                    input#vName.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
-                                    button.flex.flex-row.items-center.mt-2.text-red-700.rounded.outline-none.hover_opacity-75.fade(type="button" data-repeater-delete)
-                                        span.text-xs.font-medium.tracking-widest.uppercase Delete Option   
-                                .w-full.md_w-1_4.px-4.mb-6
-                                    label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="select-15") Type
-                                    .relative
-                                        select#select-15.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
-                                            option Option 1
-                                            option Option 2
-                                            option Option 3
-                                        .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
-                                            svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
-                                                path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
-                                
-                                .w-full.md_w-1_2.px-4.mb-6
-                                    .variation-values-repeater
-                                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Values
-                                        .items(data-repeater-list="values")
-                                            .item-content(data-repeater-item)
-                                                .flex.flex-wrap.items-center.-mx-4
-                                                    .w-8_12.px-4.mb-2
-                                                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="Enter value here")
-                                                    .w-3_12.px-4.mb-2
-                                                        label.inline-flex.items-center.mt-1
-                                                            input.form-radio.h-6.w-6.text-indigo-700(type="radio")
-                                                            span.ml-2 Default
-                                                    .w-1_12.px-4.mb-2
-                                                        button.flex.flex-row.items-center.text-red-500.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button" data-repeater-delete)
-                                                            span.material-icons.text-md clear
-                                        button.flex.flex-row.items-center.text-indigo-700.rounded.outline-none.hover_opacity-75.fade(type="button" data-repeater-create)
-                                            span.text-xs.font-medium.tracking-widest.uppercase + Add Another Value
-                // Repeater End
-
-
-            .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-1.text-2xl.font-light.text-gray-600 Customizations
-                p.mb-6.font-light.text-gray-600 Add modifier options like a text box, checkbox, or file upload to enable further product customization.
- 
-                // Repeater
-                .customizations-repeater 
-                    .flex.flex-row.items-center.justify-between.mb-8
-                        h6.text-xl.font-light.text-gray-600 Modifier Options
-                        button.flex.flex-row.items-center.text-white.bg-indigo-700.outline-none.rounded.hover_opacity-75.fade(type="button" data-repeater-create)
-                            span.material-icons.p-1.bg-indigo-800.text-xl.rounded-l add
-                            span.py-1.px-4.text-xs.font-bold.tracking-widest.uppercase Add Modifier Option
-                    .items(data-repeater-list="customizations")
-                        .item-content(data-repeater-item)
-                            .flex.flex-wrap.-mx-4
-                                .w-full.md_w-1_12.px-4.mb-6
-                                    label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Required
-                                    label.inline-flex.items-center.mt-3
+                                .w-full.md_w-1_2
+                                    label.inline-flex.items-center
                                         input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
-                                .w-full.md_w-3_12.px-4.mb-6
-                                    label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="vName") Name
-                                    input#vName.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
-                                    button.flex.flex-row.items-center.mt-2.text-red-700.rounded.outline-none.hover_opacity-75.fade(type="button" data-repeater-delete)
-                                        span.text-xs.font-medium.tracking-widest.uppercase Delete Option   
-                                .w-full.md_w-3_12.px-4.mb-6
-                                    label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="select-15") Type
-                                    .relative
-                                        select#select-15.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
-                                            option Option 1
-                                            option Option 2
-                                            option Option 3
-                                        .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
-                                            svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
-                                                path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
-                                
-                                .w-full.md_w-5_12.px-4.mb-6
-                                    label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Default Value
-                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="Enter value here") 
-                // Repeater End
+                                        span.ml-2 Visible on Storefront
 
-
-            .mb-5.text-center
-                h5.mb-1.text-xl.font-medium Storefront
-                p.text-lg.font-light.text-gray-600 Setup what customers will see on the storefront.
-
-            .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-6.text-2xl.font-light.text-gray-600 Storefront Details
- 
-                .flex.flex-wrap.-mx-4
-                    .w-full.px-4.mb-6
-                        .w-full.md_w-1_2
-                            label.inline-flex.items-center
-                                input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
-                                span.ml-2 Set as a Featured Product on my Storefront
-                    
-                    .w-full.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Search Keywords
-                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="e.g. Widget, affordable, portable, etc...")
-                    
-                    .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Sort Order 
-                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", placeholder="0")
-           
-                    .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="select-1") Template Layout File
-                        .relative
-                            select#select-1.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
-                                option Option 1
-                                option Option 2
-                                option Option 3
-                            .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
-                                svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
-                                    path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
-                    .w-full.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Warranty Information 
-                        textarea.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(rows="3", placeholder="")
-                    
-                    .w-full.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Availability Text
-                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="Usually ships in 24 hours.")
-                    
-                    .w-full.px-4.mb-6
-                        .flex.flex-wrap.items-center.-mx-4 
                             .w-full.md_w-1_2.px-4.mb-6
-                                label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Condition
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="name") Product Name
+                                    span.mx-1.text-sm.text-red-600 *
+                                input#name.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="Simple Product Name")
+                            
+                            .w-full.md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="SKU") SKU
+                                    span.mx-1.text-sm.text-red-600 *
+                                input#SKU.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="SKU-5842")
+
+                            .w-full.md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="select-1") Product Type
                                 .relative
-                                    select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                    select#select-1.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
                                         option Option 1
                                         option Option 2
                                         option Option 3
@@ -375,260 +146,548 @@ block page
                                             path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
 
                             .w-full.md_w-1_2.px-4.mb-6
-                                label.inline-flex.items-center.mt-8
-                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
-                                    span.ml-2 Show condition on storefront
-
-
-            .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-1.text-2xl.font-light.text-gray-600 Custom Fields
-                p.mb-6.font-light.text-gray-600 Custom fields allow you to specify additional information that will appear on the products page. Custom fields appear automatically in the product's details if they are defined on the product. If you don't want to show any custom fields, simply remove them from the product.
-
-                // Repeater
-                .custom-fields-repeater
-                    .items(data-repeater-list="custom-fields")
-                        .item-content(data-repeater-item)
-                            .flex.flex-wrap.items-center.-mx-4
-                                .w-full.md_w-5_12.px-4.mb-4
-                                    label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Custom Field Name
-                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="e.g. Wine Vintage") 
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="Pric") Default Pric
+                                    span.mx-1.text-sm.text-red-600 *
+                                    | (excluding tax)
+                                input#Pric.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="USD 500")
                         
-                                .w-full.md_w-6_12.px-4.mb-4
-                                    label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Custom Field Value
-                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="1966") 
-                                
-                                .w-1_12.px-4.mb-4
-                                    button.flex.flex-row.items-center.mt-8.text-red-500.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button" data-repeater-delete)
-                                        span.material-icons.text-md clear
-                    button.flex.flex-row.items-center.text-indigo-700.rounded.outline-none.hover_opacity-75.fade(type="button" data-repeater-create)
-                        span.text-xs.font-medium.tracking-widest.uppercase + Add Custom Fields
-                // Repeater End
-  
+                            .w-full.md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="select-2") Brand
+                                .relative
+                                    select#select-2.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                        option Option 1
+                                        option Option 2
+                                        option Option 3
+                                    .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                        svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                            path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
 
-            .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-6.text-2xl.font-light.text-gray-600 Related Products
+                            .w-full.md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="Weight") Weight
+                                    span.mx-1.text-sm.text-red-600 *
+                                .relative
+                                    input#Weight.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="0")
+                                    .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.px-4.text-gray-600 KGS
+                        
+
+                            .w-full.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="Weight") Categories
+                                    span.mx-1.text-sm.text-red-600 *
+                                treeselect(
+                                    v-model="treeselect_value",
+                                    v-bind:multiple="true",
+                                    v-bind:clearable="true",
+                                    v-bind:searchable="true",
+                                    v-bind:options="treeselect_options")
                 
-                .flex.flex-wrap.-mx-4
-                    .w-full.px-4.mb-6
-                        label.inline-flex.items-center
-                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox" name="related_products" v-model="related_products")
-                            span.ml-2 Automatically show related products on my storefront
+                    #description.p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Description
 
-                    .w-full.px-4.mb-6(v-if="!related_products")
+                        #editor
+                            p Hello World!
+                            p Some initial
+                                strong bold
+                                | text
+
+                    #images.p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Images
+
                         .flex.flex-wrap.-mx-4
                             .w-full.px-4.mb-6
-                                    label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="Weight") Categories
-                                        span.mx-1.text-sm.text-red-600 *
-                                    treeselect(
-                                        v-model="treeselect_value",
-                                        v-bind:multiple="true",
-                                        v-bind:clearable="true",
-                                        v-bind:searchable="true",
-                                        v-bind:options="treeselect_options")
-
-                            .w-full.px-4.mb-6
-                                label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Add Related Products
-                                table.dataTable.no-footer.dtr-inline.display
-                                    thead
-                                        tr
-                                            th.py-2.text-xs.font-bold.uppercase Image
-                                            th.py-2.text-xs.font-bold.uppercase Product SKU
-                                            th.py-2.text-xs.font-bold.uppercase Stock Level
-                                            th.py-2.text-xs.font-bold.uppercase(style="width: 40%;") Product Name
-                                            th.py-2.text-xs.font-bold.uppercase Price
-                                            th.no-sort.py-2.text-xs.font-bold.uppercase.text-right(style="width: 6%;")
-                                    tbody
-                                        tr
-                                            td
-                                                img.w-12.h-12(src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt="")
-                                            td SM13
-                                            td N/A
-                                            td [Sample] Smith Journal 13
-                                            td USD 25.00
-                                            td
-                                                nav.flex.flex-row.items-center.justify-end
-                                                    button.ml-2.fade.text-gray-500.hover_text-indigo-700.mt-2(type="button" data-tippy-content="More")
-                                                        span.material-icons add
-                                        tr
-                                            td
-                                                img.w-12.h-12(src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt="")
-                                            td SM14
-                                            td N/A
-                                            td [Sample] Smith Journal 14
-                                            td USD 25.00
-                                            td
-                                                nav.flex.flex-row.items-center.justify-end
-                                                    button.ml-2.fade.text-gray-500.hover_text-indigo-700.mt-2(type="button" data-tippy-content="More")
-                                                        span.material-icons add
-
-                            .w-full.px-4.mb-6
-                                label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Related Products
-                                table.dataTable.no-footer.dtr-inline.display
-                                    thead
-                                        tr
-                                            th.py-2.text-xs.font-bold.uppercase Image
-                                            th.py-2.text-xs.font-bold.uppercase Product SKU
-                                            th.py-2.text-xs.font-bold.uppercase Stock Level
-                                            th.py-2.text-xs.font-bold.uppercase(style="width: 40%;") Product Name
-                                            th.py-2.text-xs.font-bold.uppercase Price
-                                            th.no-sort.py-2.text-xs.font-bold.uppercase.text-right(style="width: 6%;")
-                                    tbody
-                                        tr
-                                            td
-                                                img.w-12.h-12(src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt="")
-                                            td SM13
-                                            td N/A
-                                            td [Sample] Smith Journal 13
-                                            td USD 25.00
-                                            td
-                                                nav.flex.flex-row.items-center.justify-end
-                                                    button.ml-2.fade.text-red-500.hover_text-indigo-700.mt-2(type="button" data-tippy-content="More")
-                                                        span.material-icons close
+                                #upload-widget.dropzone
 
 
-            .mb-5.text-center
-                h5.mb-1.text-xl.font-medium Fulfillment
-                p.text-lg.font-light.text-gray-600 Setup shipping and inventory details for this product.
+                    #product_identifiers.p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Product Identifiers
 
-            .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-1.text-2xl.font-light.text-gray-600 Dimensions & Weight
-                p.mb-6.font-light.text-gray-600 Enter the dimensions and weight of this product to help calculate shipping rate. These measurements are for the product's shipping container. They are used to help calculate shipping price and do not show up on your storefront.
-                
-                .flex.flex-wrap.-mx-4
-                    .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Weight (KGS)
-                            span.mx-1.text-sm.text-red-600 *
-                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="0")
-                    
-                    .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Width (Centimeters)
-                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
-                    
-                    .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Height (Centimeters)
-                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
-                    
-                    .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Depth (Centimeters)
-                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
-                    
-
-            .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-6.text-2xl.font-light.text-gray-600 Shipping Details
-                
-                .flex.flex-wrap.items-center.-mx-4 
-                    .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Fixed Shipping Price
-                        .relative
-                            input.block.w-full.py-3.px-4.pl-16.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", placeholder="0.00")
-                            .absolute.pointer-events-none.inset-y-0.left-0.flex.items-center.px-4.text-gray-600 USD
-                    
-                    .w-full.md_w-1_2.px-4.mb-6
-                        label.inline-flex.items-center.mt-8
-                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
-                            span.ml-2 Free Shipping
-                    
-
-            .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-6.text-2xl.font-light.text-gray-600 Purchasability
-                    
-                .flex.flex-wrap.items-center.-mx-4.mb-8
-                    .w-full.px-4.mb-2
-                        label.inline-flex.items-center
-                            input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="purchasability" v-model="purchasability" value="1")
-                            span.ml-2 This product can be purchased in my online store
-                    .w-full.px-4.mb-2
-                        label.inline-flex.items-center
-                            input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="purchasability" v-model="purchasability" value="2")
-                            span.ml-2 This product is coming soon but I want to take pre-orders
-                    
-                    .w-full.px-4.mb-2(v-if="purchasability == 2")
-                        .flex.flex-wrap.items-center.-mx-4.mt-4
-                            .w-full.md_w-4_12.px-4.mb-6
-                                label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Message
-                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="ie. Expected release date is December 10th")
+                        .flex.flex-wrap.-mx-4
+                            .w-full.md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="pSKU") SKU
+                                input#pSKU.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
                             
-                            .w-full.md_w-4_12.px-4.mb-6
-                                label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Release Date
-                                vuejs-datepicker(placeholder="D MMM YYYY" input-class="block w-full py-3 px-4 appearance-none leading-tight text-indigo-900 bg-white border border-gray-300 shadow-xs rounded fade focus_outline-none focus_border-indigo-300")
+                            .w-full.md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="MPN") Manufacturer Part Number (MPN)
+                                input#MPN.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                            
+                            .w-full.md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="UPC") Product UPC/EAN
+                                input#UPC.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                            
+                            .w-full.md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="UPC") Global Trade Number (GTN)
+                                input#GTN.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                            
+                            .w-full.md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="BPN") Bin Picking Number (BPN)
+                                input#GTN.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
 
-                            .w-full.md_w-4_12.px-4.mb-6
+
+                    #pricing.p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Pricing
+
+                        .flex.flex-wrap.-mx-4
+                            .w-full.px-4.mb-6
+                                .flex.flex-wrap.-mx-4
+                                    .w-full.md_w-1_2.px-4
+                                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="Weight") Default Price
+                                            span.mx-1.text-sm.text-red-600 *
+                                            | (excluding tax)
+                                        .relative
+                                            input#Weight.block.w-full.py-3.px-4.pl-16.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", placeholder="0.00")
+                                            .absolute.pointer-events-none.inset-y-0.left-0.flex.items-center.px-4.text-gray-600 USD
+                                    
+                            .w-full.md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="select-2") Tax Class
+                                .relative
+                                    select#select-2.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                        option Option 1
+                                        option Option 2
+                                        option Option 3
+                                    .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                        svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                            path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+                    
+                            .w-full.md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="BPN") Bin Picking Number (BPN)
+                                input#GTN.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+
+
+                    #inventory.p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Inventory
+
+                        .flex.flex-wrap.-mx-4
+                            .w-full.md_w-1_2.px-4.mb-4
+                                label.inline-flex.items-center
+                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox", v-model="inventory")
+                                    span.ml-2 Track inventory
+
+                            .w-full.px-4(v-if="inventory")
+                                .flex.flex-wrap.-mx-4
+                                    .w-full.px-4.mb-6
+                                        .mb-2
+                                            label.inline-flex.items-center.ml-4
+                                                input.form-radio.h-6.w-6.text-indigo-700(type="radio", name="inventory_level", v-model="inventory_level", value="1")
+                                                span.ml-2 On the product level
+                                        .mb-0
+                                            label.inline-flex.items-center.ml-4
+                                                input.form-radio.h-6.w-6.text-indigo-700(type="radio", name="inventory_level", v-model="inventory_level", value="2")
+                                                span.ml-2 On the variant level
+
+                                    .w-full.md_w-1_2.px-4.mb-6(v-if="inventory_level == 1")
+                                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Stock
+                                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", placeholder="--")
+                
+                                    .w-full.md_w-1_2.px-4.mb-6(v-if="inventory_level == 1")
+                                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Low Stock
+                                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", placeholder="--")
+
+                                    .w-full.px-4.mb-6(v-if="inventory_level == 2")
+                                        p.text-gray-600 Add variant options to create variants and manage inventory 
+                                            a.text-indigo-700(href="#variations_section") below
+                                    
+                    .mb-5.text-center
+                        h5.mb-1.text-xl.font-medium Product Options
+                        p.text-lg.font-light.text-gray-600 Create product variations and customizations.
+
+                    #variations_section.p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-1.text-2xl.font-normal.text-gray-600 Variations
+                        p.mb-6.font-normal.text-gray-600 Add variant options like size and color to create variants for this product.
+        
+                        // Repeater
+                        .variations-repeater 
+                            .flex.flex-row.items-center.justify-between.mb-8
+                                h6.text-xl.font-light.text-gray-600 Variations Options
+                                button.flex.flex-row.items-center.text-white.bg-indigo-700.outline-none.rounded.hover_opacity-75.fade(type="button" data-repeater-create)
+                                    span.material-icons.p-1.bg-indigo-800.text-xl.rounded-l add
+                                    span.py-1.px-4.text-xs.font-bold.tracking-widest.uppercase Add Variant Option
+                            .items(data-repeater-list="variations")
+                                .item-content(data-repeater-item)
+                                    .flex.flex-wrap.-mx-4
+                                        .w-full.md_w-1_4.px-4.mb-6
+                                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="vName") Name
+                                            input#vName.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                                            button.flex.flex-row.items-center.mt-2.text-red-700.rounded.outline-none.hover_opacity-75.fade(type="button" data-repeater-delete)
+                                                span.text-xs.font-medium.tracking-widest.uppercase Delete Option   
+                                        .w-full.md_w-1_4.px-4.mb-6
+                                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="select-15") Type
+                                            .relative
+                                                select#select-15.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                                    option Option 1
+                                                    option Option 2
+                                                    option Option 3
+                                                .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                                    svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                                        path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+                                        
+                                        .w-full.md_w-1_2.px-4.mb-6
+                                            .variation-values-repeater
+                                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Values
+                                                .items(data-repeater-list="values")
+                                                    .item-content(data-repeater-item)
+                                                        .flex.flex-wrap.items-center.-mx-4
+                                                            .w-8_12.px-4.mb-2
+                                                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="Enter value here")
+                                                            .w-3_12.px-4.mb-2
+                                                                label.inline-flex.items-center.mt-1
+                                                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio")
+                                                                    span.ml-2 Default
+                                                            .w-1_12.px-4.mb-2
+                                                                button.flex.flex-row.items-center.text-red-500.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button" data-repeater-delete)
+                                                                    span.material-icons.text-md clear
+                                                button.flex.flex-row.items-center.text-indigo-700.rounded.outline-none.hover_opacity-75.fade(type="button" data-repeater-create)
+                                                    span.text-xs.font-medium.tracking-widest.uppercase + Add Another Value
+                        // Repeater End
+
+
+                    #customizations.p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-1.text-2xl.font-normal.text-gray-600 Customizations
+                        p.mb-6.font-normal.text-gray-600 Add modifier options like a text box, checkbox, or file upload to enable further product customization.
+        
+                        // Repeater
+                        .customizations-repeater 
+                            .flex.flex-row.items-center.justify-between.mb-8
+                                h6.text-xl.font-light.text-gray-600 Modifier Options
+                                button.flex.flex-row.items-center.text-white.bg-indigo-700.outline-none.rounded.hover_opacity-75.fade(type="button" data-repeater-create)
+                                    span.material-icons.p-1.bg-indigo-800.text-xl.rounded-l add
+                                    span.py-1.px-4.text-xs.font-bold.tracking-widest.uppercase Add Modifier Option
+                            .items(data-repeater-list="customizations")
+                                .item-content(data-repeater-item)
+                                    .flex.flex-wrap.-mx-4
+                                        .w-full.md_w-1_12.px-4.mb-6
+                                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Required
+                                            label.inline-flex.items-center.mt-3
+                                                input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        .w-full.md_w-3_12.px-4.mb-6
+                                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="vName") Name
+                                            input#vName.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                                            button.flex.flex-row.items-center.mt-2.text-red-700.rounded.outline-none.hover_opacity-75.fade(type="button" data-repeater-delete)
+                                                span.text-xs.font-medium.tracking-widest.uppercase Delete Option   
+                                        .w-full.md_w-3_12.px-4.mb-6
+                                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="select-15") Type
+                                            .relative
+                                                select#select-15.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                                    option Option 1
+                                                    option Option 2
+                                                    option Option 3
+                                                .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                                    svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                                        path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+                                        
+                                        .w-full.md_w-5_12.px-4.mb-6
+                                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Default Value
+                                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="Enter value here") 
+                        // Repeater End
+
+
+                    .mb-5.text-center
+                        h5.mb-1.text-xl.font-medium Storefront
+                        p.text-lg.font-light.text-gray-600 Setup what customers will see on the storefront.
+
+                    #storefront.p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Storefront Details
+        
+                        .flex.flex-wrap.-mx-4
+                            .w-full.px-4.mb-6
+                                .w-full.md_w-1_2
+                                    label.inline-flex.items-center
+                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        span.ml-2 Set as a Featured Product on my Storefront
+                            
+                            .w-full.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Search Keywords
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="e.g. Widget, affordable, portable, etc...")
+                            
+                            .w-full.md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Sort Order 
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", placeholder="0")
+                
+                            .w-full.md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="select-1") Template Layout File
+                                .relative
+                                    select#select-1.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                        option Option 1
+                                        option Option 2
+                                        option Option 3
+                                    .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                        svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                            path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+                            .w-full.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Warranty Information 
+                                textarea.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(rows="3", placeholder="")
+                            
+                            .w-full.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Availability Text
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="Usually ships in 24 hours.")
+                            
+                            .w-full.px-4.mb-6
+                                .flex.flex-wrap.items-center.-mx-4 
+                                    .w-full.md_w-1_2.px-4.mb-6
+                                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Condition
+                                        .relative
+                                            select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                                option Option 1
+                                                option Option 2
+                                                option Option 3
+                                            .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                                svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                                    path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+
+                                    .w-full.md_w-1_2.px-4.mb-6
+                                        label.inline-flex.items-center.mt-8
+                                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                            span.ml-2 Show condition on storefront
+
+
+                    #custom_fields.p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-1.text-2xl.font-normal.text-gray-600 Custom Fields
+                        p.mb-6.font-normal.text-gray-600 Custom fields allow you to specify additional information that will appear on the products page. Custom fields appear automatically in the product's details if they are defined on the product. If you don't want to show any custom fields, simply remove them from the product.
+
+                        // Repeater
+                        .custom-fields-repeater
+                            .items(data-repeater-list="custom-fields")
+                                .item-content(data-repeater-item)
+                                    .flex.flex-wrap.items-center.-mx-4
+                                        .w-full.md_w-5_12.px-4.mb-4
+                                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Custom Field Name
+                                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="e.g. Wine Vintage") 
+                                
+                                        .w-full.md_w-6_12.px-4.mb-4
+                                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Custom Field Value
+                                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="1966") 
+                                        
+                                        .w-1_12.px-4.mb-4
+                                            button.flex.flex-row.items-center.mt-8.text-red-500.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button" data-repeater-delete)
+                                                span.material-icons.text-md clear
+                            button.flex.flex-row.items-center.text-indigo-700.rounded.outline-none.hover_opacity-75.fade(type="button" data-repeater-create)
+                                span.text-xs.font-medium.tracking-widest.uppercase + Add Custom Fields
+                        // Repeater End
+        
+
+                    #related_products.p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Related Products
+                        
+                        .flex.flex-wrap.-mx-4
+                            .w-full.px-4.mb-6
+                                label.inline-flex.items-center
+                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox" name="related_products" v-model="related_products")
+                                    span.ml-2 Automatically show related products on my storefront
+
+                            .w-full.px-4.mb-6(v-if="!related_products")
+                                .flex.flex-wrap.-mx-4
+                                    .w-full.px-4.mb-6
+                                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="Weight") Categories
+                                                span.mx-1.text-sm.text-red-600 *
+                                            treeselect(
+                                                v-model="treeselect_value",
+                                                v-bind:multiple="true",
+                                                v-bind:clearable="true",
+                                                v-bind:searchable="true",
+                                                v-bind:options="treeselect_options")
+
+                                    .w-full.px-4.mb-6
+                                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Add Related Products
+                                        table.dataTable.no-footer.dtr-inline.display
+                                            thead
+                                                tr
+                                                    th.py-2.text-xs.font-bold.uppercase Image
+                                                    th.py-2.text-xs.font-bold.uppercase Product SKU
+                                                    th.py-2.text-xs.font-bold.uppercase Stock Level
+                                                    th.py-2.text-xs.font-bold.uppercase(style="width: 40%;") Product Name
+                                                    th.py-2.text-xs.font-bold.uppercase Price
+                                                    th.no-sort.py-2.text-xs.font-bold.uppercase.text-right(style="width: 6%;")
+                                            tbody
+                                                tr
+                                                    td
+                                                        img.w-12.h-12(src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt="")
+                                                    td SM13
+                                                    td N/A
+                                                    td [Sample] Smith Journal 13
+                                                    td USD 25.00
+                                                    td
+                                                        nav.flex.flex-row.items-center.justify-end
+                                                            button.ml-2.fade.text-gray-500.hover_text-indigo-700.mt-2(type="button" data-tippy-content="More")
+                                                                span.material-icons add
+                                                tr
+                                                    td
+                                                        img.w-12.h-12(src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt="")
+                                                    td SM14
+                                                    td N/A
+                                                    td [Sample] Smith Journal 14
+                                                    td USD 25.00
+                                                    td
+                                                        nav.flex.flex-row.items-center.justify-end
+                                                            button.ml-2.fade.text-gray-500.hover_text-indigo-700.mt-2(type="button" data-tippy-content="More")
+                                                                span.material-icons add
+
+                                    .w-full.px-4.mb-6
+                                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Related Products
+                                        table.dataTable.no-footer.dtr-inline.display
+                                            thead
+                                                tr
+                                                    th.py-2.text-xs.font-bold.uppercase Image
+                                                    th.py-2.text-xs.font-bold.uppercase Product SKU
+                                                    th.py-2.text-xs.font-bold.uppercase Stock Level
+                                                    th.py-2.text-xs.font-bold.uppercase(style="width: 40%;") Product Name
+                                                    th.py-2.text-xs.font-bold.uppercase Price
+                                                    th.no-sort.py-2.text-xs.font-bold.uppercase.text-right(style="width: 6%;")
+                                            tbody
+                                                tr
+                                                    td
+                                                        img.w-12.h-12(src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt="")
+                                                    td SM13
+                                                    td N/A
+                                                    td [Sample] Smith Journal 13
+                                                    td USD 25.00
+                                                    td
+                                                        nav.flex.flex-row.items-center.justify-end
+                                                            button.ml-2.fade.text-red-500.hover_text-indigo-700.mt-2(type="button" data-tippy-content="More")
+                                                                span.material-icons close
+
+
+                    .mb-5.text-center
+                        h5.mb-1.text-xl.font-medium Fulfillment
+                        p.text-lg.font-light.text-gray-600 Setup shipping and inventory details for this product.
+
+                    #dimensions.p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-1.text-2xl.font-normal.text-gray-600 Dimensions & Weight
+                        p.mb-6.font-normal.text-gray-600 Enter the dimensions and weight of this product to help calculate shipping rate. These measurements are for the product's shipping container. They are used to help calculate shipping price and do not show up on your storefront.
+                        
+                        .flex.flex-wrap.-mx-4
+                            .w-full.md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Weight (KGS)
+                                    span.mx-1.text-sm.text-red-600 *
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="0")
+                            
+                            .w-full.md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Width (Centimeters)
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                            
+                            .w-full.md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Height (Centimeters)
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                            
+                            .w-full.md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Depth (Centimeters)
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                            
+
+                    #shipping.p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Shipping Details
+                        
+                        .flex.flex-wrap.items-center.-mx-4 
+                            .w-full.md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Fixed Shipping Price
+                                .relative
+                                    input.block.w-full.py-3.px-4.pl-16.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", placeholder="0.00")
+                                    .absolute.pointer-events-none.inset-y-0.left-0.flex.items-center.px-4.text-gray-600 USD
+                            
+                            .w-full.md_w-1_2.px-4.mb-6
                                 label.inline-flex.items-center.mt-8
                                     input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
-                                    span.ml-2 Remove pre-order status on this date
+                                    span.ml-2 Free Shipping
+                            
 
-                    .w-full.px-4.mb-2
-                        label.inline-flex.items-center
-                            input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="purchasability" v-model="purchasability" value="3")
-                            span.ml-2 This product cannot be purchased in my online store
+                    #purchasability.p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Purchasability
+                            
+                        .flex.flex-wrap.items-center.-mx-4.mb-8
+                            .w-full.px-4.mb-2
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="purchasability" v-model="purchasability" value="1")
+                                    span.ml-2 This product can be purchased in my online store
+                            .w-full.px-4.mb-2
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="purchasability" v-model="purchasability" value="2")
+                                    span.ml-2 This product is coming soon but I want to take pre-orders
+                            
+                            .w-full.px-4.mb-2(v-if="purchasability == 2")
+                                .flex.flex-wrap.items-center.-mx-4.mt-4
+                                    .w-full.md_w-4_12.px-4.mb-6
+                                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Message
+                                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="ie. Expected release date is December 10th")
+                                    
+                                    .w-full.md_w-4_12.px-4.mb-6
+                                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Release Date
+                                        vuejs-datepicker(placeholder="D MMM YYYY" input-class="block w-full py-3 px-4 appearance-none leading-tight text-indigo-900 bg-white border border-gray-300 shadow-xs rounded fade focus_outline-none focus_border-indigo-300")
 
-                    .w-full.px-4.mb-2(v-if="purchasability == 3")
-                        label.inline-flex.items-center.ml-6.mt-4
-                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
-                            span.ml-2 Show “Call for pricing” message instead of the price
+                                    .w-full.md_w-4_12.px-4.mb-6
+                                        label.inline-flex.items-center.mt-8
+                                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                            span.ml-2 Remove pre-order status on this date
 
+                            .w-full.px-4.mb-2
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="purchasability" v-model="purchasability" value="3")
+                                    span.ml-2 This product cannot be purchased in my online store
 
-                .flex.flex-wrap.items-center.-mx-4
-                    .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Minimum Purchase Quantity
-                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
-                    
-                    .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide Maximum Purchase Quantity
-                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
-                    
-
-
-            .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-6.text-2xl.font-light.text-gray-600 Gift Wrapping
-                p.mb-6.font-light.text-gray-600 Select the gift wrapping option you want to apply to this product.
-                
-                h6.mb-6.text-xl.font-light.text-gray-600 Gift Wrapping options
-                .flex.flex-wrap.items-center.-mx-4 
-                    .w-full.px-4.mb-2
-                        label.inline-flex.items-center
-                            input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="gift")
-                            span.ml-2 Use all visible gift wrapping options I've created
-                    .w-full.px-4.mb-2
-                        label.inline-flex.items-center
-                            input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="gift")
-                            span.ml-2 Don't allow this item to be gift wrapped
-                    .w-full.px-4.mb-2
-                        label.inline-flex.items-center.pointer-events-none
-                            input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="gift")
-                            span.ml-2.text-gray-500 Specify gift wrapping options for this product (no Gift wrapping options available to select)
+                            .w-full.px-4.mb-2(v-if="purchasability == 3")
+                                label.inline-flex.items-center.ml-6.mt-4
+                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    span.ml-2 Show “Call for pricing” message instead of the price
 
 
-            .mb-5.text-center
-                h5.mb-1.text-xl.font-medium SEO & Sharing
-                p.text-lg.font-light.text-gray-600 Boost traffic to your online business.
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Minimum Purchase Quantity
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                            
+                            .w-full.md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Maximum Purchase Quantity
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                            
 
-            .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-6.text-2xl.font-light.text-gray-600 Search Engine Optimization
-                
-                .flex.flex-wrap.-mx-4
-                    .w-full.px-4.mb-6
-                        .w-full.md_w-1_2
-                            label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="sTitle") Page Title
-                            input#sTitle.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+
+                    #gifts.p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Gift Wrapping
+                        p.mb-6.font-normal.text-gray-600 Select the gift wrapping option you want to apply to this product.
                         
-                    .w-full.px-4.mb-6
-                        .w-full.md_w-1_2
-                            label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="sKeywords") Meta Keywords
-                            input#sKeywords.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
-                        
-                    .w-full.px-4.mb-6
-                        .w-full.md_w-1_2
-                            label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="sDescription") Meta Description
-                            input#sDescription.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
-                        
-                    .w-full.px-4.mb-6
-                        .w-full.md_w-1_2
-                            label.block.mb-2.text-xs.font-bol.uppercase.tracking-wide(for="sSearch") Search Keywords
-                            input#sSearch.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
-                        
+                        h6.mb-6.text-xl.font-light.text-gray-600 Gift Wrapping options
+                        .flex.flex-wrap.items-center.-mx-4 
+                            .w-full.px-4.mb-2
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="gift")
+                                    span.ml-2 Use all visible gift wrapping options I've created
+                            .w-full.px-4.mb-2
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="gift")
+                                    span.ml-2 Don't allow this item to be gift wrapped
+                            .w-full.px-4.mb-2
+                                label.inline-flex.items-center.pointer-events-none
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="gift")
+                                    span.ml-2.text-gray-500 Specify gift wrapping options for this product (no Gift wrapping options available to select)
 
-        // end Form
+
+                    .mb-5.text-center
+                        h5.mb-1.text-xl.font-medium SEO & Sharing
+                        p.text-lg.font-light.text-gray-600 Boost traffic to your online business.
+
+                    #seo.p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Search Engine Optimization
+                        
+                        .flex.flex-wrap.-mx-4
+                            .w-full.px-4.mb-6
+                                .w-full.md_w-1_2
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="sTitle") Page Title
+                                    input#sTitle.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                                
+                            .w-full.px-4.mb-6
+                                .w-full.md_w-1_2
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="sKeywords") Meta Keywords
+                                    input#sKeywords.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                                
+                            .w-full.px-4.mb-6
+                                .w-full.md_w-1_2
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="sDescription") Meta Description
+                                    input#sDescription.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                                
+                            .w-full.px-4.mb-6
+                                .w-full.md_w-1_2
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="sSearch") Search Keywords
+                                    input#sSearch.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                                
+
+                // end Form
+    // Fields
                     
 block footer
     .flex.flex-row.justify-end.items-center.px-12.py-4.bg-white.border-t.border-gray-200.z-50

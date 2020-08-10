@@ -32,6 +32,16 @@ new Vue({
         vuejsDatepicker
     },
     mounted: function() {
+        // Smooth Scrolling
+        $(".sscroll").on('click', function(event) {
+            if (this.hash !== "") {
+              event.preventDefault();
+              var hash = this.hash;
+              $('.cscroll').animate({
+                scrollTop: $(hash).offset().top
+              }, 1000);
+            }
+          });
 
         // Tippy
         tippy('[data-tippy-content]', {
