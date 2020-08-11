@@ -116,5 +116,8 @@ new Vue({
 
         // Custom Fields repeater
         $('.custom-fields-repeater').repeater({});
+
+        // Option Values repeater
+        $('.option-values-repeater').repeater({});
     }
 });
