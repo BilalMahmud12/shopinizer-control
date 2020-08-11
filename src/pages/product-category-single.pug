@@ -39,17 +39,21 @@ block nestbar
 
 
 block page
-    .flex.flex-row.justify-between.items-center.px-12.py-4.bg-white.shadow-sm.z-50
-        h2.text-3xl.font-light.leading-none Category Name
-        // Buttons control
-        nav.flex.flex-row
-            //a.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.rounded.hover_opacity-75.fade(href="#")
-                span.material-icons.py-1.px-2.bg-indigo-800.text-md.rounded-l add
-                span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase New one
-            a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
-                span.material-icons.py-1.px-2.text-md more_vert
+    .flex.flex-col.px-12.py-4.bg-white.shadow-sm.z-50
+        .flex.flex-row.items-center.justify-between.-ml-3
+            .flex.flex-col
+                nav.flex.flex-row.mb-1
+                    a.flex.flex-row.items-center.text-gray-500.hover_text-indigo-700.fade(href="./product-categories.html")
+                        span.material-icons.text-xl keyboard_backspace
+                        span.ml-2.font-bold.text-xs.uppercase View Categories
+                h2.mb-2.text-3xl.font-light.leading-none Add Category | Category Name Here
 
-    .relative.flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
+            // Buttons control
+            nav.flex.flex-row
+                a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                    span.material-icons.py-1.px-2.text-md more_vert
+
+    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
         .mb-5.text-center
             h5.mb-1.text-xl.font-medium Edit Category
             p.text-lg.font-light.text-gray-600 Modify the details of the category below and click "Save".
