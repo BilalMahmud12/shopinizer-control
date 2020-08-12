@@ -8,6 +8,7 @@ new Vue({
         purchasability: 1,
         related_products: true,
         customer_group_categories: true,
+        customer_type: 1,
 
         // treeselect dump
         treeselect_value: null,

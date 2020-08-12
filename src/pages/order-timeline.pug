@@ -1,0 +1,72 @@
+extends ../layouts/default
+
+block meta
+    title Dashboard | Shopinizer eCommerce
+
+block nestbar
+    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-indigo-100
+        h3.mb-6.text-2xl Orders
+
+        nav.flex.flex-col.mb-6
+            ul.flex.flex-col
+                li.mb-3
+                    a.text-indigo-800.hover_text-indigo-800(href="./orders.html") View
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./order-single.html") Add
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./order-import.html") Import
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./order-export.html") Export
+
+        nav.flex.flex-col.mb-6
+            ul.flex.flex-col
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./order-drafts.html") Draft Orders
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./order-shipments.html") Shipments
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./order-tracking.html") Tracking Numbers
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./order-gifts.html") Gift Certificates
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./order-statuses.html") Order Statuses
+
+
+block page
+    .flex.flex-col.px-12.py-4.bg-white.shadow-sm.z-50
+        .flex.flex-row.items-center.justify-between.-ml-3
+            .flex.flex-col
+                nav.flex.flex-row.mb-1
+                    a.flex.flex-row.items-center.text-gray-500.hover_text-indigo-700.fade(href="./orders.html")
+                        span.material-icons.text-xl keyboard_backspace
+                        span.ml-2.font-bold.text-xs.uppercase View Ordars
+                h2.mb-2.text-3xl.font-light.leading-none Order timeline - Ordar
+                    a.ml-2.text-indigo-600.hover_text-gray-700(href="./order-single.html") #555
+
+            // Buttons control
+            nav.flex.flex-row
+                a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                    span.material-icons.py-1.px-2.text-md more_vert
+
+    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
+        .w-full.max-w-5xl
+            .p-8.mb-8.bg-white.shadow.rounded
+                .relative.w-1_2.m-8
+                    ul.list-none.m-0.p-0
+                        li.mb-8
+                            .flex.items-center.mb-1
+                                .bg-indigo-300.rounded-full.h-5.w-5
+                                .flex-1.ml-5.font-bold Oct 12, 2017  7:37pm - Order status changed
+                            .ml-16
+                                p Order Status: Awaiting Fulfillment
+                        li.mb-8
+                            .flex.items-center.mb-1
+                                .bg-indigo-300.rounded-full.h-5.w-5
+                                .flex-1.ml-5.font-bold Oct 12, 2017  7:37pm - Sales tax charged
+                            .ml-16 
+                                p Tax Total: JOD0.00
+                                p Tax Provider: Manual Tax 
+          
+                    .border-r-2.border-indigo-300.absolute.h-full(style='top: 2px;left: 9px')
+
+                

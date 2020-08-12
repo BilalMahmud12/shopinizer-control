@@ -19457,12 +19457,13 @@ table.dataTable.order-column.stripe tbody > tr.odd.selected:hover {
   padding: 0.7rem 1rem;
 }
 
-.select2-container--default .select2-selection--single .select2-selection__rendered {
+#product_discounts_select + .select2-container--default .select2-selection--single .select2-selection__rendered,
+#category_discounts_select + .select2-container--default .select2-selection--single .select2-selection__rendered {
   padding: 0.35rem 1rem;
 }
 
-#product-discounts-select + .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable,
-#category_discounts_select + .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable,
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
   background-color: #667eea;
 }
 

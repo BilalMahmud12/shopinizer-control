@@ -1,0 +1,109 @@
+extends ../layouts/default
+
+block meta
+    title Dashboard | Shopinizer eCommerce
+
+block nestbar
+    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-indigo-100
+        h3.mb-6.text-2xl Orders
+
+        nav.flex.flex-col.mb-6
+            ul.flex.flex-col
+                li.mb-3
+                    a.text-indigo-800.hover_text-indigo-800(href="./orders.html") View
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./order-single.html") Add
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./order-import.html") Import
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./order-export.html") Export
+
+        nav.flex.flex-col.mb-6
+            ul.flex.flex-col
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./order-drafts.html") Draft Orders
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./order-shipments.html") Shipments
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./order-tracking.html") Tracking Numbers
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./order-gifts.html") Gift Certificates
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./order-statuses.html") Order Statuses
+
+block page
+    .px-12.pt-6.bg-gray-100
+        .flex.flex-row.justify-between.items-center.mb-6
+            h2.text-3xl.font-light.leading-none View Orders
+            // Buttons control
+            nav.flex.flex-row
+                a.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.rounded.hover_opacity-75.fade(href="./order-single.html")
+                    span.material-icons.py-1.px-2.bg-indigo-800.text-md.rounded-l add
+                    span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase New order
+                a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                    span.material-icons.py-1.px-2.text-md more_vert
+
+        // Tabs
+        nav.flex.flex-row.border-b.border-gray-300
+            a.block.pb-2.px-5.-mb-px.font-medium.text-indigo-700.border-b-2.border-indigo-700.hover_text-indigo-700(href="./orders.html") All Records
+            a.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(href="./orders.html") Awaiting Payment
+            a.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(href="./orders.html") Awaiting Fulfillment
+            a.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(href="./orders.html") Awaiting Shipment
+            a.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(href="./orders.html") High Risk
+            a.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(href="./orders.html") Pre-Orders
+
+    .px-12.py-6
+        // Recored Table
+        table#records-table.display
+            thead
+                tr
+                    th.select-all.no-sort
+                        label.pointer-events-none.inline-flex.items-center.justify-center.w-full.h-full
+                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                    th.py-2.text-xs.font-bold.uppercase Date
+                    th.py-2.text-xs.font-bold.uppercase Order ID
+                    th.py-2.text-xs.font-bold.uppercase Customer
+                    th.py-2.text-xs.font-bold.uppercase Status
+                    th.py-2.text-xs.font-bold.uppercase Total
+                    th.no-sort.py-2.text-xs.font-bold.uppercase
+                    th.no-sort.py-2.text-xs.font-bold.uppercase.text-right(style="width: 6%;") Action
+            tbody
+                tr
+                    td.p-0
+                        label.pointer-events-none.inline-flex.items-center.justify-center.w-full.h-full.cursor-pointer
+                            input.select-row.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                    td 12th Aug 2020
+                    td 100
+                    td 
+                        a.text-indigo-500.hover_text-indigo-700(href="./customer-single.html") Rakan Awajan
+                    td.flex.items-center
+                        .w-3.h-10.bg-blue-400
+                        .relative.ml-3
+                            select#select-15.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                option(value='1') Pending
+                                option(value='7') Awaiting Payment
+                                option(value='11' selected='true') Awaiting Fulfillment
+                                option(value='9') Awaiting Shipment
+                                option(value='8') Awaiting Pickup
+                                option(value='3') Partially Shipped
+                                option(value='10') Completed
+                                option(value='2') Shipped
+                                option(value='5') Cancelled
+                                option(value='6') Declined
+                                option(value='4') Refunded
+                                option(value='13') Disputed
+                                option(value='12') Manual Verification Required
+                                option(value='14') Partially Refunded
+                            .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                    path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+                    
+                    td USD49.00
+                    td 
+                        nav.flex.flex-row.items-center.justify-end
+                            a.ml-2.fade.text-gray-500.hover_text-gray-700(href="./order-timeline.html" data-tippy-content="View Ordar Timeline")
+                                span.material-icons event_note
+                    td
+                        nav.flex.flex-row.items-center.justify-end
+                            button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="More")
+                                span.material-icons more_vert
