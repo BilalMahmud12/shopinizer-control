@@ -119,5 +119,8 @@ new Vue({
 
         // Option Values repeater
         $('.option-values-repeater').repeater({});
+
+        // Customer Address repeater
+        $('.customer-address-repeater').repeater({});
     }
 });

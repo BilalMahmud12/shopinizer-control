@@ -1,0 +1,219 @@
+extends ../layouts/default
+
+block meta
+    title Dashboard | Shopinizer eCommerce
+
+block nestbar
+    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-indigo-100
+        h3.mb-6.text-2xl Customers
+
+        .flex.flex-col.mb-6
+            h3.mb-3.text-md Customers
+            nav.pl-3
+                ul.flex.flex-col
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./customers.html") View
+                    li.mb-3
+                        a.text-indigo-800.hover_text-indigo-800(href="./customer-single.html") Add
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./customer-import.html") Import
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./customer-export.html") Export
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./customer-filters.html") Customer Groups
+
+
+block page
+    .flex.flex-col.px-12.py-4.bg-white.shadow-sm.z-50
+        .flex.flex-row.items-center.justify-between.-ml-3
+            .flex.flex-col
+                nav.flex.flex-row.mb-1
+                    a.flex.flex-row.items-center.text-gray-500.hover_text-indigo-700.fade(href="./customers.html")
+                        span.material-icons.text-xl keyboard_backspace
+                        span.ml-2.font-bold.text-xs.uppercase View Customers
+                h2.mb-2.text-3xl.font-light.leading-none Add|Customer Name
+
+            // Buttons control
+            nav.flex.flex-row
+                a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                    span.material-icons.py-1.px-2.text-md more_vert
+
+    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
+        // start Form
+        form.w-full.max-w-5xl(action="/upload" method="post" enctype="multipart/form-data" )
+            .p-8.mb-8.bg-white.shadow.rounded
+                h6.mb-6.text-2xl.font-normal.text-gray-600 Customer Details
+
+                .flex.flex-wrap.-mx-4
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide First Name
+                            span.mx-1.text-sm.text-red-600 *
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                    
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Last Name
+                            span.mx-1.text-sm.text-red-600 *
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                    
+                    .w-full.mb-6
+                        .w-full.md_w-1_2.px-4
+                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Company Name
+                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                        
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Email
+                            span.mx-1.text-sm.text-red-600 *
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="email", placeholder="")
+
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Phone Number
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="tel", placeholder="")
+
+                    .w-full.mb-6
+                        .w-full.md_w-1_2.px-4
+                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Customer Group
+                            .relative
+                                select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                    option Option 1
+                                    option Option 2
+                                    option Option 3
+                                .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                    svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                        path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+                        
+                    .w-full.mb-6
+                        .w-full.md_w-1_2.px-4
+                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Store Credit
+                            .relative
+                                input.block.w-full.py-3.px-4.pl-16.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", placeholder="0.00")
+                                .absolute.pointer-events-none.inset-y-0.left-0.flex.items-center.px-4.text-gray-600 USD
+                        
+                    .w-full.mb-8
+                        .w-full.md_w-1_2.px-4
+                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Tax Exempt Code
+                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                        
+                    .w-full.mb-4
+                        .w-full.md_w-1_2.px-4
+                            label.inline-flex.items-center
+                                input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox" checked)
+                                span.ml-2 Receive ACS/Review Emails
+                    .w-full.mb-6
+                        .w-full.md_w-1_2.px-4
+                            label.inline-flex.items-center
+                                input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                span.ml-2 Force Password Reset On Next Login
+
+
+            .p-8.mb-8.bg-white.shadow.rounded
+                h6.mb-6.text-2xl.font-normal.text-gray-600 Customer Password
+                
+                .flex.flex-wrap.-mx-4
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Password
+                            span.mx-1.text-sm.text-red-600 *
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="password", placeholder="")
+                    
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Confirm Password
+                            span.mx-1.text-sm.text-red-600 *
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="password", placeholder="")
+                    
+
+
+            .p-8.mb-8.bg-white.shadow.rounded
+                h6.mb-6.text-2xl.font-normal.text-gray-600 Customer Address
+
+                // Repeater
+                .customer-address-repeater
+                    .items(data-repeater-list="option-values")
+                        .item-content(data-repeater-item)
+                            .flex.flex-wrap.-mx-4
+                                .w-11_12.px-4
+                                    .flex.flex-wrap.items-center.-mx-4.mb-2
+                                        .w-full.md_w-1_2.px-4.mb-6
+                                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide First Name
+                                                span.mx-1.text-sm.text-red-600 *
+                                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                                        
+                                        .w-full.md_w-1_2.px-4.mb-6
+                                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Last Name
+                                                span.mx-1.text-sm.text-red-600 *
+                                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                                                 
+                                        .w-full.md_w-1_2.px-4.mb-6
+                                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Company Name
+                                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                                        
+                                        .w-full.md_w-1_2.px-4.mb-6
+                                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Phone Number
+                                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="tel", placeholder="")
+
+                                        .w-full.md_w-12_12.px-4.mb-6
+                                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Address Line 1
+                                                span.mx-1.text-sm.text-red-600 *
+                                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                                        
+                                        .w-full.md_w-12_12.px-4.mb-6
+                                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Address Line 2 
+                                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                                        
+
+                                        .w-full.md_w-1_2.px-4.mb-6
+                                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="select-2") Country
+                                                span.mx-1.text-sm.text-red-600 *
+                                            .relative
+                                                select#select-2.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                                    option Option 1
+                                                    option Option 2
+                                                    option Option 3
+                                                .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                                    svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                                        path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+                                        
+                                        .w-full.md_w-1_2.px-4.mb-6
+                                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide State/Province 
+                                                span.mx-1.text-sm.text-red-600 *
+                                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                                        
+                                        .w-full.md_w-1_2.px-4.mb-6
+                                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Suburb/City
+                                                span.mx-1.text-sm.text-red-600 *
+                                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                                        
+                                        .w-full.md_w-1_2.px-4.mb-6
+                                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Zip/Postcode
+                                                span.mx-1.text-sm.text-red-600 *
+                                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                                        
+                                        .w-full.md_w-1_2.px-4.mb-6
+                                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Address Type
+                                            .relative
+                                                select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                                    option Option 1
+                                                    option Option 2
+                                                    option Option 3
+                                                .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                                    svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                                        path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+                                        
+                                .w-1_12.px-4
+                                    button.flex.flex-row.items-center.mt-10.text-red-500.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button" data-repeater-delete)
+                                        span.material-icons.text-md clear
+                    button.flex.flex-row.items-center.text-indigo-700.rounded.outline-none.hover_opacity-75.fade(type="button" data-repeater-create)
+                        span.text-xs.font-medium.tracking-widest.uppercase + Add Customer Addres
+                // Repeater End
+
+        // end Form
+                    
+block footer
+    .flex.flex-row.justify-end.items-center.px-12.py-4.bg-white.border-t.border-gray-200.z-50
+        nav.flex.flex-row
+            button.flex.flex-row.items-center.ml-4.text-gray-600.rounded.outline-none.hover_opacity-75.fade(type="button")
+                span.py-1.text-sm.font-medium.tracking-widest.uppercase Cancel
+            button.flex.flex-row.items-center.ml-4.text-indigo-700.bg-white.border.border-indigo-700.outline-none.rounded.hover_opacity-75.fade(type="button")
+                span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Save&Exit
+            button.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
+                span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Save&Keep Editing
+            button.flex.flex-row.items-center.ml-4.text-white.bg-red-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
+                span.material-icons.py-1.px-2.bg-red-800.text-md.rounded delete

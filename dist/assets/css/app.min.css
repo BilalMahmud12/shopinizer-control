@@ -19079,10 +19079,15 @@ button {
 }
 
 .customizations-repeater > .items > .item-content:not(:last-child),
-.variations-repeater > .items > .item-content:not(:last-child) {
+.variations-repeater > .items > .item-content:not(:last-child),
+.customer-address-repeater > .items > .item-content:not(:last-child) {
   margin-bottom: 1.5rem;
   border-bottom: 1px solid #e2e8f0;
 }
+
+/*.customer-address-repeater > .items > .item-content:nth-child(even) {
+  background-color: #f7fafc;
+}*/
 
 .bg-login {
   background: #8E2DE2;
