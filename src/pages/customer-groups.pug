@@ -12,7 +12,7 @@ block nestbar
             nav.pl-3
                 ul.flex.flex-col
                     li.mb-3
-                        a.text-indigo-800.hover_text-indigo-800(href="./customers.html") View
+                        a.text-gray-600.hover_text-indigo-700(href="./customers.html") View
                     li.mb-3
                         a.text-gray-600.hover_text-indigo-700(href="./customer-single.html") Add
                     li.mb-3
@@ -20,17 +20,17 @@ block nestbar
                     li.mb-3
                         a.text-gray-600.hover_text-indigo-700(href="./customer-export.html") Export
                     li.mb-3
-                        a.text-gray-600.hover_text-indigo-700(href="./customer-groups.html") Customer Groups
+                        a.text-indigo-800.hover_text-indigo-800(href="./customer-groups.html") Customer Groups
 
 block page
     .px-12.pt-6.bg-gray-100
         .flex.flex-row.justify-between.items-center.mb-6
-            h2.text-3xl.font-light.leading-none View Customers
+            h2.text-3xl.font-light.leading-none Customer Groups
             // Buttons control
             nav.flex.flex-row
                 a.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.rounded.hover_opacity-75.fade(href="./customer-single.html")
                     span.material-icons.py-1.px-2.bg-indigo-800.text-md.rounded-l add
-                    span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase New customer
+                    span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase New customer group
                 a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
                     span.material-icons.py-1.px-2.text-md more_vert
 
@@ -46,13 +46,9 @@ block page
                     th.select-all.no-sort
                         label.pointer-events-none.inline-flex.items-center.justify-center.w-full.h-full
                             input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
-                    th.py-2.text-xs.font-bold.uppercase Name
-                    th.py-2.text-xs.font-bold.uppercase Email
-                    th.py-2.text-xs.font-bold.uppercase Phone
-                    th.py-2.text-xs.font-bold.uppercase Group
-                    th.py-2.text-xs.font-bold.uppercase Store Credit
-                    th.py-2.text-xs.font-bold.uppercase Orders
-                    th.py-2.text-xs.font-bold.uppercase Joined
+                    th.py-2.text-xs.font-bold.uppercase Group Name
+                    th.py-2.text-xs.font-bold.uppercase Customer Group Discounts
+                    th.py-2.text-xs.font-bold.uppercase Customers in Group
                     th.no-sort.py-2.text-xs.font-bold.uppercase.text-right(style="width: 6%;") Action
             tbody
                 tr
@@ -60,14 +56,9 @@ block page
                         label.pointer-events-none.inline-flex.items-center.justify-center.w-full.h-full.cursor-pointer
                             input.select-row.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
                     td
-                        a.text-indigo-500.hover_text-indigo-700(href="./customer-single.html") Rakan Awajan
-                    td
-                        a.text-indigo-500.hover_text-indigo-700(href="mailto:rkawajan@gmail.com") rkawajan@gmail.com
-                    td 0776327336
-                    td Users
-                    td $25.00
-                    td 5
-                    td Just Now
+                        a.text-indigo-500.hover_text-indigo-700(href="./customer-group-single.html") Users
+                    td 0
+                    td 0
                     td
                         nav.flex.flex-row.items-center.justify-end
                             button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="More")

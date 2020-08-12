@@ -7,26 +7,30 @@ new Vue({
         inventory_level: 1,
         purchasability: 1,
         related_products: true,
+        customer_group_categories: true,
 
         // treeselect dump
         treeselect_value: null,
-        treeselect_options: [ {
-            id: 'a',
-            label: 'a',
-            children: [ {
-            id: 'aa',
-            label: 'aa',
-            }, {
-            id: 'ab',
-            label: 'ab',
-            } ],
-        }, {
-            id: 'b',
-            label: 'b',
-        }, {
-            id: 'c',
-            label: 'c',
-        } ],
+        treeselect_options: [
+            {
+                id: '1',
+                label: 'Bath',
+            },
+            {
+                id: '2',
+                label: 'Kitchen',
+                children: [
+                    {
+                        id: '4',
+                        label: 'Publications',
+                    },
+                ],
+            }, 
+            {
+                id: '3',
+                label: 'Utility',
+            }
+        ],
     },
     components: {
         vuejsDatepicker
@@ -122,5 +126,11 @@ new Vue({
 
         // Customer Address repeater
         $('.customer-address-repeater').repeater({});
+
+        // Category Discounts repeater
+        $('.category-discounts-repeater').repeater({});
+
+        // Product Discounts repeater
+        $('.product-discounts-repeater').repeater({});
     }
 });
