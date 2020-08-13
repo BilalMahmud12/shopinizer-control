@@ -60,18 +60,23 @@ block page
                     th.select-all.no-sort
                         label.pointer-events-none.inline-flex.items-center.justify-center.w-full.h-full
                             input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                    th.no-sort.py-2.text-xs.font-bold.uppercase(style="width: 4%;")
                     th.py-2.text-xs.font-bold.uppercase Date
                     th.py-2.text-xs.font-bold.uppercase Order ID
                     th.py-2.text-xs.font-bold.uppercase Customer
                     th.py-2.text-xs.font-bold.uppercase Status
                     th.py-2.text-xs.font-bold.uppercase Total
-                    th.no-sort.py-2.text-xs.font-bold.uppercase
+                    th.no-sort.py-2.text-xs.font-bold.uppercase(style="width: 4%;")
                     th.no-sort.py-2.text-xs.font-bold.uppercase.text-right(style="width: 6%;") Action
             tbody
                 tr
                     td.p-0
                         label.pointer-events-none.inline-flex.items-center.justify-center.w-full.h-full.cursor-pointer
                             input.select-row.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                    td
+                        nav.flex.flex-row.items-center.justify-end
+                            button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="Show")
+                                span.material-icons expand_more
                     td 12th Aug 2020
                     td 100
                     td 
@@ -107,3 +112,111 @@ block page
                         nav.flex.flex-row.items-center.justify-end
                             button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="More")
                                 span.material-icons more_vert
+
+                tr
+                    td(colspan="9")
+                        .flex.flex-warp.-mx-4.px-5.py-4
+                            .flex.flex-warp.-mx-4.w-full.md_w-4_12.px-4
+                                .w-full.md_w-3_12.px-4.text-right.border-r.border-gray-300
+                                    h6.mb-4.font-bold.h-16.mb-2 Billing
+                                    ul
+                                        li.mb-2
+                                            .material-icons.text-lg.text-gray-500 public
+                                        li.mb-2
+                                            .material-icons.text-lg.text-gray-500 call
+                                        li.mb-2
+                                            .material-icons.text-lg.text-gray-500 email
+                                        li.mb-2
+                                            .material-icons.text-lg.text-gray-500 event
+                                        li.mb-2
+                                            .material-icons.text-lg.text-gray-500 dns
+                                        li.mb-2
+                                            .material-icons.text-lg.text-gray-500 shopping_bag
+                                        li.mb-2
+                                            .material-icons.text-lg.text-gray-500 payment
+                                        li.mb-2
+                                            .material-icons.text-lg.text-gray-500 local_offer
+                                        li.mb-2
+                                            .material-icons.text-lg.text-gray-500 info
+
+                                .w-full.md_w-9_12.px-4
+                                    p.text-xs.h-16.mb-2.text-gray-600
+                                        | Rakan Awajan
+                                        br
+                                        | test addres
+                                        br
+                                        | city, state 8545
+
+                                    ul.pt-px.mt-3
+                                        li.pt-px.mb-2.text-sm.h-6 Jordan
+                                        li.pt-px.mb-2.text-sm.h-6 +96277776584
+                                        li.pt-px.mb-2.text-sm.h-6 rkawajan@gmail.com
+                                        li.pt-px.mb-2.text-sm.h-6 12 Aug 2020 18:37:10 
+                                        li.pt-px.mb-2.text-sm.h-6 46.32.121.107 
+                                        li.pt-px.mb-2.text-sm.h-6 testoria (Manual Order)
+                                        li.pt-px.mb-2.text-sm.h-6 Cash
+                                        li.pt-px.mb-2.text-sm.h-6 Manual Tax
+                                        li.pt-px.mb-2.text-sm.h-6 Suspicious
+                            
+                            
+                            .flex.flex-warp.-mx-4.w-full.md_w-4_12.px-4
+                                .w-full.md_w-3_12.px-4.text-right.border-r.border-gray-300
+                                    h6.mb-4.font-bold.h-16.mb-2 Shipping
+                                    ul
+                                        li.mb-2
+                                            .material-icons.text-lg.text-gray-500 public
+                                        li.mb-2
+                                            .material-icons.text-lg.text-gray-500 call
+                                        li.mb-2
+                                            .material-icons.text-lg.text-gray-500 email
+                                        li.mb-2
+                                            .material-icons.text-lg.text-gray-500 local_shipping
+                                        li.mb-2
+                                            .material-icons.text-lg.text-gray-500 attach_money
+                                        li.mb-2
+                                            .material-icons.text-lg.text-gray-500 event
+
+                                .w-full.md_w-9_12.px-4
+                                    p.text-xs.h-16.mb-2.text-gray-600
+                                        | Rakan Awajan
+                                        br
+                                        | test addres
+                                        br
+                                        | city, state 8545
+
+                                    ul.pt-px.mt-3
+                                        li.pt-px.mb-2.text-sm.h-6 Jordan
+                                        li.pt-px.mb-2.text-sm.h-6 +96277776584
+                                        li.pt-px.mb-2.text-sm.h-6 rkawajan@gmail.com
+                                        li.pt-px.mb-2.text-sm.h-6 No Shipping Method 
+                                        li.pt-px.mb-2.text-sm.h-6 USD0.00
+                                        li.pt-px.mb-2.text-sm.h-6 N/A
+                            
+                            
+                            .flex.flex-warp.-mx-4.w-full.md_w-4_12.px-4
+                                .w-full.md_w-3_12.px-4.text-right.border-r.border-gray-300
+                                    h6.mb-4.font-bold.h-16.mb-2 Order
+                                        span.block.text-xs.text-gray-600 2 items
+        
+                                .w-full.md_w-9_12.px-4
+                                    .flex.flex-row.items-center.justify-between.mb-1
+                                        h6.text-xs.font-bold 1 x 
+                                            a.text-indigo-500.hover_text-indigo-700(href="#") [Sample] Fog Linen Chambray Towel
+                                        span.text-xs.font-bold USD49.00 
+                                    .text-xs.font-bold SLCTBS-4404031B
+                                    .text-xs.font-bold.text-gray-600 Size:
+                                        span.pl-1.text-sm.font-normal XS 
+                                    .text-xs.font-bold.text-gray-600 Color:
+                                        span.pl-1.text-sm.font-normal Black 
+
+                                    .felx.flex-col.p-4.mt-4.bg-gray-200
+                                        .flex.flex-row.items-center.justify-between.mb-2
+                                            .text-xs.font-bold.text-gray-600 Subtotal
+                                            .text-sm.font-normal USD49.00 
+                                        .flex.flex-row.items-center.justify-between.mb-2
+                                            .text-xs.font-bold.text-gray-600 Shipping
+                                            .text-sm.font-normal USD0.00 
+                                        .flex.flex-row.items-center.justify-between.mb-0
+                                            .text-sm.font-bold.text-gray-600 Grand Total
+                                            .text-base.font-normal USD49.00 
+                                            

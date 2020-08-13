@@ -36,7 +36,30 @@ new Vue({
     components: {
         vuejsDatepicker
     },
+    methods: {
+        //
+    },
     mounted: function() {
+        $(".animsition").animsition({
+            inClass: 'fade-in',
+            outClass: 'fade-out',
+            inDuration: 1500,
+            outDuration: 800,
+            linkElement: 'a:not([target="_blank"]):not([href^="#"])',
+            loading: true,
+            loadingParentElement: '.animsition-wrapper',
+            loadingClass: 'animsition-loading',
+            loadingInner: '<?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: rgb(255, 255, 255) none repeat scroll 0% 0%; display: block; shape-rendering: auto;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"><circle cx="50" cy="50" r="0" fill="none" stroke="#e90c59" stroke-width="2"> <animate attributeName="r" repeatCount="indefinite" dur="1s" values="0;40" keyTimes="0;1" keySplines="0 0.2 0.8 1" calcMode="spline" begin="-0.5s"></animate> <animate attributeName="opacity" repeatCount="indefinite" dur="1s" values="1;0" keyTimes="0;1" keySplines="0.2 0 0.8 1" calcMode="spline" begin="-0.5s"></animate></circle><circle cx="50" cy="50" r="0" fill="none" stroke="#46dff0" stroke-width="2"> <animate attributeName="r" repeatCount="indefinite" dur="1s" values="0;40" keyTimes="0;1" keySplines="0 0.2 0.8 1" calcMode="spline"></animate> <animate attributeName="opacity" repeatCount="indefinite" dur="1s" values="1;0" keyTimes="0;1" keySplines="0.2 0 0.8 1" calcMode="spline"></animate></circle></svg>', 
+            timeout: false,
+            timeoutCountdown: 5000,
+            onLoadEvent: true,
+            browser: [ 'animation-duration', '-webkit-animation-duration'],
+            overlay : false,
+            overlayClass : 'animsition-overlay-slide',
+            overlayParentElement : 'body',
+            transition: function(url){ window.location.href = url; }
+        });
+
         $('.cscroll').scrollSpy({
             target: $('.nscroll a'),
 	        activeClass: 'text-indigo-700 border-indigo-700'
@@ -68,7 +91,7 @@ new Vue({
                 style: 'multi',
                 selector: 'td:first-child'
             },
-            order: [[ 1, 'asc' ]]
+            order: [[ 2, 'asc' ]]
         });
 
         $('.select-checkbox').on('click', function() {
