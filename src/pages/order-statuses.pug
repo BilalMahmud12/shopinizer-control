@@ -1,0 +1,84 @@
+extends ../layouts/default
+
+block meta
+    title Dashboard | Shopinizer eCommerce
+
+block nestbar
+    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-indigo-100
+        h3.mb-6.text-2xl Orders
+
+        nav.flex.flex-col.mb-6
+            ul.flex.flex-col
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./orders.html") View
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./order-single.html") Add
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./order-import.html") Import
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./order-export.html") Export
+
+        nav.flex.flex-col.mb-6
+            ul.flex.flex-col
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./order-drafts.html") Draft Orders
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./order-shipments.html") Shipments
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./order-tracking.html") Tracking Numbers
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./order-gifts.html") Gift Certificates
+                li.mb-3
+                    a.text-indigo-800.hover_text-indigo-800(href="./order-statuses.html") Order Statuses
+
+
+block page
+    .flex.flex-col.px-12.py-4.bg-white.shadow-sm.z-50
+        .flex.flex-row.items-center.justify-between.-ml-3
+            .flex.flex-col
+                h2.mb-2.text-3xl.font-light.leading-none Order Statuses
+
+            // Buttons control
+            nav.flex.flex-row
+                a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                    span.material-icons.py-1.px-2.text-md more_vert
+
+    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
+        .mb-5.text-left
+            h5.mb-1.text-xl.font-medium Edit Order Statuses
+            p.text-lg.font-light.text-gray-600 Order statuses can help you decide what actions need to be taken for a particular order. Does the order need to be packaged, shipped, or refunded? Most order statuses are applied as a result of store user or customer action, but some must be manually changed.
+                br
+                a(href="#") Learn more
+        // start Form
+        form.w-full(action="/upload" method="post" enctype="multipart/form-data" )
+            .px-12.py-6.bg-white.shadow.rounded
+                // Recored Table
+                table#records-table.display
+                    thead
+                        tr
+                            th.py-2.text-xs.font-bold.uppercase(style="width: 30%;") Status
+                            th.py-2.text-xs.font-bold.uppercase Status description
+                    tbody
+                        tr
+                            td Incomplete
+                            td An incomplete order happens when a shopper reached the payment page, but did not complete the transaction.
+                        tr
+                            td Pending
+                            td Customer started the checkout process, but did not complete it.
+                        tr
+                            td ..
+                            td ..
+
+        // end Form
+                    
+block footer
+    .flex.flex-row.justify-end.items-center.px-12.py-4.bg-white.border-t.border-gray-200.z-50
+        nav.flex.flex-row
+            button.flex.flex-row.items-center.ml-4.text-gray-600.rounded.outline-none.hover_opacity-75.fade(type="button")
+                span.py-1.text-sm.font-medium.tracking-widest.uppercase Cancel
+            button.flex.flex-row.items-center.ml-4.text-indigo-700.bg-white.border.border-indigo-700.outline-none.rounded.hover_opacity-75.fade(type="button")
+                span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Save&Exit
+            button.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
+                span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Save&Keep Editing
+            button.flex.flex-row.items-center.ml-4.text-white.bg-red-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
+                span.material-icons.py-1.px-2.bg-red-800.text-md.rounded delete
