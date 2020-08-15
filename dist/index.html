@@ -333,7 +333,157 @@
       <!-- end SideBar-->
       <!--start page content-->
       <div class="animsition-wrapper flex flex-col flex-1 h-full">
-        <div class="flex flex-col flex-1 w-full overflow-y-auto">Home
+        <div class="flex flex-col flex-1 w-full overflow-y-auto">
+          <div class="px-12 pt-6 bg-white">
+            <div class="flex flex-row justify-between items-center mb-6">
+              <h2 class="text-3xl font-light leading-none">Dashboard</h2>
+              <!-- Buttons control-->
+              <nav class="flex flex-row"><a class="flex flex-row items-center ml-4 text-indigo-700 border border-indigo-700 rounded hover_opacity-50 fade" href="#"><span class="material-icons py-1 px-2 text-md">more_vert</span></a></nav>
+            </div>
+            <!-- Tabs-->
+            <nav class="flex flex-row border-b border-gray-300"><a class="block pb-2 px-5 -mb-px font-medium text-indigo-700 border-b-2 border-indigo-700 hover_text-indigo-700" href="./">Home</a></nav>
+          </div>
+          <div class="flex flex-col flex-1 items-center h-full py-8 px-12 overflow-y-auto bg-gray-100">
+            <div class="w-full">
+              <h6 class="mb-2 text-xl font-normal text-gray-600">Sales</h6>
+            </div>
+            <div class="w-full">
+              <div class="flex flex-warp -mx-4">
+                <div class="w-full md_w-12_12 px-4">
+                  <div class="w-full p-8 mb-8 bg-white shadow rounded">
+                    <div class="flex flex-warp -mx-4">
+                      <div class="w-full md_w-4_12 px-4 text-center">
+                        <div class="border-r">
+                          <div class="mb-1 text-gray-500"><span class="text-3xl align-top">USD</span><span class="text-5xl text-gray-600">21,404</span><span class="text-3xl align-top">.74</span></div>
+                          <div class="text-base uppercase text-gray-500 tracking-wide">Total Orders</div>
+                        </div>
+                      </div>
+                      <div class="w-full md_w-4_12 px-4 text-center">
+                        <div class="border-r">
+                          <div class="mb-1 text-gray-500"><span class="text-3xl align-top">USD</span><span class="text-5xl text-gray-600">21,404</span><span class="text-3xl align-top">.74</span></div>
+                          <div class="text-base uppercase text-gray-500 tracking-wide">Last Week</div>
+                        </div>
+                      </div>
+                      <div class="w-full md_w-4_12 px-4 text-center">
+                        <div class="border-0">
+                          <div class="mb-1 text-gray-500"><span class="text-3xl align-top">USD</span><span class="text-5xl text-gray-600">21,404</span><span class="text-3xl align-top">.74</span></div>
+                          <div class="text-base uppercase text-gray-500 tracking-wide">This day</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-full">
+              <div class="flex flex-warp -mx-4">
+                <div class="w-full md_w-6_12 px-4">
+                  <h6 class="mb-2 text-xl font-normal text-gray-600">Last Orders</h6>
+                  <div class="w-full p-4 mb-8 bg-white shadow rounded">
+                    <table class="display dataTable no-footer dtr-inline">
+                      <thead>
+                        <tr>
+                          <th class="py-2 text-xs font-bold uppercase" style="width: 20%;">Date</th>
+                          <th class="py-2 text-xs font-bold uppercase">Order ID</th>
+                          <th class="py-2 text-xs font-bold uppercase">Customer</th>
+                          <th class="py-2 text-xs font-bold uppercase">Status</th>
+                          <th class="py-2 text-xs font-bold uppercase">Total</th>
+                          <th class="no-sort py-2 text-xs font-bold uppercase text-right" style="width: 6%;">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>12th Aug 2020</td>
+                          <td><a class="text-indigo-500 hover_text-indigo-700" href="./ordar-single.html">100</a></td>
+                          <td> <a class="text-indigo-500 hover_text-indigo-700" href="./customer-single.html">Rakan Awajan</a></td>
+                          <td class="flex items-center">
+                            <div class="w-2 h-8 bg-blue-400"></div>
+                            <div class="relative ml-3">Pending</div>
+                          </td>
+                          <td>USD49.00</td>
+                          <td>
+                            <nav class="flex flex-row items-center justify-end">
+                              <button class="ml-2 fade text-gray-500 hover_text-gray-700" type="button" data-tippy-content="More"><span class="material-icons">more_vert</span></button>
+                            </nav>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>12th Aug 2020</td>
+                          <td><a class="text-indigo-500 hover_text-indigo-700" href="./ordar-single.html">100</a></td>
+                          <td> <a class="text-indigo-500 hover_text-indigo-700" href="./customer-single.html">Rakan Awajan</a></td>
+                          <td class="flex items-center">
+                            <div class="w-2 h-8 bg-blue-400"></div>
+                            <div class="relative ml-3">Pending</div>
+                          </td>
+                          <td>USD49.00</td>
+                          <td>
+                            <nav class="flex flex-row items-center justify-end">
+                              <button class="ml-2 fade text-gray-500 hover_text-gray-700" type="button" data-tippy-content="More"><span class="material-icons">more_vert</span></button>
+                            </nav>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="w-full md_w-6_12 px-4">
+                  <h6 class="mb-2 text-xl font-normal text-gray-600">Last Products</h6>
+                  <div class="w-full p-4 mb-8 bg-white shadow rounded">
+                    <table class="display dataTable no-footer dtr-inline">
+                      <thead>
+                        <tr>
+                          <th class="py-2 text-xs font-bold uppercase">Image</th>
+                          <th class="py-2 text-xs font-bold uppercase">Product SKU</th>
+                          <th class="py-2 text-xs font-bold uppercase">Stock Level</th>
+                          <th class="py-2 text-xs font-bold uppercase" style="width: 40%;">Product Name</th>
+                          <th class="py-2 text-xs font-bold uppercase">Price</th>
+                          <th class="no-sort py-2 text-xs font-bold uppercase text-right" style="width: 6%;">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><img class="w-12 h-12" src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt=""></td>
+                          <td>SM13</td>
+                          <td>N/A</td>
+                          <td> <a class="text-indigo-500 hover_text-indigo-700" href="./product-single.html">[Sample] Smith Journal 13</a></td>
+                          <td>USD 25.00</td>
+                          <td>
+                            <nav class="flex flex-row items-center justify-end">
+                              <button class="ml-2 fade text-gray-500 hover_text-gray-700" type="button" data-tippy-content="More"><span class="material-icons">more_vert</span></button>
+                            </nav>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><img class="w-12 h-12" src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt=""></td>
+                          <td>SM13</td>
+                          <td>N/A</td>
+                          <td> <a class="text-indigo-500 hover_text-indigo-700" href="./product-single.html">[Sample] Smith Journal 13</a></td>
+                          <td>USD 25.00</td>
+                          <td>
+                            <nav class="flex flex-row items-center justify-end">
+                              <button class="ml-2 fade text-gray-500 hover_text-gray-700" type="button" data-tippy-content="More"><span class="material-icons">more_vert</span></button>
+                            </nav>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><img class="w-12 h-12" src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt=""></td>
+                          <td>SM13</td>
+                          <td>N/A</td>
+                          <td> <a class="text-indigo-500 hover_text-indigo-700" href="./product-single.html">[Sample] Smith Journal 13</a></td>
+                          <td>USD 25.00</td>
+                          <td>
+                            <nav class="flex flex-row items-center justify-end">
+                              <button class="ml-2 fade text-gray-500 hover_text-gray-700" type="button" data-tippy-content="More"><span class="material-icons">more_vert</span></button>
+                            </nav>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- start Footer-->
           <!-- end Footer-->
         </div>
