@@ -19488,6 +19488,12 @@ table.dataTable.order-column.stripe tbody > tr.odd.selected:hover {
   right: -6px !important;
 }
 
+.lang-switcher {
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+}
+
 @media (min-width: 640px) {
   .sm_container {
     width: 100%;

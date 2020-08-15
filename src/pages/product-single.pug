@@ -127,8 +127,12 @@ block page
                             .w-full.md_w-1_2.px-4.mb-6
                                 label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="name") Product Name
                                     span.mx-1.text-sm.text-red-600 *
-                                input#name.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="Simple Product Name")
-                            
+                                .relative
+                                    input#name.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="Simple Product Name")
+                                    select.lang-switcher.absolute.overflow-hidden.inline-flex.items-center.py-0.px-3.appearance-none.border-0.rounded
+                                        option(value="en") EN
+                                        option(value="ar") AR
+
                             .w-full.md_w-1_2.px-4.mb-6
                                 label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="SKU") SKU
                                     span.mx-1.text-sm.text-red-600 *
