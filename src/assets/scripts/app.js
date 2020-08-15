@@ -3,12 +3,19 @@ Vue.component('treeselect', VueTreeselect.Treeselect)
 new Vue({
     el: '#app',
     data: {
+        // Fields
         inventory: false,
         inventory_level: 1,
         purchasability: 1,
         related_products: true,
         customer_group_categories: true,
         customer_type: 1,
+
+        // UI
+        notificationsIsOpen: false,
+        hasNotificationsLabel: true,
+        helpIsOpen: false,
+        moreIsOpen: false,
 
         // treeselect dump
         treeselect_value: null,

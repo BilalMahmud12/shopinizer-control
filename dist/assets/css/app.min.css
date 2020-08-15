@@ -16600,6 +16600,10 @@ video {
   z-index: 50 !important;
 }
 
+.z-60 {
+  z-index: 60 !important;
+}
+
 .z-auto {
   z-index: auto !important;
 }
@@ -35501,6 +35505,10 @@ table.dataTable.order-column.stripe tbody > tr.odd.selected:hover {
     z-index: 50 !important;
   }
 
+  .sm_z-60 {
+    z-index: 60 !important;
+  }
+
   .sm_z-auto {
     z-index: auto !important;
   }
@@ -53971,6 +53979,10 @@ table.dataTable.order-column.stripe tbody > tr.odd.selected:hover {
 
   .md_z-50 {
     z-index: 50 !important;
+  }
+
+  .md_z-60 {
+    z-index: 60 !important;
   }
 
   .md_z-auto {
@@ -72445,6 +72457,10 @@ table.dataTable.order-column.stripe tbody > tr.odd.selected:hover {
     z-index: 50 !important;
   }
 
+  .lg_z-60 {
+    z-index: 60 !important;
+  }
+
   .lg_z-auto {
     z-index: auto !important;
   }
@@ -90915,6 +90931,10 @@ table.dataTable.order-column.stripe tbody > tr.odd.selected:hover {
 
   .xl_z-50 {
     z-index: 50 !important;
+  }
+
+  .xl_z-60 {
+    z-index: 60 !important;
   }
 
   .xl_z-auto {
