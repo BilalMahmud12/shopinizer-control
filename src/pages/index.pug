@@ -22,7 +22,7 @@ block page
         .w-full
             .flex.flex-warp.-mx-4
                 .w-full.md_w-12_12.px-4
-                    .w-full.p-8.mb-8.bg-white.shadow.rounded
+                    .w-full.p-8.mb-6.bg-white.shadow.rounded
                         .flex.flex-warp.-mx-4
                             .w-full.md_w-4_12.px-4.text-center
                                 .border-r
@@ -53,7 +53,51 @@ block page
             .flex.flex-warp.-mx-4
                 .w-full.md_w-6_12.px-4
                     h6.mb-2.text-xl.font-normal.text-gray-600 Last Orders
-                    .w-full.p-4.mb-8.bg-white.shadow.rounded
+                    .w-full.mb-6.bg-white.shadow.rounded
+                        table.display.dataTable.no-footer.dtr-inline
+                            thead
+                                tr
+                                    th.py-2.text-xs.font-bold.uppercase(style="width: 20%;") Date
+                                    th.py-2.text-xs.font-bold.uppercase Order ID
+                                    th.py-2.text-xs.font-bold.uppercase Customer
+                                    th.py-2.text-xs.font-bold.uppercase Status
+                                    th.py-2.text-xs.font-bold.uppercase Total
+                                    th.no-sort.py-2.text-xs.font-bold.uppercase.text-right(style="width: 6%;") Action
+                            tbody
+                                tr
+                                    td 12th Aug 2020
+                                    td
+                                        a.text-indigo-500.hover_text-indigo-700(href="./ordar-single.html") 100
+                                    td 
+                                        a.text-indigo-500.hover_text-indigo-700(href="./customer-single.html") Rakan Awajan
+                                    td.flex.items-center
+                                        .w-2.h-8.bg-blue-400
+                                        .relative.ml-3 Pending
+                                    
+                                    td USD49.00
+                                    td
+                                        nav.flex.flex-row.items-center.justify-end
+                                            button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="More")
+                                                span.material-icons more_vert
+                                tr
+                                    td 12th Aug 2020
+                                    td
+                                        a.text-indigo-500.hover_text-indigo-700(href="./ordar-single.html") 100
+                                    td 
+                                        a.text-indigo-500.hover_text-indigo-700(href="./customer-single.html") Rakan Awajan
+                                    td.flex.items-center
+                                        .w-2.h-8.bg-blue-400
+                                        .relative.ml-3 Pending
+                                    
+                                    td USD49.00
+                                    td
+                                        nav.flex.flex-row.items-center.justify-end
+                                            button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="More")
+                                                span.material-icons more_vert
+                    
+                    
+                    h6.mb-2.text-xl.font-normal.text-gray-600 Top Orders
+                    .w-full.mb-6.bg-white.shadow.rounded
                         table.display.dataTable.no-footer.dtr-inline
                             thead
                                 tr
@@ -96,9 +140,10 @@ block page
                                                 span.material-icons more_vert
 
 
+
                 .w-full.md_w-6_12.px-4
                     h6.mb-2.text-xl.font-normal.text-gray-600 Last Products
-                    .w-full.p-4.mb-8.bg-white.shadow.rounded
+                    .w-full.mb-6.bg-white.shadow.rounded
                         table.display.dataTable.no-footer.dtr-inline
                             thead
                                 tr
@@ -147,6 +192,39 @@ block page
                                                 span.material-icons more_vert
 
 
-
-
-
+                    h6.mb-2.text-xl.font-normal.text-gray-600 Top Products
+                    .w-full.mb-6.bg-white.shadow.rounded
+                        table.display.dataTable.no-footer.dtr-inline
+                            thead
+                                tr
+                                    th.py-2.text-xs.font-bold.uppercase Image
+                                    th.py-2.text-xs.font-bold.uppercase Product SKU
+                                    th.py-2.text-xs.font-bold.uppercase Stock Level
+                                    th.py-2.text-xs.font-bold.uppercase(style="width: 40%;") Product Name
+                                    th.py-2.text-xs.font-bold.uppercase Price
+                                    th.no-sort.py-2.text-xs.font-bold.uppercase.text-right(style="width: 6%;") Action
+                            tbody
+                                tr
+                                    td
+                                        img.w-12.h-12(src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt="")
+                                    td SM13
+                                    td N/A
+                                    td 
+                                        a.text-indigo-500.hover_text-indigo-700(href="./product-single.html") [Sample] Smith Journal 13
+                                    td USD 25.00
+                                    td
+                                        nav.flex.flex-row.items-center.justify-end
+                                            button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="More")
+                                                span.material-icons more_vert
+                                tr
+                                    td
+                                        img.w-12.h-12(src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt="")
+                                    td SM13
+                                    td N/A
+                                    td 
+                                        a.text-indigo-500.hover_text-indigo-700(href="./product-single.html") [Sample] Smith Journal 13
+                                    td USD 25.00
+                                    td
+                                        nav.flex.flex-row.items-center.justify-end
+                                            button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="More")
+                                                span.material-icons more_vert
