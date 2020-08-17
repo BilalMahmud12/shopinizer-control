@@ -69,6 +69,12 @@ new Vue({
             overlayParentElement : 'body',
             transition: function(url){ window.location.href = url; }
         });
+
+        $(".editor").each(function() {
+            new Quill(this, {
+                theme: 'snow'
+            });
+        });
     },
     updated() {
         this.initializeJQuery();
@@ -127,12 +133,6 @@ new Vue({
                     $(this).find('input').prop("checked", false);
                     $('#records-table').find('.select-row').prop("checked", false);
                 }
-            });
-    
-            $(".editor").each(function() {
-                new Quill(this, {
-                    theme: 'snow'
-                });
             });
     
             // Select2 init
