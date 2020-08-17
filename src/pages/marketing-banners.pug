@@ -1,0 +1,78 @@
+extends ../layouts/default
+
+block meta
+    title Dashboard | Shopinizer eCommerce
+
+block nestbar
+    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-indigo-100
+        h3.mb-6.text-2xl Marketing
+
+        .flex.flex-col.mb-6
+            nav.pl-0
+                ul.flex.flex-col
+                    li.mb-3
+                        a.text-indigo-800.hover_text-indigo-800(href="./marketing-banners.html") Banners
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./marketing-promotions.html") Promotions
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./marketing-notifications.html") Abandoned Cart Notifications
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./marketing-reviews.html") Google Customer Reviews
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./marketing-coupons.html") Coupon Codes
+
+        .flex.flex-col.mb-6
+            nav.pl-0
+                ul.flex.flex-col
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./marketing-email.html") Email Marketing
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./marketing-gifts.html") Gift Certificates
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./marketing-ebay.html") Sell on eBay
+
+block page
+    .px-12.pt-6.bg-gray-100
+        .flex.flex-row.justify-between.items-center.mb-6
+            h2.text-3xl.font-light.leading-none View Banners
+            // Buttons control
+            nav.flex.flex-row
+                a.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.rounded.hover_opacity-75.fade(href="./marketing-banner-single.html")
+                    span.material-icons.py-1.px-2.bg-indigo-800.text-md.rounded-l add
+                    span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase New banner
+                a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                    span.material-icons.py-1.px-2.text-md more_vert
+
+        // Tabs
+        nav.flex.flex-row.border-b.border-gray-300
+            a.block.pb-2.px-5.-mb-px.font-medium.text-indigo-700.border-b-2.border-indigo-700.hover_text-indigo-700(href="./marketing-banners.html") All Records
+
+    .px-12.py-6
+        // Recored Table
+        table#records-table.display
+            thead
+                tr
+                    th.select-all.no-sort
+                        label.pointer-events-none.inline-flex.items-center.justify-center.w-full.h-full
+                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                    th.py-2.text-xs.font-bold.uppercase Banner Name
+                    th.py-2.text-xs.font-bold.uppercase Location
+                    th.py-2.text-xs.font-bold.uppercase Date Created
+                    th.py-2.text-xs.font-bold.uppercase Visible
+                    th.no-sort.py-2.text-xs.font-bold.uppercase.text-right(style="width: 6%;") Action
+            tbody
+                tr
+                    td.p-0
+                        label.pointer-events-none.inline-flex.items-center.justify-center.w-full.h-full.cursor-pointer
+                            input.select-row.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                    td
+                        a.text-indigo-500.hover_text-indigo-700(href="./marketing-banner-single.html") banner 01
+                    td
+                        a.text-indigo-500.hover_text-indigo-700(href="#") Home Page
+                        span.pl-1 (Top of Page)
+                    td 17th Aug 2020
+                    td 0
+                    td
+                        nav.flex.flex-row.items-center.justify-end
+                            button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="More")
+                                span.material-icons more_vert

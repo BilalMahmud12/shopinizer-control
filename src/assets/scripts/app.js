@@ -10,6 +10,8 @@ new Vue({
         related_products: true,
         customer_group_categories: true,
         customer_type: 1,
+        banner_date_switch: 1,
+        banner_page_switch: 1,
 
         // UI
         notificationsIsOpen: false,
