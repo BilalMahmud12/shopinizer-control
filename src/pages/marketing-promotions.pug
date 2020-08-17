@@ -11,9 +11,9 @@ block nestbar
             nav.pl-0
                 ul.flex.flex-col
                     li.mb-3
-                        a.text-indigo-800.hover_text-indigo-800(href="./marketing-banners.html") Banners
+                        a.text-gray-600.hover_text-indigo-700(href="./marketing-banners.html") Banners
                     li.mb-3
-                        a.text-gray-600.hover_text-indigo-700(href="./marketing-promotions.html") Promotions
+                        a.text-indigo-800.hover_text-indigo-800(href="./marketing-promotions.html") Promotions
                     li.mb-3
                         a.text-gray-600.hover_text-indigo-700(href="./marketing-notifications.html") Abandoned Cart Notifications
                     li.mb-3
@@ -34,18 +34,19 @@ block nestbar
 block page
     .px-12.pt-6.bg-gray-100
         .flex.flex-row.justify-between.items-center.mb-6
-            h2.text-3xl.font-light.leading-none View Banners
+            h2.text-3xl.font-light.leading-none Promotions
             // Buttons control
             nav.flex.flex-row
-                a.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.rounded.hover_opacity-75.fade(href="./marketing-banner-single.html")
+                a.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.rounded.hover_opacity-75.fade(href="./marketing-promotion-single.html")
                     span.material-icons.py-1.px-2.bg-indigo-800.text-md.rounded-l add
-                    span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase New banner
+                    span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase New Automatic Promotion
                 a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
                     span.material-icons.py-1.px-2.text-md more_vert
 
         // Tabs
         nav.flex.flex-row.border-b.border-gray-300
-            a.block.pb-2.px-5.-mb-px.font-medium.text-indigo-700.border-b-2.border-indigo-700.hover_text-indigo-700(href="./marketing-banners.html") All Records
+            a.block.pb-2.px-5.-mb-px.font-medium.text-indigo-700.border-b-2.border-indigo-700.hover_text-indigo-700(href="./marketing-promotions.html") Automatic
+            a.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(href="./marketing-promotions-coupon.html") Coupon
 
     .px-12.py-6
         // Recored Table
@@ -55,10 +56,13 @@ block page
                     th.select-all.no-sort
                         label.pointer-events-none.inline-flex.items-center.justify-center.w-full.h-full
                             input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
-                    th.py-2.text-xs.font-bold.uppercase Banner Name
-                    th.py-2.text-xs.font-bold.uppercase Location
-                    th.py-2.text-xs.font-bold.uppercase Date Created
-                    th.no-sort.py-2.text-xs.font-bold.uppercase Visible
+                    th.py-2.text-xs.font-bold.uppercase Rule Name
+                    th.py-2.text-xs.font-bold.uppercase Currency
+                    th.py-2.text-xs.font-bold.uppercase Number of times used
+                    th.py-2.text-xs.font-bold.uppercase Start Date/Time
+                    th.py-2.text-xs.font-bold.uppercase End Date/Time
+                    th.no-sort.py-2.text-xs.font-bold.uppercase Activated
+                    th.no-sort.py-2.text-xs.font-bold.uppercase Stop After This Rule?
                     th.no-sort.py-2.text-xs.font-bold.uppercase.text-right(style="width: 6%;") Action
             tbody
                 tr
@@ -66,13 +70,15 @@ block page
                         label.pointer-events-none.inline-flex.items-center.justify-center.w-full.h-full.cursor-pointer
                             input.select-row.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
                     td
-                        a.text-indigo-500.hover_text-indigo-700(href="./marketing-banner-single.html") banner 01
-                    td
-                        a.text-indigo-500.hover_text-indigo-700(href="#") Home Page
-                        span.pl-1 (Top of Page)
-                    td 17th Aug 2020
+                        a.text-indigo-500.hover_text-indigo-700(href="./marketing-promotion-single.html") Promotion 01
+                    td USD
+                    td 0/ Unlimited
+                    td 2020/25/52
+                    td Not set
                     td
                         span.material-icons.text-green-500 done
+                    td
+                        span.material-icons.text-red-500 close
                     td
                         nav.flex.flex-row.items-center.justify-end
                             button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="More")

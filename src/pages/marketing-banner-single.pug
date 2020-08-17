@@ -50,11 +50,11 @@ block page
     .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
         .mb-5.max-w-3xl.text-center
             h5.mb-1.text-xl.font-medium Create a Banner
-            p.text-lg.font-light.text-gray-600 Banners allow you to add promotional links and images throughout your store to advertise special deals and discounts to your shoppers.
+            p.text-lg.font-normal.text-gray-600 Banners allow you to add promotional links and images throughout your store to advertise special deals and discounts to your shoppers.
         // start Form
         form.w-full.max-w-5xl(action="/upload" method="post" enctype="multipart/form-data" )
             .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-6.text-2xl.font-light.text-gray-600 Banner Details
+                h6.mb-6.text-2xl.font-normal.text-gray-600 Banner Details
 
                 .flex.flex-wrap.-mx-4
                     .w-full.md_w-1_2.px-4.mb-6
@@ -65,7 +65,7 @@ block page
                     .w-full.px-4.mb-6
                         .relative
                             label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Description
-                            #editor
+                            .editor
                                 p Hello World!
                                 p Some initial
                                     strong bold
@@ -167,9 +167,9 @@ block page
                                 .flex.flex-wrap.-mx-4
                                     .w-full.px-2
                                         label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Through
-                                    .w-full.md_w-8_12.px-2
+                                    .w-full.md_w-9_12.px-2
                                         vuejs-datepicker(placeholder="D MMM YYYY" input-class="block w-full py-3 px-4 appearance-none leading-tight text-indigo-900 bg-white border border-gray-300 shadow-xs rounded fade focus_outline-none focus_border-indigo-300")
-                                    .w-full.md_w-4_12.px-2
+                                    .w-full.md_w-3_12.px-2
                                         .relative
                                             select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
                                                 option(value='0') 12:00 AM

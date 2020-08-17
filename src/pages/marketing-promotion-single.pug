@@ -1,0 +1,347 @@
+extends ../layouts/default
+
+block meta
+    title Dashboard | Shopinizer eCommerce
+
+block nestbar
+    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-indigo-100
+        h3.mb-6.text-2xl Marketing
+
+        .flex.flex-col.mb-6
+            nav.pl-0
+                ul.flex.flex-col
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./marketing-banners.html") Banners
+                    li.mb-3
+                        a.text-indigo-800.hover_text-indigo-800(href="./marketing-promotions.html") Promotions
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./marketing-notifications.html") Abandoned Cart Notifications
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./marketing-reviews.html") Google Customer Reviews
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./marketing-coupons.html") Coupon Codes
+
+        .flex.flex-col.mb-6
+            nav.pl-0
+                ul.flex.flex-col
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./marketing-email.html") Email Marketing
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./marketing-gifts.html") Gift Certificates
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./marketing-ebay.html") Sell on eBay
+
+
+block page
+    .flex.flex-col.px-12.py-4.bg-white.shadow-sm.z-50
+        .flex.flex-row.items-center.justify-between.-ml-3
+            .flex.flex-col
+                nav.flex.flex-row.mb-1
+                    a.flex.flex-row.items-center.text-gray-500.hover_text-indigo-700.fade(href="./marketing-promotions.html")
+                        span.material-icons.text-xl keyboard_backspace
+                        span.ml-2.font-bold.text-xs.uppercase View Promotions
+                h2.mb-2.text-3xl.font-light.leading-none Add Promotion | Promotion Name Here
+
+            // Buttons control
+            nav.flex.flex-row
+                a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                    span.material-icons.py-1.px-2.text-md more_vert
+
+    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
+        // start Form
+        form.w-full.max-w-5xl(action="/upload" method="post" enctype="multipart/form-data" )
+            .p-8.mb-8.bg-white.shadow.rounded
+                h6.mb-6.text-2xl.font-normal.text-gray-600  Promotion Details
+
+                .flex.flex-wrap.-mx-4
+                    .w-full.px-4.mb-6
+                        .w-full.md_w-1_2
+                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Name
+                                span.mx-1.text-sm.text-red-600 *
+                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                        
+                    .w-full.px-4.mb-6
+                        .w-full.md_w-1_2
+                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Currency
+                            .relative
+                                select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                    option Option 1
+                                    option Option 2
+                                    option Option 3
+                                .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                    svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                        path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z') 
+        
+                    .w-full.flex.flex-wrap.mb-6.px-4
+                        .w-full.md_w-1_2
+                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Choose a Promotion Type
+                            .relative
+                                select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                    option(value='display-group-shippingdiscount' selected='') Shipping discount
+                                    option(value='display-group-productdiscount') Product discount
+                                    option(value='display-group-branddiscount') Brand discount
+                                    option(value='display-group-categorydiscount') Category discount
+                                    option(value='display-group-orderdiscount') Order discount
+                                    option(value='display-group-customerdiscount') Customer discount
+                                .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                    svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                        path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')  
+                            p.mt-1.text-xs.text-gray-500 What type of promotion are you running?
+                        
+                        .w-full.px-4.mb-6
+                            .pl-2.mt-4
+                                .mb-2
+                                    label.inline-flex.items-center
+                                        input.form-radio.h-6.w-6.text-indigo-700(type="radio", name="promotion_type_switch", v-model="promotion_type_switch", value="1")
+                                        span.ml-2 Order at least X units of product Y, get free shipping to specific shipping zones
+                                
+                                    label.block.pl-8.mt-2.mb-4.text-xs.font-bold.uppercase.tracking-wide(v-if="promotion_type_switch == 1")
+                                        | Order at least 
+                                        .relative.inline-block.mx-1
+                                            select.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                                option 1
+                                                option 2
+                                                option 3
+                                        | of
+                                        .relative.inline-block.w-48.mx-1
+                                            select.select2-df.block.w-full.py-1.px-4.pr-10.appearance-none.leading-tight.text-gray-600.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                                option(value='--SELECT--' disabled) --SELECT--
+                                                option(value='All Products') All Products
+                                                optgroup(label='Swedish Cars')
+                                                    option(value='Product 01') Product 01
+                                                optgroup(label='German Cars')
+                                                    option(value='Product 02') Product 02
+
+                                            .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                                svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                                    path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+                                        | group members receive a
+
+                                .mb-2
+                                    label.inline-flex.items-center
+                                        input.form-radio.h-6.w-6.text-indigo-700(type="radio", name="promotion_type_switch", v-model="promotion_type_switch", value="2")
+                                        span.ml-2 Orders totalling more than amount, get free shipping to specific shipping zones
+                                    
+                                    .mb-4.mt-2.pl-8(v-if="promotion_type_switch == 2")
+                                        label.block.mb-3.text-xs.font-bold.uppercase.tracking-wide
+                                            | Spend at least JOD
+                                            .relative.inline-block.mx-1
+                                                input.block.w-24.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                                            | get free shipping to 
+                                        
+                                        .w-full.md_w-1_2
+                                            treeselect(
+                                            v-model="treeselect_value",
+                                            v-bind:multiple="true",
+                                            v-bind:clearable="true",
+                                            v-bind:searchable="true",
+                                            v-bind:options="treeselect_options")
+
+                            .mb-0.mt-6
+                                .-mx-4
+                                    label.block.text-xs.font-bold.uppercase.tracking-wide Customer Groups
+                                    p.mt-1.mb-4.text-xs.text-gray-500 Which customers should receive this discount?
+                                
+                                .pl-2
+                                    .mb-2
+                                        label.inline-flex.items-center
+                                            input.form-radio.h-6.w-6.text-indigo-700(type="radio", name="promotion_type_switch", v-model="promotion_type_switch", value="3")
+                                            span.ml-2 All customers
+                                        
+                                    .mb-0
+                                        label.inline-flex.items-center
+                                            input.form-radio.h-6.w-6.text-indigo-700(type="radio", name="promotion_type_switch", v-model="promotion_type_switch", value="4")
+                                            span.ml-2 Only customers within the following customer groups:
+
+                    .w-full.px-4.mb-6
+                        .w-full.flex.flex-wrap.-mx-4
+                            .w-full.md_w-2_12.px-4
+                                label.block.text-xs.font-bold.uppercase.tracking-wide Duration
+                                p.mt-1.text-xs.text-gray-500 When do you want this discount to run?
+
+                            .w-full.md_w-10_12.flex.flex-wrap.px-4
+                                .w-full.md_w-6_12.flex.flex-wrap.px-2
+                                    .w-full.px-2
+                                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Start date
+                                    .w-full.md_w-7_12.px-2
+                                        vuejs-datepicker(placeholder="D MMM YYYY" input-class="block w-full py-3 px-4 appearance-none leading-tight text-indigo-900 bg-white border border-gray-300 shadow-xs rounded fade focus_outline-none focus_border-indigo-300")
+                                    .w-full.md_w-5_12.px-2
+                                        .relative
+                                            select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                                option(value='0') 12:00 AM
+                                                option(value='1') 1:00 AM
+                                                option(value='2') 2:00 AM
+                                                option(value='3') 3:00 AM
+                                                option(value='4') 4:00 AM
+                                                option(value='5') 5:00 AM
+                                                option(value='6') 6:00 AM
+                                                option(value='7') 7:00 AM
+                                                option(value='8') 8:00 AM
+                                                option(value='9') 9:00 AM
+                                                option(value='10') 10:00 AM
+                                                option(value='11') 11:00 AM
+                                                option(value='12') 12:00 PM
+                                                option(value='13') 1:00 PM
+                                                option(value='14') 2:00 PM
+                                                option(value='15') 3:00 PM
+                                                option(value='16') 4:00 PM
+                                                option(value='17') 5:00 PM
+                                                option(value='18' selected='selected') 6:00 PM
+                                                option(value='19') 7:00 PM
+                                                option(value='20') 8:00 PM
+                                                option(value='21') 9:00 PM
+                                                option(value='22') 10:00 PM
+                                                option(value='23') 11:00 PM
+                                            .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                                svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                                    path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z') 
+
+                                .w-full.md_w-6_12.flex.flex-wrap.px-2
+                                    .w-full.px-2
+                                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide End date
+                                    .w-full.md_w-7_12.px-2
+                                        vuejs-datepicker(placeholder="D MMM YYYY" input-class="block w-full py-3 px-4 appearance-none leading-tight text-indigo-900 bg-white border border-gray-300 shadow-xs rounded fade focus_outline-none focus_border-indigo-300")
+                                    .w-full.md_w-5_12.px-2
+                                        .relative
+                                            select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                                option(value='0') 12:00 AM
+                                                option(value='1') 1:00 AM
+                                                option(value='2') 2:00 AM
+                                                option(value='3') 3:00 AM
+                                                option(value='4') 4:00 AM
+                                                option(value='5') 5:00 AM
+                                                option(value='6') 6:00 AM
+                                                option(value='7') 7:00 AM
+                                                option(value='8') 8:00 AM
+                                                option(value='9') 9:00 AM
+                                                option(value='10') 10:00 AM
+                                                option(value='11') 11:00 AM
+                                                option(value='12') 12:00 PM
+                                                option(value='13') 1:00 PM
+                                                option(value='14') 2:00 PM
+                                                option(value='15') 3:00 PM
+                                                option(value='16') 4:00 PM
+                                                option(value='17') 5:00 PM
+                                                option(value='18' selected='selected') 6:00 PM
+                                                option(value='19') 7:00 PM
+                                                option(value='20') 8:00 PM
+                                                option(value='21') 9:00 PM
+                                                option(value='22') 10:00 PM
+                                                option(value='23') 11:00 PM
+                                            .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                                svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                                    path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z') 
+                    
+                    .w-full.px-4.mb-2.mt-4
+                        label.inline-flex.items-center
+                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                            span.ml-2 Limit the usage of this discount
+
+                    .w-full.px-4.mb-6.mt-4
+                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Activate
+                        label.inline-flex.items-center
+                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                            span.ml-2 Do you want this discount to be available to your customers?
+            
+            
+            
+            .p-8.mb-8.bg-white.shadow.rounded
+                h6.mb-6.text-2xl.font-normal.text-gray-600 Promotion Options
+                
+                .flex.flex-wrap.-mx-4
+                    .w-full.px-4.mb-6
+                        .relative
+                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Congratulations Banner Message 
+                            .editor
+                                p Hello World!
+                                p Some initial
+                                    strong bold
+                                    | text
+                    
+                    .w-full.px-4.mb-6
+                        label.inline-flex.items-center
+                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                            span.ml-2 Show this message on cart page
+
+                    .w-full.px-4.mb-6
+                        .relative
+                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Eligible Banner Message
+                            .editor
+                                p Hello World!
+                                p Some initial
+                                    strong bold
+                                    | text
+                    
+                    .w-full.px-4.mb-6
+                        label.inline-flex.items-center
+                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                            span.ml-2 Show this message on cart page
+
+                    .w-full.px-4.mb-6
+                        .relative
+                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Upsell Banner Message
+                            .editor
+                                p Hello World!
+                                p Some initial
+                                    strong bold
+                                    | text
+                    
+                    .w-full.px-4.mb-4
+                        .mb-4
+                            label.inline-flex.items-center
+                                input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                span.ml-2 Show this message on home page
+                        .mb-4
+                            label.inline-flex.items-center
+                                input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                span.ml-2 Show this message on product page
+                        .mb-4
+                            label.inline-flex.items-center
+                                input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox" checked)
+                                span.ml-2 Show this message on cart page
+                        .mb-4
+                            label.inline-flex.items-center
+                                input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                span.ml-2 Show this message on checkout page
+
+                    .w-full.px-4.mb-6
+                        .relative
+                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Promotional Banner Message
+                            .editor
+                                p Hello World!
+                                p Some initial
+                                    strong bold
+                                    | text
+        
+        
+                    .w-full.px-4.mb-4
+                        .mb-4
+                            label.inline-flex.items-center
+                                input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                span.ml-2 Show this message on home page
+                        .mb-4
+                            label.inline-flex.items-center
+                                input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                span.ml-2 Show this message on product page
+                        .mb-4
+                            label.inline-flex.items-center
+                                input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox" checked)
+                                span.ml-2 Show this message on cart page
+                        .mb-4
+                            label.inline-flex.items-center
+                                input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                span.ml-2 Show this message on checkout page
+
+        // end Form
+                    
+block footer
+    .flex.flex-row.justify-end.items-center.px-12.py-4.bg-white.border-t.border-gray-200.z-50
+        nav.flex.flex-row
+            button.flex.flex-row.items-center.ml-4.text-gray-600.rounded.outline-none.hover_opacity-75.fade(type="button")
+                span.py-1.text-sm.font-medium.tracking-widest.uppercase Cancel
+            button.flex.flex-row.items-center.ml-4.text-indigo-700.bg-white.border.border-indigo-700.outline-none.rounded.hover_opacity-75.fade(type="button")
+                span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Save&Exit
+            button.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
+                span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Save&Keep Editing
+            button.flex.flex-row.items-center.ml-4.text-white.bg-red-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
+                span.material-icons.py-1.px-2.bg-red-800.text-md.rounded delete

@@ -12,6 +12,7 @@ new Vue({
         customer_type: 1,
         banner_date_switch: 1,
         banner_page_switch: 1,
+        promotion_type_switch: 1,
 
         // UI
         notificationsIsOpen: false,
@@ -45,10 +46,10 @@ new Vue({
     components: {
         vuejsDatepicker
     },
-    methods: {
-        //
-    },
-    mounted: function() {
+    mounted() {
+        this.initializeJQuery();
+        
+        // init page loading
         $(".animsition").animsition({
             inClass: 'fade-in',
             outClass: 'fade-out',
@@ -68,102 +69,109 @@ new Vue({
             overlayParentElement : 'body',
             transition: function(url){ window.location.href = url; }
         });
-
-        $('.cscroll').scrollSpy({
-            target: $('.nscroll a'),
-	        activeClass: 'text-indigo-700 border-indigo-700'
-        }).scroll();
-
-        // Tippy
-        tippy('[data-tippy-content]', {
-            placement: 'right'
-        });
-
-        // Records tables
-        var mainTable = $('#records-table').DataTable({
-            columnDefs: [
-                {
-                    "targets": 'no-sort',
-                    "orderable": false,
+    },
+    updated() {
+        this.initializeJQuery();
+    },
+    methods: {
+        initializeJQuery() {
+            $('.cscroll').scrollSpy({
+                target: $('.nscroll a'),
+                activeClass: 'text-indigo-700 border-indigo-700'
+            }).scroll();
+    
+            // Tippy
+            tippy('[data-tippy-content]', {
+                placement: 'right'
+            });
+    
+            // Records tables
+            var mainTable = $('#records-table').DataTable({
+                columnDefs: [
+                    {
+                        "targets": 'no-sort',
+                        "orderable": false,
+                    },
+                    {
+                        targets: 0,
+                        data: "select",
+                        searchable: false,
+                        orderable: false,
+                        className: 'select-checkbox',
+                        width: "4%"
+                    }
+                ],
+                responsive: true,
+                select: {
+                    style: 'multi',
+                    selector: 'td:first-child'
                 },
-                {
-                    targets: 0,
-                    data: "select",
-                    searchable: false,
-                    orderable: false,
-                    className: 'select-checkbox',
-                    width: "4%"
+                order: [[ 2, 'asc' ]]
+            });
+    
+            $('.select-checkbox').on('click', function() {
+                $(this).find('.select-row').prop("checked", !$(this).find('.select-row').prop("checked"));
+            });
+    
+            $('.select-all').click(function() {
+                var all = mainTable.rows({ search: 'applied' }).count();
+                var selectedRows = mainTable.rows({ selected: true, search: 'applied' }).count();
+    
+                if (selectedRows < all) {
+                    mainTable.rows({ search: 'applied' }).deselect();
+                    mainTable.rows({ search: 'applied' }).select();
+                    $(this).find('input').prop("checked", true);
+                    $('#records-table').find('.select-row').prop("checked", true);
+                } else {
+                    mainTable.rows({ search: 'applied' }).deselect();
+                    $(this).find('input').prop("checked", false);
+                    $('#records-table').find('.select-row').prop("checked", false);
                 }
-            ],
-            responsive: true,
-            select: {
-                style: 'multi',
-                selector: 'td:first-child'
-            },
-            order: [[ 2, 'asc' ]]
-        });
-
-        $('.select-checkbox').on('click', function() {
-            $(this).find('.select-row').prop("checked", !$(this).find('.select-row').prop("checked"));
-        });
-
-        $('.select-all').click(function() {
-            var all = mainTable.rows({ search: 'applied' }).count();
-            var selectedRows = mainTable.rows({ selected: true, search: 'applied' }).count();
-
-            if (selectedRows < all) {
-                mainTable.rows({ search: 'applied' }).deselect();
-                mainTable.rows({ search: 'applied' }).select();
-                $(this).find('input').prop("checked", true);
-                $('#records-table').find('.select-row').prop("checked", true);
-            } else {
-                mainTable.rows({ search: 'applied' }).deselect();
-                $(this).find('input').prop("checked", false);
-                $('#records-table').find('.select-row').prop("checked", false);
-            }
-        });
-
-        // Quill editor init
-        new Quill('#editor', {
-            theme: 'snow'
-        });
-
-        // Select2 init
-        $(".select2-df").select2({});
-
-        Dropzone.autoDiscover = false;
-
-        // Upload images init
-        $("#upload-widget").dropzone({
-            url: "/upload",
-            dictDefaultMessage: "Drag & Drop images here to upload.",
-            uploadMultiple: true,
-            capture: true,
-        });
-
-        // Variations repeater
-        $('.variations-repeater').repeater({
-            repeaters: [{
-                selector: '.variation-values-repeater'
-            }]
-        });
-
-        // Customizations repeater
-        $('.customizations-repeater').repeater({});
-
-        // Custom Fields repeater
-        $('.custom-fields-repeater').repeater({});
-
-        // Option Values repeater
-        $('.option-values-repeater').repeater({});
-
-        // Customer Address repeater
-        $('.customer-address-repeater').repeater({});
-
-        // Category Discounts repeater
-        $('.category-discounts-repeater').repeater({});
-
-        // Product Discounts repeater
-        $('.product-discounts-repeater').repeater({});
+            });
+    
+            $(".editor").each(function() {
+                new Quill(this, {
+                    theme: 'snow'
+                });
+            });
+    
+            // Select2 init
+            $(".select2-df").select2({});
+    
+            Dropzone.autoDiscover = false;
+    
+            // Upload images init
+            $("#upload-widget").dropzone({
+                url: "/upload",
+                dictDefaultMessage: "Drag & Drop images here to upload.",
+                uploadMultiple: true,
+                capture: true,
+            });
+    
+            // Variations repeater
+            $('.variations-repeater').repeater({
+                repeaters: [{
+                    selector: '.variation-values-repeater'
+                }]
+            });
+    
+            // Customizations repeater
+            $('.customizations-repeater').repeater({});
+    
+            // Custom Fields repeater
+            $('.custom-fields-repeater').repeater({});
+    
+            // Option Values repeater
+            $('.option-values-repeater').repeater({});
+    
+            // Customer Address repeater
+            $('.customer-address-repeater').repeater({});
+    
+            // Category Discounts repeater
+            $('.category-discounts-repeater').repeater({});
+    
+            // Product Discounts repeater
+            $('.product-discounts-repeater').repeater({});
+        }
     }
 });
