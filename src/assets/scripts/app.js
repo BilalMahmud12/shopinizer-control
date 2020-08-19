@@ -13,6 +13,8 @@ new Vue({
         banner_date_switch: 1,
         banner_page_switch: 1,
         promotion_type_switch: 1,
+        discount_type_switch: 1,
+        coupon_conditions_switch: 1,
 
         // UI
         notificationsIsOpen: false,
