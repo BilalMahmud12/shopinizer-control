@@ -1,0 +1,86 @@
+extends ../layouts/default
+
+block meta
+    title Dashboard | Shopinizer eCommerce
+
+block nestbar
+    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-indigo-100
+        h3.mb-6.text-2xl Marketing
+
+        .flex.flex-col.mb-6
+            nav.pl-0
+                ul.flex.flex-col
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./marketing-banners.html") Banners
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./marketing-promotions.html") Promotions
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./marketing-notifications.html") Abandoned Cart Notifications
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./marketing-reviews.html") Google Customer Reviews
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./marketing-coupons.html") Coupon Codes
+
+        .flex.flex-col.mb-6
+            nav.pl-0
+                ul.flex.flex-col
+                    li.mb-3
+                        a.text-indigo-800.hover_text-indigo-800(href="./marketing-email.html") Email Marketing
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./marketing-gifts.html") Gift Certificates
+                    li.mb-3
+                        a.text-gray-600.hover_text-indigo-700(href="./marketing-ebay.html") Sell on eBay
+
+block page
+    .flex.flex-col.px-12.py-4.bg-white.shadow-sm.z-50
+        .flex.flex-row.items-center.justify-between.-ml-3
+            .flex.flex-col
+                h2.mb-2.text-3xl.font-light.leading-none Email Marketing
+
+            // Buttons control
+            nav.flex.flex-row
+                a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                    span.material-icons.py-1.px-2.text-md more_vert
+
+    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
+        // start Form
+        form.w-full.max-w-5xl(action="/upload" method="post" enctype="multipart/form-data" )
+            .mb-5.text-center
+                h5.mb-1.text-xl.font-medium Email Marketing
+                p.text-lg.font-normal.text-gray-600 Below are settings for the default behavior of your built-in newsletter signup form. These signups will be stored in the Export Only tab, or if a third party email service is enabled, signups can also be synced to your email marketing provider.
+
+            .p-8.mb-8.bg-white.shadow.rounded
+                h6.mb-6.text-2xl.font-normal.text-gray-600 Newsletter Settings
+
+                .flex.flex-wrap.-mx-4
+                    .w-full.px-4.mb-4
+                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Allow Newsletter Subscriptions?
+                        .mb-2
+                            label.inline-flex.items-center
+                                input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                span.ml-2  Yes, allow customers to subscribe to the store newsletter
+                    
+                    .w-full.px-4.mb-4
+                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Tick Newsletter Checkbox?
+                        .mb-2
+                            label.inline-flex.items-center
+                                input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                span.ml-2 Yes, tick the newsletter subscription box by default
+                            p.ml-8.text-gray-600 Enabling this setting places your business at risk of non-compliance with privacy regulations such as the EU General Data Protection Regulation (GDPR). 
+
+                    .w-full.px-4.mb-4
+                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Show Newsletter Summary?
+                        .mb-2
+                            label.inline-flex.items-center
+                                input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                span.ml-2 Yes, Enable Newsletter Summary
+
+        // end Form
+                    
+block footer
+    .flex.flex-row.justify-end.items-center.px-12.py-4.bg-white.border-t.border-gray-200.z-50
+        nav.flex.flex-row
+            button.flex.flex-row.items-center.ml-4.text-gray-600.rounded.outline-none.hover_opacity-75.fade(type="button")
+                span.py-1.text-sm.font-medium.tracking-widest.uppercase Cancel
+            button.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
+                span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Next
