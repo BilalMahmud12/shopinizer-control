@@ -224,7 +224,7 @@ block page
                                 label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="BPN") Bin Picking Number (BPN)
                                 input#GTN.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
 
-
+                    // START Pricing
                     #pricing.p-8.mb-8.bg-white.shadow.rounded
                         h6.mb-6.text-2xl.font-normal.text-gray-600 Pricing
 
@@ -253,7 +253,77 @@ block page
                             .w-full.md_w-1_2.px-4.mb-6
                                 label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="BPN") Bin Picking Number (BPN)
                                 input#GTN.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                    
+                            .flex.flex-wrap.w-full
+                                .w-full.px-4.mb-0
+                                    a.inline-flex.items-center.text-indigo-700(href="#" @click="show_advanced_pricing = !show_advanced_pricing")
+                                        span.material-icons(v-if="!show_advanced_pricing") keyboard_arrow_right
+                                        span.material-icons(v-if="show_advanced_pricing") keyboard_arrow_down
+                                        span.ml-1 Show Advanced Pricing
 
+                                .w-full(v-if="show_advanced_pricing")
+                                    .flex.flex-wrap.mt-4
+                                        .w-full.md_w-1_2.px-4.mb-6
+                                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Cost
+                                            .relative
+                                                input.block.w-full.py-3.px-4.pl-16.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", placeholder="0.00")
+                                                .absolute.pointer-events-none.inset-y-0.left-0.flex.items-center.px-4.text-gray-600 USD
+                                        
+                                        .w-full.md_w-1_2.px-4.mb-6
+                                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide MSRP
+                                            .relative
+                                                input.block.w-full.py-3.px-4.pl-16.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", placeholder="0.00")
+                                                .absolute.pointer-events-none.inset-y-0.left-0.flex.items-center.px-4.text-gray-600 USD
+                                        
+                                        .w-full.md_w-1_2.px-4.mb-6
+                                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Sale Price
+                                            .relative
+                                                input.block.w-full.py-3.px-4.pl-16.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", placeholder="0.00")
+                                                .absolute.pointer-events-none.inset-y-0.left-0.flex.items-center.px-4.text-gray-600 USD
+                                        
+                                        .flex.flex-wrap.w-full.mt-2
+                                            .w-full.px-4.mb-6
+                                                h6.mb-1.text-2xl.font-normal.text-gray-600 Bulk Pricing
+                                                p.text-lg.font-light.text-gray-600 Create bulk pricing rules to offer price discounts based on quantity breaks.
+                                        
+                                            .w-full.md_w-1_2.px-4.mb-6
+                                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Discount Type
+                                                .relative
+                                                    select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(v-model="discount_type")
+                                                        option(value="discount") % Discount
+                                                        option(value="fixed") USD Fixed Amount
+                                                        option(value="off") USD Off/Unit
+                                                    .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                                        svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                                            path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+                                 
+                                            .product-discount-repeater.w-full.px-4
+                                                table.display.dataTable.no-footer.dtr-inline
+                                                    thead
+                                                        tr
+                                                            th.no-sort.py-2.text-xs.font-bold.uppercase Min Quantity
+                                                            th.py-2.text-xs.font-bold.uppercase
+                                                                span(v-if="discount_type == 'discount'") % Discount
+                                                                span(v-if="discount_type == 'fixed'") USD Fixed Amount
+                                                                span(v-if="discount_type == 'off'") USD Off/Unit
+                                                            th.py-2.text-xs.font-bold.uppercase Unit Price
+                                                            th.no-sort.py-2.text-xs.font-bold.uppercase.text-right(style="width: 6%;")
+                                                    tbody.items(data-repeater-list="product-discounts")
+                                                        tr.item-content(data-repeater-item)
+                                                            td.p-0
+                                                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-transparent.border-transparent.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="0.00")
+                                                            td.p-0
+                                                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-transparent.border-transparent.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="0.00")
+                                                            td.p-0
+                                                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-transparent.border-transparent.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="0.00")
+                                                            td.py-0.px-3
+                                                                nav.flex.flex-row.items-center.justify-end
+                                                                    button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="Remove" data-repeater-delete)
+                                                                        span.material-icons delete
+                 
+                                                button.flex.flex-row.items-center.text-indigo-700.rounded.outline-none.hover_opacity-75.fade(type="button" data-repeater-create)
+                                                    span.text-xs.font-medium.tracking-widest.uppercase + Add tier
+                    // END Pricing
 
                     #inventory.p-8.mb-8.bg-white.shadow.rounded
                         h6.mb-6.text-2xl.font-normal.text-gray-600 Inventory
