@@ -146,32 +146,34 @@ new Vue({
 
         // Variations repeater
         $('.variations-repeater').repeater({
+            isFirstItemUndeletable: true,
             repeaters: [{
+                isFirstItemUndeletable: true,
                 selector: '.variation-values-repeater'
             }]
         });
 
         // Customizations repeater
-        $('.customizations-repeater').repeater({});
+        $('.customizations-repeater').repeater({isFirstItemUndeletable: true});
 
         // Custom Fields repeater
-        $('.custom-fields-repeater').repeater({});
+        $('.custom-fields-repeater').repeater({isFirstItemUndeletable: true});
 
         // Option Values repeater
-        $('.option-values-repeater').repeater({});
+        $('.option-values-repeater').repeater({isFirstItemUndeletable: true});
 
         // Customer Address repeater
-        $('.customer-address-repeater').repeater({});
+        $('.customer-address-repeater').repeater({isFirstItemUndeletable: true});
 
         // Category Discounts repeater
-        $('.category-discounts-repeater').repeater({});
+        $('.category-discounts-repeater').repeater({isFirstItemUndeletable: true});
 
         // Product Discounts repeater
-        $('.product-discounts-repeater').repeater({});
+        $('.product-discounts-repeater').repeater({isFirstItemUndeletable: true});
     },
     updated() {
         this.initializeJQuery();
-        $('.product-discount-repeater').repeater({});
+        $('.product-discount-repeater').repeater({isFirstItemUndeletable: true});
     },
     methods: {
         initializeJQuery() {
