@@ -41,8 +41,8 @@ block page
             // Tabs
             nav.flex.flex-row.border-b.border-gray-300
                 button.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(type="button" x-bind:class="{ 'text-indigo-700 border-indigo-700': tab === 'website' }" x-on:click="tab = 'website'") Website
-                button.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(type="button" x-bind:class="{ 'text-indigo-700 border-indigo-700': tab === 'display' }" x-on:click="tab ='display'") Display
-                button.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(type="button" x-bind:class="{ 'text-indigo-700 border-indigo-700': tab === 'share' }" x-on:click="tab ='share'") Share
+                button.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(type="button" x-bind:class="{ 'text-indigo-700 border-indigo-700': tab === 'display' }" x-on:click="tab = 'display'") Display
+                button.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(type="button" x-bind:class="{ 'text-indigo-700 border-indigo-700': tab === 'share' }" x-on:click="tab = 'share'") Share
                 button.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(type="button" x-bind:class="{ 'text-indigo-700 border-indigo-700': tab === 'date' }" x-on:click="tab = 'date'") Date & Timezone
                 button.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(type="button" x-bind:class="{ 'text-indigo-700 border-indigo-700': tab === 'URL' }" x-on:click="tab = 'URL'") URL Structure
                 button.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(type="button" x-bind:class="{ 'text-indigo-700 border-indigo-700': tab === 'search' }" x-on:click="tab = 'search'") Search
@@ -53,6 +53,7 @@ block page
         .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
             // start Form
             form.w-full.max-w-5xl(action="/upload" method="post" enctype="multipart/form-data" )
+                // START Website tab
                 .w-full(x-show="tab === 'website'")
                     .p-8.mb-8.bg-white.shadow.rounded
                         h6.mb-6.text-2xl.font-normal.text-gray-600 Store Status
@@ -168,7 +169,370 @@ block page
                                     | Disallow: /wishlist.php
                                     | Disallow: /admin/
                                     | Disallow: /__socialshop/
+                // END Website tab
 
+                // START Display tab
+                .w-full(x-show="tab === 'display'")
+                    .p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Display Settings
+                        
+                        .flex.flex-wrap.-mx-4
+                            .flex.flex-wrap.w-full.px-4.mb-6
+                                .md_w-1_2
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Product Breadcrumbs
+                                    .relative
+                                        select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                            option Option 1
+                                            option Option 2
+                                            option Option 3
+                                        .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                            svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                                path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+                                
+                            .flex.flex-wrap.w-full.px-4.mb-6
+                                .md_w-1_2
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Show Quantity Box for Products
+                                    label.inline-flex.items-center
+                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        span.ml-2 Yes, show the quantity box on the add to cart panel
+                            
+                            .flex.flex-wrap.w-full.px-4.mb-6
+                                .md_w-1_2
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Enable Search Suggest?
+                                    label.inline-flex.items-center
+                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        span.ml-2 Yes, enable search suggest
+                            
+                            .flex.flex-wrap.w-full.px-4.mb-6
+                                .md_w-1_2
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Auto Approve Reviews?
+                                    label.inline-flex.items-center
+                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        span.ml-2 Yes, auto approve reviews
+                            
+                            .flex.flex-wrap.w-full.px-4.mb-6
+                                .md_w-1_2
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Enable Wishlist?
+                                    label.inline-flex.items-center
+                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        span.ml-2 Yes, enable the wishlist for my store
+                            
+                            .flex.flex-wrap.w-full.px-4.mb-6
+                                .md_w-1_2
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Enable Product Comparisons?
+                                    label.inline-flex.items-center
+                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        span.ml-2 Yes, enable product comparisons
+                            
+                            .flex.flex-wrap.w-full.px-4.mb-6
+                                .md_w-1_2
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Enable Account Creation?
+                                    label.inline-flex.items-center
+                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        span.ml-2 Yes, enable account creation in my store
+                    
+                    
+                    .p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Control Panel
+                        
+                        .flex.flex-wrap.-mx-4
+                            .flex.flex-wrap.w-full.px-4.mb-6
+                                .md_w-1_2.px-4
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Use WYSIWYG Editor?
+                                    label.inline-flex.items-center
+                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        span.ml-2 Yes, enable the WYSIWYG editor
+                            
+                            .flex.flex-wrap.w-full.px-4.mb-6
+                                .md_w-1_2.px-4
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Show Product Thumbnails?
+                                    label.inline-flex.items-center
+                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        span.ml-2 Yes, show product thumbnail images
+                            
+                    
+                    .p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Category Settings
+                                                    
+                        .flex.flex-wrap.-mx-4
+                            .w-full.px-4.mb-3         
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Category Product List
+
+                            .w-full.px-4.mb-3
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="category_list")
+                                    span.ml-2 Show products from the current category only
+                            .w-full.px-4.mb-3
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="category_list")
+                                    span.ml-2 Show products from child categories if the current category is empty
+                            .w-full.px-4.mb-6
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="category_list")
+                                    span.ml-2 Show products from the current category and its children
+
+                        .flex.flex-wrap.-mx-4
+                            .md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Default Product Sort
+                                .relative
+                                    select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                        option Option 1
+                                        option Option 2
+                                        option Option 3
+                                    .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                        svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                            path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+
+
+                        .flex.flex-wrap.items-center.-mx-2
+                            .w-full.md_w-2_12.px-2.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Menu Display Depth
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", value="3")
+
+                            .w-full.md_w-10_12.px-2.mb-6
+                                p.mt-8.text-gray-600 levels deep
+
+
+                    .p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Product Settings
+                        
+                        .flex.flex-wrap.-mx-4
+                            .flex.flex-wrap.w-full.px-4.mb-6
+                                .md_w-1_2
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Show Product's Price?
+                                    label.inline-flex.items-center
+                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        span.ml-2 Yes, show the product's price in my store
+                            
+                            .flex.flex-wrap.w-full.px-4.mb-6
+                                .md_w-1_2
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Show Product's SKU?
+                                    label.inline-flex.items-center
+                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        span.ml-2 Yes, show the product's SKU in my store
+                            
+                            .flex.flex-wrap.w-full.px-4.mb-6
+                                .md_w-1_2
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Show Product's Weight?
+                                    label.inline-flex.items-center
+                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        span.ml-2 Yes, show the product's weight in my store
+                            
+                            .flex.flex-wrap.w-full.px-4.mb-6
+                                .md_w-1_2
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Show Product's Brand?
+                                    label.inline-flex.items-center
+                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        span.ml-2 Yes, show the product's brand in my store
+                            
+                            .flex.flex-wrap.w-full.px-4.mb-6
+                                .md_w-1_2
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Show Product's Shipping Cost?
+                                    label.inline-flex.items-center
+                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        span.ml-2 Yes, show the product's shipping cost in my store
+                            
+                            .flex.flex-wrap.w-full.px-4.mb-6
+                                .md_w-1_2
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Show Product's Rating?
+                                    label.inline-flex.items-center
+                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        span.ml-2 Yes, show the product's rating in my store
+                            
+                            .flex.flex-wrap.w-full.px-4.mb-6
+                                .md_w-1_2
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Show Add to Cart Link?
+                                    label.inline-flex.items-center
+                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        span.ml-2 Yes, show the "Add to Cart" link in all the small product boxes
+                            
+                            .flex.flex-wrap.w-full.px-4.mb-6
+                                .md_w-1_2
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Default Pre-Order Message
+                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", value="Expected release date is %%DATE%%")
+
+                // END Display tab
+
+
+                // START Date & Timezone tab
+                .w-full(x-show="tab === 'date'")
+                    .p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Date Settings
+                        
+                        .flex.flex-wrap.-mx-4
+                            .md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Your Timezone
+                                .relative
+                                    select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                        option Option 1
+                                        option Option 2
+                                        option Option 3
+                                    .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                        svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                            path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+                        
+                        .flex.flex-wrap.-mx-4
+                            .md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Enable DST Correction?
+                                label.inline-flex.items-center
+                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    span.ml-2 Yes, enable daylight savings time correction
+
+                        .flex.flex-wrap.-mx-4
+                            .md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Display Date Format
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", value="jS M Y")
+
+                        .flex.flex-wrap.-mx-4
+                            .md_w-1_2.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Extended Display Date Format
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", value="jS M Y @ g:i A")
+
+                // END Date & Timezone tab
+
+
+                // START URL Structure tab
+                .w-full(x-show="tab === 'URL'")
+                    .p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Product URL Settings
+                        
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-4_12.px-4.mb-6
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="product_URL")
+                                    span.ml-2 SEO Optimized (Short)
+                            
+                            .w-full.md_w-6_12.px-4.mb-6
+                                p.text-gray-600 https://testoria.mybigcommerce.com/ipod-nano/
+                
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-4_12.px-4.mb-6
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="product_URL")
+                                    span.ml-2 SEO Optimized (Long)
+                            
+                            .w-full.md_w-6_12.px-4.mb-6
+                                p.text-gray-600 https://testoria.mybigcommerce.com/products/ipod-nano.html
+                
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-4_12.px-4.mb-6
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="product_URL")
+                                    span.ml-2 SEO Optimized (Category)
+                            
+                            .w-full.md_w-6_12.px-4.mb-6
+                                p.text-gray-600 https://testoria.mybigcommerce.com/mp3-players/ipod-nano/
+
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-4_12.px-4.mb-6
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="product_URL")
+                                    span.ml-2 Custom
+                            
+                            .w-full.md_w-6_12.px-4.mb-6
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="Custom URL Format")
+                    
+                    
+                    .p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Category URL Settings
+                        
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-4_12.px-4.mb-6
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="category_URL")
+                                    span.ml-2 SEO Optimized (Short)
+                            
+                            .w-full.md_w-6_12.px-4.mb-6
+                                p.text-gray-600  https://testoria.mybigcommerce.com/apple-ipod/ 
+                
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-4_12.px-4.mb-6
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="category_URL")
+                                    span.ml-2 SEO Optimized (Long)
+                            
+                            .w-full.md_w-6_12.px-4.mb-6
+                                p.text-gray-600  https://testoria.mybigcommerce.com/categories/apple-ipod.html
+                
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-4_12.px-4.mb-6
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="category_URL")
+                                    span.ml-2 Custom
+                            
+                            .w-full.md_w-6_12.px-4.mb-6
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="Custom URL Format")
+                    
+                    
+                    .p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Web Page URL Settings
+                        
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-4_12.px-4.mb-6
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="category_URL")
+                                    span.ml-2 SEO Optimized (Short)
+                            
+                            .w-full.md_w-6_12.px-4.mb-6
+                                p.text-gray-600  h https://testoria.mybigcommerce.com/about-us/
+                
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-4_12.px-4.mb-6
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="category_URL")
+                                    span.ml-2 SEO Optimized (Long)
+                            
+                            .w-full.md_w-6_12.px-4.mb-6
+                                p.text-gray-600   https://testoria.mybigcommerce.com/pages/about-us.html
+                
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-4_12.px-4.mb-6
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="category_URL")
+                                    span.ml-2 Custom
+                            
+                            .w-full.md_w-6_12.px-4.mb-6
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="Custom URL Format")
+
+                // END URL Structure tab
+
+
+                // START Search tab
+                .w-full(x-show="tab === 'search'")
+                    .p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Search Settings
+
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-4_12.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Default Product Sort
+                                .relative
+                                    select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                        option(value='relevance', selected='') Relevance
+                                        option(value='featured') Featured Items
+                                        option(value='newest') Newest Items
+                                        option(value='bestselling') Bestselling
+                                        option(value='alphaasc') Alphabetical: A to Z
+                                        option(value='alphadesc') Alphabetical: Z to A
+                                        option(value='avgcustomerreview') Avg. Customer Review
+                                        option(value='priceasc') Price: Low to High
+                                        option(value='pricedesc') Price: High to Low
+                                    .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                        svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                            path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+                            
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-4_12.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Default Content Sort
+                                .relative
+                                    select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                        option(value='relevance', selected='') Relevance
+                                        option(value='alphaasc') Alphabetical: A to Z
+                                        option(value='alphadesc') Alphabetical: Z to A
+                                    .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                        svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                            path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+                            
+                // END Search tab
             // end Form
                         
 block footer
