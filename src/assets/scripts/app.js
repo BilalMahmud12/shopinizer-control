@@ -133,52 +133,53 @@ new Vue({
             uploadMultiple: true,
             capture: true,
         });
+
+
+        $('.cscroll').scrollSpy({
+            target: $('.nscroll a'),
+            activeClass: 'text-indigo-700 border-indigo-700'
+        }).scroll();
+
+        // Tippy
+        tippy('[data-tippy-content]', {
+            placement: 'right'
+        });
+
+        // Variations repeater
+        $('.variations-repeater').repeater({
+            repeaters: [{
+                selector: '.variation-values-repeater'
+            }]
+        });
+
+        // Customizations repeater
+        $('.customizations-repeater').repeater({});
+
+        // Custom Fields repeater
+        $('.custom-fields-repeater').repeater({});
+
+        // Option Values repeater
+        $('.option-values-repeater').repeater({});
+
+        // Customer Address repeater
+        $('.customer-address-repeater').repeater({});
+
+        // Category Discounts repeater
+        $('.category-discounts-repeater').repeater({});
+
+        // Product Discounts repeater
+        $('.product-discounts-repeater').repeater({});
+
+        // Product Discount repeater
+        $('.product-discount-repeater').repeater({});
     },
     updated() {
         this.initializeJQuery();
     },
     methods: {
         initializeJQuery() {
-            $('.cscroll').scrollSpy({
-                target: $('.nscroll a'),
-                activeClass: 'text-indigo-700 border-indigo-700'
-            }).scroll();
-    
-            // Tippy
-            tippy('[data-tippy-content]', {
-                placement: 'right'
-            });
-
             // Select2 init
             $(".select2-df").select2({});
-    
-            // Variations repeater
-            $('.variations-repeater').repeater({
-                repeaters: [{
-                    selector: '.variation-values-repeater'
-                }]
-            });
-    
-            // Customizations repeater
-            $('.customizations-repeater').repeater({});
-    
-            // Custom Fields repeater
-            $('.custom-fields-repeater').repeater({});
-    
-            // Option Values repeater
-            $('.option-values-repeater').repeater({});
-    
-            // Customer Address repeater
-            $('.customer-address-repeater').repeater({});
-    
-            // Category Discounts repeater
-            $('.category-discounts-repeater').repeater({});
-    
-            // Product Discounts repeater
-            $('.product-discounts-repeater').repeater({});
-    
-            // Product Discount repeater
-            $('.product-discount-repeater').repeater({});
         }
     }
 });
