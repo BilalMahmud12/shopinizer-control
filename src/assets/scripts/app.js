@@ -134,7 +134,6 @@ new Vue({
             capture: true,
         });
 
-
         $('.cscroll').scrollSpy({
             target: $('.nscroll a'),
             activeClass: 'text-indigo-700 border-indigo-700'
@@ -169,12 +168,10 @@ new Vue({
 
         // Product Discounts repeater
         $('.product-discounts-repeater').repeater({});
-
-        // Product Discount repeater
-        $('.product-discount-repeater').repeater({});
     },
     updated() {
         this.initializeJQuery();
+        $('.product-discount-repeater').repeater({});
     },
     methods: {
         initializeJQuery() {
