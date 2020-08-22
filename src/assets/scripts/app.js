@@ -17,6 +17,7 @@ new Vue({
         coupon_conditions_switch: 1,
         show_advanced_pricing: false,
         discount_type: 'discount',
+        xFrame_header: true,
 
         // UI
         notificationsIsOpen: false,

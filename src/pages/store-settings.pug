@@ -10,7 +10,7 @@ block nestbar
         nav.flex.flex-col.mb-6
             ul.flex.flex-col
                 li.mb-3
-                    a(href="./store-profile.html") Store Profile
+                    a.text-gray-600.hover_text-indigo-700(href="./store-profile.html") Store Profile
                 li.mb-3
                     a.text-gray-600.hover_text-indigo-700(href="./store-currencies.html") Currencies
                 li.mb-3
@@ -533,6 +533,184 @@ block page
                                             path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
                             
                 // END Search tab
+
+
+                // START Security & Privacy tab
+                .w-full(x-show="tab === 'security'")
+                    .p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Security
+
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-12_12.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Configure complexity of the shoppers password?
+                                label.inline-flex.items-center
+                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    span.ml-2 Yes, I would like to enforce complexity rules for shopper passwords
+                
+
+                    .p-8.mb-8.bg-white.shadow.rounded
+                        p.mb-6.text-base.font-normal.text-gray-600  For advanced users only, this section allows you to configure the automatic logout duration for inactive shoppers.
+                            a.text-indigo-600.hover_text-indigo-800(href="#") Learn more 
+
+                        .flex.flex-wrap.items-center.-mx-4.mb-6
+                            .w-full.md_w-12_12.px-4
+                                label.block.mb-3.text-xs.font-bold.uppercase.tracking-wide Inactive shopper logout 
+
+                            .w-full.md_w-12_12.px-4.mb-2
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="shopper_logout")
+                                    span.ml-2 Use the default 7 day duration
+
+                            .w-full.md_w-12_12.px-4.mb-0
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="shopper_logout")
+                                    span.ml-2 Let me customize the duration
+
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-12_12.px-4
+                                label.block.mb-3.text-xs.font-bold.uppercase.tracking-wide Shopper activity extends logout duration
+
+                            .w-full.md_w-12_12.px-4.mb-2
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="logout_duration")
+                                    span.ml-2 Disabled
+
+                            .w-full.md_w-12_12.px-4.mb-0
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="logout_duration")
+                                    span.ml-2 Use the default 5 minute extension
+
+                            .w-full.md_w-12_12.px-4.mb-0
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="logout_duration")
+                                    span.ml-2 Let me customize the duration
+
+
+                    .p-8.mb-8.bg-white.shadow.rounded
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-6_12.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Control Panel Inactivity Timeout
+                                .relative
+                                    select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                        option Option 1
+                                        option Option 2
+                                        option Option 3
+                                    .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                        svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                            path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+                        
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-6_12.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Enable reCAPTCHA on storefront?
+                                label.inline-flex.items-center
+                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    span.ml-2 Yes, enable reCAPTCHA security
+                
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-6_12.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide reCAPTCHA Site Key
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text")
+
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-6_12.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide reCAPTCHA Secret Key
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text")
+
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-12_12.px-4
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Failed Login Lockout
+
+                            .w-full.md_w-2_12.px-4.mb-6
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number" value="10")
+
+
+                    .p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Your customers' privacy
+                    
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-6_12.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Cookie consent tracking
+                                label.inline-flex.items-center
+                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    span.ml-2 Yes, turn on the cookie consent banner on my store.
+                
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-6_12.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Privacy Policy URL
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text" placeholder="https://example.com/privacy-policy")
+
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-12_12.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Analytics for my business
+                                label.inline-flex.items-center
+                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    span.ml-2 When on, we track your customers' behaviors so you can get analytics features to help you run your business. When this is off we do not track your customers behavior, your analytics reports will not work, and this data will NOT be recoverable. Please consult your legal advisors to determine the appropriate setting for your business. 
+                
+
+                    .p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Storefront
+                    
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.px-4
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide HSTS 
+                            
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-6_12.px-4.mb-2
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="HSTS")
+                                    span.ml-2 Do not enforce HSTS on my storefront
+
+                        .flex.flex-wrap.items-center.-mx-4.mb-6
+                            .w-full.md_w-6_12.px-4.mb-0
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="HSTS")
+                                    span.ml-2 Enforce HSTS on my storefront
+                    
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.px-4
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Configure Content-Security-Policy Header Value 
+                            
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-6_12.px-4.mb-2
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="Header")
+                                    span.ml-2 Do not use a custom CSP header
+
+                        .flex.flex-wrap.items-center.-mx-4.mb-6
+                            .w-full.md_w-6_12.px-4.mb-2
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="Header")
+                                    span.ml-2 Specify my own CSP header
+                            
+                    
+                        .flex.flex-wrap.items-center.-mx-4.mb-6
+                            .w-full.px-4
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide X-Frame-Options header
+                                label.inline-flex.items-center
+                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox" v-model="xFrame_header")
+                                    span.ml-2 X-Frame-Options header settings 
+
+                        .w-full(v-if="xFrame_header")
+                            .flex.flex-wrap.items-center.-mx-4
+                                .w-full.md_w-6_12.px-4.mb-2
+                                    label.inline-flex.items-center
+                                        input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="Frame")
+                                        span.ml-2 Deny
+
+                            .flex.flex-wrap.items-center.-mx-4
+                                .w-full.md_w-6_12.px-4.mb-2
+                                    label.inline-flex.items-center
+                                        input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="Frame")
+                                        span.ml-2 Same Origin
+                                        
+                            .flex.flex-wrap.items-center.-mx-4
+                                .w-full.md_w-6_12.px-4.mb-2
+                                    label.inline-flex.items-center
+                                        input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="Frame")
+                                        span.ml-2 Same Origin
+                                
+                // END Security & Privacy tab
+
             // end Form
                         
 block footer
