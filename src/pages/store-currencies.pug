@@ -1,0 +1,87 @@
+extends ../layouts/default
+
+block meta
+    title Store | Shopinizer eCommerce
+
+block nestbar
+    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-indigo-100
+        h3.mb-6.text-2xl Store Setup
+
+        nav.flex.flex-col.mb-6
+            ul.flex.flex-col
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./store-profile.html") Store Profile
+                li.mb-3
+                    a.text-indigo-800.hover_text-indigo-800(href="./store-currencies.html") Currencies
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./store-payments.html") Payments
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./store-settings.html") Store Settings
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./store-shipping.html") Shipping
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./store-tax.html") Tax
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./store-points.html") Point of Sale
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./store-accounting.html") Accounting
+
+block page
+    .px-12.pt-6.bg-gray-100
+        .flex.flex-row.justify-between.items-center.mb-6
+            h2.text-3xl.font-light.leading-none View Currencies
+            // Buttons control
+            nav.flex.flex-row
+                a.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.rounded.hover_opacity-75.fade(href="./product-single.html")
+                    span.material-icons.py-1.px-2.bg-indigo-800.text-md.rounded-l add
+                    span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase New currency
+                a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                    span.material-icons.py-1.px-2.text-md more_vert
+
+    .px-12.py-6
+        // Recored Table
+        table#records-table.display
+            thead
+                tr
+                    th.select-all.no-sort
+                        label.pointer-events-none.inline-flex.items-center.justify-center.w-full.h-full
+                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                    th.py-2.text-xs.font-bold.uppercase Displays in
+                    th.py-2.text-xs.font-bold.uppercase Conversion rate
+                    th.py-2.text-xs.font-bold.uppercase Your customer pays in
+                    th.no-sort.py-2.text-xs.font-bold.uppercase Visible?
+                    th.no-sort.py-2.text-xs.font-bold.uppercase Default?
+                    th.no-sort.py-2.text-xs.font-bold.uppercase.text-right(style="width: 6%;") Action
+            tbody
+                tr
+                    td.p-0
+                        label.pointer-events-none.inline-flex.items-center.justify-center.w-full.h-full.cursor-pointer
+                            input.select-row.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                    td 
+                        a.text-indigo-500.hover_text-indigo-700(href="./store-currency-single.html") United State Dollar - USD 
+                    td 71.00 
+                    td This currency (USD)
+                    td
+                        span.material-icons.text-green-500 done
+                    td
+                        span.material-icons.text-green-500 done
+                    td
+                        nav.flex.flex-row.items-center.justify-end
+                            button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="More")
+                                span.material-icons more_vert
+                tr
+                    td.p-0
+                        label.pointer-events-none.inline-flex.items-center.justify-center.w-full.h-full.cursor-pointer
+                            input.select-row.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                    td 
+                        a.text-indigo-500.hover_text-indigo-700(href="./store-currency-single.html") Afghan Afghani - AFN 
+                    td 110.0766 
+                    td This currency (AFN)
+                    td
+                        span.material-icons.text-green-500 done
+                    td
+                        span.material-icons.text-red-500 close
+                    td
+                        nav.flex.flex-row.items-center.justify-end
+                            button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="More")
+                                span.material-icons more_vert
