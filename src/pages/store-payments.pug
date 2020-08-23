@@ -1,0 +1,93 @@
+extends ../layouts/default
+
+block meta
+    title Store | Shopinizer eCommerce
+
+block nestbar
+    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-indigo-100
+        h3.mb-6.text-2xl Store Setup
+
+        nav.flex.flex-col.mb-6
+            ul.flex.flex-col
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./store-profile.html") Store Profile
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./store-currencies.html") Currencies
+                li.mb-3
+                    a.text-indigo-800.hover_text-indigo-800(href="./store-payments.html") Payments
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./store-settings.html") Store Settings
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./store-shipping.html") Shipping
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./store-tax.html") Tax
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./store-points.html") Point of Sale
+                li.mb-3
+                    a.text-gray-600.hover_text-indigo-700(href="./store-accounting.html") Accounting
+
+block page
+    .px-12.pt-6.bg-white
+        .flex.flex-row.justify-between.items-center.mb-6
+            h2.text-3xl.font-light.leading-none Payment Methods
+            // Buttons control
+            nav.flex.flex-row
+                a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                    span.material-icons.py-1.px-2.text-md more_vert
+
+        // Tabs
+        nav.flex.flex-row.border-b.border-gray-300
+            a.block.pb-2.px-5.-mb-px.font-medium.text-indigo-700.border-b-2.border-indigo-700.hover_text-indigo-700(href="./store-payments.html") Checkout Payment Settings
+
+    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
+        .w-full.max-w-5xl(x-data="{ accordion: '' }")
+            .p-6.mb-6.bg-white.shadow.rounded
+                .flex.flex-row.justify-between.items-center.cursor-pointer(x-on:click="accordion !== 'offline' ? accordion = 'offline' : accordion = ''")
+                    h6.text-xl.font-normal Offline Payment Methods
+                    span.material-icons.text-gray-600(x-show="accordion !== 'offline'") keyboard_arrow_down
+                    span.material-icons.text-gray-600(x-show="accordion === 'offline'") keyboard_arrow_up
+                
+                .w-full(x-show="accordion === 'offline'")
+                    .pt-4.mt-4.border-t
+                        .flex.flex-row.justify-between.items-center
+                            h6.text-base.font-bold.text-gray-600 Bank Deposit
+                            a.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(href="./store-payment-single.html")
+                                span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Set up
+                    
+                    .pt-4.mt-4.border-t
+                        .flex.flex-row.justify-between.items-center
+                            h6.text-base.font-bold.text-gray-600 Cash on Delivery
+                            a.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(href="./store-payment-single.html")
+                                span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Set up
+
+                    .pt-4.mt-4.border-t
+                        .flex.flex-row.justify-between.items-center
+                            h6.text-base.font-bold.text-gray-600 Check
+                            a.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(href="./store-payment-single.html")
+                                span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Set up
+
+
+            .p-6.mb-6.bg-white.shadow.rounded
+                .flex.flex-row.justify-between.items-center.cursor-pointer(x-on:click="accordion !== 'online' ? accordion = 'online' : accordion = ''")
+                    h6.text-xl.font-normal Online Payment Methods
+                    span.material-icons.text-gray-600(x-show="accordion !== 'offline'") keyboard_arrow_down
+                    span.material-icons.text-gray-600(x-show="accordion === 'offline'") keyboard_arrow_up
+                
+                .w-full(x-show="accordion === 'online'")
+                    .pt-4.mt-4.border-t
+                        .flex.flex-row.justify-between.items-center
+                            h6.text-base.font-bold.text-gray-600 Stripe
+                            a.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(href="./store-payment-single.html")
+                                span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Set up
+                    
+                    .pt-4.mt-4.border-t
+                        .flex.flex-row.justify-between.items-center
+                            h6.text-base.font-bold.text-gray-600 PayPal
+                            a.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(href="./store-payment-single.html")
+                                span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Set up
+                    
+                    .pt-4.mt-4.border-t
+                        .flex.flex-row.justify-between.items-center
+                            h6.text-base.font-bold.text-gray-600 Gateway API
+                            a.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(href="./store-payment-single.html")
+                                span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Set up

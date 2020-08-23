@@ -77,19 +77,9 @@ block page
                     td 0
                     td Row 1 Data 4
                     td
-                        nav.flex.flex-row.items-center.justify-end
-                            button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="More")
+                        nav.relative.flex.flex-row.items-center.justify-end(x-data='{ open: false }')
+                            button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" x-on:click="open = true" data-tippy-content="More")
                                 span.material-icons more_vert
-                tr
-                    td.p-0
-                        label.pointer-events-none.inline-flex.items-center.justify-center.w-full.h-full
-                            input.select-row.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
-                    td
-                        a.text-indigo-500.hover_text-indigo-700(href="./product-category-single.html") Publications
-                    td 13
-                    td 0
-                    td Row 1 Data 4
-                    td
-                        nav.flex.flex-row.items-center.justify-end
-                            button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="More")
-                                span.material-icons more_vert
+                            nav.absolute.top-0.mt-5.right-0.z-30.py-2.w-full.md_w-40.bg-white.border.shadow-lg.rounded(x-show.transition='open' x-on:click.away='open = false')
+                                a.block.w-full.py-1.px-4.text-sm.text-bold.text-indigo-700.hover_text-indigo-800(href="./product-category-single.html") Edit
+                                a.block.w-full.py-1.px-4.text-sm.text-bold.text-indigo-700.hover_text-indigo-800(href="./product-category-single.html") Option 2

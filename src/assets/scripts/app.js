@@ -106,7 +106,7 @@ new Vue({
                     width: "4%"
                 }
             ],
-            responsive: true,
+            responsive: false,
             select: {
                 style: 'multi',
                 selector: 'td:first-child'

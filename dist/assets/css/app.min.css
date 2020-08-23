@@ -19374,6 +19374,10 @@ table.dataTable.order-column.stripe tbody > tr.odd.selected:hover {
   background-color: #ebf4ff !important;
 }
 
+table.dataTable.no-footer {
+  width: 100% !important;
+}
+
 .vue-treeselect__control {
   height: 46px !important;
   border-color: #e2e8f0 !important;
@@ -19434,6 +19438,10 @@ table.dataTable.order-column.stripe tbody > tr.odd.selected:hover {
 .ql-container.ql-snow {
   border-radius: 0 0 4px 4px;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05) !important;
+}
+
+.ql-editor {
+  min-height: 250px;
 }
 
 .select2-container--default .select2-selection--single {
