@@ -595,39 +595,68 @@ block page
                         p.mb-6.text-base.font-normal.text-gray-600  For advanced users only, this section allows you to configure the automatic logout duration for inactive shoppers.
                             a.text-indigo-600.hover_text-indigo-800(href="#") Learn more 
 
-                        .flex.flex-wrap.items-center.-mx-4.mb-6
+                        .flex.flex-wrap.items-center.-mx-4.mb-4
                             .w-full.md_w-12_12.px-4
                                 label.block.mb-3.text-xs.font-bold.uppercase.tracking-wide Inactive shopper logout 
 
                             .w-full.md_w-12_12.px-4.mb-2
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="shopper_logout")
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="shopper_logout" v-model="shopper_logout" value="1")
                                     span.ml-2 Use the default 7 day duration
 
                             .w-full.md_w-12_12.px-4.mb-0
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="shopper_logout")
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="shopper_logout" v-model="shopper_logout" value="2")
                                     span.ml-2 Let me customize the duration
 
-                        .flex.flex-wrap.items-center.-mx-4
+                        .flex.flex-wrap.items-center.-mx-2.mb-6.pl-8(v-if="shopper_logout == 2")
+                            .w-full.md_w-1_12.px-2
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number" value="7")
+
+                            .w-full.md_w-2_12.px-2
+                                .relative
+                                    select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                        option Days
+                                        option Hours
+                                        option Option 3
+                                    .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                        svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                            path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+                        
+
+                        .flex.flex-wrap.items-center.-mx-4.mb-4
                             .w-full.md_w-12_12.px-4
                                 label.block.mb-3.text-xs.font-bold.uppercase.tracking-wide Shopper activity extends logout duration
 
                             .w-full.md_w-12_12.px-4.mb-2
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="logout_duration")
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="logout_duration" v-model="logout_duration" value="1")
                                     span.ml-2 Disabled
 
                             .w-full.md_w-12_12.px-4.mb-0
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="logout_duration")
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="logout_duration" v-model="logout_duration" value="2")
                                     span.ml-2 Use the default 5 minute extension
 
                             .w-full.md_w-12_12.px-4.mb-0
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="logout_duration")
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="logout_duration" v-model="logout_duration" value="3")
                                     span.ml-2 Let me customize the duration
 
+                        .flex.flex-wrap.items-center.-mx-2.mb-6.pl-8(v-if="logout_duration == 3")
+                            .w-full.md_w-1_12.px-2
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number" value="7")
+
+                            .w-full.md_w-2_12.px-2
+                                .relative
+                                    select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                        option Days
+                                        option Hours
+                                        option Option 3
+                                    .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                        svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                            path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+                        
 
                     .p-8.mb-8.bg-white.shadow.rounded
                         .flex.flex-wrap.items-center.-mx-4
@@ -692,7 +721,11 @@ block page
 
                     .p-8.mb-8.bg-white.shadow.rounded
                         h6.mb-6.text-2xl.font-normal.text-gray-600 Storefront
-                    
+                        
+                        .mb-6.bg-orange-100.border-l-4.border-orange-500.text-orange-700.p-4(role='alert')
+                            p.font-bold Be Warned
+                            p Changing these settings can have serious consequences for your storefront if done incorrectly. Please consult the documentation before making any changes. It is recommended to not modify these settings at all unless you know exactly what you're doing.
+
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.px-4
                                 label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide HSTS 
@@ -700,33 +733,58 @@ block page
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-6_12.px-4.mb-2
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="HSTS")
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="HSTS" v-model="HSTS" value="1")
                                     span.ml-2 Do not enforce HSTS on my storefront
 
-                        .flex.flex-wrap.items-center.-mx-4.mb-6
-                            .w-full.md_w-6_12.px-4.mb-0
-                                label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="HSTS")
-                                    span.ml-2 Enforce HSTS on my storefront
-                    
                         .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-6_12.px-4.mb-3
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="HSTS" v-model="HSTS" value="2")
+                                    span.ml-2 Enforce HSTS on my storefront
+                        
+                        .flex.flex-wrap.items-center.-mx-4.pl-8(v-if="HSTS == 2")
+                            .w-full.md_w-12_12.px-4.mb-3
+                                .inline-flex.items-center
+                                    label.text-xs.font-bold.uppercase.tracking-wide Set Max-Age Header (max-age) to:
+                                    .relative.ml-3
+                                        select.block.w-28.py-2.px-3.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                            option(value='0', selected='selected') 0 (Disabled)
+                                            option(value='3') 3 Months
+                                            option(value='6') 6 Months
+                                            option(value='9') 9 Months
+                                            option(value='12') 12 Months
+                                        .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                            svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                                path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+   
+                            .w-full.md_w-12_12.px-4
+                                label.inline-flex.items-center
+                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    span.ml-2 Apply HSTS policy to subdomains (includeSubDomains)
+                
+
+                        .flex.flex-wrap.items-center.-mx-4.mt-6
                             .w-full.px-4
                                 label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Configure Content-Security-Policy Header Value 
                             
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-6_12.px-4.mb-2
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="Header")
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="Header" v-model="Header" value="1")
                                     span.ml-2 Do not use a custom CSP header
 
-                        .flex.flex-wrap.items-center.-mx-4.mb-6
-                            .w-full.md_w-6_12.px-4.mb-2
+                        .flex.flex-wrap.items-center.-mx-4.mb-3
+                            .w-full.md_w-6_12.px-4.mb-0
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="Header")
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="Header" v-model="Header" value="2")
                                     span.ml-2 Specify my own CSP header
                             
-                    
-                        .flex.flex-wrap.items-center.-mx-4.mb-6
+                        .flex.flex-wrap.items-center.-mx-4.pl-8(v-if="Header == 2")
+                            .w-full.md_w-6_12.px-4
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Content Security Policy Header Value 
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text")
+
+                        .flex.flex-wrap.items-center.-mx-4.mt-6.mb-6
                             .w-full.px-4
                                 label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide X-Frame-Options header
                                 label.inline-flex.items-center
@@ -737,22 +795,168 @@ block page
                             .flex.flex-wrap.items-center.-mx-4
                                 .w-full.md_w-6_12.px-4.mb-2
                                     label.inline-flex.items-center
-                                        input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="Frame")
+                                        input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="Frame" v-model="Frame" value="1")
                                         span.ml-2 Deny
 
                             .flex.flex-wrap.items-center.-mx-4
                                 .w-full.md_w-6_12.px-4.mb-2
                                     label.inline-flex.items-center
-                                        input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="Frame")
+                                        input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="Frame" v-model="Frame" value="2")
                                         span.ml-2 Same Origin
                                         
-                            .flex.flex-wrap.items-center.-mx-4
-                                .w-full.md_w-6_12.px-4.mb-2
+                            .flex.flex-wrap.items-center.-mx-4.mb-3
+                                .w-full.md_w-6_12.px-4
                                     label.inline-flex.items-center
-                                        input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="Frame")
-                                        span.ml-2 Same Origin
+                                        input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="Frame" v-model="Frame" value="3")
+                                        span.ml-2 Allow from url
                                 
+                            .flex.flex-wrap.items-center.-mx-4.pl-8.mb-6(v-if="Frame == 3")
+                                .w-full.md_w-6_12.px-4
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide URL 
+                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text" placeholder="https://example.com")
+
                 // END Security & Privacy tab
+
+
+                // START Miscellaneous tab
+                .w-full(x-show="tab === 'miscellaneous'")
+                    .p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Email Settings
+
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-12_12.px-4
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Product Review Emails
+                                label.inline-flex.items-center
+                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox" v-model="review_emails")
+                                    span.ml-2 Yes, send emails to customers asking them to review products they have purchased
+
+                        .flex.flex-wrap.items-center.-mx-4.mt-3.pl-8(v-if="review_emails")
+                            .w-full.md_w-12_12.px-4.mb-4
+                                .inline-flex.items-center
+                                    input.inline-block.w-20.py-2.px-3.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number" placeholder="")
+                                    span.ml-3 days after the order is marked as Shipped or Completed
+                            .w-full.md_w-12_12.px-4
+                                label.inline-flex.items-center
+                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    span.ml-2 Yes, send product review emails to guest customers
+
+                        .flex.flex-wrap.items-center.-mx-4.mt-6
+                            .w-full.md_w-12_12.px-4
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Forward Order Invoices
+                                label.inline-flex.items-center
+                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox" v-model="order_invoice")
+                                    span.ml-2 Yes, forward order invoice emails to
+
+                        .flex.flex-wrap.items-center.-mx-4.mt-3.pl-8(v-if="order_invoice")
+                            .w-full.md_w-6_12.px-4
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text" placeholder="")
+                                p.mt-1.text-sm.text-gray-600 Type the email addresses, separated by commas.
+
+                        .flex.flex-wrap.items-center.-mx-4.mt-6
+                            .w-full.md_w-12_12.px-4
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Use SMTP Server
+                            
+                            .w-full.md_w-6_12.px-4.mb-2
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="SMTP" v-model="SMTP" value="1")
+                                    span.ml-2 Use my default mail settings
+                                    
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-6_12.px-4.mb-0
+                                label.inline-flex.items-center
+                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="SMTP" v-model="SMTP" value="2")
+                                    span.ml-2 Let me specify my own SMTP server details
+                        
+                        .w-full.pl-8.mt-3(v-if="SMTP == 2")
+                            .flex.flex-wrap.items-center.-mx-4.mb-3
+                                .w-full.md_w-6_12.px-4.mb-0
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide SMTP Hostname
+                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text" placeholder="")
+        
+                            .flex.flex-wrap.items-center.-mx-4.mb-3
+                                .w-full.md_w-6_12.px-4.mb-0
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide SMTP Username 
+                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text" placeholder="")
+        
+                            .flex.flex-wrap.items-center.-mx-4.mb-3
+                                .w-full.md_w-6_12.px-4.mb-0
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide SMTP Password
+                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="password" placeholder="")
+        
+                            .flex.flex-wrap.items-center.-mx-4.mb-3
+                                .w-full.md_w-6_12.px-4.mb-0
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide SMTP Port
+                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text" placeholder="")
+                        
+                            .flex.flex-wrap.items-center.-mx-4.mb-3
+                                .w-full.md_w-6_12.px-4.mb-4
+                                    button.w-full.block.flex.flex-row.items-center.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
+                                        span.w-full.text-center.py-2.px-5.text-sm.font-bold.tracking-widest.uppercase Test SMTP Settings
+
+                        .flex.flex-wrap.items-center.-mx-4.mt-6
+                            .w-full.md_w-6_12.px-4.mb-0
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Administrator's Email(Required)
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="email" placeholder="name@website.com" value="name@website.com")
+    
+                        .flex.flex-wrap.items-center.-mx-4.mt-6
+                            .w-full.md_w-12_12.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Abandoned Cart Notifications
+                                label.inline-flex.items-center
+                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    span.ml-2 Yes, enable the abandoned cart notifications
+   
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-12_12.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Require Consent
+                                label.inline-flex.items-center
+                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    span.ml-2 Yes, require customers to give consent to receive marketing emails (GDPR recommended)
+                    
+                    
+                    .p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Advanced Store Settings
+
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-12_12.px-4.mb-6
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Allow Purchasing?
+                                label.inline-flex.items-center
+                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    span.ml-2 Yes, allow people to purchase from my store
+
+                    
+                    .p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Order Settings
+
+                        .flex.flex-wrap.items-center.-mx-4
+                            .w-full.md_w-4_12.px-4.mb-6
+                                label.block.mb-0.text-xs.font-bold.uppercase.tracking-wide Starting Order Number
+                                p.mb-2.text-sm.text-gray-600 (Optional)
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number" placeholder="" value="101")
+                    
+                    .p-8.mb-8.bg-white.shadow.rounded
+                        h6.mb-6.text-2xl.font-normal.text-gray-600 Throttler
+
+                        .flex.flex-wrap.items-center.-mx-4.mb-3
+                            .w-full.md_w-12_12.px-4
+                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Enable Throttler
+                                label.inline-flex.items-center
+                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    span.ml-2 Yes, turn on throttler in my store
+
+                        .flex.flex-wrap.items-center.-mx-4.mb-6
+                            .w-full.md_w-12_12.px-4
+                                .inline-flex.items-center
+                                    span Allow
+                                    input.mx-3.inline-block.w-24.py-2.px-3.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number" value="1")
+                                    span reviews to be posted every
+                                    .relative.mx-3
+                                        select.inline-block.w-24.py-2.px-3.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                            option 1
+                                            option 2
+                                            option 3
+                                    span minutes
+
+                // END Miscellaneous tab
 
             // end Form
                         

@@ -3,6 +3,12 @@ Vue.component('treeselect', VueTreeselect.Treeselect)
 new Vue({
     el: '#app',
     data: {
+        // UI
+        notificationsIsOpen: false,
+        hasNotificationsLabel: true,
+        helpIsOpen: false,
+        moreIsOpen: false,
+
         // Fields
         inventory: false,
         inventory_level: 1,
@@ -18,13 +24,15 @@ new Vue({
         show_advanced_pricing: false,
         shoppers_password: false,
         discount_type: 'discount',
+        shopper_logout: 1,
+        logout_duration: 1,
+        HSTS: 1,
+        Header: 1,
         xFrame_header: true,
-
-        // UI
-        notificationsIsOpen: false,
-        hasNotificationsLabel: true,
-        helpIsOpen: false,
-        moreIsOpen: false,
+        Frame: 1,
+        SMTP: 1,
+        review_emails: false,
+        order_invoice: false,
 
         // treeselect dump
         treeselect_value: null,
