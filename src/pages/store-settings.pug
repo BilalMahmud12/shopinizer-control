@@ -544,9 +544,52 @@ block page
                             .w-full.md_w-12_12.px-4.mb-6
                                 label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Configure complexity of the shoppers password?
                                 label.inline-flex.items-center
-                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox" v-model="shoppers_password")
                                     span.ml-2 Yes, I would like to enforce complexity rules for shopper passwords
-                
+
+                        .w-full(v-if="shoppers_password")
+                            .flex.flex-wrap.items-center.-mx-4.mb-6
+                                .w-full.md_w-12_12.px-4
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Minimum password length
+                                .w-full.md_w-2_12.px-4
+                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", value="7")
+
+                            .flex.flex-wrap.items-center.-mx-4.mb-4
+                                .w-full.md_w-12_12.px-4
+                                    label.block.mb-0.text-xs.font-normal.uppercase.tracking-wide.text-gray-600 Select three or more rules to apply.
+
+                            .flex.flex-wrap.items-center.-mx-4.mb-6
+                                .w-full.md_w-12_12.px-4
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Require lower case letters?
+                                    label.inline-flex.items-center
+                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        span.ml-2 Yes, enable lower case requirement
+                    
+                            .flex.flex-wrap.items-center.-mx-4.mb-6
+                                .w-full.md_w-12_12.px-4
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Require upper case letters?
+                                    label.inline-flex.items-center
+                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        span.ml-2 Yes, enable upper case requirement
+                    
+                            .flex.flex-wrap.items-center.-mx-4.mb-6
+                                .w-full.md_w-12_12.px-4
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Require numbers?
+                                    label.inline-flex.items-center
+                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        span.ml-2 At least
+                                        input.inline-block.w-24.ml-2.py-1.px-3.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number" value="1")
+                                        span.ml-2 characters
+                    
+                            .flex.flex-wrap.items-center.-mx-4.mb-6
+                                .w-full.md_w-12_12.px-4
+                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Require special characters?
+                                    label.inline-flex.items-center
+                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        span.ml-2 At least
+                                        input.inline-block.w-24.ml-2.py-1.px-3.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number" value="1")
+                                        span.ml-2 characters
+                    
 
                     .p-8.mb-8.bg-white.shadow.rounded
                         p.mb-6.text-base.font-normal.text-gray-600  For advanced users only, this section allows you to configure the automatic logout duration for inactive shoppers.

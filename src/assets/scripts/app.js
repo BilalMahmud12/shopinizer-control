@@ -16,6 +16,7 @@ new Vue({
         discount_type_switch: 1,
         coupon_conditions_switch: 1,
         show_advanced_pricing: false,
+        shoppers_password: false,
         discount_type: 'discount',
         xFrame_header: true,
 
