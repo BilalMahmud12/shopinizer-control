@@ -34,7 +34,7 @@ block page
                     a.flex.flex-row.items-center.text-gray-500.hover_text-indigo-700.fade(href="./store-payments.html")
                         span.material-icons.text-xl keyboard_backspace
                         span.ml-2.font-bold.text-xs.uppercase View Payment Methods
-                h2.mb-2.text-3xl.font-light.leading-none Bank Deposit
+                h2.mb-2.text-3xl.font-light.leading-none Cash on Delivery
 
             // Buttons control
             nav.flex.flex-row
@@ -47,7 +47,7 @@ block page
         form.w-full.max-w-5xl(action="/upload" method="post" enctype="multipart/form-data" )
 
             .mb-5.text-center
-                p.text-lg.font-normal.text-gray-600 To integrate Bank Deposit into your store simply complete the form above and click the 'Save' button.
+                p.text-lg.font-normal.text-gray-600 To integrate Cash on Delivery into your store simply complete the form above and click the 'Save' button.
             
             .flex.flex-wrap.-mx-4.mb-5
                 .w-full.md_w-3_12.px-4
@@ -67,7 +67,7 @@ block page
                 .flex.flex-wrap.-mx-4.mb-6
                     .w-full.md_w-1_2.px-4
                         label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Display Name
-                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text" value="Bank Deposit")
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text" value="Cash on Delivery")
                 
                 .flex.flex-wrap.-mx-4.mb-6
                     .w-full.md_w-1_2.px-4
@@ -83,13 +83,9 @@ block page
                     
                 .flex.flex-wrap.-mx-4.mb-6
                     .w-full.md_w-1_2.px-4
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Account Information
+                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Delivery Information
                         textarea.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(rows="6")
-                            | Bank Name: ACME Bank
-                            | Bank Branch: New York
-                            | Account Name: John Smith
-                            | Account Number: XXXXXXXXXXXX
-                            | Type any special instructions in here.
+                            | Type your cash on delivery instructions in here.
 
         // end Form
                     
