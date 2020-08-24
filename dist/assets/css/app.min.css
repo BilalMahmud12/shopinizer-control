@@ -19072,6 +19072,10 @@ video {
  **  Custom CSS
  **/
 
+td {
+  vertical-align: middle;
+}
+
 .cscroll {
   scroll-behavior: smooth;
 }
