@@ -33,29 +33,6 @@ new Vue({
         SMTP: 1,
         review_emails: false,
         order_invoice: false,
-
-        // treeselect dump
-        treeselect_value: null,
-        treeselect_options: [
-            {
-                id: '1',
-                label: 'Bath',
-            },
-            {
-                id: '2',
-                label: 'Kitchen',
-                children: [
-                    {
-                        id: '4',
-                        label: 'Publications',
-                    },
-                ],
-            }, 
-            {
-                id: '3',
-                label: 'Utility',
-            }
-        ],
     },
     components: {
         vuejsDatepicker
@@ -84,11 +61,135 @@ new Vue({
             transition: function(url){ window.location.href = url; }
         });
 
-        $(".editor").each(function() {
-            new Quill(this, {
-                theme: 'snow'
-            });
+        // Tippy
+        tippy('[data-tippy-content]', {
+            placement: 'right'
         });
+
+        // START Charts
+        var chartConfig = {
+            spanGaps: false,
+            responsive: true,
+            tooltips: {
+                mode: 'index',
+                intersect: false,
+            },
+            legend: { display: false },
+            maintainAspectRatio: false,
+            scales: {
+                yAxes: [{
+                    display: false,
+                    scaleLabel: {
+                        display: false,
+                    }
+                }]
+            }
+        };
+
+        var chart1 = new Chart(document.getElementById('chart-1').getContext('2d'), {
+            type: 'line',
+            data: {
+                labels: ['Sun', 'Mon', 'Tue', 'Thu', 'Fri', 'Sat'],
+                datasets: [
+                    {
+                        label: 'This Week',
+                        borderColor: '#4c51bf',
+                        pointBackgroundColor: '#4c51bf',
+                        borderWidth: 1,
+                        data: [0, 0, 0, 0],
+                        fill: false,
+                    },
+                    {
+                        label: 'Last Week',
+                        borderColor: '#4c51bf',
+                        pointBackgroundColor: '#4c51bf',
+                        borderWidth: 1,
+                        data: [0, 0, 0],
+                        fill: false, 
+                    }
+                ]
+            },
+            options: chartConfig,
+        });
+        
+        var chart2 = new Chart(document.getElementById('chart-2').getContext('2d'), {
+            type: 'line',
+            data: {
+                labels: ['Sun', 'Mon', 'Tue', 'Thu', 'Fri', 'Sat'],
+                datasets: [
+                    {
+                        label: 'This Week',
+                        borderColor: '#4c51bf',
+                        pointBackgroundColor: '#4c51bf',
+                        borderWidth: 1,
+                        data: [0, 0, 0, 0],
+                        fill: false,
+                    },
+                    {
+                        label: 'Last Week',
+                        borderColor: '#4c51bf',
+                        pointBackgroundColor: '#4c51bf',
+                        borderWidth: 1,
+                        data: [0, 0, 0],
+                        fill: false, 
+                    }
+                ]
+            },
+            options: chartConfig,
+        });
+
+        var chart3 = new Chart(document.getElementById('chart-3').getContext('2d'), {
+            type: 'line',
+            data: {
+                labels: ['Sun', 'Mon', 'Tue', 'Thu', 'Fri', 'Sat'],
+                datasets: [
+                    {
+                        label: 'This Week',
+                        borderColor: '#4c51bf',
+                        pointBackgroundColor: '#4c51bf',
+                        borderWidth: 1,
+                        data: [0, 0, 0, 0],
+                        fill: false,
+                    },
+                    {
+                        label: 'Last Week',
+                        borderColor: '#4c51bf',
+                        pointBackgroundColor: '#4c51bf',
+                        borderWidth: 1,
+                        data: [0, 0, 0],
+                        fill: false, 
+                    }
+                ]
+            },
+            options: chartConfig,
+        }); 
+
+        var chart4 = new Chart(document.getElementById('chart-4').getContext('2d'), {
+            type: 'line',
+            data: {
+                labels: ['Sun', 'Mon', 'Tue', 'Thu', 'Fri', 'Sat'],
+                datasets: [
+                    {
+                        label: 'This Week',
+                        borderColor: '#4c51bf',
+                        pointBackgroundColor: '#4c51bf',
+                        borderWidth: 1,
+                        data: [0, 0, 0, 0],
+                        fill: false,
+                    },
+                    {
+                        label: 'Last Week',
+                        borderColor: '#4c51bf',
+                        pointBackgroundColor: '#4c51bf',
+                        borderWidth: 1,
+                        data: [0, 0, 0],
+                        fill: false, 
+                    }
+                ]
+            },
+            options: chartConfig,
+        }); 
+        // END Charts
 
         // Records tables
         var mainTable = $('#records-table').DataTable({
@@ -134,25 +235,32 @@ new Vue({
             }
         });
 
-        Dropzone.autoDiscover = false;
-
         // Upload images init
-        $("#upload-widget").dropzone({
-            url: "/upload",
-            dictDefaultMessage: "Drag & Drop images here to upload.",
-            uploadMultiple: true,
-            capture: true,
-        });
+        Dropzone.autoDiscover = false;
+        if($("#upload-widget").length) {
+            $("#upload-widget").dropzone({
+                url: "/upload",
+                dictDefaultMessage: "Drag & Drop images here to upload.",
+                uploadMultiple: true,
+                capture: true,
+            });
+        }
 
-        $('.cscroll').scrollSpy({
-            target: $('.nscroll a'),
-            activeClass: 'text-indigo-700 border-indigo-700'
-        }).scroll();
+        if($(".editor").length) {
+            $(".editor").each(function() {
+                new Quill(this, {
+                    theme: 'snow'
+                });
+            });
+    
+        }
 
-        // Tippy
-        tippy('[data-tippy-content]', {
-            placement: 'right'
-        });
+        if($('.cscroll').length) {
+            $('.cscroll').scrollSpy({
+                target: $('.nscroll a'),
+                activeClass: 'text-indigo-700 border-indigo-700'
+            }).scroll();
+        }
 
         // Variations repeater
         $('.variations-repeater').repeater({
@@ -188,7 +296,9 @@ new Vue({
     methods: {
         initializeJQuery() {
             // Select2 init
-            $(".select2-df").select2({});
+            if($(".select2-df").length) {
+                $(".select2-df").select2({});
+            }
         }
     }
 });

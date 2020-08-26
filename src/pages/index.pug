@@ -4,227 +4,208 @@ block meta
     title Dashboard | Shopinizer eCommerce
 
 block page
-    .px-12.pt-6.bg-white
-        .flex.flex-row.justify-between.items-center.mb-6
+    .px-12.py-6.bg-white.shadow-sm.z-50
+        .flex.flex-row.justify-between.items-center
             h2.text-3xl.font-light.leading-none Dashboard
             // Buttons control
-            nav.flex.flex-row
-                a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+            nav.relative.flex.flex-row(x-data='{ open: false }')
+                button.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(type="button" x-on:click="open = true")
                     span.material-icons.py-1.px-2.text-md more_vert
+                .absolute.top-0.mt-8.right-0.z-30.py-2.w-full.md_w-48.bg-white.border.shadow-lg.rounded(x-show.transition='open' x-on:click.away='open = false')
+                    a.block.w-full.py-1.px-4.text-sm.font-medium.text-gray-700.hover_text-indigo-700.hover_bg-gray-200(href="./product-single.html") Add Product
+                    a.block.w-full.py-1.px-4.text-sm.font-medium.text-gray-700.hover_text-indigo-700.hover_bg-gray-200(href="./product-category-single.html") Add Product Category
+                    a.block.w-full.py-1.px-4.text-sm.font-medium.text-gray-700.hover_text-indigo-700.hover_bg-gray-200(href="#") ...
 
-        // Tabs
-        nav.flex.flex-row.border-b.border-gray-300
-            a.block.pb-2.px-5.-mb-px.font-medium.text-indigo-700.border-b-2.border-indigo-700.hover_text-indigo-700(href="./") Home
-
-    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
+    .flex.flex-col.flex-1.w-full.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
         .w-full
-            h6.mb-2.text-xl.font-normal.text-gray-600 Sales
-        .w-full
-            .flex.flex-warp.-mx-4
-                .w-full.md_w-12_12.px-4
-                    .w-full.p-8.mb-6.bg-white.shadow.rounded
-                        .flex.flex-warp.-mx-4
-                            .w-full.md_w-4_12.px-4.text-center
-                                .border-r
-                                    .mb-1.text-gray-500
-                                        span.text-3xl.align-top USD
-                                        span.text-5xl.text-gray-600 21,404
-                                        span.text-3xl.align-top .74
-                                    .text-base.uppercase.text-gray-500.tracking-wide Total Orders
+            .mb-6.relative.bg-indigo-100.border-t-4.border-indigo-500.rounded-b.text-indigo-900.px-4.py-3.shadow-md(role='alert' x-data='{ open: true }' x-show.transition='open')
+                .flex
+                    .py-1
+                        span.material-icons.text-3xl.text-indigo-500.mr-4 help_outline
+                    div
+                        p.font-bold Cras euismod tellus non orci venenatis
+                        p.text-sm Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse iaculis scelerisque nulla.
+                .absolute.top-0.right-0.inline-block.mt-2.mr-2
+                    button.text-gray-500.hover_indigo-500.fade(x-on:click="open = false")
+                        span.material-icons.text-xl close
 
-                            .w-full.md_w-4_12.px-4.text-center
-                                .border-r
-                                    .mb-1.text-gray-500
-                                        span.text-3xl.align-top USD
-                                        span.text-5xl.text-gray-600 21,404
-                                        span.text-3xl.align-top .74
-                                    .text-base.uppercase.text-gray-500.tracking-wide Last Week
+            .mb-6.relative.bg-red-100.border-t-4.border-red-500.rounded-b.text-red-900.px-4.py-3.shadow-md(role='alert' x-data='{ open: true }' x-show.transition='open')
+                .flex
+                    .py-1
+                        span.material-icons.text-3xl.text-red-500.mr-4 error_outline
+                    div
+                        p.font-bold Cras euismod tellus non orci venenatis
+                        p.text-sm Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                .absolute.top-0.right-0.inline-block.mt-2.mr-2
+                    button.text-gray-500.hover_indigo-500.fade(x-on:click="open = false")
+                        span.material-icons.text-xl close
 
-                            .w-full.md_w-4_12.px-4.text-center
-                                .border-0
-                                    .mb-1.text-gray-500
-                                        span.text-3xl.align-top USD
-                                        span.text-5xl.text-gray-600 21,404
-                                        span.text-3xl.align-top .74
-                                    .text-base.uppercase.text-gray-500.tracking-wide This day
-                    
-                    
-        .w-full
-            .flex.flex-warp.-mx-4
-                .w-full.md_w-6_12.px-4
-                    h6.mb-2.text-xl.font-normal.text-gray-600 Last Orders
-                    .w-full.mb-6.bg-white.shadow.rounded
-                        table.display.dataTable.no-footer.dtr-inline
+
+            // START Sales Statistics
+            .mb-6
+                h6.mb-2.text-xl.font-normal.text-gray-600 Sales
+                .w-full.p-5.bg-white.shadow.rounded
+                    .flex.flex-warp.-mx-4
+                        .w-full.md_w-4_12.px-4.text-center
+                            .border-r
+                                .mb-1.text-gray-500
+                                    span.text-xl.align-top USD
+                                    span.mx-1.text-3xl.text-indigo-900 21,404
+                                    span.text-xl.align-top .74
+                                .text-sm.uppercase.text-gray-600.tracking-wide Total Orders
+
+                        .w-full.md_w-4_12.px-4.text-center
+                            .border-r
+                                .mb-1.text-gray-500
+                                    span.text-xl.align-top USD
+                                    span.mx-1.text-3xl.text-indigo-900 21,404
+                                    span.text-xl.align-top .74
+                                .text-sm.uppercase.text-gray-600.tracking-wide Last Week
+
+                        .w-full.md_w-4_12.px-4.text-center
+                            .border-0
+                                .mb-1.text-gray-500
+                                    span.text-xl.align-top USD
+                                    span.mx-1.text-3xl.text-indigo-900 21,404
+                                    span.text-xl.align-top .74
+                                .text-sm.uppercase.text-gray-600.tracking-wide This day
+                
+            // END Sales Statistics
+
+
+            // START Store Performance
+            .mb-6
+                h6.mb-2.text-xl.font-normal.text-gray-600 Store Performance
+                .w-full.p-5.bg-white.shadow.rounded
+                    .flex.flex-row.items-center.justify-between.pb-4.mb-0.border-b
+                        .relative.mr-4
+                            select.block.w-full.py-2.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                option Today
+                                option(selected) Week to date
+                                option Month to date
+                                option Year to date
+                                option Last 7 days
+                                option Last 30 days
+                                option Last 365 days
+                            .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                    path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+                        p.text-base.font-bold.text-gray-600 Aug 23, 2020 – Aug 26, 2020
+
+                    .flex.flex-warp.-mx-4
+                        .w-full.md_w-4_12.px-4
+                            .border-r.pt-5
+                                h6.mb-0.text-sm.font-bold Visits
+                                h5.mb-6.text-3xl.font-light 0
+                                .h-48
+                                    canvas#chart-1.w-full
+
+                        .w-full.md_w-4_12.px-4
+                            .border-r.pt-5
+                                h6.mb-0.text-sm.font-bold Conversion
+                                h5.mb-6.text-3xl.font-light 0.00%
+                                .h-48
+                                    canvas#chart-2.w-full
+                        .w-full.md_w-4_12.px-4
+                            .border-r.pt-5
+                                h6.mb-0.text-sm.font-bold Orders
+                                h5.mb-6.text-3xl.font-light 0
+                                .h-48
+                                    canvas#chart-3.w-full
+                        .w-full.md_w-4_12.px-4
+                            .border-0.pt-5
+                                h6.mb-0.text-sm.font-bold Revenue
+                                h5.mb-6.text-3xl.font-light 0
+                                .h-48
+                                    canvas#chart-4.w-full
+
+            // END Store Performance
+
+
+            // START Sales Statistics
+            .mb-6
+                h6.mb-2.text-xl.font-normal.text-gray-600 Store Statistics
+                .w-full.p-5.bg-white.shadow.rounded
+                    .flex.flex-warp.-mx-4
+                        .w-full.md_w-3_12.px-4.text-center
+                            .border-r
+                                .mb-1
+                                    span.mx-1.text-3xl.text-indigo-900 1
+                                .text-sm.uppercase.text-gray-600.tracking-wide Orders
+
+                        .w-full.md_w-3_12.px-4.text-center
+                            .border-r
+                                .mb-1
+                                    span.mx-1.text-3xl.text-indigo-900 2
+                                .text-sm.uppercase.text-gray-600.tracking-wide Customers
+                                
+                        .w-full.md_w-3_12.px-4.text-center
+                            .border-r
+                                .mb-1
+                                    span.mx-1.text-3xl.text-indigo-900 20
+                                .text-sm.uppercase.text-gray-600.tracking-wide Products
+                                
+                        .w-full.md_w-3_12.px-4.text-center
+                            .border-0
+                                .mb-1
+                                    span.mx-1.text-3xl.text-indigo-900 8
+                                .text-sm.uppercase.text-gray-600.tracking-wide Categories
+                
+            // END Sales Statistics
+
+            // START Orders
+            .mb-12
+                h6.mb-2.text-xl.font-normal.text-gray-600 Orders
+                .w-full.p-5.bg-white.shadow.rounded( x-data="{ tab: 'recent' }")
+                    // START Tabs
+                    .flex.flex-row.items-center.justify-between.pb-4.mb-5.border-b
+                        nav.flex.flex-row.text-gray-600
+                            button.py-1.px-4.mr-1.text-sm.font-medium.bg-transparent.rounded-full.cursor-pointer.fade(href="#" x-on:click="tab = 'recent'" x-bind:class="{ 'text-white bg-indigo-700 hover_text-white': tab === 'recent', 'hover_text-indigo-700': tab !== 'recent'}") Recent
+                            button.py-1.px-4.mr-1.text-sm.font-medium.bg-transparent.rounded-full.cursor-pointer.fade(type="button" x-on:click="tab = 'pending'" x-bind:class="{ 'text-white bg-indigo-700 hover_text-white': tab === 'pending', 'hover_text-indigo-700': tab !== 'pending' }") Pending
+                            button.py-1.px-4.mr-1.text-sm.font-medium.bg-transparent.rounded-full.cursor-pointer.fade(type="button" x-on:click="tab = 'completed'" x-bind:class="{ 'text-white bg-indigo-700 hover_text-white': tab === 'completed', 'hover_text-indigo-700': tab !== 'completed' }") Completed
+                            button.py-1.px-4.mr-1.text-sm.font-medium.bg-transparent.rounded-full.cursor-pointer.fade(type="button" x-on:click="tab = 'refunded'" x-bind:class="{ 'text-white bg-indigo-700 hover_text-white': tab === 'refunded', 'hover_text-indigo-700': tab !== 'refunded' }") Refunded
+                        a.flex.items-center.text-indigo-700.hover_text-indigo-800.fade(href="./orders.html")
+                            span View more
+                            span.material-icons.mt-1.ml-1 chevron_right
+                    // END Tabs
+
+                    // START Recent Content
+                    div(x-show="tab === 'recent'")
+                        table.table-auto.w-full.m-0
                             thead
-                                tr
-                                    th.py-2.text-xs.font-bold.uppercase(style="width: 20%;") Date
-                                    th.py-2.text-xs.font-bold.uppercase Order ID
-                                    th.py-2.text-xs.font-bold.uppercase Customer
-                                    th.py-2.text-xs.font-bold.uppercase Status
-                                    th.py-2.text-xs.font-bold.uppercase Total
-                                    th.no-sort.py-2.text-xs.font-bold.uppercase.text-right(style="width: 6%;") Action
+                                tr.sr-only
+                                    th Status
+                                    th Details
+                                    th Total
+                                    th Date
                             tbody
-                                tr
-                                    td 12th Aug 2020
-                                    td
-                                        a.text-indigo-500.hover_text-indigo-700(href="./ordar-single.html") 100
-                                    td 
-                                        a.text-indigo-500.hover_text-indigo-700(href="./customer-single.html") Rakan Awajan
-                                    td.flex.items-center
-                                        .w-2.h-8.bg-blue-400
-                                        .relative.ml-3 Pending
-                                    
-                                    td USD49.00
-                                    td
-                                        nav.flex.flex-row.items-center.justify-end
-                                            button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="More")
-                                                span.material-icons more_vert
-                                tr
-                                    td 12th Aug 2020
-                                    td
-                                        a.text-indigo-500.hover_text-indigo-700(href="./ordar-single.html") 100
-                                    td 
-                                        a.text-indigo-500.hover_text-indigo-700(href="./customer-single.html") Rakan Awajan
-                                    td.flex.items-center
-                                        .w-2.h-8.bg-blue-400
-                                        .relative.ml-3 Pending
-                                    
-                                    td USD49.00
-                                    td
-                                        nav.flex.flex-row.items-center.justify-end
-                                            button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="More")
-                                                span.material-icons more_vert
-                    
-                    
-                    h6.mb-2.text-xl.font-normal.text-gray-600 Top Orders
-                    .w-full.mb-6.bg-white.shadow.rounded
-                        table.display.dataTable.no-footer.dtr-inline
-                            thead
-                                tr
-                                    th.py-2.text-xs.font-bold.uppercase(style="width: 20%;") Date
-                                    th.py-2.text-xs.font-bold.uppercase Order ID
-                                    th.py-2.text-xs.font-bold.uppercase Customer
-                                    th.py-2.text-xs.font-bold.uppercase Status
-                                    th.py-2.text-xs.font-bold.uppercase Total
-                                    th.no-sort.py-2.text-xs.font-bold.uppercase.text-right(style="width: 6%;") Action
-                            tbody
-                                tr
-                                    td 12th Aug 2020
-                                    td
-                                        a.text-indigo-500.hover_text-indigo-700(href="./ordar-single.html") 100
-                                    td 
-                                        a.text-indigo-500.hover_text-indigo-700(href="./customer-single.html") Rakan Awajan
-                                    td.flex.items-center
-                                        .w-2.h-8.bg-blue-400
-                                        .relative.ml-3 Pending
-                                    
-                                    td USD49.00
-                                    td
-                                        nav.flex.flex-row.items-center.justify-end
-                                            button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="More")
-                                                span.material-icons more_vert
-                                tr
-                                    td 12th Aug 2020
-                                    td
-                                        a.text-indigo-500.hover_text-indigo-700(href="./ordar-single.html") 100
-                                    td 
-                                        a.text-indigo-500.hover_text-indigo-700(href="./customer-single.html") Rakan Awajan
-                                    td.flex.items-center
-                                        .w-2.h-8.bg-blue-400
-                                        .relative.ml-3 Pending
-                                    
-                                    td USD49.00
-                                    td
-                                        nav.flex.flex-row.items-center.justify-end
-                                            button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="More")
-                                                span.material-icons more_vert
+                                tr.border-b.last_border-b-0
+                                    td.py-3.align-middle.flex.items-center
+                                        .w-2.h-5.bg-blue-400
+                                        span.ml-2 Disputed
+                                    td.py-3.align-middle
+                                        a.text-indigo-700.hover_text-indigo-800.fade(href="./order-single.html") Order #100 Rakan Awajan 
+                                    td.py-3.align-middle.text-sm.font-bold USD49.00
+                                    td.py-3.align-middle.text-gray-600 on 12th Aug 2020 at 06:37 PM 
 
+                                tr.border-b.last_border-b-0
+                                    td.py-3.align-middle.flex.items-center
+                                        .w-2.h-5.bg-blue-400
+                                        span.ml-2 Disputed
+                                    td.py-3.align-middle
+                                        a.text-indigo-700.hover_text-indigo-800.fade(href="./order-single.html") Order #100 Rakan Awajan 
+                                    td.py-3.align-middle.text-sm.font-bold USD49.00
+                                    td.py-3.align-middle.text-gray-600 on 12th Aug 2020 at 06:37 PM 
 
+                    // END Recent Content
 
-                .w-full.md_w-6_12.px-4
-                    h6.mb-2.text-xl.font-normal.text-gray-600 Last Products
-                    .w-full.mb-6.bg-white.shadow.rounded
-                        table.display.dataTable.no-footer.dtr-inline
-                            thead
-                                tr
-                                    th.py-2.text-xs.font-bold.uppercase Image
-                                    th.py-2.text-xs.font-bold.uppercase Product SKU
-                                    th.py-2.text-xs.font-bold.uppercase Stock Level
-                                    th.py-2.text-xs.font-bold.uppercase(style="width: 40%;") Product Name
-                                    th.py-2.text-xs.font-bold.uppercase Price
-                                    th.no-sort.py-2.text-xs.font-bold.uppercase.text-right(style="width: 6%;") Action
-                            tbody
-                                tr
-                                    td
-                                        img.w-12.h-12(src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt="")
-                                    td SM13
-                                    td N/A
-                                    td 
-                                        a.text-indigo-500.hover_text-indigo-700(href="./product-single.html") [Sample] Smith Journal 13
-                                    td USD 25.00
-                                    td
-                                        nav.flex.flex-row.items-center.justify-end
-                                            button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="More")
-                                                span.material-icons more_vert
-                                tr
-                                    td
-                                        img.w-12.h-12(src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt="")
-                                    td SM13
-                                    td N/A
-                                    td 
-                                        a.text-indigo-500.hover_text-indigo-700(href="./product-single.html") [Sample] Smith Journal 13
-                                    td USD 25.00
-                                    td
-                                        nav.flex.flex-row.items-center.justify-end
-                                            button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="More")
-                                                span.material-icons more_vert
-                                tr
-                                    td
-                                        img.w-12.h-12(src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt="")
-                                    td SM13
-                                    td N/A
-                                    td 
-                                        a.text-indigo-500.hover_text-indigo-700(href="./product-single.html") [Sample] Smith Journal 13
-                                    td USD 25.00
-                                    td
-                                        nav.flex.flex-row.items-center.justify-end
-                                            button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="More")
-                                                span.material-icons more_vert
+                    div(x-show="tab === 'pending'")
+                        p.p-6.text-center Orders will appear once they have been placed by a customer.
 
+                    div(x-show="tab === 'completed'")
+                        p.p-6.text-center Your success will be listed here. Any second now...
 
-                    h6.mb-2.text-xl.font-normal.text-gray-600 Top Products
-                    .w-full.mb-6.bg-white.shadow.rounded
-                        table.display.dataTable.no-footer.dtr-inline
-                            thead
-                                tr
-                                    th.py-2.text-xs.font-bold.uppercase Image
-                                    th.py-2.text-xs.font-bold.uppercase Product SKU
-                                    th.py-2.text-xs.font-bold.uppercase Stock Level
-                                    th.py-2.text-xs.font-bold.uppercase(style="width: 40%;") Product Name
-                                    th.py-2.text-xs.font-bold.uppercase Price
-                                    th.no-sort.py-2.text-xs.font-bold.uppercase.text-right(style="width: 6%;") Action
-                            tbody
-                                tr
-                                    td
-                                        img.w-12.h-12(src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt="")
-                                    td SM13
-                                    td N/A
-                                    td 
-                                        a.text-indigo-500.hover_text-indigo-700(href="./product-single.html") [Sample] Smith Journal 13
-                                    td USD 25.00
-                                    td
-                                        nav.flex.flex-row.items-center.justify-end
-                                            button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="More")
-                                                span.material-icons more_vert
-                                tr
-                                    td
-                                        img.w-12.h-12(src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt="")
-                                    td SM13
-                                    td N/A
-                                    td 
-                                        a.text-indigo-500.hover_text-indigo-700(href="./product-single.html") [Sample] Smith Journal 13
-                                    td USD 25.00
-                                    td
-                                        nav.flex.flex-row.items-center.justify-end
-                                            button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" data-tippy-content="More")
-                                                span.material-icons more_vert
+                    div(x-show="tab === 'refunded'")
+                        p.p-6.text-center Your success will be listed here. Any second now...
+
+            // END Orders

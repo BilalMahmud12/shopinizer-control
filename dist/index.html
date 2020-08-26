@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@riophae/vue-treeselect@^0.4.0/dist/vue-treeselect.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
     <link rel="stylesheet" href="assets/css/app.min.css">
     <!--end css-->
     <link rel="shortcut icon" href="./assets/images/note.svg" type="image/x-icon">
@@ -24,7 +25,7 @@
       <!-- start SideBar-->
       <aside class="relative flex flex-col content-center justify-between h-full py-6 px-4 bg-indigo-700">
         <div class="block mb-2"><a class="flex w-full hover_opacity-75" href="./" data-tippy-content="Home"><img class="mx-auto" src="./assets/images/icon.svg" width="30px"></a></div>
-        <div class="flex flex-col"><a class="flex p-2 rounded my-1 bg-indigo-800 hover_opacity-75" href="./" data-tippy-content="Home"><span class="material-icons text-white text-md">home</span></a><a class="flex p-2 rounded my-1 bg-indigo-800 hover_opacity-75" href="./orders.html" data-tippy-content="Orders"><span class="material-icons text-white text-md">attach_money</span></a><a class="flex p-2 rounded my-1 bg-indigo-800 hover_opacity-75" href="./customers.html" data-tippy-content="Customers"><span class="material-icons text-white text-md">group</span></a><a class="flex p-2 rounded my-1 bg-indigo-800 hover_opacity-75" href="./products.html" data-tippy-content="Catalog"><span class="material-icons text-white text-md">category</span></a><a class="flex p-2 rounded my-1 bg-indigo-800 hover_opacity-75" href="./marketing-banners.html" data-tippy-content="Marketing"><span class="material-icons text-white bg-indigo-800 text-md">campaign</span></a><a class="flex p-2 rounded my-1 bg-indigo-800 hover_opacity-75" href="./analytics.html" data-tippy-content="Analytics"><span class="material-icons text-white text-md">bar_chart</span></a><a class="flex p-2 rounded my-1 bg-indigo-100 pointer-events-none" href="./channels.html" data-tippy-content="Channels"><span class="material-icons text-indigo-800 text-md">merge_type</span></a><a class="flex p-2 rounded my-1 bg-indigo-800 hover_opacity-75" href="./store-profile.html" data-tippy-content="Store"><span class="material-icons text-white text-md">store_mall_directory</span></a></div>
+        <div class="flex flex-col"><a class="flex p-2 rounded my-1 bg-indigo-800 hover_opacity-75" href="./index.html" data-tippy-content="Home"><span class="material-icons text-white text-md">home</span></a><a class="flex p-2 rounded my-1 bg-indigo-800 hover_opacity-75" href="./orders.html" data-tippy-content="Orders"><span class="material-icons text-white text-md">attach_money</span></a><a class="flex p-2 rounded my-1 bg-indigo-800 hover_opacity-75" href="./customers.html" data-tippy-content="Customers"><span class="material-icons text-white text-md">group</span></a><a class="flex p-2 rounded my-1 bg-indigo-800 hover_opacity-75" href="./products.html" data-tippy-content="Catalog"><span class="material-icons text-white text-md">category</span></a><a class="flex p-2 rounded my-1 bg-indigo-800 hover_opacity-75" href="./marketing-banners.html" data-tippy-content="Marketing"><span class="material-icons text-white bg-indigo-800 text-md">campaign</span></a><a class="flex p-2 rounded my-1 bg-indigo-800 hover_opacity-75" href="./analytics.html" data-tippy-content="Analytics"><span class="material-icons text-white text-md">bar_chart</span></a><a class="flex p-2 rounded my-1 bg-indigo-100 pointer-events-none" href="./channels.html" data-tippy-content="Channels"><span class="material-icons text-indigo-800 text-md">merge_type</span></a><a class="flex p-2 rounded my-1 bg-indigo-800 hover_opacity-75" href="./store-profile.html" data-tippy-content="Store"><span class="material-icons text-white text-md">store_mall_directory</span></a></div>
         <div class="flex flex-col mt-2"><a class="relative flex px-2 mb-3 hover_opacity-75" href="#" data-tippy-content="Notifications" @click="notificationsIsOpen = !notificationsIsOpen; helpIsOpen = false; moreIsOpen = false; hasNotificationsLabel = false;"><span class="material-icons text-white text-md">notifications</span><span class="notifications_label absolute inline-flex justify-center items-center w-6 h-6 font-mono text-sm font-bold text-center text-white bg-red-600 shadow-sm rounded-full" v-bind:class="hasNotificationsLabel ? 'inline-flex' : 'hidden'">9</span></a><a class="flex mb-3 px-2 hover_opacity-75" href="#" data-tippy-content="Help" @click="helpIsOpen = !helpIsOpen; notificationsIsOpen = false; moreIsOpen = false"><span class="material-icons text-white text-md">help</span></a><a class="flex px-2 hover_opacity-75" href="#" data-tippy-content="More" @click="moreIsOpen = !moreIsOpen; notificationsIsOpen = false; helpIsOpen = false "><span class="material-icons text-white text-md">more_vert</span></a></div>
       </aside>
       <!-- Notifications Sidebar-->
@@ -335,242 +336,224 @@
       <!--start page content-->
       <div class="animsition-wrapper flex flex-col flex-1 h-full">
         <div class="flex flex-col flex-1 w-full overflow-y-auto">
-          <div class="px-12 pt-6 bg-white">
-            <div class="flex flex-row justify-between items-center mb-6">
+          <div class="px-12 py-6 bg-white shadow-sm z-50">
+            <div class="flex flex-row justify-between items-center">
               <h2 class="text-3xl font-light leading-none">Dashboard</h2>
               <!-- Buttons control-->
-              <nav class="flex flex-row"><a class="flex flex-row items-center ml-4 text-indigo-700 border border-indigo-700 rounded hover_opacity-50 fade" href="#"><span class="material-icons py-1 px-2 text-md">more_vert</span></a></nav>
+              <nav class="relative flex flex-row" x-data="{ open: false }">
+                <button class="flex flex-row items-center ml-4 text-indigo-700 border border-indigo-700 rounded hover_opacity-50 fade" type="button" x-on:click="open = true"><span class="material-icons py-1 px-2 text-md">more_vert</span></button>
+                <div class="absolute top-0 mt-8 right-0 z-30 py-2 w-full md_w-48 bg-white border shadow-lg rounded" x-show.transition="open" x-on:click.away="open = false"><a class="block w-full py-1 px-4 text-sm font-medium text-gray-700 hover_text-indigo-700 hover_bg-gray-200" href="./product-single.html">Add Product</a><a class="block w-full py-1 px-4 text-sm font-medium text-gray-700 hover_text-indigo-700 hover_bg-gray-200" href="./product-category-single.html">Add Product Category</a><a class="block w-full py-1 px-4 text-sm font-medium text-gray-700 hover_text-indigo-700 hover_bg-gray-200" href="#">...</a></div>
+              </nav>
             </div>
-            <!-- Tabs-->
-            <nav class="flex flex-row border-b border-gray-300"><a class="block pb-2 px-5 -mb-px font-medium text-indigo-700 border-b-2 border-indigo-700 hover_text-indigo-700" href="./">Home</a></nav>
           </div>
-          <div class="flex flex-col flex-1 items-center h-full py-8 px-12 overflow-y-auto bg-gray-100">
+          <div class="flex flex-col flex-1 w-full h-full py-8 px-12 overflow-y-auto bg-gray-100">
             <div class="w-full">
-              <h6 class="mb-2 text-xl font-normal text-gray-600">Sales</h6>
-            </div>
-            <div class="w-full">
-              <div class="flex flex-warp -mx-4">
-                <div class="w-full md_w-12_12 px-4">
-                  <div class="w-full p-8 mb-6 bg-white shadow rounded">
-                    <div class="flex flex-warp -mx-4">
-                      <div class="w-full md_w-4_12 px-4 text-center">
-                        <div class="border-r">
-                          <div class="mb-1 text-gray-500"><span class="text-3xl align-top">USD</span><span class="text-5xl text-gray-600">21,404</span><span class="text-3xl align-top">.74</span></div>
-                          <div class="text-base uppercase text-gray-500 tracking-wide">Total Orders</div>
+              <div class="mb-6 relative bg-indigo-100 border-t-4 border-indigo-500 rounded-b text-indigo-900 px-4 py-3 shadow-md" role="alert" x-data="{ open: true }" x-show.transition="open">
+                <div class="flex">
+                  <div class="py-1"><span class="material-icons text-3xl text-indigo-500 mr-4">help_outline</span></div>
+                  <div>
+                    <p class="font-bold">Cras euismod tellus non orci venenatis</p>
+                    <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse iaculis scelerisque nulla.</p>
+                  </div>
+                </div>
+                <div class="absolute top-0 right-0 inline-block mt-2 mr-2">
+                  <button class="text-gray-500 hover_indigo-500 fade" x-on:click="open = false"><span class="material-icons text-xl">close</span></button>
+                </div>
+              </div>
+              <div class="mb-6 relative bg-red-100 border-t-4 border-red-500 rounded-b text-red-900 px-4 py-3 shadow-md" role="alert" x-data="{ open: true }" x-show.transition="open">
+                <div class="flex">
+                  <div class="py-1"><span class="material-icons text-3xl text-red-500 mr-4">error_outline</span></div>
+                  <div>
+                    <p class="font-bold">Cras euismod tellus non orci venenatis</p>
+                    <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                  </div>
+                </div>
+                <div class="absolute top-0 right-0 inline-block mt-2 mr-2">
+                  <button class="text-gray-500 hover_indigo-500 fade" x-on:click="open = false"><span class="material-icons text-xl">close</span></button>
+                </div>
+              </div>
+              <!-- START Sales Statistics-->
+              <div class="mb-6">
+                <h6 class="mb-2 text-xl font-normal text-gray-600">Sales</h6>
+                <div class="w-full p-5 bg-white shadow rounded">
+                  <div class="flex flex-warp -mx-4">
+                    <div class="w-full md_w-4_12 px-4 text-center">
+                      <div class="border-r">
+                        <div class="mb-1 text-gray-500"><span class="text-xl align-top">USD</span><span class="mx-1 text-3xl text-indigo-900">21,404</span><span class="text-xl align-top">.74</span></div>
+                        <div class="text-sm uppercase text-gray-600 tracking-wide">Total Orders</div>
+                      </div>
+                    </div>
+                    <div class="w-full md_w-4_12 px-4 text-center">
+                      <div class="border-r">
+                        <div class="mb-1 text-gray-500"><span class="text-xl align-top">USD</span><span class="mx-1 text-3xl text-indigo-900">21,404</span><span class="text-xl align-top">.74</span></div>
+                        <div class="text-sm uppercase text-gray-600 tracking-wide">Last Week</div>
+                      </div>
+                    </div>
+                    <div class="w-full md_w-4_12 px-4 text-center">
+                      <div class="border-0">
+                        <div class="mb-1 text-gray-500"><span class="text-xl align-top">USD</span><span class="mx-1 text-3xl text-indigo-900">21,404</span><span class="text-xl align-top">.74</span></div>
+                        <div class="text-sm uppercase text-gray-600 tracking-wide">This day</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- END Sales Statistics-->
+              <!-- START Store Performance-->
+              <div class="mb-6">
+                <h6 class="mb-2 text-xl font-normal text-gray-600">Store Performance</h6>
+                <div class="w-full p-5 bg-white shadow rounded">
+                  <div class="flex flex-row items-center justify-between pb-4 mb-0 border-b">
+                    <div class="relative mr-4">
+                      <select class="block w-full py-2 px-4 pr-10 appearance-none leading-tight text-indigo-900 bg-white border border-gray-300 shadow-xs rounded fade focus_outline-none focus_border-indigo-300">
+                        <option>Today</option>
+                        <option selected>Week to date</option>
+                        <option>Month to date</option>
+                        <option>Year to date</option>
+                        <option>Last 7 days</option>
+                        <option>Last 30 days</option>
+                        <option>Last 365 days</option>
+                      </select>
+                      <div class="absolute pointer-events-none inset-y-0 right-0 flex items-center pt-1 px-3 text-gray-700">
+                        <svg class="fill-current w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20">
+                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <p class="text-base font-bold text-gray-600">Aug 23, 2020 – Aug 26, 2020</p>
+                  </div>
+                  <div class="flex flex-warp -mx-4">
+                    <div class="w-full md_w-4_12 px-4">
+                      <div class="border-r pt-5">
+                        <h6 class="mb-0 text-sm font-bold">Visits</h6>
+                        <h5 class="mb-6 text-3xl font-light">0</h5>
+                        <div class="h-48">
+                          <canvas class="w-full" id="chart-1"></canvas>
                         </div>
                       </div>
-                      <div class="w-full md_w-4_12 px-4 text-center">
-                        <div class="border-r">
-                          <div class="mb-1 text-gray-500"><span class="text-3xl align-top">USD</span><span class="text-5xl text-gray-600">21,404</span><span class="text-3xl align-top">.74</span></div>
-                          <div class="text-base uppercase text-gray-500 tracking-wide">Last Week</div>
+                    </div>
+                    <div class="w-full md_w-4_12 px-4">
+                      <div class="border-r pt-5">
+                        <h6 class="mb-0 text-sm font-bold">Conversion</h6>
+                        <h5 class="mb-6 text-3xl font-light">0.00%</h5>
+                        <div class="h-48">
+                          <canvas class="w-full" id="chart-2"></canvas>
                         </div>
                       </div>
-                      <div class="w-full md_w-4_12 px-4 text-center">
-                        <div class="border-0">
-                          <div class="mb-1 text-gray-500"><span class="text-3xl align-top">USD</span><span class="text-5xl text-gray-600">21,404</span><span class="text-3xl align-top">.74</span></div>
-                          <div class="text-base uppercase text-gray-500 tracking-wide">This day</div>
+                    </div>
+                    <div class="w-full md_w-4_12 px-4">
+                      <div class="border-r pt-5">
+                        <h6 class="mb-0 text-sm font-bold">Orders</h6>
+                        <h5 class="mb-6 text-3xl font-light">0</h5>
+                        <div class="h-48">
+                          <canvas class="w-full" id="chart-3"></canvas>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="w-full md_w-4_12 px-4">
+                      <div class="border-0 pt-5">
+                        <h6 class="mb-0 text-sm font-bold">Revenue</h6>
+                        <h5 class="mb-6 text-3xl font-light">0</h5>
+                        <div class="h-48">
+                          <canvas class="w-full" id="chart-4"></canvas>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="w-full">
-              <div class="flex flex-warp -mx-4">
-                <div class="w-full md_w-6_12 px-4">
-                  <h6 class="mb-2 text-xl font-normal text-gray-600">Last Orders</h6>
-                  <div class="w-full mb-6 bg-white shadow rounded">
-                    <table class="display dataTable no-footer dtr-inline">
-                      <thead>
-                        <tr>
-                          <th class="py-2 text-xs font-bold uppercase" style="width: 20%;">Date</th>
-                          <th class="py-2 text-xs font-bold uppercase">Order ID</th>
-                          <th class="py-2 text-xs font-bold uppercase">Customer</th>
-                          <th class="py-2 text-xs font-bold uppercase">Status</th>
-                          <th class="py-2 text-xs font-bold uppercase">Total</th>
-                          <th class="no-sort py-2 text-xs font-bold uppercase text-right" style="width: 6%;">Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>12th Aug 2020</td>
-                          <td><a class="text-indigo-500 hover_text-indigo-700" href="./ordar-single.html">100</a></td>
-                          <td> <a class="text-indigo-500 hover_text-indigo-700" href="./customer-single.html">Rakan Awajan</a></td>
-                          <td class="flex items-center">
-                            <div class="w-2 h-8 bg-blue-400"></div>
-                            <div class="relative ml-3">Pending</div>
-                          </td>
-                          <td>USD49.00</td>
-                          <td>
-                            <nav class="flex flex-row items-center justify-end">
-                              <button class="ml-2 fade text-gray-500 hover_text-gray-700" type="button" data-tippy-content="More"><span class="material-icons">more_vert</span></button>
-                            </nav>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>12th Aug 2020</td>
-                          <td><a class="text-indigo-500 hover_text-indigo-700" href="./ordar-single.html">100</a></td>
-                          <td> <a class="text-indigo-500 hover_text-indigo-700" href="./customer-single.html">Rakan Awajan</a></td>
-                          <td class="flex items-center">
-                            <div class="w-2 h-8 bg-blue-400"></div>
-                            <div class="relative ml-3">Pending</div>
-                          </td>
-                          <td>USD49.00</td>
-                          <td>
-                            <nav class="flex flex-row items-center justify-end">
-                              <button class="ml-2 fade text-gray-500 hover_text-gray-700" type="button" data-tippy-content="More"><span class="material-icons">more_vert</span></button>
-                            </nav>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <h6 class="mb-2 text-xl font-normal text-gray-600">Top Orders</h6>
-                  <div class="w-full mb-6 bg-white shadow rounded">
-                    <table class="display dataTable no-footer dtr-inline">
-                      <thead>
-                        <tr>
-                          <th class="py-2 text-xs font-bold uppercase" style="width: 20%;">Date</th>
-                          <th class="py-2 text-xs font-bold uppercase">Order ID</th>
-                          <th class="py-2 text-xs font-bold uppercase">Customer</th>
-                          <th class="py-2 text-xs font-bold uppercase">Status</th>
-                          <th class="py-2 text-xs font-bold uppercase">Total</th>
-                          <th class="no-sort py-2 text-xs font-bold uppercase text-right" style="width: 6%;">Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>12th Aug 2020</td>
-                          <td><a class="text-indigo-500 hover_text-indigo-700" href="./ordar-single.html">100</a></td>
-                          <td> <a class="text-indigo-500 hover_text-indigo-700" href="./customer-single.html">Rakan Awajan</a></td>
-                          <td class="flex items-center">
-                            <div class="w-2 h-8 bg-blue-400"></div>
-                            <div class="relative ml-3">Pending</div>
-                          </td>
-                          <td>USD49.00</td>
-                          <td>
-                            <nav class="flex flex-row items-center justify-end">
-                              <button class="ml-2 fade text-gray-500 hover_text-gray-700" type="button" data-tippy-content="More"><span class="material-icons">more_vert</span></button>
-                            </nav>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>12th Aug 2020</td>
-                          <td><a class="text-indigo-500 hover_text-indigo-700" href="./ordar-single.html">100</a></td>
-                          <td> <a class="text-indigo-500 hover_text-indigo-700" href="./customer-single.html">Rakan Awajan</a></td>
-                          <td class="flex items-center">
-                            <div class="w-2 h-8 bg-blue-400"></div>
-                            <div class="relative ml-3">Pending</div>
-                          </td>
-                          <td>USD49.00</td>
-                          <td>
-                            <nav class="flex flex-row items-center justify-end">
-                              <button class="ml-2 fade text-gray-500 hover_text-gray-700" type="button" data-tippy-content="More"><span class="material-icons">more_vert</span></button>
-                            </nav>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-                <div class="w-full md_w-6_12 px-4">
-                  <h6 class="mb-2 text-xl font-normal text-gray-600">Last Products</h6>
-                  <div class="w-full mb-6 bg-white shadow rounded">
-                    <table class="display dataTable no-footer dtr-inline">
-                      <thead>
-                        <tr>
-                          <th class="py-2 text-xs font-bold uppercase">Image</th>
-                          <th class="py-2 text-xs font-bold uppercase">Product SKU</th>
-                          <th class="py-2 text-xs font-bold uppercase">Stock Level</th>
-                          <th class="py-2 text-xs font-bold uppercase" style="width: 40%;">Product Name</th>
-                          <th class="py-2 text-xs font-bold uppercase">Price</th>
-                          <th class="no-sort py-2 text-xs font-bold uppercase text-right" style="width: 6%;">Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td><img class="w-12 h-12" src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt=""></td>
-                          <td>SM13</td>
-                          <td>N/A</td>
-                          <td> <a class="text-indigo-500 hover_text-indigo-700" href="./product-single.html">[Sample] Smith Journal 13</a></td>
-                          <td>USD 25.00</td>
-                          <td>
-                            <nav class="flex flex-row items-center justify-end">
-                              <button class="ml-2 fade text-gray-500 hover_text-gray-700" type="button" data-tippy-content="More"><span class="material-icons">more_vert</span></button>
-                            </nav>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><img class="w-12 h-12" src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt=""></td>
-                          <td>SM13</td>
-                          <td>N/A</td>
-                          <td> <a class="text-indigo-500 hover_text-indigo-700" href="./product-single.html">[Sample] Smith Journal 13</a></td>
-                          <td>USD 25.00</td>
-                          <td>
-                            <nav class="flex flex-row items-center justify-end">
-                              <button class="ml-2 fade text-gray-500 hover_text-gray-700" type="button" data-tippy-content="More"><span class="material-icons">more_vert</span></button>
-                            </nav>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><img class="w-12 h-12" src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt=""></td>
-                          <td>SM13</td>
-                          <td>N/A</td>
-                          <td> <a class="text-indigo-500 hover_text-indigo-700" href="./product-single.html">[Sample] Smith Journal 13</a></td>
-                          <td>USD 25.00</td>
-                          <td>
-                            <nav class="flex flex-row items-center justify-end">
-                              <button class="ml-2 fade text-gray-500 hover_text-gray-700" type="button" data-tippy-content="More"><span class="material-icons">more_vert</span></button>
-                            </nav>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <h6 class="mb-2 text-xl font-normal text-gray-600">Top Products</h6>
-                  <div class="w-full mb-6 bg-white shadow rounded">
-                    <table class="display dataTable no-footer dtr-inline">
-                      <thead>
-                        <tr>
-                          <th class="py-2 text-xs font-bold uppercase">Image</th>
-                          <th class="py-2 text-xs font-bold uppercase">Product SKU</th>
-                          <th class="py-2 text-xs font-bold uppercase">Stock Level</th>
-                          <th class="py-2 text-xs font-bold uppercase" style="width: 40%;">Product Name</th>
-                          <th class="py-2 text-xs font-bold uppercase">Price</th>
-                          <th class="no-sort py-2 text-xs font-bold uppercase text-right" style="width: 6%;">Action</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td><img class="w-12 h-12" src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt=""></td>
-                          <td>SM13</td>
-                          <td>N/A</td>
-                          <td> <a class="text-indigo-500 hover_text-indigo-700" href="./product-single.html">[Sample] Smith Journal 13</a></td>
-                          <td>USD 25.00</td>
-                          <td>
-                            <nav class="flex flex-row items-center justify-end">
-                              <button class="ml-2 fade text-gray-500 hover_text-gray-700" type="button" data-tippy-content="More"><span class="material-icons">more_vert</span></button>
-                            </nav>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><img class="w-12 h-12" src="https://cdn11.bigcommerce.com/s-5pt0ejunjr/products/111/images/371/smithjournal1.1435956911.100.100.jpg?c=1" alt=""></td>
-                          <td>SM13</td>
-                          <td>N/A</td>
-                          <td> <a class="text-indigo-500 hover_text-indigo-700" href="./product-single.html">[Sample] Smith Journal 13</a></td>
-                          <td>USD 25.00</td>
-                          <td>
-                            <nav class="flex flex-row items-center justify-end">
-                              <button class="ml-2 fade text-gray-500 hover_text-gray-700" type="button" data-tippy-content="More"><span class="material-icons">more_vert</span></button>
-                            </nav>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+              <!-- END Store Performance-->
+              <!-- START Sales Statistics-->
+              <div class="mb-6">
+                <h6 class="mb-2 text-xl font-normal text-gray-600">Store Statistics</h6>
+                <div class="w-full p-5 bg-white shadow rounded">
+                  <div class="flex flex-warp -mx-4">
+                    <div class="w-full md_w-3_12 px-4 text-center">
+                      <div class="border-r">
+                        <div class="mb-1"><span class="mx-1 text-3xl text-indigo-900">1</span></div>
+                        <div class="text-sm uppercase text-gray-600 tracking-wide">Orders</div>
+                      </div>
+                    </div>
+                    <div class="w-full md_w-3_12 px-4 text-center">
+                      <div class="border-r">
+                        <div class="mb-1"><span class="mx-1 text-3xl text-indigo-900">2</span></div>
+                        <div class="text-sm uppercase text-gray-600 tracking-wide">Customers</div>
+                      </div>
+                    </div>
+                    <div class="w-full md_w-3_12 px-4 text-center">
+                      <div class="border-r">
+                        <div class="mb-1"><span class="mx-1 text-3xl text-indigo-900">20</span></div>
+                        <div class="text-sm uppercase text-gray-600 tracking-wide">Products</div>
+                      </div>
+                    </div>
+                    <div class="w-full md_w-3_12 px-4 text-center">
+                      <div class="border-0">
+                        <div class="mb-1"><span class="mx-1 text-3xl text-indigo-900">8</span></div>
+                        <div class="text-sm uppercase text-gray-600 tracking-wide">Categories</div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
+              <!-- END Sales Statistics-->
+              <!-- START Orders-->
+              <div class="mb-12">
+                <h6 class="mb-2 text-xl font-normal text-gray-600">Orders</h6>
+                <div class="w-full p-5 bg-white shadow rounded" x-data="{ tab: 'recent' }">
+                  <!-- START Tabs-->
+                  <div class="flex flex-row items-center justify-between pb-4 mb-5 border-b">
+                    <nav class="flex flex-row text-gray-600">
+                      <button class="py-1 px-4 mr-1 text-sm font-medium bg-transparent rounded-full cursor-pointer fade" href="#" x-on:click="tab = 'recent'" x-bind:class="{ 'text-white bg-indigo-700 hover_text-white': tab === 'recent', 'hover_text-indigo-700': tab !== 'recent'}">Recent</button>
+                      <button class="py-1 px-4 mr-1 text-sm font-medium bg-transparent rounded-full cursor-pointer fade" type="button" x-on:click="tab = 'pending'" x-bind:class="{ 'text-white bg-indigo-700 hover_text-white': tab === 'pending', 'hover_text-indigo-700': tab !== 'pending' }">Pending</button>
+                      <button class="py-1 px-4 mr-1 text-sm font-medium bg-transparent rounded-full cursor-pointer fade" type="button" x-on:click="tab = 'completed'" x-bind:class="{ 'text-white bg-indigo-700 hover_text-white': tab === 'completed', 'hover_text-indigo-700': tab !== 'completed' }">Completed</button>
+                      <button class="py-1 px-4 mr-1 text-sm font-medium bg-transparent rounded-full cursor-pointer fade" type="button" x-on:click="tab = 'refunded'" x-bind:class="{ 'text-white bg-indigo-700 hover_text-white': tab === 'refunded', 'hover_text-indigo-700': tab !== 'refunded' }">Refunded</button>
+                    </nav><a class="flex items-center text-indigo-700 hover_text-indigo-800 fade" href="./orders.html"><span>View more</span><span class="material-icons mt-1 ml-1">chevron_right</span></a>
+                  </div>
+                  <!-- END Tabs-->
+                  <!-- START Recent Content-->
+                  <div x-show="tab === 'recent'">
+                    <table class="table-auto w-full m-0">
+                      <thead>
+                        <tr class="sr-only">
+                          <th>Status</th>
+                          <th>Details</th>
+                          <th>Total</th>
+                          <th>Date</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="border-b last_border-b-0">
+                          <td class="py-3 align-middle flex items-center">
+                            <div class="w-2 h-5 bg-blue-400"></div><span class="ml-2">Disputed</span>
+                          </td>
+                          <td class="py-3 align-middle"><a class="text-indigo-700 hover_text-indigo-800 fade" href="./order-single.html">Order #100 Rakan Awajan </a></td>
+                          <td class="py-3 align-middle text-sm font-bold">USD49.00</td>
+                          <td class="py-3 align-middle text-gray-600">on 12th Aug 2020 at 06:37 PM </td>
+                        </tr>
+                        <tr class="border-b last_border-b-0">
+                          <td class="py-3 align-middle flex items-center">
+                            <div class="w-2 h-5 bg-blue-400"></div><span class="ml-2">Disputed</span>
+                          </td>
+                          <td class="py-3 align-middle"><a class="text-indigo-700 hover_text-indigo-800 fade" href="./order-single.html">Order #100 Rakan Awajan </a></td>
+                          <td class="py-3 align-middle text-sm font-bold">USD49.00</td>
+                          <td class="py-3 align-middle text-gray-600">on 12th Aug 2020 at 06:37 PM </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- END Recent Content-->
+                  <div x-show="tab === 'pending'">
+                    <p class="p-6 text-center">Orders will appear once they have been placed by a customer.</p>
+                  </div>
+                  <div x-show="tab === 'completed'">
+                    <p class="p-6 text-center">Your success will be listed here. Any second now...</p>
+                  </div>
+                  <div x-show="tab === 'refunded'">
+                    <p class="p-6 text-center">Your success will be listed here. Any second now...</p>
+                  </div>
+                </div>
+              </div>
+              <!-- END Orders-->
             </div>
           </div>
           <!-- start Footer-->
@@ -595,6 +578,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.repeater/1.2.1/jquery.repeater.min.js"></script>
     <script src="https://unpkg.com/vuejs-datepicker"></script>
     <script src="https://www.jqueryscript.net/demo/active-menu-scrollspy/jquery.scroll-spy.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="assets/javascripts/app.min.js"></script>
     <!-- END JAVASCRIPTS-->
   </body>
