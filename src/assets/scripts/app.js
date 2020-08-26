@@ -33,6 +33,10 @@ new Vue({
         SMTP: 1,
         review_emails: false,
         order_invoice: false,
+
+        // dum
+        treeselect_options: [],
+        treeselect_value: null,
     },
     components: {
         vuejsDatepicker
@@ -86,110 +90,116 @@ new Vue({
             }
         };
 
-        var chart1 = new Chart(document.getElementById('chart-1').getContext('2d'), {
-            type: 'line',
-            data: {
-                labels: ['Sun', 'Mon', 'Tue', 'Thu', 'Fri', 'Sat'],
-                datasets: [
-                    {
-                        label: 'This Week',
-                        borderColor: '#4c51bf',
-                        pointBackgroundColor: '#4c51bf',
-                        borderWidth: 1,
-                        data: [0, 0, 0, 0],
-                        fill: false,
-                    },
-                    {
-                        label: 'Last Week',
-                        borderColor: '#4c51bf',
-                        pointBackgroundColor: '#4c51bf',
-                        borderWidth: 1,
-                        data: [0, 0, 0],
-                        fill: false, 
-                    }
-                ]
-            },
-            options: chartConfig,
-        });
-        
-        var chart2 = new Chart(document.getElementById('chart-2').getContext('2d'), {
-            type: 'line',
-            data: {
-                labels: ['Sun', 'Mon', 'Tue', 'Thu', 'Fri', 'Sat'],
-                datasets: [
-                    {
-                        label: 'This Week',
-                        borderColor: '#4c51bf',
-                        pointBackgroundColor: '#4c51bf',
-                        borderWidth: 1,
-                        data: [0, 0, 0, 0],
-                        fill: false,
-                    },
-                    {
-                        label: 'Last Week',
-                        borderColor: '#4c51bf',
-                        pointBackgroundColor: '#4c51bf',
-                        borderWidth: 1,
-                        data: [0, 0, 0],
-                        fill: false, 
-                    }
-                ]
-            },
-            options: chartConfig,
-        });
+        if(document.getElementById('chart-1') !== null) {
+            var chart1 = new Chart(document.getElementById('chart-1').getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: ['Sun', 'Mon', 'Tue', 'Thu', 'Fri', 'Sat'],
+                    datasets: [
+                        {
+                            label: 'This Week',
+                            borderColor: '#4c51bf',
+                            pointBackgroundColor: '#4c51bf',
+                            borderWidth: 1,
+                            data: [0, 0, 0, 0],
+                            fill: false,
+                        },
+                        {
+                            label: 'Last Week',
+                            borderColor: '#4c51bf',
+                            pointBackgroundColor: '#4c51bf',
+                            borderWidth: 1,
+                            data: [0, 0, 0],
+                            fill: false, 
+                        }
+                    ]
+                },
+                options: chartConfig,
+            });
+            
+            var chart2 = new Chart(document.getElementById('chart-2').getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: ['Sun', 'Mon', 'Tue', 'Thu', 'Fri', 'Sat'],
+                    datasets: [
+                        {
+                            label: 'This Week',
+                            borderColor: '#4c51bf',
+                            pointBackgroundColor: '#4c51bf',
+                            borderWidth: 1,
+                            data: [0, 0, 0, 0],
+                            fill: false,
+                        },
+                        {
+                            label: 'Last Week',
+                            borderColor: '#4c51bf',
+                            pointBackgroundColor: '#4c51bf',
+                            borderWidth: 1,
+                            data: [0, 0, 0],
+                            fill: false, 
+                        }
+                    ]
+                },
+                options: chartConfig,
+            });
 
-        var chart3 = new Chart(document.getElementById('chart-3').getContext('2d'), {
-            type: 'line',
-            data: {
-                labels: ['Sun', 'Mon', 'Tue', 'Thu', 'Fri', 'Sat'],
-                datasets: [
-                    {
-                        label: 'This Week',
-                        borderColor: '#4c51bf',
-                        pointBackgroundColor: '#4c51bf',
-                        borderWidth: 1,
-                        data: [0, 0, 0, 0],
-                        fill: false,
-                    },
-                    {
-                        label: 'Last Week',
-                        borderColor: '#4c51bf',
-                        pointBackgroundColor: '#4c51bf',
-                        borderWidth: 1,
-                        data: [0, 0, 0],
-                        fill: false, 
-                    }
-                ]
-            },
-            options: chartConfig,
-        }); 
+            var chart3 = new Chart(document.getElementById('chart-3').getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: ['Sun', 'Mon', 'Tue', 'Thu', 'Fri', 'Sat'],
+                    datasets: [
+                        {
+                            label: 'This Week',
+                            borderColor: '#4c51bf',
+                            pointBackgroundColor: '#4c51bf',
+                            borderWidth: 1,
+                            data: [0, 0, 0, 0],
+                            fill: false,
+                        },
+                        {
+                            label: 'Last Week',
+                            borderColor: '#4c51bf',
+                            pointBackgroundColor: '#4c51bf',
+                            borderWidth: 1,
+                            data: [0, 0, 0],
+                            fill: false, 
+                        }
+                    ]
+                },
+                options: chartConfig,
+            }); 
 
-        var chart4 = new Chart(document.getElementById('chart-4').getContext('2d'), {
-            type: 'line',
-            data: {
-                labels: ['Sun', 'Mon', 'Tue', 'Thu', 'Fri', 'Sat'],
-                datasets: [
-                    {
-                        label: 'This Week',
-                        borderColor: '#4c51bf',
-                        pointBackgroundColor: '#4c51bf',
-                        borderWidth: 1,
-                        data: [0, 0, 0, 0],
-                        fill: false,
-                    },
-                    {
-                        label: 'Last Week',
-                        borderColor: '#4c51bf',
-                        pointBackgroundColor: '#4c51bf',
-                        borderWidth: 1,
-                        data: [0, 0, 0],
-                        fill: false, 
-                    }
-                ]
-            },
-            options: chartConfig,
-        }); 
+            var chart4 = new Chart(document.getElementById('chart-4').getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: ['Sun', 'Mon', 'Tue', 'Thu', 'Fri', 'Sat'],
+                    datasets: [
+                        {
+                            label: 'This Week',
+                            borderColor: '#4c51bf',
+                            pointBackgroundColor: '#4c51bf',
+                            borderWidth: 1,
+                            data: [0, 0, 0, 0],
+                            fill: false,
+                        },
+                        {
+                            label: 'Last Week',
+                            borderColor: '#4c51bf',
+                            pointBackgroundColor: '#4c51bf',
+                            borderWidth: 1,
+                            data: [0, 0, 0],
+                            fill: false, 
+                        }
+                    ]
+                },
+                options: chartConfig,
+            });
+        }
         // END Charts
+
+        // START Form Validate
+        $("#category-form").validate();
+        // END Form Validate
 
         // Records tables
         var mainTable = $('#records-table').DataTable({

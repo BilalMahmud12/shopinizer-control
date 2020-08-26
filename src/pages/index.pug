@@ -154,7 +154,7 @@ block page
             // END Sales Statistics
 
             // START Orders
-            .mb-12
+            .mb-8
                 h6.mb-2.text-xl.font-normal.text-gray-600 Orders
                 .w-full.p-5.bg-white.shadow.rounded( x-data="{ tab: 'recent' }")
                     // START Tabs
@@ -209,3 +209,12 @@ block page
                         p.p-6.text-center Your success will be listed here. Any second now...
 
             // END Orders
+
+
+            // START Notifications
+            .mb-8
+                h6.mb-2.text-xl.font-normal.text-gray-600 Notifications
+                button.bg-indigo-700.text-white.font-bold.py-2.px-6.rounded.fade.hover_bg-indigo-800.focus_outline-none(type="button" onclick="new Noty({type: 'info', timeout: '5000', text: 'Info notification text'}).show();") Info
+                button.bg-yellow-500.text-white.font-bold.py-2.px-6.rounded.fade.hover_bg-yellow-600.focus_outline-none(type="button" onclick="new Noty({type: 'warning', timeout: '5000', text: 'Info notification text'}).show();") Warning
+                button.bg-red-500.text-white.font-bold.py-2.px-6.rounded.fade.hover_bg-red-600.focus_outline-none(type="button" onclick="new Noty({type: 'danger', timeout: '5000', text: 'Info notification text'}).show();") Danger
+            // END Notifications

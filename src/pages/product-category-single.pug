@@ -58,7 +58,7 @@ block page
             h5.mb-1.text-xl.font-medium Edit Category
             p.text-lg.font-normal.text-gray-600 Modify the details of the category below and click "Save".
         // start Form
-        form.w-full.max-w-5xl(action="/upload" method="post" enctype="multipart/form-data" )
+        form#category-form.w-full.max-w-5xl(action="" method="post")
             .p-8.mb-8.bg-white.shadow.rounded
                 h6.mb-6.text-2xl.font-normal.text-gray-600 Category Details
 
@@ -66,12 +66,12 @@ block page
                     .w-full.md_w-1_2.px-4.mb-6
                         label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="name") Name
                             span.mx-1.text-sm.text-red-600 *
-                        input#name.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="Simple Category Name")
+                        input#name.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text" name="name" minlength="2" required placeholder="Simple Category Name")
                     
                     .w-full.md_w-1_2.px-4.mb-6
                         label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="url") URL
                             span.mx-1.text-sm.text-red-600 *
-                        input#url.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="/URL-HERE/")
+                        input#url.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text" name="url" minlength="3" required placeholder="/URL-HERE/")
                     
                     .w-full.px-4.mb-6
                         .relative
@@ -92,6 +92,7 @@ block page
                             v-bind:searchable="true",
                             v-bind:options="treeselect_options")
     
+                .flex.flex-wrap.-mx-4
                     .w-full.md_w-1_2.px-4.mb-6
                         label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="layout-file") Template Layout File
                         .relative
@@ -103,28 +104,28 @@ block page
                                 svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
                                     path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
                     
-                    .w-full.px-4.mb-6
-                        .w-full.md_w-1_2
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="image") Category Image
-                            input#image.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="file", placeholder="Upload Category Image")
-                        
-                    .w-full.px-4.mb-6
-                        .w-full.md_w-1_2
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="product-sort") Default Product Sort
-                            .relative
-                                select#product-sort.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
-                                    option Option 1
-                                    option Option 2
-                                    option Option 3
-                                .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
-                                    svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
-                                        path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
+                .flex.flex-wrap.-mx-4
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="image") Category Image
+                        input#image.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="file", placeholder="Upload Category Image")
+                    
+                .flex.flex-wrap.-mx-4
+                    .w-full.md_w-1_2.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="product-sort") Default Product Sort
+                        .relative
+                            select#product-sort.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                option Option 1
+                                option Option 2
+                                option Option 3
+                            .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
+                                svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
+                                    path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
 
-                    .w-full.px-4.mb-6
-                        .w-full.md_w-1_6
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="sort") Sort Order
-                            input#sort.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", placeholder="0")
-                        
+                .flex.flex-wrap.-mx-4
+                    .w-full.md_w-1_6.px-4.mb-6
+                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="sort") Sort Order
+                        input#sort.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", placeholder="0")
+                    
 
             .p-8.mb-8.bg-white.shadow.rounded
                 h6.mb-6.text-2xl.font-normal.text-gray-600 Search Engine Optimization
@@ -160,7 +161,7 @@ block footer
                 span.py-1.text-sm.font-medium.tracking-widest.uppercase Cancel
             button.flex.flex-row.items-center.ml-4.text-indigo-700.bg-white.border.border-indigo-700.outline-none.rounded.hover_opacity-75.fade(type="button")
                 span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Save&Exit
-            button.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
+            button.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button" onclick="$('form#category-form').submit();")
                 span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Save&Keep Editing
             button.flex.flex-row.items-center.ml-4.text-white.bg-red-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
                 span.material-icons.py-1.px-2.bg-red-800.text-md.rounded delete

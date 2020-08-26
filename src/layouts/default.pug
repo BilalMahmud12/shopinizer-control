@@ -16,6 +16,7 @@ html.h-full(lang="en", dir="ltr")
             link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/min/dropzone.min.css")
             link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css")
             link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css")
+            link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css")
             link(rel="stylesheet", href="assets/css/app.min.css")
             //end css
             link(rel="shortcut icon", href="./assets/images/note.svg", type="image/x-icon")
@@ -59,5 +60,9 @@ html.h-full(lang="en", dir="ltr")
         script(src="https://unpkg.com/vuejs-datepicker")
         script(src="https://www.jqueryscript.net/demo/active-menu-scrollspy/jquery.scroll-spy.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js")
         script(src="assets/javascripts/app.min.js")
+        script
+            | setTimeout(function(){ new Noty({type: 'info', timeout: '2500', text: 'Welcome Back! Admin'}).show(); }, 500);
         // END JAVASCRIPTS
