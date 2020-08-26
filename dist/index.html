@@ -24,16 +24,16 @@
   <body class="animsition flex flex-col h-full antialiased font-sans text-base font-normal leading-normal text-left text-indigo-900 bg-white overflow-x-hidden">
     <main class="flex flex-row h-full" id="app">
       <!-- start SideBar-->
-      <aside class="relative flex flex-col content-center justify-between h-full py-6 px-4 bg-indigo-700">
+      <aside class="relative flex flex-col content-center justify-between h-full py-6 px-4 bg-blue-900">
         <div class="block mb-2"><a class="flex w-full hover_opacity-75" href="./" data-tippy-content="Home"><img class="mx-auto" src="./assets/images/icon.svg" width="30px"></a></div>
-        <div class="flex flex-col"><a class="flex p-2 rounded my-1 bg-indigo-800 hover_opacity-75" href="./index.html" data-tippy-content="Home"><span class="material-icons text-white text-md">home</span></a><a class="flex p-2 rounded my-1 bg-indigo-800 hover_opacity-75" href="./orders.html" data-tippy-content="Orders"><span class="material-icons text-white text-md">attach_money</span></a><a class="flex p-2 rounded my-1 bg-indigo-800 hover_opacity-75" href="./customers.html" data-tippy-content="Customers"><span class="material-icons text-white text-md">group</span></a><a class="flex p-2 rounded my-1 bg-indigo-800 hover_opacity-75" href="./products.html" data-tippy-content="Catalog"><span class="material-icons text-white text-md">category</span></a><a class="flex p-2 rounded my-1 bg-indigo-800 hover_opacity-75" href="./marketing-banners.html" data-tippy-content="Marketing"><span class="material-icons text-white bg-indigo-800 text-md">campaign</span></a><a class="flex p-2 rounded my-1 bg-indigo-800 hover_opacity-75" href="./analytics.html" data-tippy-content="Analytics"><span class="material-icons text-white text-md">bar_chart</span></a><a class="flex p-2 rounded my-1 bg-indigo-100 pointer-events-none" href="./channels.html" data-tippy-content="Channels"><span class="material-icons text-indigo-800 text-md">merge_type</span></a><a class="flex p-2 rounded my-1 bg-indigo-800 hover_opacity-75" href="./store-profile.html" data-tippy-content="Store"><span class="material-icons text-white text-md">store_mall_directory</span></a></div>
+        <div class="flex flex-col"><a class="flex p-2 rounded my-1 bg-blue-800 hover_opacity-75" href="./index.html" data-tippy-content="Home"><span class="material-icons text-white text-md">home</span></a><a class="flex p-2 rounded my-1 bg-blue-800 hover_opacity-75" href="./orders.html" data-tippy-content="Orders"><span class="material-icons text-white text-md">attach_money</span></a><a class="flex p-2 rounded my-1 bg-blue-800 hover_opacity-75" href="./customers.html" data-tippy-content="Customers"><span class="material-icons text-white text-md">group</span></a><a class="flex p-2 rounded my-1 bg-blue-800 hover_opacity-75" href="./products.html" data-tippy-content="Catalog"><span class="material-icons text-white text-md">category</span></a><a class="flex p-2 rounded my-1 bg-blue-800 hover_opacity-75" href="./marketing-banners.html" data-tippy-content="Marketing"><span class="material-icons text-white bg-blue-800 text-md">campaign</span></a><a class="flex p-2 rounded my-1 bg-blue-800 hover_opacity-75" href="./analytics.html" data-tippy-content="Analytics"><span class="material-icons text-white text-md">bar_chart</span></a><a class="flex p-2 rounded my-1 bg-indigo-100 pointer-events-none" href="./channels.html" data-tippy-content="Channels"><span class="material-icons text-blue-600 text-md">merge_type</span></a><a class="flex p-2 rounded my-1 bg-blue-800 hover_opacity-75" href="./store-profile.html" data-tippy-content="Store"><span class="material-icons text-white text-md">store_mall_directory</span></a></div>
         <div class="flex flex-col mt-2"><a class="relative flex px-2 mb-3 hover_opacity-75" href="#" data-tippy-content="Notifications" @click="notificationsIsOpen = !notificationsIsOpen; helpIsOpen = false; moreIsOpen = false; hasNotificationsLabel = false;"><span class="material-icons text-white text-md">notifications</span><span class="notifications_label absolute inline-flex justify-center items-center w-6 h-6 font-mono text-sm font-bold text-center text-white bg-red-600 shadow-sm rounded-full" v-bind:class="hasNotificationsLabel ? 'inline-flex' : 'hidden'">9</span></a><a class="flex mb-3 px-2 hover_opacity-75" href="#" data-tippy-content="Help" @click="helpIsOpen = !helpIsOpen; notificationsIsOpen = false; moreIsOpen = false"><span class="material-icons text-white text-md">help</span></a><a class="flex px-2 hover_opacity-75" href="#" data-tippy-content="More" @click="moreIsOpen = !moreIsOpen; notificationsIsOpen = false; helpIsOpen = false "><span class="material-icons text-white text-md">more_vert</span></a></div>
       </aside>
       <!-- Notifications Sidebar-->
       <aside class="absolute inset-y-0 a flex flex-col h-full w-full max-w-xs bg-white shadow-lg transition-all z-60" style="left: 72px;" v-if="notificationsIsOpen">
         <div class="flex flex-row items-center justify-between pt-6 px-8 mb-6">
           <h3 class="text-2xl">Notifications</h3><a class="mt-3" href="#" @click="notificationsIsOpen = false; helpIsOpen = false; moreIsOpen = false">
-            <div class="material-icons text-xl text-gray-600">close</div></a>
+            <div class="material-icons text-xl text-gray-700">close</div></a>
         </div>
         <div class="w-full h-full overflow-auto shadow bg-white">
           <table class="w-full">
@@ -288,21 +288,21 @@
       <aside class="absolute inset-y-0 a flex flex-col h-full w-full max-w-xs bg-white shadow-lg transition-all z-60" style="left: 72px;" v-if="helpIsOpen">
         <div class="flex flex-row items-center justify-between pt-6 px-8 mb-6">
           <h3 class="text-2xl">Help</h3><a class="mt-3" href="#" @click="helpIsOpen = false; notificationsIsOpen = false; moreIsOpen = false">
-            <div class="material-icons text-xl text-gray-600">close</div></a>
+            <div class="material-icons text-xl text-gray-700">close</div></a>
         </div>
         <div class="w-full h-full overflow-auto py-6 px-8 shadow bg-white">
           <div class="relative mb-6">
             <input class="block w-full py-3 pl-12 pr-4 appearance-none leading-tight text-indigo-900 bg-white border border-gray-300 shadow-xs rounded fade focus_outline-none focus_border-indigo-300" type="text" placeholder="Search...">
-            <div class="absolute pointer-events-none inset-y-0 left-0 flex items-center pt-1 px-3"><span class="material-icons text-gray-600 text-2xl">search</span></div>
+            <div class="absolute pointer-events-none inset-y-0 left-0 flex items-center pt-1 px-3"><span class="material-icons text-gray-700 text-2xl">search</span></div>
           </div>
           <nav class="flex flex-col mb-6">
             <ul class="flex flex-col">
-              <li class="mb-3"><a class="text-gray-600 hover_text-indigo-700" href="#">Ask the Community</a></li>
-              <li class="mb-3"><a class="text-gray-600 hover_text-indigo-700" href="#">Visit the Help Center</a></li>
-              <li class="mb-3"><a class="text-gray-600 hover_text-indigo-700" href="#">Submit a Feature Request</a></li>
-              <li class="mb-3"><a class="text-gray-600 hover_text-indigo-700" href="#">Email Support</a></li>
-              <li class="mb-3"><a class="text-gray-600 hover_text-indigo-700" href="#">Live Chat Online</a></li>
-              <li class="mb-3"><a class="text-gray-600 hover_text-indigo-700" href="#">Phone support</a></li>
+              <li class="mb-3"><a class="text-gray-700 hover_text-blue-500" href="#">Ask the Community</a></li>
+              <li class="mb-3"><a class="text-gray-700 hover_text-blue-500" href="#">Visit the Help Center</a></li>
+              <li class="mb-3"><a class="text-gray-700 hover_text-blue-500" href="#">Submit a Feature Request</a></li>
+              <li class="mb-3"><a class="text-gray-700 hover_text-blue-500" href="#">Email Support</a></li>
+              <li class="mb-3"><a class="text-gray-700 hover_text-blue-500" href="#">Live Chat Online</a></li>
+              <li class="mb-3"><a class="text-gray-700 hover_text-blue-500" href="#">Phone support</a></li>
             </ul>
           </nav>
         </div>
@@ -314,20 +314,20 @@
             <div class="rounded-full h-10 w-10 flex-shrink-0 mr-3 mt-1 overflow-hidden shadow-inner relative"><img class="absolute inset-0 w-full h-full" src="https://pbs.twimg.com/profile_images/1260982966383230976/hbi-ZdCR_normal.png" alt=""></div>
             <div class="flex-1 leading-snug w-0">
               <h4 class="whitespace-no-wrap font-bold truncate">Full Name</h4>
-              <p class="text-sm text-gray-600">email|position</p>
+              <p class="text-sm text-gray-700">email|position</p>
             </div>
           </div><a class="mt-3" href="#" @click="moreIsOpen = false; helpIsOpen = false; notificationsIsOpen = false;">
-            <div class="material-icons text-xl text-gray-600">close</div></a>
+            <div class="material-icons text-xl text-gray-700">close</div></a>
         </div>
         <div class="w-full h-full overflow-auto py-6 px-8 shadow bg-white">
           <div class="flex flex-col mb-6">
             <h3 class="mb-3 text-md">My Profile</h3>
             <nav>
               <ul class="flex flex-col">
-                <li class="pl-3 mb-3"><a class="text-gray-600 hover_text-indigo-700" href="#">Edit Profile</a></li>
-                <li class="pl-3 mb-3"><a class="text-gray-600 hover_text-indigo-700" href="#">Change Email Address</a></li>
-                <li class="pl-3 mb-3"><a class="text-gray-600 hover_text-indigo-700" href="#">Change Password</a></li>
-                <li class="mb-3"><a class="text-gray-600 hover_text-indigo-700" href="#">Log Out</a></li>
+                <li class="pl-3 mb-3"><a class="text-gray-700 hover_text-blue-500" href="#">Edit Profile</a></li>
+                <li class="pl-3 mb-3"><a class="text-gray-700 hover_text-blue-500" href="#">Change Email Address</a></li>
+                <li class="pl-3 mb-3"><a class="text-gray-700 hover_text-blue-500" href="#">Change Password</a></li>
+                <li class="mb-3"><a class="text-gray-700 hover_text-blue-500" href="#">Log Out</a></li>
               </ul>
             </nav>
           </div>
@@ -342,23 +342,23 @@
               <h2 class="text-3xl font-light leading-none">Dashboard</h2>
               <!-- Buttons control-->
               <nav class="relative flex flex-row" x-data="{ open: false }">
-                <button class="flex flex-row items-center ml-4 text-indigo-700 border border-indigo-700 rounded hover_opacity-50 fade" type="button" x-on:click="open = true"><span class="material-icons py-1 px-2 text-md">more_vert</span></button>
-                <div class="absolute top-0 mt-8 right-0 z-30 py-2 w-full md_w-48 bg-white border shadow-lg rounded" x-show.transition="open" x-on:click.away="open = false"><a class="block w-full py-1 px-4 text-sm font-medium text-gray-700 hover_text-indigo-700 hover_bg-gray-200" href="./product-single.html">Add Product</a><a class="block w-full py-1 px-4 text-sm font-medium text-gray-700 hover_text-indigo-700 hover_bg-gray-200" href="./product-category-single.html">Add Product Category</a><a class="block w-full py-1 px-4 text-sm font-medium text-gray-700 hover_text-indigo-700 hover_bg-gray-200" href="#">...</a></div>
+                <button class="flex flex-row items-center ml-4 text-blue-500 border border-blue-500 rounded hover_opacity-50 fade" type="button" x-on:click="open = true"><span class="material-icons py-1 px-2 text-md">more_vert</span></button>
+                <div class="absolute top-0 mt-8 right-0 z-30 py-2 w-full md_w-48 bg-white border shadow-lg rounded" x-show.transition="open" x-on:click.away="open = false"><a class="block w-full py-1 px-4 text-sm font-medium text-gray-700 hover_text-blue-500 hover_bg-gray-200" href="./product-single.html">Add Product</a><a class="block w-full py-1 px-4 text-sm font-medium text-gray-700 hover_text-blue-500 hover_bg-gray-200" href="./product-category-single.html">Add Product Category</a><a class="block w-full py-1 px-4 text-sm font-medium text-gray-700 hover_text-blue-500 hover_bg-gray-200" href="#">...</a></div>
               </nav>
             </div>
           </div>
-          <div class="flex flex-col flex-1 w-full h-full py-8 px-12 overflow-y-auto bg-gray-100">
+          <div class="flex flex-col flex-1 w-full h-full py-8 px-12 overflow-y-auto bg-gray-200">
             <div class="w-full">
-              <div class="mb-6 relative bg-indigo-100 border-t-4 border-indigo-500 rounded-b text-indigo-900 px-4 py-3 shadow-md" role="alert" x-data="{ open: true }" x-show.transition="open">
+              <div class="mb-6 relative bg-blue-100 border-t-4 border-blue-500 rounded-b text-blue-900 px-4 py-3 shadow-md" role="alert" x-data="{ open: true }" x-show.transition="open">
                 <div class="flex">
-                  <div class="py-1"><span class="material-icons text-3xl text-indigo-500 mr-4">help_outline</span></div>
+                  <div class="py-1"><span class="material-icons text-3xl text-blue-500 mr-4">help_outline</span></div>
                   <div>
                     <p class="font-bold">Cras euismod tellus non orci venenatis</p>
                     <p class="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse iaculis scelerisque nulla.</p>
                   </div>
                 </div>
                 <div class="absolute top-0 right-0 inline-block mt-2 mr-2">
-                  <button class="text-gray-500 hover_indigo-500 fade" x-on:click="open = false"><span class="material-icons text-xl">close</span></button>
+                  <button class="text-gray-500 hover_blue-500 fade" x-on:click="open = false"><span class="material-icons text-xl">close</span></button>
                 </div>
               </div>
               <div class="mb-6 relative bg-red-100 border-t-4 border-red-500 rounded-b text-red-900 px-4 py-3 shadow-md" role="alert" x-data="{ open: true }" x-show.transition="open">
@@ -370,30 +370,61 @@
                   </div>
                 </div>
                 <div class="absolute top-0 right-0 inline-block mt-2 mr-2">
-                  <button class="text-gray-500 hover_indigo-500 fade" x-on:click="open = false"><span class="material-icons text-xl">close</span></button>
+                  <button class="text-gray-500 hover_blue-500 fade" x-on:click="open = false"><span class="material-icons text-xl">close</span></button>
                 </div>
               </div>
               <!-- START Sales Statistics-->
               <div class="mb-6">
-                <h6 class="mb-2 text-xl font-normal text-gray-600">Sales</h6>
+                <h6 class="mb-2 text-xl font-normal text-gray-700">Store Statistics</h6>
+                <div class="w-full p-5 bg-white shadow rounded">
+                  <div class="flex flex-warp -mx-4"><a class="w-full md_w-3_12 px-4 text-center fade hover_bg-blue-100">
+                      <div class="border-r">
+                        <div class="mb-1"><span class="mx-1 text-3xl text-blue-900">1</span></div>
+                        <div class="text-sm uppercase text-gray-700 tracking-wide">Orders</div>
+                      </div></a>
+                    <div class="w-full md_w-3_12 px-4 text-center">
+                      <div class="border-r">
+                        <div class="mb-1"><span class="mx-1 text-3xl text-blue-900">2</span></div>
+                        <div class="text-sm uppercase text-gray-700 tracking-wide">Customers</div>
+                      </div>
+                    </div>
+                    <div class="w-full md_w-3_12 px-4 text-center">
+                      <div class="border-r">
+                        <div class="mb-1"><span class="mx-1 text-3xl text-blue-900">20</span></div>
+                        <div class="text-sm uppercase text-gray-700 tracking-wide">Products</div>
+                      </div>
+                    </div>
+                    <div class="w-full md_w-3_12 px-4 text-center">
+                      <div class="border-0">
+                        <div class="mb-1"><span class="mx-1 text-3xl text-blue-900">8</span></div>
+                        <div class="text-sm uppercase text-gray-700 tracking-wide">Categories</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- END Sales Statistics-->
+              <!-- START Sales Statistics-->
+              <div class="mb-6">
+                <h6 class="mb-2 text-xl font-normal text-gray-700">Sales</h6>
                 <div class="w-full p-5 bg-white shadow rounded">
                   <div class="flex flex-warp -mx-4">
                     <div class="w-full md_w-4_12 px-4 text-center">
                       <div class="border-r">
-                        <div class="mb-1 text-gray-500"><span class="text-xl align-top">USD</span><span class="mx-1 text-3xl text-indigo-900">21,404</span><span class="text-xl align-top">.74</span></div>
-                        <div class="text-sm uppercase text-gray-600 tracking-wide">Total Orders</div>
+                        <div class="mb-1 text-gray-500"><span class="text-xl align-top">USD</span><span class="mx-1 text-3xl text-blue-900">21,404</span><span class="text-xl align-top">.74</span></div>
+                        <div class="text-sm uppercase text-gray-700 tracking-wide">Total Orders</div>
                       </div>
                     </div>
                     <div class="w-full md_w-4_12 px-4 text-center">
                       <div class="border-r">
-                        <div class="mb-1 text-gray-500"><span class="text-xl align-top">USD</span><span class="mx-1 text-3xl text-indigo-900">21,404</span><span class="text-xl align-top">.74</span></div>
-                        <div class="text-sm uppercase text-gray-600 tracking-wide">Last Week</div>
+                        <div class="mb-1 text-gray-500"><span class="text-xl align-top">USD</span><span class="mx-1 text-3xl text-blue-900">21,404</span><span class="text-xl align-top">.74</span></div>
+                        <div class="text-sm uppercase text-gray-700 tracking-wide">Last Week</div>
                       </div>
                     </div>
                     <div class="w-full md_w-4_12 px-4 text-center">
                       <div class="border-0">
-                        <div class="mb-1 text-gray-500"><span class="text-xl align-top">USD</span><span class="mx-1 text-3xl text-indigo-900">21,404</span><span class="text-xl align-top">.74</span></div>
-                        <div class="text-sm uppercase text-gray-600 tracking-wide">This day</div>
+                        <div class="mb-1 text-gray-500"><span class="text-xl align-top">USD</span><span class="mx-1 text-3xl text-blue-900">21,404</span><span class="text-xl align-top">.74</span></div>
+                        <div class="text-sm uppercase text-gray-700 tracking-wide">This day</div>
                       </div>
                     </div>
                   </div>
@@ -402,11 +433,11 @@
               <!-- END Sales Statistics-->
               <!-- START Store Performance-->
               <div class="mb-6">
-                <h6 class="mb-2 text-xl font-normal text-gray-600">Store Performance</h6>
+                <h6 class="mb-2 text-xl font-normal text-gray-700">Store Performance</h6>
                 <div class="w-full p-5 bg-white shadow rounded">
                   <div class="flex flex-row items-center justify-between pb-4 mb-0 border-b">
                     <div class="relative mr-4">
-                      <select class="block w-full py-2 px-4 pr-10 appearance-none leading-tight text-indigo-900 bg-white border border-gray-300 shadow-xs rounded fade focus_outline-none focus_border-indigo-300">
+                      <select class="block w-full py-2 px-4 pr-10 appearance-none leading-tight text-blue-900 bg-white border border-gray-500 shadow-xs rounded fade focus_outline-none focus_border-blue-500">
                         <option>Today</option>
                         <option selected>Week to date</option>
                         <option>Month to date</option>
@@ -421,7 +452,7 @@
                         </svg>
                       </div>
                     </div>
-                    <p class="text-base font-bold text-gray-600">Aug 23, 2020 – Aug 26, 2020</p>
+                    <p class="text-base font-bold text-gray-700">Aug 23, 2020 – Aug 26, 2020</p>
                   </div>
                   <div class="flex flex-warp -mx-4">
                     <div class="w-full md_w-4_12 px-4">
@@ -464,51 +495,18 @@
                 </div>
               </div>
               <!-- END Store Performance-->
-              <!-- START Sales Statistics-->
-              <div class="mb-6">
-                <h6 class="mb-2 text-xl font-normal text-gray-600">Store Statistics</h6>
-                <div class="w-full p-5 bg-white shadow rounded">
-                  <div class="flex flex-warp -mx-4">
-                    <div class="w-full md_w-3_12 px-4 text-center">
-                      <div class="border-r">
-                        <div class="mb-1"><span class="mx-1 text-3xl text-indigo-900">1</span></div>
-                        <div class="text-sm uppercase text-gray-600 tracking-wide">Orders</div>
-                      </div>
-                    </div>
-                    <div class="w-full md_w-3_12 px-4 text-center">
-                      <div class="border-r">
-                        <div class="mb-1"><span class="mx-1 text-3xl text-indigo-900">2</span></div>
-                        <div class="text-sm uppercase text-gray-600 tracking-wide">Customers</div>
-                      </div>
-                    </div>
-                    <div class="w-full md_w-3_12 px-4 text-center">
-                      <div class="border-r">
-                        <div class="mb-1"><span class="mx-1 text-3xl text-indigo-900">20</span></div>
-                        <div class="text-sm uppercase text-gray-600 tracking-wide">Products</div>
-                      </div>
-                    </div>
-                    <div class="w-full md_w-3_12 px-4 text-center">
-                      <div class="border-0">
-                        <div class="mb-1"><span class="mx-1 text-3xl text-indigo-900">8</span></div>
-                        <div class="text-sm uppercase text-gray-600 tracking-wide">Categories</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- END Sales Statistics-->
               <!-- START Orders-->
               <div class="mb-8">
-                <h6 class="mb-2 text-xl font-normal text-gray-600">Orders</h6>
+                <h6 class="mb-2 text-xl font-normal text-gray-700">Orders</h6>
                 <div class="w-full p-5 bg-white shadow rounded" x-data="{ tab: 'recent' }">
                   <!-- START Tabs-->
                   <div class="flex flex-row items-center justify-between pb-4 mb-5 border-b">
-                    <nav class="flex flex-row text-gray-600">
-                      <button class="py-1 px-4 mr-1 text-sm font-medium bg-transparent rounded-full cursor-pointer fade" href="#" x-on:click="tab = 'recent'" x-bind:class="{ 'text-white bg-indigo-700 hover_text-white': tab === 'recent', 'hover_text-indigo-700': tab !== 'recent'}">Recent</button>
-                      <button class="py-1 px-4 mr-1 text-sm font-medium bg-transparent rounded-full cursor-pointer fade" type="button" x-on:click="tab = 'pending'" x-bind:class="{ 'text-white bg-indigo-700 hover_text-white': tab === 'pending', 'hover_text-indigo-700': tab !== 'pending' }">Pending</button>
-                      <button class="py-1 px-4 mr-1 text-sm font-medium bg-transparent rounded-full cursor-pointer fade" type="button" x-on:click="tab = 'completed'" x-bind:class="{ 'text-white bg-indigo-700 hover_text-white': tab === 'completed', 'hover_text-indigo-700': tab !== 'completed' }">Completed</button>
-                      <button class="py-1 px-4 mr-1 text-sm font-medium bg-transparent rounded-full cursor-pointer fade" type="button" x-on:click="tab = 'refunded'" x-bind:class="{ 'text-white bg-indigo-700 hover_text-white': tab === 'refunded', 'hover_text-indigo-700': tab !== 'refunded' }">Refunded</button>
-                    </nav><a class="flex items-center text-indigo-700 hover_text-indigo-800 fade" href="./orders.html"><span>View more</span><span class="material-icons mt-1 ml-1">chevron_right</span></a>
+                    <nav class="flex flex-row text-gray-700">
+                      <button class="py-1 px-4 mr-1 text-sm font-medium bg-transparent rounded-full cursor-pointer fade" href="#" x-on:click="tab = 'recent'" x-bind:class="{ 'text-white bg-blue-500 hover_text-white': tab === 'recent', 'hover_text-blue-500': tab !== 'recent'}">Recent</button>
+                      <button class="py-1 px-4 mr-1 text-sm font-medium bg-transparent rounded-full cursor-pointer fade" type="button" x-on:click="tab = 'pending'" x-bind:class="{ 'text-white bg-blue-500 hover_text-white': tab === 'pending', 'hover_text-blue-500': tab !== 'pending' }">Pending</button>
+                      <button class="py-1 px-4 mr-1 text-sm font-medium bg-transparent rounded-full cursor-pointer fade" type="button" x-on:click="tab = 'completed'" x-bind:class="{ 'text-white bg-blue-500 hover_text-white': tab === 'completed', 'hover_text-blue-500': tab !== 'completed' }">Completed</button>
+                      <button class="py-1 px-4 mr-1 text-sm font-medium bg-transparent rounded-full cursor-pointer fade" type="button" x-on:click="tab = 'refunded'" x-bind:class="{ 'text-white bg-blue-500 hover_text-white': tab === 'refunded', 'hover_text-blue-500': tab !== 'refunded' }">Refunded</button>
+                    </nav><a class="flex items-center text-blue-500 hover_text-blue-600 fade" href="./orders.html"><span>View more</span><span class="material-icons mt-1 ml-1">chevron_right</span></a>
                   </div>
                   <!-- END Tabs-->
                   <!-- START Recent Content-->
@@ -527,17 +525,17 @@
                           <td class="py-3 align-middle flex items-center">
                             <div class="w-2 h-5 bg-blue-400"></div><span class="ml-2">Disputed</span>
                           </td>
-                          <td class="py-3 align-middle"><a class="text-indigo-700 hover_text-indigo-800 fade" href="./order-single.html">Order #100 Rakan Awajan </a></td>
+                          <td class="py-3 align-middle"><a class="text-blue-500 hover_text-blue-600 fade" href="./order-single.html">Order #100 Rakan Awajan </a></td>
                           <td class="py-3 align-middle text-sm font-bold">USD49.00</td>
-                          <td class="py-3 align-middle text-gray-600">on 12th Aug 2020 at 06:37 PM </td>
+                          <td class="py-3 align-middle text-gray-700">on 12th Aug 2020 at 06:37 PM </td>
                         </tr>
                         <tr class="border-b last_border-b-0">
                           <td class="py-3 align-middle flex items-center">
                             <div class="w-2 h-5 bg-blue-400"></div><span class="ml-2">Disputed</span>
                           </td>
-                          <td class="py-3 align-middle"><a class="text-indigo-700 hover_text-indigo-800 fade" href="./order-single.html">Order #100 Rakan Awajan </a></td>
+                          <td class="py-3 align-middle"><a class="text-blue-500 hover_text-blue-600 fade" href="./order-single.html">Order #100 Rakan Awajan </a></td>
                           <td class="py-3 align-middle text-sm font-bold">USD49.00</td>
-                          <td class="py-3 align-middle text-gray-600">on 12th Aug 2020 at 06:37 PM </td>
+                          <td class="py-3 align-middle text-gray-700">on 12th Aug 2020 at 06:37 PM </td>
                         </tr>
                       </tbody>
                     </table>
@@ -557,8 +555,8 @@
               <!-- END Orders-->
               <!-- START Notifications-->
               <div class="mb-8">
-                <h6 class="mb-2 text-xl font-normal text-gray-600">Notifications</h6>
-                <button class="bg-indigo-700 text-white font-bold py-2 px-6 rounded fade hover_bg-indigo-800 focus_outline-none" type="button" onclick="new Noty({type: 'info', timeout: '5000', text: 'Info notification text'}).show();">Info</button>
+                <h6 class="mb-2 text-xl font-normal text-gray-700">Notifications</h6>
+                <button class="bg-blue-500 text-white font-bold py-2 px-6 rounded fade hover_bg-blue-600 focus_outline-none" type="button" onclick="new Noty({type: 'info', timeout: '5000', text: 'Info notification text'}).show();">Info</button>
                 <button class="bg-yellow-500 text-white font-bold py-2 px-6 rounded fade hover_bg-yellow-600 focus_outline-none" type="button" onclick="new Noty({type: 'warning', timeout: '5000', text: 'Info notification text'}).show();">Warning</button>
                 <button class="bg-red-500 text-white font-bold py-2 px-6 rounded fade hover_bg-red-600 focus_outline-none" type="button" onclick="new Noty({type: 'danger', timeout: '5000', text: 'Info notification text'}).show();">Danger</button>
               </div>

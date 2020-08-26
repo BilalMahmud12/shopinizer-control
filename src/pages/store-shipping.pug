@@ -4,27 +4,27 @@ block meta
     title Store | Shopinizer eCommerce
 
 block nestbar
-    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-indigo-100
+    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-gray-300
         h3.mb-6.text-2xl Store Setup
 
         nav.flex.flex-col.mb-6
             ul.flex.flex-col
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-profile.html") Store Profile
+                    a.text-gray-700.hover_text-blue-500(href="./store-profile.html") Store Profile
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-currencies.html") Currencies
+                    a.text-gray-700.hover_text-blue-500(href="./store-currencies.html") Currencies
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-payments.html") Payments
+                    a.text-gray-700.hover_text-blue-500(href="./store-payments.html") Payments
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-settings.html") Store Settings
+                    a.text-gray-700.hover_text-blue-500(href="./store-settings.html") Store Settings
                 li.mb-3
-                    a.text-indigo-800.hover_text-indigo-800(href="./store-shipping.html") Shipping
+                    a.text-blue-600.hover_text-blue-600(href="./store-shipping.html") Shipping
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-tax.html") Tax
+                    a.text-gray-700.hover_text-blue-500(href="./store-tax.html") Tax
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-points.html") Point of Sale
+                    a.text-gray-700.hover_text-blue-500(href="./store-points.html") Point of Sale
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-accounting.html") Accounting
+                    a.text-gray-700.hover_text-blue-500(href="./store-accounting.html") Accounting
 
 block page
     .px-12.pt-6.bg-white
@@ -32,25 +32,25 @@ block page
             h2.text-3xl.font-light.leading-none Shipping Manager
             // Buttons control
             nav.flex.flex-row
-                a.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.rounded.hover_opacity-75.fade(href="./product-single.html")
-                    span.material-icons.py-1.px-2.bg-indigo-800.text-md.rounded-l add
+                a.flex.flex-row.items-center.ml-4.text-white.bg-blue-500.rounded.hover_opacity-75.fade(href="./product-single.html")
+                    span.material-icons.py-1.px-2.bg-blue-600.text-md.rounded-l add
                     span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase New shipping address
-                a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                a.flex.flex-row.items-center.ml-4.text-blue-500.border.border-blue-500.rounded.hover_opacity-50.fade(href="#")
                     span.material-icons.py-1.px-2.text-md more_vert
 
-    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
+    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-200
         .w-full.max-w-5xl(x-data="{ accordion: '', modal: '', tab: '' }")
             // START Shipping Item
             .p-6.mb-6.bg-white.shadow.rounded
                 .flex.flex-row.justify-between.items-center
                     .flex.flex-row.items-center.cursor-pointer(x-on:click="accordion !== 'shipping-1' ? accordion = 'shipping-1' : accordion = ''")
-                        span.material-icons.text-md.text-gray-600.mr-2.mt-1 public
+                        span.material-icons.text-md.text-gray-700.mr-2.mt-1 public
                         h6.text-xl.font-normal World
                     .flex.flex-row.items-center
-                        button.flex.flex-row.items-center.mr-4.text-indigo-700.rounded.outline-none.hover_opacity-75.fade(type="button" x-on:click="modal = 'shipping-1'; tab = 'zone'")
+                        button.flex.flex-row.items-center.mr-4.text-blue-500.rounded.outline-none.hover_opacity-75.fade(type="button" x-on:click="modal = 'shipping-1'; tab = 'zone'")
                             span.py-1.text-sm.font-bold.tracking-widest.uppercase Edit
-                        span.material-icons.text-gray-600.cursor-pointer(x-show="accordion !== 'shipping-1'" x-on:click="accordion !== 'shipping-1' ? accordion = 'shipping-1' : accordion = ''") keyboard_arrow_down
-                        span.material-icons.text-gray-600.cursor-pointer(x-show="accordion === 'shipping-1'" x-on:click="accordion !== 'shipping-1' ? accordion = 'shipping-1' : accordion = ''") keyboard_arrow_up
+                        span.material-icons.text-gray-700.cursor-pointer(x-show="accordion !== 'shipping-1'" x-on:click="accordion !== 'shipping-1' ? accordion = 'shipping-1' : accordion = ''") keyboard_arrow_down
+                        span.material-icons.text-gray-700.cursor-pointer(x-show="accordion === 'shipping-1'" x-on:click="accordion !== 'shipping-1' ? accordion = 'shipping-1' : accordion = ''") keyboard_arrow_up
 
                         // START Shipping Item Modal
                         .absolute.w-full.h-full.top-0.left-0.z-50(x-show.transition="modal === 'shipping-1'")
@@ -60,12 +60,12 @@ block page
                                     .bg-gray-200.pt-5.px-6
                                         .flex.flex-row.items-center.justify-between.mb-5
                                             h6.text-lg.font-bold Edit World 
-                                            span.material-icons.text-gray-600.cursor-pointer(x-on:click="modal = ''") close
+                                            span.material-icons.text-gray-700.cursor-pointer(x-on:click="modal = ''") close
 
                                         // Tabs
-                                        nav.flex.flex-row.border-b.border-gray-300
-                                            button.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(type="button" x-bind:class="{ 'text-indigo-700 border-indigo-700': tab === 'zone' }" x-on:click="tab = 'zone'") Zone
-                                            button.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(type="button" x-bind:class="{ 'text-indigo-700 border-indigo-700': tab === 'fee' }" x-on:click="tab = 'fee'") Handling fee
+                                        nav.flex.flex-row.border-b.border-gray-400
+                                            button.block.pb-2.px-5.-mb-px.font-medium.text-gray-700.border-b-2.border-transparent.hover_text-blue-500(type="button" x-bind:class="{ 'text-blue-500 border-blue-500': tab === 'zone' }" x-on:click="tab = 'zone'") Zone
+                                            button.block.pb-2.px-5.-mb-px.font-medium.text-gray-700.border-b-2.border-transparent.hover_text-blue-500(type="button" x-bind:class="{ 'text-blue-500 border-blue-500': tab === 'fee' }" x-on:click="tab = 'fee'") Handling fee
                                     
                                     // Modal body
                                     .py-8.px-6
@@ -75,9 +75,9 @@ block page
                                     // Modal footer
                                     .flex.flex-row.justify-end.items-center.py-5.px-6.bg-white.border-t.border-gray-200.z-50
                                         nav.flex.flex-row
-                                            button.flex.flex-row.items-center.ml-4.text-gray-600.rounded.outline-none.hover_opacity-75.fade(type="button" x-on:click="modal = ''")
+                                            button.flex.flex-row.items-center.ml-4.text-gray-700.rounded.outline-none.hover_opacity-75.fade(type="button" x-on:click="modal = ''")
                                                 span.py-1.text-sm.font-medium.tracking-widest.uppercase Cancel
-                                            button.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
+                                            button.flex.flex-row.items-center.ml-4.text-white.bg-blue-500.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
                                                 span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Save
 
                         // END Shipping Item Modal
@@ -86,9 +86,9 @@ block page
                     .pt-4.mt-4.border-t
                         .flex.flex-row.justify-between.items-center
                             h6.text-base.font-bold Free Shipping
-                            p.w-7_12.text-gray-600 Use free shipping to improve checkout conversion, increase average order value and reduce abandoned carts.
+                            p.w-7_12.text-gray-700 Use free shipping to improve checkout conversion, increase average order value and reduce abandoned carts.
                             .flex.flex-row.items-center
-                                a.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(href="./store-payment-bankdeposit.html")
+                                a.flex.flex-row.items-center.ml-4.text-white.bg-blue-500.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(href="./store-payment-bankdeposit.html")
                                     span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Edit
                     
             // END Shipping Item
@@ -97,13 +97,13 @@ block page
             // START Out of delivery zone message
             .p-6.mb-6.bg-white.shadow.rounded
                 h6.mb-1.text-xl.font-normal Out of delivery zone message
-                p.text-gray-600 This message will be shown to shoppers outside of Zones you have set up for delivery. 
+                p.text-gray-700 This message will be shown to shoppers outside of Zones you have set up for delivery. 
 
                 form.pt-4.mt-4.border-t
-                    textarea.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(rows="2")
+                    textarea.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(rows="2")
                         | Unfortunately one or more items in your cart can't be shipped to your location. Please choose a different delivery address.
                     .flex.flex-row.justify-end.mt-3
-                        button.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="submit")
+                        button.flex.flex-row.items-center.ml-4.text-white.bg-blue-500.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="submit")
                             span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Save
 
             // END Out of delivery zone message

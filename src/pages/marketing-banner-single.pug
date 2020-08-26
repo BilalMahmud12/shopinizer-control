@@ -4,32 +4,32 @@ block meta
     title Dashboard | Shopinizer eCommerce
 
 block nestbar
-    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-indigo-100
+    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-gray-300
         h3.mb-6.text-2xl Marketing
 
         .flex.flex-col.mb-6
             nav.pl-0
                 ul.flex.flex-col
                     li.mb-3
-                        a.text-indigo-800.hover_text-indigo-800(href="./marketing-banners.html") Banners
+                        a.text-blue-600.hover_text-blue-600(href="./marketing-banners.html") Banners
                     li.mb-3
-                        a.text-gray-600.hover_text-indigo-700(href="./marketing-promotions.html") Promotions
+                        a.text-gray-700.hover_text-blue-500(href="./marketing-promotions.html") Promotions
                     li.mb-3
-                        a.text-gray-600.hover_text-indigo-700(href="./marketing-notifications.html") Abandoned Cart Notifications
+                        a.text-gray-700.hover_text-blue-500(href="./marketing-notifications.html") Abandoned Cart Notifications
                     li.mb-3
-                        a.text-gray-600.hover_text-indigo-700(href="./marketing-reviews.html") Google Customer Reviews
+                        a.text-gray-700.hover_text-blue-500(href="./marketing-reviews.html") Google Customer Reviews
                     li.mb-3
-                        a.text-gray-600.hover_text-indigo-700(href="./marketing-coupons.html") Coupon Codes
+                        a.text-gray-700.hover_text-blue-500(href="./marketing-coupons.html") Coupon Codes
 
         .flex.flex-col.mb-6
             nav.pl-0
                 ul.flex.flex-col
                     li.mb-3
-                        a.text-gray-600.hover_text-indigo-700(href="./marketing-email.html") Email Marketing
+                        a.text-gray-700.hover_text-blue-500(href="./marketing-email.html") Email Marketing
                     li.mb-3
-                        a.text-gray-600.hover_text-indigo-700(href="./marketing-gifts.html") Gift Certificates
+                        a.text-gray-700.hover_text-blue-500(href="./marketing-gifts.html") Gift Certificates
                     li.mb-3
-                        a.text-gray-600.hover_text-indigo-700(href="./marketing-ebay.html") Sell on eBay
+                        a.text-gray-700.hover_text-blue-500(href="./marketing-ebay.html") Sell on eBay
 
 
 block page
@@ -37,34 +37,34 @@ block page
         .flex.flex-row.items-center.justify-between.-ml-3
             .flex.flex-col
                 nav.flex.flex-row.mb-1
-                    a.flex.flex-row.items-center.text-gray-500.hover_text-indigo-700.fade(href="./marketing-banners.html")
+                    a.flex.flex-row.items-center.text-gray-500.hover_text-blue-500.fade(href="./marketing-banners.html")
                         span.material-icons.text-xl keyboard_backspace
                         span.ml-2.font-bold.text-xs.uppercase View Banners
                 h2.mb-2.text-3xl.font-light.leading-none Add Banner | Banner Name Here
 
             // Buttons control
             nav.flex.flex-row
-                a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                a.flex.flex-row.items-center.ml-4.text-blue-500.border.border-blue-500.rounded.hover_opacity-50.fade(href="#")
                     span.material-icons.py-1.px-2.text-md more_vert
 
-    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
+    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-200
         .mb-5.max-w-3xl.text-center
             h5.mb-1.text-xl.font-medium Create a Banner
-            p.text-lg.font-normal.text-gray-600 Banners allow you to add promotional links and images throughout your store to advertise special deals and discounts to your shoppers.
+            p.text-lg.font-normal.text-gray-700 Banners allow you to add promotional links and images throughout your store to advertise special deals and discounts to your shoppers.
         // start Form
         form.w-full.max-w-5xl(action="/upload" method="post" enctype="multipart/form-data" )
             .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-6.text-2xl.font-normal.text-gray-600 Banner Details
+                h6.mb-6.text-2xl.font-normal.text-gray-700 Banner Details
 
                 .flex.flex-wrap.-mx-4
                     .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Name
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Name
                             span.mx-1.text-sm.text-red-600 *
-                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", placeholder="")
                     
                     .w-full.px-4.mb-6
                         .relative
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Description
+                            label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Description
                             .editor
                                 p Hello World!
                                 p Some initial
@@ -73,15 +73,15 @@ block page
                         
                     .w-full.px-4.mb-6
                         .w-full.md_w-1_2
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Show on Page
+                            label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Show on Page
                             .mb-2
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio", name="banner_page_switch", v-model="banner_page_switch", value="1")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio", name="banner_page_switch", v-model="banner_page_switch", value="1")
                                     span.ml-2 Home Page
                             
                             .mb-2
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio", name="banner_page_switch", v-model="banner_page_switch", value="2")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio", name="banner_page_switch", v-model="banner_page_switch", value="2")
                                     span.ml-2 For a Specific Category
                                 
                                 .mb-6.mt-3(v-if="banner_page_switch == 2")
@@ -94,12 +94,12 @@ block page
                             
                             .mb-2
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio", name="banner_page_switch", v-model="banner_page_switch", value="3")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio", name="banner_page_switch", v-model="banner_page_switch", value="3")
                                     span.ml-2 For a Specific Brand
                                 
                                 .mb-6.mt-3(v-if="banner_page_switch == 3")
                                     .relative
-                                        select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                        select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                             option Option 1
                                             option Option 2
                                             option Option 3
@@ -109,19 +109,19 @@ block page
 
                             .mb-0
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio", name="banner_page_switch", v-model="banner_page_switch", value="4")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio", name="banner_page_switch", v-model="banner_page_switch", value="4")
                                     span.ml-2 Search Results Page
                         
                     .w-full.px-4.mb-6
                         .w-full.md_w-1_2
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Date Range
+                            label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Date Range
                             .mb-2
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio", name="banner_date_switch", v-model="banner_date_switch", value="1")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio", name="banner_date_switch", v-model="banner_date_switch", value="1")
                                     span.ml-2 Always show this banner until I remove it
                             .mb-0
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio", name="banner_date_switch", v-model="banner_date_switch", value="2")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio", name="banner_date_switch", v-model="banner_date_switch", value="2")
                                     span.ml-2 Only display this banner between specific dates
 
                     .w-full.px-4.mb-6(v-if="banner_date_switch == 2")
@@ -129,12 +129,12 @@ block page
                             .w-full.md_w-1_2.px-4
                                 .flex.flex-wrap.-mx-4
                                     .w-full.px-2
-                                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide From
+                                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide From
                                     .w-full.md_w-8_12.px-2
-                                        vuejs-datepicker(placeholder="D MMM YYYY" input-class="block w-full py-3 px-4 appearance-none leading-tight text-indigo-900 bg-white border border-gray-300 shadow-xs rounded fade focus_outline-none focus_border-indigo-300")
+                                        vuejs-datepicker(placeholder="D MMM YYYY" input-class="block w-full py-3 px-4 appearance-none leading-tight text-blue-900 bg-white border border-gray-500 shadow-xs rounded fade focus_outline-none focus_border-blue-300")
                                     .w-full.md_w-4_12.px-2
                                         .relative
-                                            select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                            select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                                 option(value='0') 12:00 AM
                                                 option(value='1') 1:00 AM
                                                 option(value='2') 2:00 AM
@@ -166,12 +166,12 @@ block page
                             .w-full.md_w-1_2.px-4
                                 .flex.flex-wrap.-mx-4
                                     .w-full.px-2
-                                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Through
+                                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Through
                                     .w-full.md_w-9_12.px-2
-                                        vuejs-datepicker(placeholder="D MMM YYYY" input-class="block w-full py-3 px-4 appearance-none leading-tight text-indigo-900 bg-white border border-gray-300 shadow-xs rounded fade focus_outline-none focus_border-indigo-300")
+                                        vuejs-datepicker(placeholder="D MMM YYYY" input-class="block w-full py-3 px-4 appearance-none leading-tight text-blue-900 bg-white border border-gray-500 shadow-xs rounded fade focus_outline-none focus_border-blue-300")
                                     .w-full.md_w-3_12.px-2
                                         .relative
-                                            select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                            select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                                 option(value='0') 12:00 AM
                                                 option(value='1') 1:00 AM
                                                 option(value='2') 2:00 AM
@@ -203,16 +203,16 @@ block page
 
                     .w-full.px-4.mb-6
                         .w-full.md_w-1_2
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Visible
+                            label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Visible
                             label.inline-flex.items-center
-                                input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                 span.ml-2 Yes, this banner should be visible on my web site
 
                     .w-full.px-4.mb-6
                         .w-full.md_w-1_2
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Location
+                            label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Location
                             .relative
-                                select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                     option Option 1
                                     option Option 2
                                     option Option 3
@@ -225,11 +225,11 @@ block page
 block footer
     .flex.flex-row.justify-end.items-center.px-12.py-4.bg-white.border-t.border-gray-200.z-50
         nav.flex.flex-row
-            button.flex.flex-row.items-center.ml-4.text-gray-600.rounded.outline-none.hover_opacity-75.fade(type="button")
+            button.flex.flex-row.items-center.ml-4.text-gray-700.rounded.outline-none.hover_opacity-75.fade(type="button")
                 span.py-1.text-sm.font-medium.tracking-widest.uppercase Cancel
-            button.flex.flex-row.items-center.ml-4.text-indigo-700.bg-white.border.border-indigo-700.outline-none.rounded.hover_opacity-75.fade(type="button")
+            button.flex.flex-row.items-center.ml-4.text-blue-500.bg-white.border.border-blue-500.outline-none.rounded.hover_opacity-75.fade(type="button")
                 span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Save&Exit
-            button.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
+            button.flex.flex-row.items-center.ml-4.text-white.bg-blue-500.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
                 span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Save&Keep Editing
             button.flex.flex-row.items-center.ml-4.text-white.bg-red-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
                 span.material-icons.py-1.px-2.bg-red-800.text-md.rounded delete

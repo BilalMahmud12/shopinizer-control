@@ -4,7 +4,7 @@ block meta
     title Dashboard | Shopinizer eCommerce
 
 block nestbar
-    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-indigo-100
+    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-gray-300
         h3.mb-6.text-2xl Customers
 
         .flex.flex-col.mb-6
@@ -12,31 +12,31 @@ block nestbar
             nav.pl-3
                 ul.flex.flex-col
                     li.mb-3
-                        a.text-gray-600.hover_text-indigo-700(href="./customers.html") View
+                        a.text-gray-700.hover_text-blue-500(href="./customers.html") View
                     li.mb-3
-                        a.text-gray-600.hover_text-indigo-700(href="./customer-single.html") Add
+                        a.text-gray-700.hover_text-blue-500(href="./customer-single.html") Add
                     li.mb-3
-                        a.text-gray-600.hover_text-indigo-700(href="./customer-import.html") Import
+                        a.text-gray-700.hover_text-blue-500(href="./customer-import.html") Import
                     li.mb-3
-                        a.text-gray-600.hover_text-indigo-700(href="./customer-export.html") Export
+                        a.text-gray-700.hover_text-blue-500(href="./customer-export.html") Export
                     li.mb-3
-                        a.text-indigo-800.hover_text-indigo-800(href="./customer-groups.html") Customer Groups
+                        a.text-blue-600.hover_text-blue-600(href="./customer-groups.html") Customer Groups
 
 block page
-    .px-12.pt-6.bg-gray-100
+    .px-12.pt-6.bg-gray-200
         .flex.flex-row.justify-between.items-center.mb-6
             h2.text-3xl.font-light.leading-none Customer Groups
             // Buttons control
             nav.flex.flex-row
-                a.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.rounded.hover_opacity-75.fade(href="./customer-single.html")
-                    span.material-icons.py-1.px-2.bg-indigo-800.text-md.rounded-l add
+                a.flex.flex-row.items-center.ml-4.text-white.bg-blue-500.rounded.hover_opacity-75.fade(href="./customer-single.html")
+                    span.material-icons.py-1.px-2.bg-blue-600.text-md.rounded-l add
                     span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase New customer group
-                a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                a.flex.flex-row.items-center.ml-4.text-blue-500.border.border-blue-500.rounded.hover_opacity-50.fade(href="#")
                     span.material-icons.py-1.px-2.text-md more_vert
 
         // Tabs
-        nav.flex.flex-row.border-b.border-gray-300
-            a.block.pb-2.px-5.-mb-px.font-medium.text-indigo-700.border-b-2.border-indigo-700.hover_text-indigo-700(href="./customers.html") All Records
+        nav.flex.flex-row.border-b.border-gray-400
+            a.block.pb-2.px-5.-mb-px.font-medium.text-blue-500.border-b-2.border-blue-500.hover_text-blue-500(href="./customers.html") All Records
 
     .px-12.py-6
         // Recored Table
@@ -45,7 +45,7 @@ block page
                 tr
                     th.select-all.no-sort
                         label.pointer-events-none.inline-flex.items-center.justify-center.w-full.h-full
-                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                            input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                     th.py-2.text-xs.font-bold.uppercase Group Name
                     th.py-2.text-xs.font-bold.uppercase Customer Group Discounts
                     th.py-2.text-xs.font-bold.uppercase Customers in Group
@@ -54,9 +54,9 @@ block page
                 tr
                     td.p-0
                         label.pointer-events-none.inline-flex.items-center.justify-center.w-full.h-full.cursor-pointer
-                            input.select-row.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                            input.select-row.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                     td
-                        a.text-indigo-500.hover_text-indigo-700(href="./customer-group-single.html") Users
+                        a.text-blue-500.hover_text-blue-500(href="./customer-group-single.html") Users
                     td 0
                     td 0
                     td

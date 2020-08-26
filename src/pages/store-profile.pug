@@ -4,27 +4,27 @@ block meta
     title Store | Shopinizer eCommerce
 
 block nestbar
-    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-indigo-100
+    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-gray-300
         h3.mb-6.text-2xl Store Setup
 
         nav.flex.flex-col.mb-6
             ul.flex.flex-col
                 li.mb-3
-                    a.text-indigo-800.hover_text-indigo-800(href="./store-profile.html") Store Profile
+                    a.text-blue-600.hover_text-blue-600(href="./store-profile.html") Store Profile
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-currencies.html") Currencies
+                    a.text-gray-700.hover_text-blue-500(href="./store-currencies.html") Currencies
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-payments.html") Payments
+                    a.text-gray-700.hover_text-blue-500(href="./store-payments.html") Payments
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-settings.html") Store Settings
+                    a.text-gray-700.hover_text-blue-500(href="./store-settings.html") Store Settings
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-shipping.html") Shipping
+                    a.text-gray-700.hover_text-blue-500(href="./store-shipping.html") Shipping
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-tax.html") Tax
+                    a.text-gray-700.hover_text-blue-500(href="./store-tax.html") Tax
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-points.html") Point of Sale
+                    a.text-gray-700.hover_text-blue-500(href="./store-points.html") Point of Sale
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-accounting.html") Accounting
+                    a.text-gray-700.hover_text-blue-500(href="./store-accounting.html") Accounting
 
 block page
     .flex.flex-col.px-12.py-4.bg-white.shadow-sm.z-50
@@ -34,32 +34,32 @@ block page
 
             // Buttons control
             nav.flex.flex-row
-                a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                a.flex.flex-row.items-center.ml-4.text-blue-500.border.border-blue-500.rounded.hover_opacity-50.fade(href="#")
                     span.material-icons.py-1.px-2.text-md more_vert
 
-    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
+    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-200
         // start Form
         form.w-full.max-w-5xl(action="/upload" method="post" enctype="multipart/form-data" )
 
             .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-6.text-2xl.font-normal.text-gray-600 Contact Information
+                h6.mb-6.text-2xl.font-normal.text-gray-700 Contact Information
                 
                 .flex.flex-wrap.-mx-4
                     .flex.flex-wrap.w-full.px-4.mb-6
                         .md_w-1_2
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Store Name
-                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text")
+                            label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Store Name
+                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text")
                         
                     .flex.flex-wrap.w-full.px-4.mb-6
                         .md_w-1_2
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Store Address
-                            textarea.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(rows="4")
+                            label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Store Address
+                            textarea.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(rows="4")
                         
                     .flex.flex-wrap.w-full.px-4.mb-6
                         .md_w-1_2
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Store Country
+                            label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Store Country
                             .relative
-                                select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                     option Turkey
                                     option Option 2
                                     option Option 3
@@ -69,20 +69,20 @@ block page
                         
                     .flex.flex-wrap.w-full.px-4.mb-6
                         .md_w-1_2
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Email
-                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="email")
+                            label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Email
+                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="email")
                         
                     .flex.flex-wrap.w-full.px-4.mb-6
                         .md_w-1_2
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Phone
-                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="tel")
-                            p.mt-1.text-sm.text-gray-600 Stores with contact numbers get higher conversion rates
+                            label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Phone
+                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="tel")
+                            p.mt-1.text-sm.text-gray-700 Stores with contact numbers get higher conversion rates
         // end Form
                     
 block footer
     .flex.flex-row.justify-end.items-center.px-12.py-4.bg-white.border-t.border-gray-200.z-50
         nav.flex.flex-row
-            button.flex.flex-row.items-center.ml-4.text-gray-600.rounded.outline-none.hover_opacity-75.fade(type="button")
+            button.flex.flex-row.items-center.ml-4.text-gray-700.rounded.outline-none.hover_opacity-75.fade(type="button")
                 span.py-1.text-sm.font-medium.tracking-widest.uppercase Cancel
-            button.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
+            button.flex.flex-row.items-center.ml-4.text-white.bg-blue-500.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
                 span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Save

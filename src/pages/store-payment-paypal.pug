@@ -4,56 +4,56 @@ block meta
     title Store | Shopinizer eCommerce
 
 block nestbar
-    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-indigo-100
+    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-gray-300
         h3.mb-6.text-2xl Store Setup
 
         nav.flex.flex-col.mb-6
             ul.flex.flex-col
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-profile.html") Store Profile
+                    a.text-gray-700.hover_text-blue-500(href="./store-profile.html") Store Profile
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-currencies.html") Currencies
+                    a.text-gray-700.hover_text-blue-500(href="./store-currencies.html") Currencies
                 li.mb-3
-                    a.text-indigo-800.hover_text-indigo-800(href="./store-payments.html") Payments
+                    a.text-blue-600.hover_text-blue-600(href="./store-payments.html") Payments
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-settings.html") Store Settings
+                    a.text-gray-700.hover_text-blue-500(href="./store-settings.html") Store Settings
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-shipping.html") Shipping
+                    a.text-gray-700.hover_text-blue-500(href="./store-shipping.html") Shipping
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-tax.html") Tax
+                    a.text-gray-700.hover_text-blue-500(href="./store-tax.html") Tax
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-points.html") Point of Sale
+                    a.text-gray-700.hover_text-blue-500(href="./store-points.html") Point of Sale
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-accounting.html") Accounting
+                    a.text-gray-700.hover_text-blue-500(href="./store-accounting.html") Accounting
 
 block page
     .flex.flex-col.px-12.py-4.bg-white.shadow-sm.z-50
         .flex.flex-row.items-center.justify-between.-ml-3
             .flex.flex-col
                 nav.flex.flex-row.mb-1
-                    a.flex.flex-row.items-center.text-gray-500.hover_text-indigo-700.fade(href="./store-payments.html")
+                    a.flex.flex-row.items-center.text-gray-500.hover_text-blue-500.fade(href="./store-payments.html")
                         span.material-icons.text-xl keyboard_backspace
                         span.ml-2.font-bold.text-xs.uppercase View Payment Methods
                 h2.mb-2.text-3xl.font-light.leading-none PayPal
 
             // Buttons control
             nav.flex.flex-row
-                a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                a.flex.flex-row.items-center.ml-4.text-blue-500.border.border-blue-500.rounded.hover_opacity-50.fade(href="#")
                     span.material-icons.py-1.px-2.text-md more_vert
 
 
-    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
+    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-200
         // start Form
         form.w-full.max-w-5xl(action="/upload" method="post" enctype="multipart/form-data" )
 
             .mb-5.text-center
-                p.text-lg.font-normal.text-gray-600 To integrate PayPal into your store simply complete the form above and click the 'Save' button.
+                p.text-lg.font-normal.text-gray-700 To integrate PayPal into your store simply complete the form above and click the 'Save' button.
 
             .flex.flex-wrap.-mx-4.mb-5
                 .w-full.md_w-3_12.px-4
-                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Show payment methods for: 
+                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Show payment methods for: 
                     .relative
-                        select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                        select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                             option USD
                             option Option 2
                             option Option 3
@@ -72,13 +72,13 @@ block page
                             path(fill='#222D65', d='M21.754 7.151a9.757 9.757 0 0 0-1.203-.267 15.284 15.284 0 0 0-2.426-.177h-7.352a1.172 1.172 0 0 0-1.159.992L8.05 17.605l-.045.289a1.336 1.336 0 0 1 1.321-1.132h2.752c5.405 0 9.637-2.195 10.874-8.545.037-.188.068-.371.096-.55a6.594 6.594 0 0 0-1.017-.429 9.045 9.045 0 0 0-.277-.087z')
                             path(fill='#253B80', d='M9.614 7.699a1.169 1.169 0 0 1 1.159-.991h7.352c.871 0 1.684.057 2.426.177a9.757 9.757 0 0 1 1.481.353c.365.121.704.264 1.017.429.368-2.347-.003-3.945-1.272-5.392C20.378.682 17.853 0 14.622 0h-9.38c-.66 0-1.223.48-1.325 1.133L.01 25.898a.806.806 0 0 0 .795.932h5.791l1.454-9.225 1.564-9.906z')
 
-                h6.mb-6.text-2xl.font-normal.text-gray-600 Settings
+                h6.mb-6.text-2xl.font-normal.text-gray-700 Settings
                                 
                 .flex.flex-wrap.-mx-4.mb-6
                     .w-full.md_w-1_2.px-4
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Account Type
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Account Type
                         .relative
-                            select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                            select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                 option Demo
                                 option Live
                             .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
@@ -87,24 +87,24 @@ block page
                     
                 .flex.flex-wrap.-mx-4.mb-6
                     .w-full.md_w-1_2.px-4
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Display Name
-                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text" value="PayPal")
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Display Name
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text" value="PayPal")
                 
                 .flex.flex-wrap.-mx-4.mb-6
                     .w-full.md_w-1_2.px-4
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide PayPal Client ID 
-                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text")
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide PayPal Client ID 
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text")
                 
                 .flex.flex-wrap.-mx-4.mb-6
                     .w-full.md_w-1_2.px-4
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide PayPal Secret
-                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="password")
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide PayPal Secret
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="password")
 
                 .flex.flex-wrap.-mx-4.mb-6
                     .w-full.md_w-1_2.px-4
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Transaction Type
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Transaction Type
                         .relative
-                            select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                            select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                 option Authorize & Capture
                                 option Authorize Only
                             .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
@@ -116,7 +116,7 @@ block page
 block footer
     .flex.flex-row.justify-end.items-center.px-12.py-4.bg-white.border-t.border-gray-200.z-50
         nav.flex.flex-row
-            button.flex.flex-row.items-center.ml-4.text-gray-600.rounded.outline-none.hover_opacity-75.fade(type="button")
+            button.flex.flex-row.items-center.ml-4.text-gray-700.rounded.outline-none.hover_opacity-75.fade(type="button")
                 span.py-1.text-sm.font-medium.tracking-widest.uppercase Cancel
-            button.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
+            button.flex.flex-row.items-center.ml-4.text-white.bg-blue-500.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
                 span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Save

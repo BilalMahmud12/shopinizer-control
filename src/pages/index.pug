@@ -9,24 +9,24 @@ block page
             h2.text-3xl.font-light.leading-none Dashboard
             // Buttons control
             nav.relative.flex.flex-row(x-data='{ open: false }')
-                button.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(type="button" x-on:click="open = true")
+                button.flex.flex-row.items-center.ml-4.text-blue-500.border.border-blue-500.rounded.hover_opacity-50.fade(type="button" x-on:click="open = true")
                     span.material-icons.py-1.px-2.text-md more_vert
                 .absolute.top-0.mt-8.right-0.z-30.py-2.w-full.md_w-48.bg-white.border.shadow-lg.rounded(x-show.transition='open' x-on:click.away='open = false')
-                    a.block.w-full.py-1.px-4.text-sm.font-medium.text-gray-700.hover_text-indigo-700.hover_bg-gray-200(href="./product-single.html") Add Product
-                    a.block.w-full.py-1.px-4.text-sm.font-medium.text-gray-700.hover_text-indigo-700.hover_bg-gray-200(href="./product-category-single.html") Add Product Category
-                    a.block.w-full.py-1.px-4.text-sm.font-medium.text-gray-700.hover_text-indigo-700.hover_bg-gray-200(href="#") ...
+                    a.block.w-full.py-1.px-4.text-sm.font-medium.text-gray-700.hover_text-blue-500.hover_bg-gray-200(href="./product-single.html") Add Product
+                    a.block.w-full.py-1.px-4.text-sm.font-medium.text-gray-700.hover_text-blue-500.hover_bg-gray-200(href="./product-category-single.html") Add Product Category
+                    a.block.w-full.py-1.px-4.text-sm.font-medium.text-gray-700.hover_text-blue-500.hover_bg-gray-200(href="#") ...
 
-    .flex.flex-col.flex-1.w-full.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
+    .flex.flex-col.flex-1.w-full.h-full.py-8.px-12.overflow-y-auto.bg-gray-200
         .w-full
-            .mb-6.relative.bg-indigo-100.border-t-4.border-indigo-500.rounded-b.text-indigo-900.px-4.py-3.shadow-md(role='alert' x-data='{ open: true }' x-show.transition='open')
+            .mb-6.relative.bg-blue-100.border-t-4.border-blue-500.rounded-b.text-blue-900.px-4.py-3.shadow-md(role='alert' x-data='{ open: true }' x-show.transition='open')
                 .flex
                     .py-1
-                        span.material-icons.text-3xl.text-indigo-500.mr-4 help_outline
+                        span.material-icons.text-3xl.text-blue-500.mr-4 help_outline
                     div
                         p.font-bold Cras euismod tellus non orci venenatis
                         p.text-sm Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse iaculis scelerisque nulla.
                 .absolute.top-0.right-0.inline-block.mt-2.mr-2
-                    button.text-gray-500.hover_indigo-500.fade(x-on:click="open = false")
+                    button.text-gray-500.hover_blue-500.fade(x-on:click="open = false")
                         span.material-icons.text-xl close
 
             .mb-6.relative.bg-red-100.border-t-4.border-red-500.rounded-b.text-red-900.px-4.py-3.shadow-md(role='alert' x-data='{ open: true }' x-show.transition='open')
@@ -37,49 +37,82 @@ block page
                         p.font-bold Cras euismod tellus non orci venenatis
                         p.text-sm Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 .absolute.top-0.right-0.inline-block.mt-2.mr-2
-                    button.text-gray-500.hover_indigo-500.fade(x-on:click="open = false")
+                    button.text-gray-500.hover_blue-500.fade(x-on:click="open = false")
                         span.material-icons.text-xl close
+
 
 
             // START Sales Statistics
             .mb-6
-                h6.mb-2.text-xl.font-normal.text-gray-600 Sales
+                h6.mb-2.text-xl.font-normal.text-gray-700 Store Statistics
+                .w-full.p-5.bg-white.shadow.rounded
+                    .flex.flex-warp.-mx-4
+                        a.w-full.md_w-3_12.px-4.text-center.fade.hover_bg-blue-100()
+                            .border-r
+                                .mb-1
+                                    span.mx-1.text-3xl.text-blue-900 1
+                                .text-sm.uppercase.text-gray-700.tracking-wide Orders
+
+                        .w-full.md_w-3_12.px-4.text-center
+                            .border-r
+                                .mb-1
+                                    span.mx-1.text-3xl.text-blue-900 2
+                                .text-sm.uppercase.text-gray-700.tracking-wide Customers
+                                
+                        .w-full.md_w-3_12.px-4.text-center
+                            .border-r
+                                .mb-1
+                                    span.mx-1.text-3xl.text-blue-900 20
+                                .text-sm.uppercase.text-gray-700.tracking-wide Products
+                                
+                        .w-full.md_w-3_12.px-4.text-center
+                            .border-0
+                                .mb-1
+                                    span.mx-1.text-3xl.text-blue-900 8
+                                .text-sm.uppercase.text-gray-700.tracking-wide Categories
+                
+            // END Sales Statistics
+            
+
+            // START Sales Statistics
+            .mb-6
+                h6.mb-2.text-xl.font-normal.text-gray-700 Sales
                 .w-full.p-5.bg-white.shadow.rounded
                     .flex.flex-warp.-mx-4
                         .w-full.md_w-4_12.px-4.text-center
                             .border-r
                                 .mb-1.text-gray-500
                                     span.text-xl.align-top USD
-                                    span.mx-1.text-3xl.text-indigo-900 21,404
+                                    span.mx-1.text-3xl.text-blue-900 21,404
                                     span.text-xl.align-top .74
-                                .text-sm.uppercase.text-gray-600.tracking-wide Total Orders
+                                .text-sm.uppercase.text-gray-700.tracking-wide Total Orders
 
                         .w-full.md_w-4_12.px-4.text-center
                             .border-r
                                 .mb-1.text-gray-500
                                     span.text-xl.align-top USD
-                                    span.mx-1.text-3xl.text-indigo-900 21,404
+                                    span.mx-1.text-3xl.text-blue-900 21,404
                                     span.text-xl.align-top .74
-                                .text-sm.uppercase.text-gray-600.tracking-wide Last Week
+                                .text-sm.uppercase.text-gray-700.tracking-wide Last Week
 
                         .w-full.md_w-4_12.px-4.text-center
                             .border-0
                                 .mb-1.text-gray-500
                                     span.text-xl.align-top USD
-                                    span.mx-1.text-3xl.text-indigo-900 21,404
+                                    span.mx-1.text-3xl.text-blue-900 21,404
                                     span.text-xl.align-top .74
-                                .text-sm.uppercase.text-gray-600.tracking-wide This day
+                                .text-sm.uppercase.text-gray-700.tracking-wide This day
                 
             // END Sales Statistics
 
 
             // START Store Performance
             .mb-6
-                h6.mb-2.text-xl.font-normal.text-gray-600 Store Performance
+                h6.mb-2.text-xl.font-normal.text-gray-700 Store Performance
                 .w-full.p-5.bg-white.shadow.rounded
                     .flex.flex-row.items-center.justify-between.pb-4.mb-0.border-b
                         .relative.mr-4
-                            select.block.w-full.py-2.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                            select.block.w-full.py-2.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                 option Today
                                 option(selected) Week to date
                                 option Month to date
@@ -90,7 +123,7 @@ block page
                             .absolute.pointer-events-none.inset-y-0.right-0.flex.items-center.pt-1.px-3.text-gray-700
                                 svg.fill-current.w-5.h-5(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 20 20')
                                     path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
-                        p.text-base.font-bold.text-gray-600 Aug 23, 2020 – Aug 26, 2020
+                        p.text-base.font-bold.text-gray-700 Aug 23, 2020 – Aug 26, 2020
 
                     .flex.flex-warp.-mx-4
                         .w-full.md_w-4_12.px-4
@@ -122,49 +155,18 @@ block page
             // END Store Performance
 
 
-            // START Sales Statistics
-            .mb-6
-                h6.mb-2.text-xl.font-normal.text-gray-600 Store Statistics
-                .w-full.p-5.bg-white.shadow.rounded
-                    .flex.flex-warp.-mx-4
-                        .w-full.md_w-3_12.px-4.text-center
-                            .border-r
-                                .mb-1
-                                    span.mx-1.text-3xl.text-indigo-900 1
-                                .text-sm.uppercase.text-gray-600.tracking-wide Orders
-
-                        .w-full.md_w-3_12.px-4.text-center
-                            .border-r
-                                .mb-1
-                                    span.mx-1.text-3xl.text-indigo-900 2
-                                .text-sm.uppercase.text-gray-600.tracking-wide Customers
-                                
-                        .w-full.md_w-3_12.px-4.text-center
-                            .border-r
-                                .mb-1
-                                    span.mx-1.text-3xl.text-indigo-900 20
-                                .text-sm.uppercase.text-gray-600.tracking-wide Products
-                                
-                        .w-full.md_w-3_12.px-4.text-center
-                            .border-0
-                                .mb-1
-                                    span.mx-1.text-3xl.text-indigo-900 8
-                                .text-sm.uppercase.text-gray-600.tracking-wide Categories
-                
-            // END Sales Statistics
-
             // START Orders
             .mb-8
-                h6.mb-2.text-xl.font-normal.text-gray-600 Orders
+                h6.mb-2.text-xl.font-normal.text-gray-700 Orders
                 .w-full.p-5.bg-white.shadow.rounded( x-data="{ tab: 'recent' }")
                     // START Tabs
                     .flex.flex-row.items-center.justify-between.pb-4.mb-5.border-b
-                        nav.flex.flex-row.text-gray-600
-                            button.py-1.px-4.mr-1.text-sm.font-medium.bg-transparent.rounded-full.cursor-pointer.fade(href="#" x-on:click="tab = 'recent'" x-bind:class="{ 'text-white bg-indigo-700 hover_text-white': tab === 'recent', 'hover_text-indigo-700': tab !== 'recent'}") Recent
-                            button.py-1.px-4.mr-1.text-sm.font-medium.bg-transparent.rounded-full.cursor-pointer.fade(type="button" x-on:click="tab = 'pending'" x-bind:class="{ 'text-white bg-indigo-700 hover_text-white': tab === 'pending', 'hover_text-indigo-700': tab !== 'pending' }") Pending
-                            button.py-1.px-4.mr-1.text-sm.font-medium.bg-transparent.rounded-full.cursor-pointer.fade(type="button" x-on:click="tab = 'completed'" x-bind:class="{ 'text-white bg-indigo-700 hover_text-white': tab === 'completed', 'hover_text-indigo-700': tab !== 'completed' }") Completed
-                            button.py-1.px-4.mr-1.text-sm.font-medium.bg-transparent.rounded-full.cursor-pointer.fade(type="button" x-on:click="tab = 'refunded'" x-bind:class="{ 'text-white bg-indigo-700 hover_text-white': tab === 'refunded', 'hover_text-indigo-700': tab !== 'refunded' }") Refunded
-                        a.flex.items-center.text-indigo-700.hover_text-indigo-800.fade(href="./orders.html")
+                        nav.flex.flex-row.text-gray-700
+                            button.py-1.px-4.mr-1.text-sm.font-medium.bg-transparent.rounded-full.cursor-pointer.fade(href="#" x-on:click="tab = 'recent'" x-bind:class="{ 'text-white bg-blue-500 hover_text-white': tab === 'recent', 'hover_text-blue-500': tab !== 'recent'}") Recent
+                            button.py-1.px-4.mr-1.text-sm.font-medium.bg-transparent.rounded-full.cursor-pointer.fade(type="button" x-on:click="tab = 'pending'" x-bind:class="{ 'text-white bg-blue-500 hover_text-white': tab === 'pending', 'hover_text-blue-500': tab !== 'pending' }") Pending
+                            button.py-1.px-4.mr-1.text-sm.font-medium.bg-transparent.rounded-full.cursor-pointer.fade(type="button" x-on:click="tab = 'completed'" x-bind:class="{ 'text-white bg-blue-500 hover_text-white': tab === 'completed', 'hover_text-blue-500': tab !== 'completed' }") Completed
+                            button.py-1.px-4.mr-1.text-sm.font-medium.bg-transparent.rounded-full.cursor-pointer.fade(type="button" x-on:click="tab = 'refunded'" x-bind:class="{ 'text-white bg-blue-500 hover_text-white': tab === 'refunded', 'hover_text-blue-500': tab !== 'refunded' }") Refunded
+                        a.flex.items-center.text-blue-500.hover_text-blue-600.fade(href="./orders.html")
                             span View more
                             span.material-icons.mt-1.ml-1 chevron_right
                     // END Tabs
@@ -184,18 +186,18 @@ block page
                                         .w-2.h-5.bg-blue-400
                                         span.ml-2 Disputed
                                     td.py-3.align-middle
-                                        a.text-indigo-700.hover_text-indigo-800.fade(href="./order-single.html") Order #100 Rakan Awajan 
+                                        a.text-blue-500.hover_text-blue-600.fade(href="./order-single.html") Order #100 Rakan Awajan 
                                     td.py-3.align-middle.text-sm.font-bold USD49.00
-                                    td.py-3.align-middle.text-gray-600 on 12th Aug 2020 at 06:37 PM 
+                                    td.py-3.align-middle.text-gray-700 on 12th Aug 2020 at 06:37 PM 
 
                                 tr.border-b.last_border-b-0
                                     td.py-3.align-middle.flex.items-center
                                         .w-2.h-5.bg-blue-400
                                         span.ml-2 Disputed
                                     td.py-3.align-middle
-                                        a.text-indigo-700.hover_text-indigo-800.fade(href="./order-single.html") Order #100 Rakan Awajan 
+                                        a.text-blue-500.hover_text-blue-600.fade(href="./order-single.html") Order #100 Rakan Awajan 
                                     td.py-3.align-middle.text-sm.font-bold USD49.00
-                                    td.py-3.align-middle.text-gray-600 on 12th Aug 2020 at 06:37 PM 
+                                    td.py-3.align-middle.text-gray-700 on 12th Aug 2020 at 06:37 PM 
 
                     // END Recent Content
 
@@ -213,8 +215,8 @@ block page
 
             // START Notifications
             .mb-8
-                h6.mb-2.text-xl.font-normal.text-gray-600 Notifications
-                button.bg-indigo-700.text-white.font-bold.py-2.px-6.rounded.fade.hover_bg-indigo-800.focus_outline-none(type="button" onclick="new Noty({type: 'info', timeout: '5000', text: 'Info notification text'}).show();") Info
+                h6.mb-2.text-xl.font-normal.text-gray-700 Notifications
+                button.bg-blue-500.text-white.font-bold.py-2.px-6.rounded.fade.hover_bg-blue-600.focus_outline-none(type="button" onclick="new Noty({type: 'info', timeout: '5000', text: 'Info notification text'}).show();") Info
                 button.bg-yellow-500.text-white.font-bold.py-2.px-6.rounded.fade.hover_bg-yellow-600.focus_outline-none(type="button" onclick="new Noty({type: 'warning', timeout: '5000', text: 'Info notification text'}).show();") Warning
                 button.bg-red-500.text-white.font-bold.py-2.px-6.rounded.fade.hover_bg-red-600.focus_outline-none(type="button" onclick="new Noty({type: 'danger', timeout: '5000', text: 'Info notification text'}).show();") Danger
             // END Notifications

@@ -4,32 +4,32 @@ block meta
     title Dashboard | Shopinizer eCommerce
 
 block nestbar
-    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-indigo-100
+    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-gray-300
         h3.mb-6.text-2xl Orders
 
         nav.flex.flex-col.mb-6
             ul.flex.flex-col
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./orders.html") View
+                    a.text-gray-700.hover_text-blue-500(href="./orders.html") View
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-single.html") Add
+                    a.text-gray-700.hover_text-blue-500(href="./order-single.html") Add
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-import.html") Import
+                    a.text-gray-700.hover_text-blue-500(href="./order-import.html") Import
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-export.html") Export
+                    a.text-gray-700.hover_text-blue-500(href="./order-export.html") Export
 
         nav.flex.flex-col.mb-6
             ul.flex.flex-col
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-drafts.html") Draft Orders
+                    a.text-gray-700.hover_text-blue-500(href="./order-drafts.html") Draft Orders
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-shipments.html") Shipments
+                    a.text-gray-700.hover_text-blue-500(href="./order-shipments.html") Shipments
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-tracking.html") Tracking Numbers
+                    a.text-gray-700.hover_text-blue-500(href="./order-tracking.html") Tracking Numbers
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-gifts.html") Gift Certificates
+                    a.text-gray-700.hover_text-blue-500(href="./order-gifts.html") Gift Certificates
                 li.mb-3
-                    a.text-indigo-800.hover_text-indigo-800(href="./order-statuses.html") Order Statuses
+                    a.text-blue-600.hover_text-blue-600(href="./order-statuses.html") Order Statuses
 
 
 block page
@@ -40,13 +40,13 @@ block page
 
             // Buttons control
             nav.flex.flex-row
-                a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                a.flex.flex-row.items-center.ml-4.text-blue-500.border.border-blue-500.rounded.hover_opacity-50.fade(href="#")
                     span.material-icons.py-1.px-2.text-md more_vert
 
-    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
+    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-200
         .mb-5.text-left
             h5.mb-1.text-xl.font-medium Edit Order Statuses
-            p.text-lg.font-light.text-gray-600 Order statuses can help you decide what actions need to be taken for a particular order. Does the order need to be packaged, shipped, or refunded? Most order statuses are applied as a result of store user or customer action, but some must be manually changed.
+            p.text-lg.font-light.text-gray-700 Order statuses can help you decide what actions need to be taken for a particular order. Does the order need to be packaged, shipped, or refunded? Most order statuses are applied as a result of store user or customer action, but some must be manually changed.
                 br
                 a(href="#") Learn more
         // start Form
@@ -74,11 +74,11 @@ block page
 block footer
     .flex.flex-row.justify-end.items-center.px-12.py-4.bg-white.border-t.border-gray-200.z-50
         nav.flex.flex-row
-            button.flex.flex-row.items-center.ml-4.text-gray-600.rounded.outline-none.hover_opacity-75.fade(type="button")
+            button.flex.flex-row.items-center.ml-4.text-gray-700.rounded.outline-none.hover_opacity-75.fade(type="button")
                 span.py-1.text-sm.font-medium.tracking-widest.uppercase Cancel
-            button.flex.flex-row.items-center.ml-4.text-indigo-700.bg-white.border.border-indigo-700.outline-none.rounded.hover_opacity-75.fade(type="button")
+            button.flex.flex-row.items-center.ml-4.text-blue-500.bg-white.border.border-blue-500.outline-none.rounded.hover_opacity-75.fade(type="button")
                 span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Save&Exit
-            button.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
+            button.flex.flex-row.items-center.ml-4.text-white.bg-blue-500.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
                 span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Save&Keep Editing
             button.flex.flex-row.items-center.ml-4.text-white.bg-red-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
                 span.material-icons.py-1.px-2.bg-red-800.text-md.rounded delete

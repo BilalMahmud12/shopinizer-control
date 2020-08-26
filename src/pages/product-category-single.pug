@@ -4,7 +4,7 @@ block meta
     title Dashboard | Shopinizer eCommerce
 
 block nestbar
-    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-indigo-100
+    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-gray-300
         h3.mb-6.text-2xl Catalog
 
         .flex.flex-col.mb-6
@@ -12,30 +12,30 @@ block nestbar
             nav.pl-3
                 ul.flex.flex-col
                     li.mb-3
-                        a.text-gray-600.hover_text-indigo-700(href="./products.html") View
+                        a.text-gray-700.hover_text-blue-500(href="./products.html") View
                     li.mb-3
-                        a.text-gray-600.hover_text-indigo-700(href="./product-single.html") Add
+                        a.text-gray-700.hover_text-blue-500(href="./product-single.html") Add
                     li.mb-3
-                        a.text-gray-600.hover_text-indigo-700(href="./product-import.html") Import
+                        a.text-gray-700.hover_text-blue-500(href="./product-import.html") Import
                     li.mb-3
-                        a.text-gray-600.hover_text-indigo-700(href="./product-export.html") Export
+                        a.text-gray-700.hover_text-blue-500(href="./product-export.html") Export
 
         .flex.flex-col.mb-6
             h3.mb-3.text-md Product Definitions
             nav.pl-3
                 ul.flex.flex-col
                     li.mb-3
-                        a.text-gray-600.hover_text-indigo-700(href="./product-brands.html") Brands
+                        a.text-gray-700.hover_text-blue-500(href="./product-brands.html") Brands
                     li.mb-3
-                        a.text-indigo-800.hover_text-indigo-800(href="./product-categories.html") Product Categories
+                        a.text-blue-600.hover_text-blue-600(href="./product-categories.html") Product Categories
                     li.mb-3
-                        a.text-gray-600.hover_text-indigo-700(href="./product-attributes.html") Product Attributes
+                        a.text-gray-700.hover_text-blue-500(href="./product-attributes.html") Product Attributes
                     li.mb-3
-                        a.text-gray-600.hover_text-indigo-700(href="./product-options.html") Product Options
+                        a.text-gray-700.hover_text-blue-500(href="./product-options.html") Product Options
                     li.mb-3
-                        a.text-gray-600.hover_text-indigo-700(href="./product-filters.html") Product Filters
+                        a.text-gray-700.hover_text-blue-500(href="./product-filters.html") Product Filters
                     li.mb-3
-                        a.text-gray-600.hover_text-indigo-700(href="./product-lists.html") Price Lists
+                        a.text-gray-700.hover_text-blue-500(href="./product-lists.html") Price Lists
 
 
 block page
@@ -43,39 +43,39 @@ block page
         .flex.flex-row.items-center.justify-between.-ml-3
             .flex.flex-col
                 nav.flex.flex-row.mb-1
-                    a.flex.flex-row.items-center.text-gray-500.hover_text-indigo-700.fade(href="./product-categories.html")
+                    a.flex.flex-row.items-center.text-gray-500.hover_text-blue-500.fade(href="./product-categories.html")
                         span.material-icons.text-xl keyboard_backspace
                         span.ml-2.font-bold.text-xs.uppercase View Categories
                 h2.mb-2.text-3xl.font-normal.leading-none Add Category | Category Name Here
 
             // Buttons control
             nav.flex.flex-row
-                a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                a.flex.flex-row.items-center.ml-4.text-blue-500.border.border-blue-500.rounded.hover_opacity-50.fade(href="#")
                     span.material-icons.py-1.px-2.text-md more_vert
 
-    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
+    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-200
         .mb-5.text-center
             h5.mb-1.text-xl.font-medium Edit Category
-            p.text-lg.font-normal.text-gray-600 Modify the details of the category below and click "Save".
+            p.text-lg.font-normal.text-gray-700 Modify the details of the category below and click "Save".
         // start Form
         form#category-form.w-full.max-w-5xl(action="" method="post")
             .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-6.text-2xl.font-normal.text-gray-600 Category Details
+                h6.mb-6.text-2xl.font-normal.text-gray-700 Category Details
 
                 .flex.flex-wrap.-mx-4
                     .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="name") Name
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide(for="name") Name
                             span.mx-1.text-sm.text-red-600 *
-                        input#name.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text" name="name" minlength="2" required placeholder="Simple Category Name")
+                        input#name.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text" name="name" minlength="2" required placeholder="Simple Category Name")
                     
                     .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="url") URL
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide(for="url") URL
                             span.mx-1.text-sm.text-red-600 *
-                        input#url.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text" name="url" minlength="3" required placeholder="/URL-HERE/")
+                        input#url.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text" name="url" minlength="3" required placeholder="/URL-HERE/")
                     
                     .w-full.px-4.mb-6
                         .relative
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Description
+                            label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Description
                             .editor
                                 p Hello World!
                                 p Some initial
@@ -83,7 +83,7 @@ block page
                                     | text
 
                     .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="category") Parent Category
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide(for="category") Parent Category
                             span.mx-1.text-sm.text-red-600 *
                         treeselect(
                             v-model="treeselect_value",
@@ -94,9 +94,9 @@ block page
     
                 .flex.flex-wrap.-mx-4
                     .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="layout-file") Template Layout File
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide(for="layout-file") Template Layout File
                         .relative
-                            select#layout-file.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                            select#layout-file.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                 option Option 1
                                 option Option 2
                                 option Option 3
@@ -106,14 +106,14 @@ block page
                     
                 .flex.flex-wrap.-mx-4
                     .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="image") Category Image
-                        input#image.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="file", placeholder="Upload Category Image")
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide(for="image") Category Image
+                        input#image.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="file", placeholder="Upload Category Image")
                     
                 .flex.flex-wrap.-mx-4
                     .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="product-sort") Default Product Sort
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide(for="product-sort") Default Product Sort
                         .relative
-                            select#product-sort.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                            select#product-sort.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                 option Option 1
                                 option Option 2
                                 option Option 3
@@ -123,33 +123,33 @@ block page
 
                 .flex.flex-wrap.-mx-4
                     .w-full.md_w-1_6.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="sort") Sort Order
-                        input#sort.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", placeholder="0")
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide(for="sort") Sort Order
+                        input#sort.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="number", placeholder="0")
                     
 
             .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-6.text-2xl.font-normal.text-gray-600 Search Engine Optimization
+                h6.mb-6.text-2xl.font-normal.text-gray-700 Search Engine Optimization
 
                 .flex.flex-wrap.-mx-4
                     .w-full.px-4.mb-6
                         .w-full.md_w-1_2
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="sTitle") Page Title
-                            input#sTitle.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                            label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide(for="sTitle") Page Title
+                            input#sTitle.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", placeholder="")
                         
                     .w-full.px-4.mb-6
                         .w-full.md_w-1_2
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="sKeywords") Meta Keywords
-                            input#sKeywords.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                            label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide(for="sKeywords") Meta Keywords
+                            input#sKeywords.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", placeholder="")
                         
                     .w-full.px-4.mb-6
                         .w-full.md_w-1_2
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="sDescription") Meta Description
-                            input#sDescription.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                            label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide(for="sDescription") Meta Description
+                            input#sDescription.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", placeholder="")
                         
                     .w-full.px-4.mb-6
                         .w-full.md_w-1_2
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="sSearch") Search Keywords
-                            input#sSearch.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                            label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide(for="sSearch") Search Keywords
+                            input#sSearch.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", placeholder="")
                         
 
         // end Form
@@ -157,11 +157,11 @@ block page
 block footer
     .flex.flex-row.justify-end.items-center.px-12.py-4.bg-white.border-t.border-gray-200.z-50
         nav.flex.flex-row
-            button.flex.flex-row.items-center.ml-4.text-gray-600.rounded.outline-none.hover_opacity-75.fade(type="button")
+            button.flex.flex-row.items-center.ml-4.text-gray-700.rounded.outline-none.hover_opacity-75.fade(type="button")
                 span.py-1.text-sm.font-medium.tracking-widest.uppercase Cancel
-            button.flex.flex-row.items-center.ml-4.text-indigo-700.bg-white.border.border-indigo-700.outline-none.rounded.hover_opacity-75.fade(type="button")
+            button.flex.flex-row.items-center.ml-4.text-blue-500.bg-white.border.border-blue-500.outline-none.rounded.hover_opacity-75.fade(type="button")
                 span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Save&Exit
-            button.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button" onclick="$('form#category-form').submit();")
+            button.flex.flex-row.items-center.ml-4.text-white.bg-blue-500.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button" onclick="$('form#category-form').submit();")
                 span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Save&Keep Editing
             button.flex.flex-row.items-center.ml-4.text-white.bg-red-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
                 span.material-icons.py-1.px-2.bg-red-800.text-md.rounded delete

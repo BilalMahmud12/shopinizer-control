@@ -36,7 +36,7 @@ module.exports = {
     }),
     extend: {
       colors: {
-        /*'indigo': {
+        'blue': {
           50: '#F2F7FD',
           100: '#E6EFFC',
           200: '#BFD7F7',
@@ -44,10 +44,10 @@ module.exports = {
           400: '#4D90E9',
           500: '#0060DF',
           600: '#0056C9',
-          700: '#0060DF',
+          700: '#003A86',
           800: '#002B64',
           900: '#001D43',
-        },*/
+        },
       },
       maxWidth: {
         'xxs': '16rem'

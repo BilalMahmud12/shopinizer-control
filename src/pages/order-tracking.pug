@@ -4,32 +4,32 @@ block meta
     title Dashboard | Shopinizer eCommerce
 
 block nestbar
-    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-indigo-100
+    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-gray-300
         h3.mb-6.text-2xl Orders
 
         nav.flex.flex-col.mb-6
             ul.flex.flex-col
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./orders.html") View
+                    a.text-gray-700.hover_text-blue-500(href="./orders.html") View
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-single.html") Add
+                    a.text-gray-700.hover_text-blue-500(href="./order-single.html") Add
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-import.html") Import
+                    a.text-gray-700.hover_text-blue-500(href="./order-import.html") Import
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-export.html") Export
+                    a.text-gray-700.hover_text-blue-500(href="./order-export.html") Export
 
         nav.flex.flex-col.mb-6
             ul.flex.flex-col
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-drafts.html") Draft Orders
+                    a.text-gray-700.hover_text-blue-500(href="./order-drafts.html") Draft Orders
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-shipments.html") Shipments
+                    a.text-gray-700.hover_text-blue-500(href="./order-shipments.html") Shipments
                 li.mb-3
-                    a.text-indigo-800.hover_text-indigo-800(href="./order-tracking.html") Tracking Numbers
+                    a.text-blue-600.hover_text-blue-600(href="./order-tracking.html") Tracking Numbers
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-gifts.html") Gift Certificates
+                    a.text-gray-700.hover_text-blue-500(href="./order-gifts.html") Gift Certificates
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-statuses.html") Order Statuses
+                    a.text-gray-700.hover_text-blue-500(href="./order-statuses.html") Order Statuses
 
 
 block page
@@ -40,21 +40,21 @@ block page
 
             // Buttons control
             nav.flex.flex-row
-                a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                a.flex.flex-row.items-center.ml-4.text-blue-500.border.border-blue-500.rounded.hover_opacity-50.fade(href="#")
                     span.material-icons.py-1.px-2.text-md more_vert
 
-    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
+    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-200
         // start Form
         form.w-full.max-w-5xl(action="/upload" method="post" enctype="multipart/form-data" )
 
             .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-6.text-2xl.font-normal.text-gray-600 Order Status Details
+                h6.mb-6.text-2xl.font-normal.text-gray-700 Order Status Details
 
                 .flex.flex-wrap.-mx-4
                     .w-full.md_w-1_2.px-4.mb-0
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Update Order Status to:
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Update Order Status to:
                         .relative
-                            select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                            select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                 option(value='1') Pending
                                 option(value='7') Awaiting Payment
                                 option(value='11' selected='true') Awaiting Fulfillment
@@ -75,48 +75,48 @@ block page
 
 
             .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-6.text-2xl.font-normal.text-gray-600 Import Details
+                h6.mb-6.text-2xl.font-normal.text-gray-700 Import Details
 
                 .flex.flex-wrap.-mx-4
                     .w-full.px-4.mb-0
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Override Existing Details?
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Override Existing Details?
                         label.inline-flex.items-center
-                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                            input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                             span.ml-2 Yes, override existing records
 
 
             .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-6.text-2xl.font-normal.text-gray-600 File Details
+                h6.mb-6.text-2xl.font-normal.text-gray-700 File Details
 
                 .flex.flex-wrap.-mx-4
                     .w-full.px-4.mb-0
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Import File:
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Import File:
                     
                     .w-full.px-4.mb-2
                         label.inline-flex.items-center
-                            input.form-radio.h-6.w-6.text-indigo-700(type="radio")
+                            input.form-radio.h-6.w-6.text-blue-500(type="radio")
                             span.ml-2 Upload a .csv file from my computer(512MB size limit)
                     
                     .w-full.px-4.mb-6
                         label.inline-flex.items-center
-                            input.form-radio.h-6.w-6.text-indigo-700(type="radio")
+                            input.form-radio.h-6.w-6.text-blue-500(type="radio")
                             span.ml-2 Use a file already on the server
                     
                     .w-full.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Contains Headers?
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Contains Headers?
                         label.inline-flex.items-center
-                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                            input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                             span.ml-2 Yes, this file contains headers
                     
                     .w-full.md_w-1_2.flex.flex-wrap.px-4.-mx-4
                         .w-full.px-4.mb-6
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Field Separator:
-                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text" value="," placeholder="")
+                            label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Field Separator:
+                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text" value="," placeholder="")
                          
                     .w-full.md_w-1_2.flex.flex-wrap.px-4.-mx-4
                         .w-full.px-4.mb-6
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Field Enclosure:
-                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text" value='"' placeholder="")
+                            label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Field Enclosure:
+                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text" value='"' placeholder="")
                          
 
         // end Form
@@ -124,7 +124,7 @@ block page
 block footer
     .flex.flex-row.justify-end.items-center.px-12.py-4.bg-white.border-t.border-gray-200.z-50
         nav.flex.flex-row
-            button.flex.flex-row.items-center.ml-4.text-gray-600.rounded.outline-none.hover_opacity-75.fade(type="button")
+            button.flex.flex-row.items-center.ml-4.text-gray-700.rounded.outline-none.hover_opacity-75.fade(type="button")
                 span.py-1.text-sm.font-medium.tracking-widest.uppercase Cancel
-            button.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
+            button.flex.flex-row.items-center.ml-4.text-white.bg-blue-500.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
                 span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Next

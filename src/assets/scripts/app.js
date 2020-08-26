@@ -198,7 +198,19 @@ new Vue({
         // END Charts
 
         // START Form Validate
-        $("#category-form").validate();
+        $("#category-form").validate({
+            rules: {
+                name: {
+                    digits: true,
+
+                }
+            },
+            messages: {
+                name: {
+                    digits: 'only digits'
+                }
+            }
+        });
         // END Form Validate
 
         // Records tables

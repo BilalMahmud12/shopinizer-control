@@ -4,32 +4,32 @@ block meta
     title Dashboard | Shopinizer eCommerce
 
 block nestbar
-    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-indigo-100
+    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-gray-300
         h3.mb-6.text-2xl Orders
 
         nav.flex.flex-col.mb-6
             ul.flex.flex-col
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./orders.html") View
+                    a.text-gray-700.hover_text-blue-500(href="./orders.html") View
                 li.mb-3
-                    a.text-indigo-800.hover_text-indigo-800(href="./order-single.html") Add
+                    a.text-blue-600.hover_text-blue-600(href="./order-single.html") Add
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-import.html") Import
+                    a.text-gray-700.hover_text-blue-500(href="./order-import.html") Import
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-export.html") Export
+                    a.text-gray-700.hover_text-blue-500(href="./order-export.html") Export
 
         nav.flex.flex-col.mb-6
             ul.flex.flex-col
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-drafts.html") Draft Orders
+                    a.text-gray-700.hover_text-blue-500(href="./order-drafts.html") Draft Orders
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-shipments.html") Shipments
+                    a.text-gray-700.hover_text-blue-500(href="./order-shipments.html") Shipments
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-tracking.html") Tracking Numbers
+                    a.text-gray-700.hover_text-blue-500(href="./order-tracking.html") Tracking Numbers
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-gifts.html") Gift Certificates
+                    a.text-gray-700.hover_text-blue-500(href="./order-gifts.html") Gift Certificates
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-statuses.html") Order Statuses
+                    a.text-gray-700.hover_text-blue-500(href="./order-statuses.html") Order Statuses
 
 
 block page
@@ -37,30 +37,30 @@ block page
         .flex.flex-row.items-center.justify-between.-ml-3
             .flex.flex-col
                 nav.flex.flex-row.mb-1
-                    a.flex.flex-row.items-center.text-gray-500.hover_text-indigo-700.fade(href="./orders.html")
+                    a.flex.flex-row.items-center.text-gray-500.hover_text-blue-500.fade(href="./orders.html")
                         span.material-icons.text-xl keyboard_backspace
                         span.ml-2.font-bold.text-xs.uppercase View Ordars
                 h2.mb-2.text-3xl.font-light.leading-none Add|Edit Ordar Here
 
             // Buttons control
             nav.flex.flex-row
-                a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                a.flex.flex-row.items-center.ml-4.text-blue-500.border.border-blue-500.rounded.hover_opacity-50.fade(href="#")
                     span.material-icons.py-1.px-2.text-md more_vert
 
-    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
+    .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-200
         // start Form
         form.w-full.max-w-5xl(action="/upload" method="post" enctype="multipart/form-data" )
             .flex.w-full.mt-4.mb-8
                 .w-3_12
                     .relative.mb-2
-                        .flex.items-center.w-8.h-8.mx-auto.text-white.bg-indigo-700.border-2.border-indigo-700.rounded-full
+                        .flex.items-center.w-8.h-8.mx-auto.text-white.bg-blue-500.border-2.border-blue-500.rounded-full
                             span.w-full.text-base.font-bold.text-center 1
                     p.text-sm.text-center.font-bold Customer Info
                 .w-3_12
                     .relative.mb-2
                         .absolute.flex.align-center.items-center.align-middle.content-center(style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)")
                             .w-full.bg-gray-300.rounded.items-center.align-middle.align-center.flex-1
-                                .w-0.bg-indigo-700.py-1.rounded
+                                .w-0.bg-blue-500.py-1.rounded
                         .flex.items-center.w-8.h-8.mx-auto.text-gray-500.bg-transparent.border-2.border-gray-500.rounded-full
                             span.w-full.text-base.font-bold.text-center 2
                     p.text-sm.text-center.font-normal Items
@@ -68,7 +68,7 @@ block page
                     .relative.mb-2
                         .absolute.flex.align-center.items-center.align-middle.content-center(style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)")
                             .w-full.bg-gray-300.rounded.items-center.align-middle.align-center.flex-1
-                                .w-0.bg-indigo-700.py-1.rounded
+                                .w-0.bg-blue-500.py-1.rounded
                         .flex.items-center.w-8.h-8.mx-auto.text-gray-500.bg-transparent.border-2.border-gray-500.rounded-full
                             span.w-full.text-base.font-bold.text-center 3
                     p.text-sm.text-center.font-normal Shipping
@@ -76,53 +76,53 @@ block page
                     .relative.mb-2
                         .absolute.flex.align-center.items-center.align-middle.content-center(style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)")
                             .w-full.bg-gray-300.rounded.items-center.align-middle.align-center.flex-1
-                                .w-0.bg-indigo-700.py-1.rounded
+                                .w-0.bg-blue-500.py-1.rounded
                         .flex.items-center.w-8.h-8.mx-auto.text-gray-500.bg-transparent.border-2.border-gray-500.rounded-full
                             span.w-full.text-base.font-bold.text-center 4
                     p.text-sm.text-center.font-normal Finalize
 
             .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-6.text-2xl.font-normal.text-gray-600 Customer Information 
+                h6.mb-6.text-2xl.font-normal.text-gray-700 Customer Information 
 
                 .flex.flex-wrap.-mx-4
                     .w-full.px-4.mb-6
                         .mt-2
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Order for
+                            label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Order for
                             label.inline-flex.items-center
-                                input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="customer_type" v-model="customer_type" value="1" checked)
+                                input.form-radio.h-6.w-6.text-blue-500(type="radio" name="customer_type" v-model="customer_type" value="1" checked)
                                 span.ml-2 Existing Customer
                         .mt-2
                             label.inline-flex.items-center
-                                input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="customer_type" v-model="customer_type" value="2")
+                                input.form-radio.h-6.w-6.text-blue-500(type="radio" name="customer_type" v-model="customer_type" value="2")
                                 span.ml-2 New Customer
 
                     .w-full.flex.flex-wrap.px-4.-mx-4(v-if="customer_type == 1")
                         .w-full.md_w-1_2.px-4.mb-6
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Search
-                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                            label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Search
+                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", placeholder="")
                         
                     .w-full.md_w-1_2.flex.flex-wrap.px-4.-mx-4(v-if="customer_type == 2")
                         .w-full.px-4.mb-6
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Email Address
-                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="email", placeholder="")
+                            label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Email Address
+                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="email", placeholder="")
                         
                         .w-full.px-4.mb-6
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Password
-                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="email", placeholder="")
+                            label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Password
+                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="email", placeholder="")
                         
                         .w-full.px-4.mb-6
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Confirm Password
-                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="email", placeholder="")
+                            label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Confirm Password
+                            input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="email", placeholder="")
                         
                         .w-full.px-4.mb-6
                             label.inline-flex.items-center
-                                input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                 span.ml-2 I would like to receive updates and offers.
 
                         .w-full.px-4.mb-6
-                            label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="select-1") Customer Group
+                            label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide(for="select-1") Customer Group
                             .relative
-                                select#select-1.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                select#select-1.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                     option Option 1
                                     option Option 2
                                     option Option 3
@@ -132,42 +132,42 @@ block page
 
 
             .p-8.mb-8.bg-white.shadow.rounded
-                h6.mb-6.text-2xl.font-normal.text-gray-600 Billing Information  
+                h6.mb-6.text-2xl.font-normal.text-gray-700 Billing Information  
 
                 .flex.flex-wrap.-mx-4
                     .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide First Name
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide First Name
                             span.mx-1.text-sm.text-red-600 *
-                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", placeholder="")
                     
                     .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Last Name
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Last Name
                             span.mx-1.text-sm.text-red-600 *
-                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", placeholder="")
                                 
                     .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Company Name
-                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Company Name
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", placeholder="")
                     
                     .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Phone Number
-                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="tel", placeholder="")
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Phone Number
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="tel", placeholder="")
 
                     .w-full.md_w-12_12.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Address Line 1
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Address Line 1
                             span.mx-1.text-sm.text-red-600 *
-                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", placeholder="")
                     
                     .w-full.md_w-12_12.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Address Line 2 
-                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Address Line 2 
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", placeholder="")
                     
 
                     .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="select-2") Country
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide(for="select-2") Country
                             span.mx-1.text-sm.text-red-600 *
                         .relative
-                            select#select-2.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                            select#select-2.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                 option Option 1
                                 option Option 2
                                 option Option 3
@@ -176,24 +176,24 @@ block page
                                     path(d='M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z')
                     
                     .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide State/Province 
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide State/Province 
                             span.mx-1.text-sm.text-red-600 *
-                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", placeholder="")
                     
                     .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Suburb/City
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Suburb/City
                             span.mx-1.text-sm.text-red-600 *
-                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", placeholder="")
                     
                     .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Zip/Postcode
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Zip/Postcode
                             span.mx-1.text-sm.text-red-600 *
-                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                        input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", placeholder="")
                     
                     .w-full.md_w-1_2.px-4.mb-6
-                        label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Address Type
+                        label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Address Type
                         .relative
-                            select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                            select.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                 option Option 1
                                 option Option 2
                                 option Option 3
@@ -203,7 +203,7 @@ block page
                     
                     .w-full.px-4.mb-6
                         label.inline-flex.items-center
-                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                            input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                             span.ml-2 Save to customer's address book
                     
         // end Form
@@ -211,9 +211,9 @@ block page
 block footer
     .flex.flex-row.justify-end.items-center.px-12.py-4.bg-white.border-t.border-gray-200.z-50
         nav.flex.flex-row
-            button.flex.flex-row.items-center.ml-4.text-gray-600.rounded.outline-none.hover_opacity-75.fade(type="button")
+            button.flex.flex-row.items-center.ml-4.text-gray-700.rounded.outline-none.hover_opacity-75.fade(type="button")
                 span.py-1.text-sm.font-medium.tracking-widest.uppercase Cancel
-            button.flex.flex-row.items-center.ml-4.text-indigo-700.bg-white.border.border-indigo-700.outline-none.rounded.hover_opacity-75.fade(type="button")
+            button.flex.flex-row.items-center.ml-4.text-blue-500.bg-white.border.border-blue-500.outline-none.rounded.hover_opacity-75.fade(type="button")
                 span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Back
-            button.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
+            button.flex.flex-row.items-center.ml-4.text-white.bg-blue-500.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
                 span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Next

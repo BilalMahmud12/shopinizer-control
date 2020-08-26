@@ -4,53 +4,53 @@ block meta
     title Dashboard | Shopinizer eCommerce
 
 block nestbar
-    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-indigo-100
+    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-gray-300
         h3.mb-6.text-2xl Orders
 
         nav.flex.flex-col.mb-6
             ul.flex.flex-col
                 li.mb-3
-                    a.text-indigo-800.hover_text-indigo-800(href="./orders.html") View
+                    a.text-blue-600.hover_text-blue-600(href="./orders.html") View
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-single.html") Add
+                    a.text-gray-700.hover_text-blue-500(href="./order-single.html") Add
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-import.html") Import
+                    a.text-gray-700.hover_text-blue-500(href="./order-import.html") Import
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-export.html") Export
+                    a.text-gray-700.hover_text-blue-500(href="./order-export.html") Export
 
         nav.flex.flex-col.mb-6
             ul.flex.flex-col
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-drafts.html") Draft Orders
+                    a.text-gray-700.hover_text-blue-500(href="./order-drafts.html") Draft Orders
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-shipments.html") Shipments
+                    a.text-gray-700.hover_text-blue-500(href="./order-shipments.html") Shipments
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-tracking.html") Tracking Numbers
+                    a.text-gray-700.hover_text-blue-500(href="./order-tracking.html") Tracking Numbers
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-gifts.html") Gift Certificates
+                    a.text-gray-700.hover_text-blue-500(href="./order-gifts.html") Gift Certificates
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./order-statuses.html") Order Statuses
+                    a.text-gray-700.hover_text-blue-500(href="./order-statuses.html") Order Statuses
 
 block page
-    .px-12.pt-6.bg-gray-100
+    .px-12.pt-6.bg-gray-200
         .flex.flex-row.justify-between.items-center.mb-6
             h2.text-3xl.font-light.leading-none View Orders
             // Buttons control
             nav.flex.flex-row
-                a.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.rounded.hover_opacity-75.fade(href="./order-single.html")
-                    span.material-icons.py-1.px-2.bg-indigo-800.text-md.rounded-l add
+                a.flex.flex-row.items-center.ml-4.text-white.bg-blue-500.rounded.hover_opacity-75.fade(href="./order-single.html")
+                    span.material-icons.py-1.px-2.bg-blue-600.text-md.rounded-l add
                     span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase New order
-                a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                a.flex.flex-row.items-center.ml-4.text-blue-500.border.border-blue-500.rounded.hover_opacity-50.fade(href="#")
                     span.material-icons.py-1.px-2.text-md more_vert
 
         // Tabs
-        nav.flex.flex-row.border-b.border-gray-300
-            a.block.pb-2.px-5.-mb-px.font-medium.text-indigo-700.border-b-2.border-indigo-700.hover_text-indigo-700(href="./orders.html") All Records
-            a.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(href="./orders.html") Awaiting Payment
-            a.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(href="./orders.html") Awaiting Fulfillment
-            a.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(href="./orders.html") Awaiting Shipment
-            a.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(href="./orders.html") High Risk
-            a.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(href="./orders.html") Pre-Orders
+        nav.flex.flex-row.border-b.border-gray-400
+            a.block.pb-2.px-5.-mb-px.font-medium.text-blue-500.border-b-2.border-blue-500.hover_text-blue-500(href="./orders.html") All Records
+            a.block.pb-2.px-5.-mb-px.font-medium.text-gray-700.border-b-2.border-transparent.hover_text-blue-500(href="./orders.html") Awaiting Payment
+            a.block.pb-2.px-5.-mb-px.font-medium.text-gray-700.border-b-2.border-transparent.hover_text-blue-500(href="./orders.html") Awaiting Fulfillment
+            a.block.pb-2.px-5.-mb-px.font-medium.text-gray-700.border-b-2.border-transparent.hover_text-blue-500(href="./orders.html") Awaiting Shipment
+            a.block.pb-2.px-5.-mb-px.font-medium.text-gray-700.border-b-2.border-transparent.hover_text-blue-500(href="./orders.html") High Risk
+            a.block.pb-2.px-5.-mb-px.font-medium.text-gray-700.border-b-2.border-transparent.hover_text-blue-500(href="./orders.html") Pre-Orders
 
     .px-12.py-6
         // Recored Table
@@ -59,7 +59,7 @@ block page
                 tr
                     th.select-all.no-sort
                         label.pointer-events-none.inline-flex.items-center.justify-center.w-full.h-full
-                            input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                            input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                     th.no-sort.py-2.text-xs.font-bold.uppercase(style="width: 4%;")
                     th.py-2.text-xs.font-bold.uppercase Date
                     th.py-2.text-xs.font-bold.uppercase Order ID
@@ -73,20 +73,20 @@ block page
                 tr
                     td.p-0
                         label.pointer-events-none.inline-flex.items-center.justify-center.w-full.h-full.cursor-pointer
-                            input.select-row.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                            input.select-row.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                     td
                         nav.mt-2.flex.flex-row.items-center.justify-end
                             button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" x-on:click="accordion !== 'order-1' ? accordion = 'order-1' : accordion = ''" data-tippy-content="Show")
-                                span.material-icons.text-gray-600(x-show="accordion !== 'order-1'") keyboard_arrow_down
-                                span.material-icons.text-gray-600(x-show="accordion === 'order-1'") keyboard_arrow_up
+                                span.material-icons.text-gray-700(x-show="accordion !== 'order-1'") keyboard_arrow_down
+                                span.material-icons.text-gray-700(x-show="accordion === 'order-1'") keyboard_arrow_up
                     td 12th Aug 2020
                     td 100
                     td 
-                        a.text-indigo-500.hover_text-indigo-700(href="./customer-single.html") Rakan Awajan
+                        a.text-blue-500.hover_text-blue-500(href="./customer-single.html") Rakan Awajan
                     td.flex.items-center
                         .w-3.h-8.bg-blue-400
                         .relative.ml-3
-                            select.inline-block.w-56.py-2.px-3.pr-8.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                            select.inline-block.w-56.py-2.px-3.pr-8.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                 option(value='1') Pending
                                 option(value='7') Awaiting Payment
                                 option(value='11' selected='true') Awaiting Fulfillment
@@ -122,7 +122,7 @@ block page
                     td(colspan="9")
                         .flex.flex-warp.-mx-4.px-5.py-4
                             .flex.flex-warp.-mx-4.w-full.md_w-4_12.px-4
-                                .w-full.md_w-4_12.px-4.text-right.border-r.border-gray-300
+                                .w-full.md_w-4_12.px-4.text-right.border-r.border-gray-500
                                     h6.mb-4.font-bold.h-16.mb-2 Billing
                                     ul
                                         li.mb-2
@@ -145,7 +145,7 @@ block page
                                             .material-icons.text-lg.text-gray-500 info
 
                                 .w-full.md_w-8_12.px-4
-                                    p.text-xs.h-16.mb-2.text-gray-600
+                                    p.text-xs.h-16.mb-2.text-gray-700
                                         | Rakan Awajan
                                         br
                                         | test addres
@@ -165,7 +165,7 @@ block page
                             
                             
                             .flex.flex-warp.-mx-4.w-full.md_w-4_12.px-4
-                                .w-full.md_w-4_12.px-4.text-right.border-r.border-gray-300
+                                .w-full.md_w-4_12.px-4.text-right.border-r.border-gray-500
                                     h6.mb-4.font-bold.h-16.mb-2 Shipping
                                     ul
                                         li.mb-2
@@ -182,7 +182,7 @@ block page
                                             .material-icons.text-lg.text-gray-500 event
 
                                 .w-full.md_w-8_12.px-4
-                                    p.text-xs.h-16.mb-2.text-gray-600
+                                    p.text-xs.h-16.mb-2.text-gray-700
                                         | Rakan Awajan
                                         br
                                         | test addres
@@ -199,30 +199,30 @@ block page
                             
                             
                             .flex.flex-warp.-mx-4.w-full.md_w-4_12.px-4
-                                .w-full.md_w-4_12.px-4.text-right.border-r.border-gray-300
+                                .w-full.md_w-4_12.px-4.text-right.border-r.border-gray-500
                                     h6.mb-4.font-bold.h-16.mb-2 Order
-                                        span.block.text-xs.text-gray-600 2 items
+                                        span.block.text-xs.text-gray-700 2 items
         
                                 .w-full.md_w-8_12.px-4
                                     .flex.flex-row.items-center.justify-between.mb-1
                                         h6.text-xs.font-bold 1 x 
-                                            a.text-indigo-500.hover_text-indigo-700(href="#") [Sample] Fog Linen Chambray Towel
+                                            a.text-blue-500.hover_text-blue-500(href="#") [Sample] Fog Linen Chambray Towel
                                         span.text-xs.font-bold USD49.00 
                                     .text-xs.font-bold SLCTBS-4404031B
-                                    .text-xs.font-bold.text-gray-600 Size:
+                                    .text-xs.font-bold.text-gray-700 Size:
                                         span.pl-1.text-sm.font-normal XS 
-                                    .text-xs.font-bold.text-gray-600 Color:
+                                    .text-xs.font-bold.text-gray-700 Color:
                                         span.pl-1.text-sm.font-normal Black 
 
                                     .felx.flex-col.p-4.mt-4.bg-gray-200
                                         .flex.flex-row.items-center.justify-between.mb-2
-                                            .text-xs.font-bold.text-gray-600 Subtotal
+                                            .text-xs.font-bold.text-gray-700 Subtotal
                                             .text-sm.font-normal USD49.00 
                                         .flex.flex-row.items-center.justify-between.mb-2
-                                            .text-xs.font-bold.text-gray-600 Shipping
+                                            .text-xs.font-bold.text-gray-700 Shipping
                                             .text-sm.font-normal USD0.00 
                                         .flex.flex-row.items-center.justify-between.mb-0
-                                            .text-sm.font-bold.text-gray-600 Grand Total
+                                            .text-sm.font-bold.text-gray-700 Grand Total
                                             .text-base.font-normal USD49.00 
                 // END Item Details
 
@@ -230,20 +230,20 @@ block page
                 tr
                     td.p-0
                         label.pointer-events-none.inline-flex.items-center.justify-center.w-full.h-full.cursor-pointer
-                            input.select-row.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                            input.select-row.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                     td
                         nav.mt-2.flex.flex-row.items-center.justify-end
                             button.ml-2.fade.text-gray-500.hover_text-gray-700(type="button" x-on:click="accordion !== 'order-2' ? accordion = 'order-2' : accordion = ''" data-tippy-content="Show")
-                                span.material-icons.text-gray-600(x-show="accordion !== 'order-2'") keyboard_arrow_down
-                                span.material-icons.text-gray-600(x-show="accordion === 'order-2'") keyboard_arrow_up
+                                span.material-icons.text-gray-700(x-show="accordion !== 'order-2'") keyboard_arrow_down
+                                span.material-icons.text-gray-700(x-show="accordion === 'order-2'") keyboard_arrow_up
                     td 12th Aug 2020
                     td 100
                     td 
-                        a.text-indigo-500.hover_text-indigo-700(href="./customer-single.html") Rakan Awajan
+                        a.text-blue-500.hover_text-blue-500(href="./customer-single.html") Rakan Awajan
                     td.flex.items-center
                         .w-3.h-8.bg-blue-400
                         .relative.ml-3
-                            select.inline-block.w-56.py-2.px-3.pr-8.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                            select.inline-block.w-56.py-2.px-3.pr-8.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                 option(value='1') Pending
                                 option(value='7') Awaiting Payment
                                 option(value='11' selected='true') Awaiting Fulfillment
@@ -278,7 +278,7 @@ block page
                     td(colspan="9")
                         .flex.flex-warp.-mx-4.px-5.py-4
                             .flex.flex-warp.-mx-4.w-full.md_w-4_12.px-4
-                                .w-full.md_w-4_12.px-4.text-right.border-r.border-gray-300
+                                .w-full.md_w-4_12.px-4.text-right.border-r.border-gray-500
                                     h6.mb-4.font-bold.h-16.mb-2 Billing
                                     ul
                                         li.mb-2
@@ -301,7 +301,7 @@ block page
                                             .material-icons.text-lg.text-gray-500 info
 
                                 .w-full.md_w-8_12.px-4
-                                    p.text-xs.h-16.mb-2.text-gray-600
+                                    p.text-xs.h-16.mb-2.text-gray-700
                                         | Rakan Awajan
                                         br
                                         | test addres
@@ -321,7 +321,7 @@ block page
                             
                             
                             .flex.flex-warp.-mx-4.w-full.md_w-4_12.px-4
-                                .w-full.md_w-4_12.px-4.text-right.border-r.border-gray-300
+                                .w-full.md_w-4_12.px-4.text-right.border-r.border-gray-500
                                     h6.mb-4.font-bold.h-16.mb-2 Shipping
                                     ul
                                         li.mb-2
@@ -338,7 +338,7 @@ block page
                                             .material-icons.text-lg.text-gray-500 event
 
                                 .w-full.md_w-8_12.px-4
-                                    p.text-xs.h-16.mb-2.text-gray-600
+                                    p.text-xs.h-16.mb-2.text-gray-700
                                         | Rakan Awajan
                                         br
                                         | test addres
@@ -355,30 +355,30 @@ block page
                             
                             
                             .flex.flex-warp.-mx-4.w-full.md_w-4_12.px-4
-                                .w-full.md_w-4_12.px-4.text-right.border-r.border-gray-300
+                                .w-full.md_w-4_12.px-4.text-right.border-r.border-gray-500
                                     h6.mb-4.font-bold.h-16.mb-2 Order
-                                        span.block.text-xs.text-gray-600 2 items
+                                        span.block.text-xs.text-gray-700 2 items
         
                                 .w-full.md_w-8_12.px-4
                                     .flex.flex-row.items-center.justify-between.mb-1
                                         h6.text-xs.font-bold 1 x 
-                                            a.text-indigo-500.hover_text-indigo-700(href="#") [Sample] Fog Linen Chambray Towel
+                                            a.text-blue-500.hover_text-blue-500(href="#") [Sample] Fog Linen Chambray Towel
                                         span.text-xs.font-bold USD49.00 
                                     .text-xs.font-bold SLCTBS-4404031B
-                                    .text-xs.font-bold.text-gray-600 Size:
+                                    .text-xs.font-bold.text-gray-700 Size:
                                         span.pl-1.text-sm.font-normal XS 
-                                    .text-xs.font-bold.text-gray-600 Color:
+                                    .text-xs.font-bold.text-gray-700 Color:
                                         span.pl-1.text-sm.font-normal Black 
 
                                     .felx.flex-col.p-4.mt-4.bg-gray-200
                                         .flex.flex-row.items-center.justify-between.mb-2
-                                            .text-xs.font-bold.text-gray-600 Subtotal
+                                            .text-xs.font-bold.text-gray-700 Subtotal
                                             .text-sm.font-normal USD49.00 
                                         .flex.flex-row.items-center.justify-between.mb-2
-                                            .text-xs.font-bold.text-gray-600 Shipping
+                                            .text-xs.font-bold.text-gray-700 Shipping
                                             .text-sm.font-normal USD0.00 
                                         .flex.flex-row.items-center.justify-between.mb-0
-                                            .text-sm.font-bold.text-gray-600 Grand Total
+                                            .text-sm.font-bold.text-gray-700 Grand Total
                                             .text-base.font-normal USD49.00 
 
                 // END Item Details

@@ -4,27 +4,27 @@ block meta
     title Store | Shopinizer eCommerce
 
 block nestbar
-    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-indigo-100
+    aside.flex.flex-col.w-full.max-w-xxs.py-6.px-8.bg-gray-300
         h3.mb-6.text-2xl Store Setup
 
         nav.flex.flex-col.mb-6
             ul.flex.flex-col
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-profile.html") Store Profile
+                    a.text-gray-700.hover_text-blue-500(href="./store-profile.html") Store Profile
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-currencies.html") Currencies
+                    a.text-gray-700.hover_text-blue-500(href="./store-currencies.html") Currencies
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-payments.html") Payments
+                    a.text-gray-700.hover_text-blue-500(href="./store-payments.html") Payments
                 li.mb-3
-                    a.text-indigo-800.hover_text-indigo-800(href="./store-settings.html") Store Settings
+                    a.text-blue-600.hover_text-blue-600(href="./store-settings.html") Store Settings
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-shipping.html") Shipping
+                    a.text-gray-700.hover_text-blue-500(href="./store-shipping.html") Shipping
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-tax.html") Tax
+                    a.text-gray-700.hover_text-blue-500(href="./store-tax.html") Tax
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-points.html") Point of Sale
+                    a.text-gray-700.hover_text-blue-500(href="./store-points.html") Point of Sale
                 li.mb-3
-                    a.text-gray-600.hover_text-indigo-700(href="./store-accounting.html") Accounting
+                    a.text-gray-700.hover_text-blue-500(href="./store-accounting.html") Accounting
 
 block page
     .flex.flex-col.flex-1.w-full.overflow-y-auto(x-data="{ tab: 'website' }")
@@ -32,48 +32,48 @@ block page
             .flex.flex-row.justify-between.items-center.mb-6
                 div
                     h2.mb-1.text-3xl.font-light.leading-none Store Settings
-                    p.text-lg.font-light.text-gray-600 Update the settings in the form below and click "Save", or click "Cancel" to keep the current settings.
+                    p.text-lg.font-light.text-gray-700 Update the settings in the form below and click "Save", or click "Cancel" to keep the current settings.
                 // Buttons control
                 nav.flex.flex-row
-                    a.flex.flex-row.items-center.ml-4.text-indigo-700.border.border-indigo-700.rounded.hover_opacity-50.fade(href="#")
+                    a.flex.flex-row.items-center.ml-4.text-blue-500.border.border-blue-500.rounded.hover_opacity-50.fade(href="#")
                         span.material-icons.py-1.px-2.text-md more_vert
 
             // Tabs
-            nav.flex.flex-row.border-b.border-gray-300
-                button.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(type="button" x-bind:class="{ 'text-indigo-700 border-indigo-700': tab === 'website' }" x-on:click="tab = 'website'") Website
-                button.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(type="button" x-bind:class="{ 'text-indigo-700 border-indigo-700': tab === 'display' }" x-on:click="tab = 'display'") Display
-                button.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(type="button" x-bind:class="{ 'text-indigo-700 border-indigo-700': tab === 'share' }" x-on:click="tab = 'share'") Share
-                button.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(type="button" x-bind:class="{ 'text-indigo-700 border-indigo-700': tab === 'date' }" x-on:click="tab = 'date'") Date & Timezone
-                button.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(type="button" x-bind:class="{ 'text-indigo-700 border-indigo-700': tab === 'URL' }" x-on:click="tab = 'URL'") URL Structure
-                button.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(type="button" x-bind:class="{ 'text-indigo-700 border-indigo-700': tab === 'search' }" x-on:click="tab = 'search'") Search
-                button.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(type="button" x-bind:class="{ 'text-indigo-700 border-indigo-700': tab === 'security' }" x-on:click="tab = 'security'") Security & Privacy
-                button.block.pb-2.px-5.-mb-px.font-medium.text-gray-600.border-b-2.border-transparent.hover_text-indigo-700(type="button" x-bind:class="{ 'text-indigo-700 border-indigo-700': tab === 'miscellaneous' }" x-on:click="tab = 'miscellaneous'") Miscellaneous
+            nav.flex.flex-row.border-b.border-gray-400
+                button.block.pb-2.px-5.-mb-px.font-medium.text-gray-700.border-b-2.border-transparent.hover_text-blue-500(type="button" x-bind:class="{ 'text-blue-500 border-blue-500': tab === 'website' }" x-on:click="tab = 'website'") Website
+                button.block.pb-2.px-5.-mb-px.font-medium.text-gray-700.border-b-2.border-transparent.hover_text-blue-500(type="button" x-bind:class="{ 'text-blue-500 border-blue-500': tab === 'display' }" x-on:click="tab = 'display'") Display
+                button.block.pb-2.px-5.-mb-px.font-medium.text-gray-700.border-b-2.border-transparent.hover_text-blue-500(type="button" x-bind:class="{ 'text-blue-500 border-blue-500': tab === 'share' }" x-on:click="tab = 'share'") Share
+                button.block.pb-2.px-5.-mb-px.font-medium.text-gray-700.border-b-2.border-transparent.hover_text-blue-500(type="button" x-bind:class="{ 'text-blue-500 border-blue-500': tab === 'date' }" x-on:click="tab = 'date'") Date & Timezone
+                button.block.pb-2.px-5.-mb-px.font-medium.text-gray-700.border-b-2.border-transparent.hover_text-blue-500(type="button" x-bind:class="{ 'text-blue-500 border-blue-500': tab === 'URL' }" x-on:click="tab = 'URL'") URL Structure
+                button.block.pb-2.px-5.-mb-px.font-medium.text-gray-700.border-b-2.border-transparent.hover_text-blue-500(type="button" x-bind:class="{ 'text-blue-500 border-blue-500': tab === 'search' }" x-on:click="tab = 'search'") Search
+                button.block.pb-2.px-5.-mb-px.font-medium.text-gray-700.border-b-2.border-transparent.hover_text-blue-500(type="button" x-bind:class="{ 'text-blue-500 border-blue-500': tab === 'security' }" x-on:click="tab = 'security'") Security & Privacy
+                button.block.pb-2.px-5.-mb-px.font-medium.text-gray-700.border-b-2.border-transparent.hover_text-blue-500(type="button" x-bind:class="{ 'text-blue-500 border-blue-500': tab === 'miscellaneous' }" x-on:click="tab = 'miscellaneous'") Miscellaneous
 
 
-        .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-100
+        .flex.flex-col.flex-1.items-center.h-full.py-8.px-12.overflow-y-auto.bg-gray-200
             // start Form
             form.w-full.max-w-5xl(action="/upload" method="post" enctype="multipart/form-data" )
                 // START Website tab
                 .w-full(x-show="tab === 'website'")
                     .p-8.mb-8.bg-white.shadow.rounded
-                        h6.mb-6.text-2xl.font-normal.text-gray-600 Store Status
+                        h6.mb-6.text-2xl.font-normal.text-gray-700 Store Status
                         
                         .flex.flex-wrap.-mx-4
                             .w-full.px-4.mb-0
                                 label.inline-flex.items-center
-                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                     span.ml-2 Down for Maintenance
             
             
                     .p-8.mb-8.bg-white.shadow.rounded
-                        h6.mb-6.text-2xl.font-normal.text-gray-600 Physical Dimension Settings
+                        h6.mb-6.text-2xl.font-normal.text-gray-700 Physical Dimension Settings
                         
                         .flex.flex-wrap.-mx-4
                             .flex.flex-wrap.w-full.px-4.mb-6
                                 .md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Weight Measurement
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Weight Measurement
                                     .relative
-                                        select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                        select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                             option Option 1
                                             option Option 2
                                             option Option 3
@@ -83,9 +83,9 @@ block page
                                 
                             .flex.flex-wrap.w-full.px-4.mb-6
                                 .md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Length Measurement
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Length Measurement
                                     .relative
-                                        select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                        select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                             option Option 1
                                             option Option 2
                                             option Option 3
@@ -95,24 +95,24 @@ block page
                                 
                             .flex.flex-wrap.w-full.px-4.mb-6
                                 .md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Decimal Token
-                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text" value=".")
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Decimal Token
+                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text" value=".")
                                 
                             .flex.flex-wrap.w-full.px-4.mb-6
                                 .md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Thousands Token
-                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text" value=",")
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Thousands Token
+                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text" value=",")
                                 
                             .flex.flex-wrap.w-full.px-4.mb-6
                                 .md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Decimal Places
-                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number" value="2")
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Decimal Places
+                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="number" value="2")
                                 
                             .flex.flex-wrap.w-full.px-4.mb-6
                                 .md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Factoring Dimension
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Factoring Dimension
                                     .relative
-                                        select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                        select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                             option Option 1
                                             option Option 2
                                             option Option 3
@@ -122,36 +122,36 @@ block page
                                 
 
                     .p-8.mb-8.bg-white.shadow.rounded
-                        h6.mb-6.text-2xl.font-normal.text-gray-600 Search Engine Optimization
+                        h6.mb-6.text-2xl.font-normal.text-gray-700 Search Engine Optimization
 
                         .flex.flex-wrap.-mx-4
                             .w-full.px-4.mb-6
                                 .w-full.md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="sTitle") Page Title
-                                    input#sTitle.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide(for="sTitle") Page Title
+                                    input#sTitle.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", placeholder="")
                                 
                             .w-full.px-4.mb-6
                                 .w-full.md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="sKeywords") Meta Keywords
-                                    input#sKeywords.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide(for="sKeywords") Meta Keywords
+                                    input#sKeywords.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", placeholder="")
                                 
                             .w-full.px-4.mb-6
                                 .w-full.md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="sDescription") Meta Description
-                                    input#sDescription.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide(for="sDescription") Meta Description
+                                    input#sDescription.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", placeholder="")
                                 
                             .w-full.px-4.mb-6
                                 .w-full.md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide(for="sSearch") Search Keywords
-                                    input#sSearch.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="")
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide(for="sSearch") Search Keywords
+                                    input#sSearch.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", placeholder="")
                                 
 
                     .p-8.mb-8.bg-white.shadow.rounded
-                        h6.mb-6.text-2xl.font-normal.text-gray-600 Search Engine Robots
+                        h6.mb-6.text-2xl.font-normal.text-gray-700 Search Engine Robots
                         
                         .flex.flex-wrap.-mx-4
                             .w-full.px-4.mb-6
-                                textarea.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(rows="10")
+                                textarea.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(rows="10")
                                     | User-agent: *
                                     | Disallow: /account.php
                                     | Disallow: /cart.php
@@ -174,14 +174,14 @@ block page
                 // START Display tab
                 .w-full(x-show="tab === 'display'")
                     .p-8.mb-8.bg-white.shadow.rounded
-                        h6.mb-6.text-2xl.font-normal.text-gray-600 Display Settings
+                        h6.mb-6.text-2xl.font-normal.text-gray-700 Display Settings
                         
                         .flex.flex-wrap.-mx-4
                             .flex.flex-wrap.w-full.px-4.mb-6
                                 .md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Product Breadcrumbs
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Product Breadcrumbs
                                     .relative
-                                        select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                        select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                             option Option 1
                                             option Option 2
                                             option Option 3
@@ -191,91 +191,91 @@ block page
                                 
                             .flex.flex-wrap.w-full.px-4.mb-6
                                 .md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Show Quantity Box for Products
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Show Quantity Box for Products
                                     label.inline-flex.items-center
-                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                         span.ml-2 Yes, show the quantity box on the add to cart panel
                             
                             .flex.flex-wrap.w-full.px-4.mb-6
                                 .md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Enable Search Suggest?
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Enable Search Suggest?
                                     label.inline-flex.items-center
-                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                         span.ml-2 Yes, enable search suggest
                             
                             .flex.flex-wrap.w-full.px-4.mb-6
                                 .md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Auto Approve Reviews?
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Auto Approve Reviews?
                                     label.inline-flex.items-center
-                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                         span.ml-2 Yes, auto approve reviews
                             
                             .flex.flex-wrap.w-full.px-4.mb-6
                                 .md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Enable Wishlist?
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Enable Wishlist?
                                     label.inline-flex.items-center
-                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                         span.ml-2 Yes, enable the wishlist for my store
                             
                             .flex.flex-wrap.w-full.px-4.mb-6
                                 .md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Enable Product Comparisons?
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Enable Product Comparisons?
                                     label.inline-flex.items-center
-                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                         span.ml-2 Yes, enable product comparisons
                             
                             .flex.flex-wrap.w-full.px-4.mb-6
                                 .md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Enable Account Creation?
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Enable Account Creation?
                                     label.inline-flex.items-center
-                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                         span.ml-2 Yes, enable account creation in my store
                     
                     
                     .p-8.mb-8.bg-white.shadow.rounded
-                        h6.mb-6.text-2xl.font-normal.text-gray-600 Control Panel
+                        h6.mb-6.text-2xl.font-normal.text-gray-700 Control Panel
                         
                         .flex.flex-wrap.-mx-4
                             .flex.flex-wrap.w-full.px-4.mb-6
                                 .md_w-1_2.px-4
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Use WYSIWYG Editor?
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Use WYSIWYG Editor?
                                     label.inline-flex.items-center
-                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                         span.ml-2 Yes, enable the WYSIWYG editor
                             
                             .flex.flex-wrap.w-full.px-4.mb-6
                                 .md_w-1_2.px-4
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Show Product Thumbnails?
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Show Product Thumbnails?
                                     label.inline-flex.items-center
-                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                         span.ml-2 Yes, show product thumbnail images
                             
                     
                     .p-8.mb-8.bg-white.shadow.rounded
-                        h6.mb-6.text-2xl.font-normal.text-gray-600 Category Settings
+                        h6.mb-6.text-2xl.font-normal.text-gray-700 Category Settings
                                                     
                         .flex.flex-wrap.-mx-4
                             .w-full.px-4.mb-3         
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Category Product List
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Category Product List
 
                             .w-full.px-4.mb-3
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="category_list")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="category_list")
                                     span.ml-2 Show products from the current category only
                             .w-full.px-4.mb-3
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="category_list")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="category_list")
                                     span.ml-2 Show products from child categories if the current category is empty
                             .w-full.px-4.mb-6
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="category_list")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="category_list")
                                     span.ml-2 Show products from the current category and its children
 
                         .flex.flex-wrap.-mx-4
                             .md_w-1_2.px-4.mb-6
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Default Product Sort
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Default Product Sort
                                 .relative
-                                    select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                    select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                         option Option 1
                                         option Option 2
                                         option Option 3
@@ -286,70 +286,70 @@ block page
 
                         .flex.flex-wrap.items-center.-mx-2
                             .w-full.md_w-2_12.px-2.mb-6
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Menu Display Depth
-                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", value="3")
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Menu Display Depth
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="number", value="3")
 
                             .w-full.md_w-10_12.px-2.mb-6
-                                p.mt-8.text-gray-600 levels deep
+                                p.mt-8.text-gray-700 levels deep
 
 
                     .p-8.mb-8.bg-white.shadow.rounded
-                        h6.mb-6.text-2xl.font-normal.text-gray-600 Product Settings
+                        h6.mb-6.text-2xl.font-normal.text-gray-700 Product Settings
                         
                         .flex.flex-wrap.-mx-4
                             .flex.flex-wrap.w-full.px-4.mb-6
                                 .md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Show Product's Price?
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Show Product's Price?
                                     label.inline-flex.items-center
-                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                         span.ml-2 Yes, show the product's price in my store
                             
                             .flex.flex-wrap.w-full.px-4.mb-6
                                 .md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Show Product's SKU?
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Show Product's SKU?
                                     label.inline-flex.items-center
-                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                         span.ml-2 Yes, show the product's SKU in my store
                             
                             .flex.flex-wrap.w-full.px-4.mb-6
                                 .md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Show Product's Weight?
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Show Product's Weight?
                                     label.inline-flex.items-center
-                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                         span.ml-2 Yes, show the product's weight in my store
                             
                             .flex.flex-wrap.w-full.px-4.mb-6
                                 .md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Show Product's Brand?
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Show Product's Brand?
                                     label.inline-flex.items-center
-                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                         span.ml-2 Yes, show the product's brand in my store
                             
                             .flex.flex-wrap.w-full.px-4.mb-6
                                 .md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Show Product's Shipping Cost?
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Show Product's Shipping Cost?
                                     label.inline-flex.items-center
-                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                         span.ml-2 Yes, show the product's shipping cost in my store
                             
                             .flex.flex-wrap.w-full.px-4.mb-6
                                 .md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Show Product's Rating?
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Show Product's Rating?
                                     label.inline-flex.items-center
-                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                         span.ml-2 Yes, show the product's rating in my store
                             
                             .flex.flex-wrap.w-full.px-4.mb-6
                                 .md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Show Add to Cart Link?
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Show Add to Cart Link?
                                     label.inline-flex.items-center
-                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                         span.ml-2 Yes, show the "Add to Cart" link in all the small product boxes
                             
                             .flex.flex-wrap.w-full.px-4.mb-6
                                 .md_w-1_2
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Default Pre-Order Message
-                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", value="Expected release date is %%DATE%%")
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Default Pre-Order Message
+                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", value="Expected release date is %%DATE%%")
 
                 // END Display tab
 
@@ -357,13 +357,13 @@ block page
                 // START Date & Timezone tab
                 .w-full(x-show="tab === 'date'")
                     .p-8.mb-8.bg-white.shadow.rounded
-                        h6.mb-6.text-2xl.font-normal.text-gray-600 Date Settings
+                        h6.mb-6.text-2xl.font-normal.text-gray-700 Date Settings
                         
                         .flex.flex-wrap.-mx-4
                             .md_w-1_2.px-4.mb-6
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Your Timezone
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Your Timezone
                                 .relative
-                                    select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                    select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                         option Option 1
                                         option Option 2
                                         option Option 3
@@ -373,20 +373,20 @@ block page
                         
                         .flex.flex-wrap.-mx-4
                             .md_w-1_2.px-4.mb-6
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Enable DST Correction?
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Enable DST Correction?
                                 label.inline-flex.items-center
-                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                     span.ml-2 Yes, enable daylight savings time correction
 
                         .flex.flex-wrap.-mx-4
                             .md_w-1_2.px-4.mb-6
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Display Date Format
-                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", value="jS M Y")
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Display Date Format
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", value="jS M Y")
 
                         .flex.flex-wrap.-mx-4
                             .md_w-1_2.px-4.mb-6
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Extended Display Date Format
-                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", value="jS M Y @ g:i A")
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Extended Display Date Format
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", value="jS M Y @ g:i A")
 
                 // END Date & Timezone tab
 
@@ -394,105 +394,105 @@ block page
                 // START URL Structure tab
                 .w-full(x-show="tab === 'URL'")
                     .p-8.mb-8.bg-white.shadow.rounded
-                        h6.mb-6.text-2xl.font-normal.text-gray-600 Product URL Settings
+                        h6.mb-6.text-2xl.font-normal.text-gray-700 Product URL Settings
                         
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-4_12.px-4.mb-6
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="product_URL")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="product_URL")
                                     span.ml-2 SEO Optimized (Short)
                             
                             .w-full.md_w-6_12.px-4.mb-6
-                                p.text-gray-600 https://testoria.mybigcommerce.com/ipod-nano/
+                                p.text-gray-700 https://testoria.mybigcommerce.com/ipod-nano/
                 
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-4_12.px-4.mb-6
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="product_URL")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="product_URL")
                                     span.ml-2 SEO Optimized (Long)
                             
                             .w-full.md_w-6_12.px-4.mb-6
-                                p.text-gray-600 https://testoria.mybigcommerce.com/products/ipod-nano.html
+                                p.text-gray-700 https://testoria.mybigcommerce.com/products/ipod-nano.html
                 
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-4_12.px-4.mb-6
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="product_URL")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="product_URL")
                                     span.ml-2 SEO Optimized (Category)
                             
                             .w-full.md_w-6_12.px-4.mb-6
-                                p.text-gray-600 https://testoria.mybigcommerce.com/mp3-players/ipod-nano/
+                                p.text-gray-700 https://testoria.mybigcommerce.com/mp3-players/ipod-nano/
 
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-4_12.px-4.mb-6
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="product_URL")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="product_URL")
                                     span.ml-2 Custom
                             
                             .w-full.md_w-6_12.px-4.mb-6
-                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="Custom URL Format")
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", placeholder="Custom URL Format")
                     
                     
                     .p-8.mb-8.bg-white.shadow.rounded
-                        h6.mb-6.text-2xl.font-normal.text-gray-600 Category URL Settings
+                        h6.mb-6.text-2xl.font-normal.text-gray-700 Category URL Settings
                         
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-4_12.px-4.mb-6
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="category_URL")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="category_URL")
                                     span.ml-2 SEO Optimized (Short)
                             
                             .w-full.md_w-6_12.px-4.mb-6
-                                p.text-gray-600  https://testoria.mybigcommerce.com/apple-ipod/ 
+                                p.text-gray-700  https://testoria.mybigcommerce.com/apple-ipod/ 
                 
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-4_12.px-4.mb-6
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="category_URL")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="category_URL")
                                     span.ml-2 SEO Optimized (Long)
                             
                             .w-full.md_w-6_12.px-4.mb-6
-                                p.text-gray-600  https://testoria.mybigcommerce.com/categories/apple-ipod.html
+                                p.text-gray-700  https://testoria.mybigcommerce.com/categories/apple-ipod.html
                 
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-4_12.px-4.mb-6
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="category_URL")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="category_URL")
                                     span.ml-2 Custom
                             
                             .w-full.md_w-6_12.px-4.mb-6
-                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="Custom URL Format")
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", placeholder="Custom URL Format")
                     
                     
                     .p-8.mb-8.bg-white.shadow.rounded
-                        h6.mb-6.text-2xl.font-normal.text-gray-600 Web Page URL Settings
+                        h6.mb-6.text-2xl.font-normal.text-gray-700 Web Page URL Settings
                         
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-4_12.px-4.mb-6
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="category_URL")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="category_URL")
                                     span.ml-2 SEO Optimized (Short)
                             
                             .w-full.md_w-6_12.px-4.mb-6
-                                p.text-gray-600  h https://testoria.mybigcommerce.com/about-us/
+                                p.text-gray-700  h https://testoria.mybigcommerce.com/about-us/
                 
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-4_12.px-4.mb-6
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="category_URL")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="category_URL")
                                     span.ml-2 SEO Optimized (Long)
                             
                             .w-full.md_w-6_12.px-4.mb-6
-                                p.text-gray-600   https://testoria.mybigcommerce.com/pages/about-us.html
+                                p.text-gray-700   https://testoria.mybigcommerce.com/pages/about-us.html
                 
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-4_12.px-4.mb-6
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="category_URL")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="category_URL")
                                     span.ml-2 Custom
                             
                             .w-full.md_w-6_12.px-4.mb-6
-                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text", placeholder="Custom URL Format")
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text", placeholder="Custom URL Format")
 
                 // END URL Structure tab
 
@@ -500,13 +500,13 @@ block page
                 // START Search tab
                 .w-full(x-show="tab === 'search'")
                     .p-8.mb-8.bg-white.shadow.rounded
-                        h6.mb-6.text-2xl.font-normal.text-gray-600 Search Settings
+                        h6.mb-6.text-2xl.font-normal.text-gray-700 Search Settings
 
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-4_12.px-4.mb-6
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Default Product Sort
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Default Product Sort
                                 .relative
-                                    select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                    select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                         option(value='relevance', selected='') Relevance
                                         option(value='featured') Featured Items
                                         option(value='newest') Newest Items
@@ -522,9 +522,9 @@ block page
                             
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-4_12.px-4.mb-6
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Default Content Sort
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Default Content Sort
                                 .relative
-                                    select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                    select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                         option(value='relevance', selected='') Relevance
                                         option(value='alphaasc') Alphabetical: A to Z
                                         option(value='alphadesc') Alphabetical: Z to A
@@ -538,62 +538,62 @@ block page
                 // START Security & Privacy tab
                 .w-full(x-show="tab === 'security'")
                     .p-8.mb-8.bg-white.shadow.rounded
-                        h6.mb-6.text-2xl.font-normal.text-gray-600 Security
+                        h6.mb-6.text-2xl.font-normal.text-gray-700 Security
 
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-12_12.px-4.mb-6
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Configure complexity of the shoppers password?
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Configure complexity of the shoppers password?
                                 label.inline-flex.items-center
-                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox" v-model="shoppers_password")
+                                    input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox" v-model="shoppers_password")
                                     span.ml-2 Yes, I would like to enforce complexity rules for shopper passwords
 
                         .w-full(v-if="shoppers_password")
                             .flex.flex-wrap.items-center.-mx-4.mb-6
                                 .w-full.md_w-12_12.px-4
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Minimum password length
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Minimum password length
                                 .w-full.md_w-2_12.px-4
-                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number", value="7")
+                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="number", value="7")
 
                             .flex.flex-wrap.items-center.-mx-4.mb-4
                                 .w-full.md_w-12_12.px-4
-                                    label.block.mb-0.text-xs.font-normal.uppercase.tracking-wide.text-gray-600 Select three or more rules to apply.
+                                    label.block.mb-0.text-xs.font-normal.uppercase.tracking-wide.text-gray-700 Select three or more rules to apply.
 
                             .flex.flex-wrap.items-center.-mx-4.mb-6
                                 .w-full.md_w-12_12.px-4
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Require lower case letters?
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Require lower case letters?
                                     label.inline-flex.items-center
-                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                         span.ml-2 Yes, enable lower case requirement
                     
                             .flex.flex-wrap.items-center.-mx-4.mb-6
                                 .w-full.md_w-12_12.px-4
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Require upper case letters?
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Require upper case letters?
                                     label.inline-flex.items-center
-                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                         span.ml-2 Yes, enable upper case requirement
                     
                             .flex.flex-wrap.items-center.-mx-4.mb-6
                                 .w-full.md_w-12_12.px-4
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Require numbers?
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Require numbers?
                                     label.inline-flex.items-center
-                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                         span.ml-2 At least
-                                        input.inline-block.w-24.ml-2.py-1.px-3.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number" value="1")
+                                        input.inline-block.w-24.ml-2.py-1.px-3.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="number" value="1")
                                         span.ml-2 characters
                     
                             .flex.flex-wrap.items-center.-mx-4.mb-6
                                 .w-full.md_w-12_12.px-4
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Require special characters?
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Require special characters?
                                     label.inline-flex.items-center
-                                        input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                        input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                         span.ml-2 At least
-                                        input.inline-block.w-24.ml-2.py-1.px-3.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number" value="1")
+                                        input.inline-block.w-24.ml-2.py-1.px-3.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="number" value="1")
                                         span.ml-2 characters
                     
 
                     .p-8.mb-8.bg-white.shadow.rounded
-                        p.mb-6.text-base.font-normal.text-gray-600  For advanced users only, this section allows you to configure the automatic logout duration for inactive shoppers.
-                            a.text-indigo-600.hover_text-indigo-800(href="#") Learn more 
+                        p.mb-6.text-base.font-normal.text-gray-700  For advanced users only, this section allows you to configure the automatic logout duration for inactive shoppers.
+                            a.text-blue-600.hover_text-blue-600(href="#") Learn more 
 
                         .flex.flex-wrap.items-center.-mx-4.mb-4
                             .w-full.md_w-12_12.px-4
@@ -601,21 +601,21 @@ block page
 
                             .w-full.md_w-12_12.px-4.mb-2
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="shopper_logout" v-model="shopper_logout" value="1")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="shopper_logout" v-model="shopper_logout" value="1")
                                     span.ml-2 Use the default 7 day duration
 
                             .w-full.md_w-12_12.px-4.mb-0
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="shopper_logout" v-model="shopper_logout" value="2")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="shopper_logout" v-model="shopper_logout" value="2")
                                     span.ml-2 Let me customize the duration
 
                         .flex.flex-wrap.items-center.-mx-2.mb-6.pl-8(v-if="shopper_logout == 2")
                             .w-full.md_w-1_12.px-2
-                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number" value="7")
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="number" value="7")
 
                             .w-full.md_w-2_12.px-2
                                 .relative
-                                    select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                    select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                         option Days
                                         option Hours
                                         option Option 3
@@ -630,26 +630,26 @@ block page
 
                             .w-full.md_w-12_12.px-4.mb-2
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="logout_duration" v-model="logout_duration" value="1")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="logout_duration" v-model="logout_duration" value="1")
                                     span.ml-2 Disabled
 
                             .w-full.md_w-12_12.px-4.mb-0
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="logout_duration" v-model="logout_duration" value="2")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="logout_duration" v-model="logout_duration" value="2")
                                     span.ml-2 Use the default 5 minute extension
 
                             .w-full.md_w-12_12.px-4.mb-0
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="logout_duration" v-model="logout_duration" value="3")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="logout_duration" v-model="logout_duration" value="3")
                                     span.ml-2 Let me customize the duration
 
                         .flex.flex-wrap.items-center.-mx-2.mb-6.pl-8(v-if="logout_duration == 3")
                             .w-full.md_w-1_12.px-2
-                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number" value="7")
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="number" value="7")
 
                             .w-full.md_w-2_12.px-2
                                 .relative
-                                    select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                    select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                         option Days
                                         option Hours
                                         option Option 3
@@ -661,9 +661,9 @@ block page
                     .p-8.mb-8.bg-white.shadow.rounded
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-6_12.px-4.mb-6
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Control Panel Inactivity Timeout
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Control Panel Inactivity Timeout
                                 .relative
-                                    select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                    select.select2-df.block.w-full.py-3.px-4.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                         option Option 1
                                         option Option 2
                                         option Option 3
@@ -673,54 +673,54 @@ block page
                         
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-6_12.px-4.mb-6
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Enable reCAPTCHA on storefront?
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Enable reCAPTCHA on storefront?
                                 label.inline-flex.items-center
-                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                     span.ml-2 Yes, enable reCAPTCHA security
                 
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-6_12.px-4.mb-6
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide reCAPTCHA Site Key
-                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text")
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide reCAPTCHA Site Key
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text")
 
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-6_12.px-4.mb-6
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide reCAPTCHA Secret Key
-                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text")
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide reCAPTCHA Secret Key
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text")
 
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-12_12.px-4
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Failed Login Lockout
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Failed Login Lockout
 
                             .w-full.md_w-2_12.px-4.mb-6
-                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number" value="10")
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="number" value="10")
 
 
                     .p-8.mb-8.bg-white.shadow.rounded
-                        h6.mb-6.text-2xl.font-normal.text-gray-600 Your customers' privacy
+                        h6.mb-6.text-2xl.font-normal.text-gray-700 Your customers' privacy
                     
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-6_12.px-4.mb-6
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Cookie consent tracking
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Cookie consent tracking
                                 label.inline-flex.items-center
-                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                     span.ml-2 Yes, turn on the cookie consent banner on my store.
                 
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-6_12.px-4.mb-6
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Privacy Policy URL
-                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text" placeholder="https://example.com/privacy-policy")
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Privacy Policy URL
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text" placeholder="https://example.com/privacy-policy")
 
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-12_12.px-4.mb-6
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Analytics for my business
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Analytics for my business
                                 label.inline-flex.items-center
-                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                     span.ml-2 When on, we track your customers' behaviors so you can get analytics features to help you run your business. When this is off we do not track your customers behavior, your analytics reports will not work, and this data will NOT be recoverable. Please consult your legal advisors to determine the appropriate setting for your business. 
                 
 
                     .p-8.mb-8.bg-white.shadow.rounded
-                        h6.mb-6.text-2xl.font-normal.text-gray-600 Storefront
+                        h6.mb-6.text-2xl.font-normal.text-gray-700 Storefront
                         
                         .mb-6.bg-orange-100.border-l-4.border-orange-500.text-orange-700.p-4(role='alert')
                             p.font-bold Be Warned
@@ -728,18 +728,18 @@ block page
 
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.px-4
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide HSTS 
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide HSTS 
                             
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-6_12.px-4.mb-2
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="HSTS" v-model="HSTS" value="1")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="HSTS" v-model="HSTS" value="1")
                                     span.ml-2 Do not enforce HSTS on my storefront
 
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-6_12.px-4.mb-3
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="HSTS" v-model="HSTS" value="2")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="HSTS" v-model="HSTS" value="2")
                                     span.ml-2 Enforce HSTS on my storefront
                         
                         .flex.flex-wrap.items-center.-mx-4.pl-8(v-if="HSTS == 2")
@@ -747,7 +747,7 @@ block page
                                 .inline-flex.items-center
                                     label.text-xs.font-bold.uppercase.tracking-wide Set Max-Age Header (max-age) to:
                                     .relative.ml-3
-                                        select.block.w-28.py-2.px-3.pr-10.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                        select.block.w-28.py-2.px-3.pr-10.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                             option(value='0', selected='selected') 0 (Disabled)
                                             option(value='3') 3 Months
                                             option(value='6') 6 Months
@@ -759,61 +759,61 @@ block page
    
                             .w-full.md_w-12_12.px-4
                                 label.inline-flex.items-center
-                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                     span.ml-2 Apply HSTS policy to subdomains (includeSubDomains)
                 
 
                         .flex.flex-wrap.items-center.-mx-4.mt-6
                             .w-full.px-4
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Configure Content-Security-Policy Header Value 
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Configure Content-Security-Policy Header Value 
                             
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-6_12.px-4.mb-2
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="Header" v-model="Header" value="1")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="Header" v-model="Header" value="1")
                                     span.ml-2 Do not use a custom CSP header
 
                         .flex.flex-wrap.items-center.-mx-4.mb-3
                             .w-full.md_w-6_12.px-4.mb-0
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="Header" v-model="Header" value="2")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="Header" v-model="Header" value="2")
                                     span.ml-2 Specify my own CSP header
                             
                         .flex.flex-wrap.items-center.-mx-4.pl-8(v-if="Header == 2")
                             .w-full.md_w-6_12.px-4
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Content Security Policy Header Value 
-                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text")
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Content Security Policy Header Value 
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text")
 
                         .flex.flex-wrap.items-center.-mx-4.mt-6.mb-6
                             .w-full.px-4
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide X-Frame-Options header
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide X-Frame-Options header
                                 label.inline-flex.items-center
-                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox" v-model="xFrame_header")
+                                    input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox" v-model="xFrame_header")
                                     span.ml-2 X-Frame-Options header settings 
 
                         .w-full(v-if="xFrame_header")
                             .flex.flex-wrap.items-center.-mx-4
                                 .w-full.md_w-6_12.px-4.mb-2
                                     label.inline-flex.items-center
-                                        input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="Frame" v-model="Frame" value="1")
+                                        input.form-radio.h-6.w-6.text-blue-500(type="radio" name="Frame" v-model="Frame" value="1")
                                         span.ml-2 Deny
 
                             .flex.flex-wrap.items-center.-mx-4
                                 .w-full.md_w-6_12.px-4.mb-2
                                     label.inline-flex.items-center
-                                        input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="Frame" v-model="Frame" value="2")
+                                        input.form-radio.h-6.w-6.text-blue-500(type="radio" name="Frame" v-model="Frame" value="2")
                                         span.ml-2 Same Origin
                                         
                             .flex.flex-wrap.items-center.-mx-4.mb-3
                                 .w-full.md_w-6_12.px-4
                                     label.inline-flex.items-center
-                                        input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="Frame" v-model="Frame" value="3")
+                                        input.form-radio.h-6.w-6.text-blue-500(type="radio" name="Frame" v-model="Frame" value="3")
                                         span.ml-2 Allow from url
                                 
                             .flex.flex-wrap.items-center.-mx-4.pl-8.mb-6(v-if="Frame == 3")
                                 .w-full.md_w-6_12.px-4
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide URL 
-                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text" placeholder="https://example.com")
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide URL 
+                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text" placeholder="https://example.com")
 
                 // END Security & Privacy tab
 
@@ -821,136 +821,136 @@ block page
                 // START Miscellaneous tab
                 .w-full(x-show="tab === 'miscellaneous'")
                     .p-8.mb-8.bg-white.shadow.rounded
-                        h6.mb-6.text-2xl.font-normal.text-gray-600 Email Settings
+                        h6.mb-6.text-2xl.font-normal.text-gray-700 Email Settings
 
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-12_12.px-4
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Product Review Emails
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Product Review Emails
                                 label.inline-flex.items-center
-                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox" v-model="review_emails")
+                                    input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox" v-model="review_emails")
                                     span.ml-2 Yes, send emails to customers asking them to review products they have purchased
 
                         .flex.flex-wrap.items-center.-mx-4.mt-3.pl-8(v-if="review_emails")
                             .w-full.md_w-12_12.px-4.mb-4
                                 .inline-flex.items-center
-                                    input.inline-block.w-20.py-2.px-3.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number" placeholder="")
+                                    input.inline-block.w-20.py-2.px-3.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="number" placeholder="")
                                     span.ml-3 days after the order is marked as Shipped or Completed
                             .w-full.md_w-12_12.px-4
                                 label.inline-flex.items-center
-                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                     span.ml-2 Yes, send product review emails to guest customers
 
                         .flex.flex-wrap.items-center.-mx-4.mt-6
                             .w-full.md_w-12_12.px-4
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Forward Order Invoices
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Forward Order Invoices
                                 label.inline-flex.items-center
-                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox" v-model="order_invoice")
+                                    input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox" v-model="order_invoice")
                                     span.ml-2 Yes, forward order invoice emails to
 
                         .flex.flex-wrap.items-center.-mx-4.mt-3.pl-8(v-if="order_invoice")
                             .w-full.md_w-6_12.px-4
-                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text" placeholder="")
-                                p.mt-1.text-sm.text-gray-600 Type the email addresses, separated by commas.
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text" placeholder="")
+                                p.mt-1.text-sm.text-gray-700 Type the email addresses, separated by commas.
 
                         .flex.flex-wrap.items-center.-mx-4.mt-6
                             .w-full.md_w-12_12.px-4
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Use SMTP Server
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Use SMTP Server
                             
                             .w-full.md_w-6_12.px-4.mb-2
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="SMTP" v-model="SMTP" value="1")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="SMTP" v-model="SMTP" value="1")
                                     span.ml-2 Use my default mail settings
                                     
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-6_12.px-4.mb-0
                                 label.inline-flex.items-center
-                                    input.form-radio.h-6.w-6.text-indigo-700(type="radio" name="SMTP" v-model="SMTP" value="2")
+                                    input.form-radio.h-6.w-6.text-blue-500(type="radio" name="SMTP" v-model="SMTP" value="2")
                                     span.ml-2 Let me specify my own SMTP server details
                         
                         .w-full.pl-8.mt-3(v-if="SMTP == 2")
                             .flex.flex-wrap.items-center.-mx-4.mb-3
                                 .w-full.md_w-6_12.px-4.mb-0
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide SMTP Hostname
-                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text" placeholder="")
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide SMTP Hostname
+                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text" placeholder="")
         
                             .flex.flex-wrap.items-center.-mx-4.mb-3
                                 .w-full.md_w-6_12.px-4.mb-0
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide SMTP Username 
-                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text" placeholder="")
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide SMTP Username 
+                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text" placeholder="")
         
                             .flex.flex-wrap.items-center.-mx-4.mb-3
                                 .w-full.md_w-6_12.px-4.mb-0
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide SMTP Password
-                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="password" placeholder="")
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide SMTP Password
+                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="password" placeholder="")
         
                             .flex.flex-wrap.items-center.-mx-4.mb-3
                                 .w-full.md_w-6_12.px-4.mb-0
-                                    label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide SMTP Port
-                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="text" placeholder="")
+                                    label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide SMTP Port
+                                    input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="text" placeholder="")
                         
                             .flex.flex-wrap.items-center.-mx-4.mb-3
                                 .w-full.md_w-6_12.px-4.mb-4
-                                    button.w-full.block.flex.flex-row.items-center.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
+                                    button.w-full.block.flex.flex-row.items-center.text-white.bg-blue-500.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
                                         span.w-full.text-center.py-2.px-5.text-sm.font-bold.tracking-widest.uppercase Test SMTP Settings
 
                         .flex.flex-wrap.items-center.-mx-4.mt-6
                             .w-full.md_w-6_12.px-4.mb-0
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Administrator's Email(Required)
-                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="email" placeholder="name@website.com" value="name@website.com")
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Administrator's Email(Required)
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="email" placeholder="name@website.com" value="name@website.com")
     
                         .flex.flex-wrap.items-center.-mx-4.mt-6
                             .w-full.md_w-12_12.px-4.mb-6
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Abandoned Cart Notifications
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Abandoned Cart Notifications
                                 label.inline-flex.items-center
-                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                     span.ml-2 Yes, enable the abandoned cart notifications
    
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-12_12.px-4.mb-6
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Require Consent
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Require Consent
                                 label.inline-flex.items-center
-                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                     span.ml-2 Yes, require customers to give consent to receive marketing emails (GDPR recommended)
                     
                     
                     .p-8.mb-8.bg-white.shadow.rounded
-                        h6.mb-6.text-2xl.font-normal.text-gray-600 Advanced Store Settings
+                        h6.mb-6.text-2xl.font-normal.text-gray-700 Advanced Store Settings
 
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-12_12.px-4.mb-6
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Allow Purchasing?
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Allow Purchasing?
                                 label.inline-flex.items-center
-                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                     span.ml-2 Yes, allow people to purchase from my store
 
                     
                     .p-8.mb-8.bg-white.shadow.rounded
-                        h6.mb-6.text-2xl.font-normal.text-gray-600 Order Settings
+                        h6.mb-6.text-2xl.font-normal.text-gray-700 Order Settings
 
                         .flex.flex-wrap.items-center.-mx-4
                             .w-full.md_w-4_12.px-4.mb-6
                                 label.block.mb-0.text-xs.font-bold.uppercase.tracking-wide Starting Order Number
-                                p.mb-2.text-sm.text-gray-600 (Optional)
-                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number" placeholder="" value="101")
+                                p.mb-2.text-sm.text-gray-700 (Optional)
+                                input.block.w-full.py-3.px-4.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="number" placeholder="" value="101")
                     
                     .p-8.mb-8.bg-white.shadow.rounded
-                        h6.mb-6.text-2xl.font-normal.text-gray-600 Throttler
+                        h6.mb-6.text-2xl.font-normal.text-gray-700 Throttler
 
                         .flex.flex-wrap.items-center.-mx-4.mb-3
                             .w-full.md_w-12_12.px-4
-                                label.block.mb-2.text-xs.font-bold.uppercase.tracking-wide Enable Throttler
+                                label.block.mb-1.text-xs.font-bold.uppercase.tracking-wide Enable Throttler
                                 label.inline-flex.items-center
-                                    input.form-checkbox.h-6.w-6.text-indigo-700(type="checkbox")
+                                    input.form-checkbox.h-6.w-6.text-blue-500(type="checkbox")
                                     span.ml-2 Yes, turn on throttler in my store
 
                         .flex.flex-wrap.items-center.-mx-4.mb-6
                             .w-full.md_w-12_12.px-4
                                 .inline-flex.items-center
                                     span Allow
-                                    input.mx-3.inline-block.w-24.py-2.px-3.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300(type="number" value="1")
+                                    input.mx-3.inline-block.w-24.py-2.px-3.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500(type="number" value="1")
                                     span reviews to be posted every
                                     .relative.mx-3
-                                        select.inline-block.w-24.py-2.px-3.appearance-none.leading-tight.text-indigo-900.bg-white.border.border-gray-300.shadow-xs.rounded.fade.focus_outline-none.focus_border-indigo-300
+                                        select.inline-block.w-24.py-2.px-3.appearance-none.leading-tight.text-blue-900.bg-white.border.border-gray-500.shadow-xs.rounded.fade.focus_outline-none.focus_border-blue-500
                                             option 1
                                             option 2
                                             option 3
@@ -963,7 +963,7 @@ block page
 block footer
     .flex.flex-row.justify-end.items-center.px-12.py-4.bg-white.border-t.border-gray-200.z-50
         nav.flex.flex-row
-            button.flex.flex-row.items-center.ml-4.text-gray-600.rounded.outline-none.hover_opacity-75.fade(type="button")
+            button.flex.flex-row.items-center.ml-4.text-gray-700.rounded.outline-none.hover_opacity-75.fade(type="button")
                 span.py-1.text-sm.font-medium.tracking-widest.uppercase Cancel
-            button.flex.flex-row.items-center.ml-4.text-white.bg-indigo-700.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
+            button.flex.flex-row.items-center.ml-4.text-white.bg-blue-500.border.border-transparent.outline-none.rounded.hover_opacity-75.fade(type="button")
                 span.py-1.px-5.text-sm.font-bold.tracking-widest.uppercase Save
